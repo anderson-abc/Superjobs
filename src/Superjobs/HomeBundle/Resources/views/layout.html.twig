@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    
+<!--######################################################################################
+      _                _                                  _                     _
+   __| | _____   _____| | ___  _ __  _ __ ___   ___ _ __ | |_    __ _  ___  ___| | _____
+  / _` |/ _ \ \ / / _ \ |/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __|  / _` |/ _ \/ _ \ |/ / __|
+ | (_| |  __/\ V /  __/ | (_) | |_) | | | | | |  __/ | | | |_  | (_| |  __/  __/   <\__ \
+  \__,_|\___| \_/ \___|_|\___/| .__/|_| |_| |_|\___|_| |_|\__|  \__, |\___|\___|_|\_\___/
+                              |_|                               |___/
+#######################################################################################-->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{{ asset('bundles/superjobshome/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('bundles/superjobshome/css/font-awsome.min.css')}}" rel="stylesheet">
+    
+    <title>Superjobs - Site de recrutement </title>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ path("superjobs_home_homepage") }}">SuperJobs</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            { {{ app.user.username }} } <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+                    <a href="{{ path('fos_user_profile_show') }}">
+                      Mon compte
+                    </a>
+            </li>
+            <li>
+              <a href="{{ path('fos_user_security_logout') }}">
+                  {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+              </a>
+            </li>
+          </ul>
+        </li>
+
+              {% endif %}
+        <li>
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+              {% else %}
+                  <li>
+                    <a href="{{ path('fos_user_security_login') }}">
+                      {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                  </li>
+              {% endif %}
+        </li>
+        <li>
+          <div>
+              {% block fos_user_content %}
+              {% endblock fos_user_content %}
+          </div>
+        </li>
+      </ul>
+
+
+      <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="{{ path('fos_user_security_login') }}">
+            Entreprise
+          </a>
+        </li>
+        <li>
+          <a href="{{ path('superjobs_home_recruiter_intro') }}">
+            Lancer offre
+          </a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</head>
+<body>
+  
+  <div class="container">
+    
+    {% block container %}  
+    {% endblock %}       
+      {% block intro %}
+        {% endblock %}
+  </div>
+
+  <script src="{{ asset('bundles/superjobshome/js/jquery.js')}}"></script>
+  <script src="{{ asset('bundles/superjobshome/js/bootstrap.min.js')}}"></script>
+</body>
+</html>

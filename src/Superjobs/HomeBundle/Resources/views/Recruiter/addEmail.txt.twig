@@ -1,0 +1,8 @@
+{# src/Blogger/BlogBundle/Resources/view/Page/contactEmail.txt.twig #}
+{# src/marketis/HomeBundle/Resources/view/contact/contactEmail.txt.twig #}
+A contact enquiry was made by {{ add.name }} at {{ "now" | date("Y-m-d H:i") }}.
+
+Reply-To: {{ add.email }}
+Subject: {{ add.subject }}
+Body:
+{{ add.body }}

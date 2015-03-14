@@ -1,0 +1,22 @@
+{% extends "SuperjobsHomeBundle::layout.html.twig" %}
+
+{% block container %}
+	Formulaire ici
+
+	<a href="{{ path('superjobs_home_recruiter_intro') }}">go back to intro</a>
+
+	<form role="form" action="{{ path('superjobs_home_recruiter_add') }}" method="post"  
+    {{ form_enctype(form) }} >
+{#         {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.subject) }}
+        {{ form_row(form.body) }}
+
+        {{ form_rest(form) }} #}
+        {{ form_widget(form) }}
+
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

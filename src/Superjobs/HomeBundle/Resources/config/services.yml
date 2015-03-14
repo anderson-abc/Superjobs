@@ -1,0 +1,4 @@
+services:
+#    superjobs_home.example:
+#        class: Superjobs\HomeBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

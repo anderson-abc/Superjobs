@@ -1,0 +1,48 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+    
+{% block fos_user_content %}
+
+
+{% if error %}
+    
+      <div><p class="bg-warning">
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+      </p></div>
+    
+{% endif %}
+
+<form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+    <fieldset>
+        {# <h2 class="form-signin-heading">Please sign in</h2> #}
+        <legend><center>Connexion</center></legend>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+        <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"
+        class="form-control" placeholder="{{ 'security.login.username'|trans }}" autofocus />
+
+        <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>
+        <input type="password" id="password" name="_password" class="form-control" 
+        placeholder="{{ 'security.login.password'|trans }}" required="required" />
+
+        <div class="checkbox">
+          <label for="remember_me">
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+            {{ 'security.login.remember_me'|trans }}
+          </label>
+        </div>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit">
+            {{ 'security.login.submit'|trans }}
+        </button>
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{ path('fos_user_registration_register') }}">Créer un compte</a></li>
+            <li><a href="{{ path('fos_user_resetting_request') }}">Forget password</a></li>
+        </ul>
+    </fieldset>
+</form>
+
+
+{% endblock fos_user_content %}

@@ -1,0 +1,3 @@
+# superjobs_user_homepage:
+#     path:     /
+#     defaults: { _controller: SuperjobsUserBundle:Default:index }
