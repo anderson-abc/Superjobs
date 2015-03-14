@@ -59,7 +59,7 @@ class RecuiterController extends Controller
 
     }
 
-    function detailsAction($id){     
+    function detailsAction(){     
         $em = $this->getDoctrine()->getEntityManager();
         $job = $em->getRepository("SuperjobsHomeBundle:Jobs")->find($id);
         var_dump($job);
