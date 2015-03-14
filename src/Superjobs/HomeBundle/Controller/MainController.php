@@ -10,11 +10,9 @@ class MainController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
         $jobs = $em->getRepository("SuperjobsHomeBundle:Jobs")->findAll();
-        $id = $em->getRepository("SuperjobsHomeBundle:Jobs")->findAll('id');
      
         return $this->render('SuperjobsHomeBundle:Main:index.html.twig', array(
-            'jobs'=>$jobs,
-            'id'=>$id,
+            'jobs'=>$jobs
                 ));
     }
 }
