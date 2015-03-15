@@ -13,6 +13,6 @@ superjobs_home_recruiter_add:
         _method:  GET|POST
 
 superjobs_home_recruiter_job_details:
-    path:     /jobs/
+    path:     /jobs/{id}
     defaults: { _controller: SuperjobsHomeBundle:Recuiter:details }
 
