@@ -24,13 +24,6 @@ class JobsType extends AbstractType
             ->add('location')
             ->add('description', 'textarea')
             ->add('skills')
-            ->add('token')
-            ->add('isPublic')
-            ->add('isCreated')
-            ->add('expiresAt')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('website')
         ;
     }
     
