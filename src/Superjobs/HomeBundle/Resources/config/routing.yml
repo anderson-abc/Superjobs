@@ -14,5 +14,7 @@ superjobs_home_recruiter_add:
 
 superjobs_home_recruiter_job_details:
     path:     /jobs/{id}
-    defaults: { _controller: SuperjobsHomeBundle:Recuiter:details }
-
+    defaults: { _controller: SuperjobsHomeBundle:Recuiter:details, id: 1 }
+    requirements:
+        id: \d+
+        
