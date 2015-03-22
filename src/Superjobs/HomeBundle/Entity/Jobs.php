@@ -62,21 +62,21 @@ class Jobs
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="string", length=255)
+     * @ORM\Column(name="url", type="string", length=255, nullable=true)
      */
     private $url;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="location", type="string", length=255)
+     * @ORM\Column(name="location", type="string", length=255, nullable=true)
      */
     private $location;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
@@ -90,14 +90,14 @@ class Jobs
     /**
      * @var string
      *
-     * @ORM\Column(name="token", type="string", length=255)
+     * @ORM\Column(name="token", type="string", length=255, nullable=true)
      */
     private $token;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="is_public", type="boolean")
+     * @ORM\Column(name="is_public", type="boolean", nullable=true)
      */
     private $isPublic;
 
@@ -128,13 +128,6 @@ class Jobs
      * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="website", type="string", length=255)
-     */
-    private $website;
 
 
     function __construct(){
@@ -477,29 +470,6 @@ class Jobs
     public function getUpdatedAt()
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * Set website
-     *
-     * @param string $website
-     * @return Jobs
-     */
-    public function setWebsite($website)
-    {
-        $this->website = $website;
-
-        return $this;
-    }
-
-    /**
-     * Get website
-     *
-     * @return string 
-     */
-    public function getWebsite()
-    {
-        return $this->website;
     }
 
     /**
