@@ -50,7 +50,7 @@ class RecuiterController extends Controller
 
                 $this->get('session')->getFlashBag()->add(
                     'success',
-                    'Votre message à bien été envoyer !'
+                    'Votre offre à était créer et sera bientôt en ligne !'
                 );
                 return $this->redirect($this->generateUrl('superjobs_home_homepage'));
             }
