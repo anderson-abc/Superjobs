@@ -7,6 +7,8 @@
 
 	<form role="form" action="{{ path('superjobs_home_recruiter_add') }}" method="post"  
     {{ form_enctype(form) }} >
+{#            {{ tinymce_init() }}#}
+            {{ tinymce_init({'use_callback_tinymce_init': true, 'theme': {'simple': {'menubar': false}}}) }}
 {#         {{ form_errors(form) }}
 
         {{ form_row(form.name) }}
