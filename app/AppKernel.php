@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Superjobs\HomeBundle\SuperjobsHomeBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Superjobs\UserBundle\SuperjobsUserBundle(),
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
