@@ -22,7 +22,8 @@ class JobsType extends AbstractType
             ->add('logo')
             ->add('url', 'url')
             ->add('location')
-            ->add('description', 'textarea')
+            ->add('description', 'textarea', array(
+                        'attr' => array('class' => 'tinymce'),))
             ->add('skills')
         ;
     }
