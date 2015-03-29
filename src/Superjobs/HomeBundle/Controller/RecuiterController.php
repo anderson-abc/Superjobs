@@ -75,4 +75,5 @@ class RecuiterController extends Controller
         return $this->render('SuperjobsHomeBundle:Recruiter:details.html.twig',
             array('job' => $job));
     }
+
 }

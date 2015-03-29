@@ -23,7 +23,11 @@ class JobsType extends AbstractType
             ->add('url', 'url')
             ->add('location')
             ->add('description', 'textarea', array(
-                        'attr' => array('class' => 'tinymce'),))
+                    'attr' => array(
+                        'class' => 'tinymce',
+                        'data-theme' => 'bbcode' // Skip it if you want to use default theme
+                    )
+                ))
             ->add('skills')
         ;
     }
