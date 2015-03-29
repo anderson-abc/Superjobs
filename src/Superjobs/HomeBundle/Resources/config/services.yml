@@ -2,3 +2,8 @@ services:
 #    superjobs_home.example:
 #        class: Superjobs\HomeBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+    superjobs_home.image_type_extension:
+        class: Superjobs\HomeBundle\Form\Extension\ImageTypeExtension
+        tags:
+            - { name: form.type_extension, alias: file }
