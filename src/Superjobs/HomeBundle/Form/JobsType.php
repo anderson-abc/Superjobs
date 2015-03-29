@@ -19,7 +19,7 @@ class JobsType extends AbstractType
             ->add('idCategory')
             ->add('type')
             ->add('company')
-            ->add('logo')
+            ->add('logo', 'file', array('label' => 'Company logo', 'required' => false))
             ->add('url', 'url')
             ->add('location')
             ->add('description', 'textarea', array(
