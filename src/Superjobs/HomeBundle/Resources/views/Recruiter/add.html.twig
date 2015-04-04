@@ -1,40 +1,99 @@
 {% extends "SuperjobsHomeBundle::layout.html.twig" %}
 
-
 {% block container %}
-	Veuillez remplir ce formulaire :
-    <script>
-    function callback_tinymce_init(editor){
-        editor.settings.entity_encoding = 'raw';
-    }
-    </script>
+    <centre>
+    <h2>
+	Remplissez ce truc
+    </h2>
+    </centre>
+<script>
+function callback_tinymce_init(editor){
+    editor.settings.entity_encoding = 'raw';
+}
+</script>
 
-	<form role="form" action="{{ path('superjobs_home_recruiter_add') }}" method="post"  
-    {{ form_enctype(form) }} >
-            {# {{ tinymce_init() }} #}
-            {{ tinymce_init({'use_callback_tinymce_init': true, 
-                             'theme': {'simple': {'menubar': false}}})
-                             }}
-                             
-{#         {{ form_errors(form) }}
+<form role="form" action="{{ path('superjobs_home_recruiter_add') }}" method="post"{{ form_enctype(form) }} >
+    {# {{ tinymce_init() }} #}
+    {{ tinymce_init({'use_callback_tinymce_init': true, 
+                     'theme': {'simple': {'menubar': false}}})
+                     }}
 
-        {{ form_row(form.name) }}
-        {{ form_row(form.email) }}
-        {{ form_row(form.subject) }}
-        {{ form_row(form.body) }}
+{{ form_errors(form) }}
+  <div class="form-group">
+    <label for="exampleInputEmail1">
+        Catégorie
+{#        {{ form_label(form.idCategory) }}#}
+    {{ form_widget(form.idCategory, { 'attr': {'class': 'form-control'} }) }}
+    </label>
+    {{ form_errors(form.idCategory) }}
+  </div>
 
-        {{ form_rest(form) }} #}
+  <div class="form-group">
+    <label for="exampleInputEmail1">
+        {{ form_label(form.title) }}
+    {{ form_widget(form.title, { 'attr': {'class': 'form-control'} }) }}
+    </label>
+    {{ form_errors(form.title) }}
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">
+        {{ form_label(form.type) }}
+    {{ form_widget(form.type, { 'attr': {'class': 'form-control'} }) }}
+    </label>
+    {{ form_errors(form.type) }}
+  </div>
+    
+  <div class="form-group">
+    <label for="exampleInputEmail1">
+        {{ form_label(form.skills) }}
+    {{ form_widget(form.skills, { 'attr': {'class': 'form-control'} }) }}
+    </label>
+    {{ form_errors(form.skills) }}
+  </div>
+ 
+  <div class="form-group">
+    <label for="exampleInputEmail1">
+        {{ form_label(form.company) }}
+    {{ form_widget(form.company, { 'attr': {'class': 'form-control'} }) }}
+    </label>
+    {{ form_errors(form.company) }}
+  </div>
+    
+  <div class="form-group">
+    <label for="exampleInputEmail1">
+        {{ form_label(form.url) }}
+    {{ form_widget(form.url, { 'attr': {'class': 'form-control'} }) }}
+    </label>
+    {{ form_errors(form.url) }}
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">
+        {{ form_label(form.logo) }}
+    {{ form_widget(form.logo, { 'attr': {'class': 'form-control'} }) }}
+    </label>
+    {{ form_errors(form.logo) }}
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">
+        {{ form_label(form.location) }}
+    {{ form_widget(form.location, { 'attr': {'class': 'form-control'} }) }}
+    </label>
+    {{ form_errors(form.location) }}
+  </div>
+
+{{ form_label(form.description) }}
+{{ form_errors(form.description) }}
+{{ form_widget(form.description) }}
+   <br/>     
+
+{{ form_rest(form) }} 
 
 
-      
-          {{ form_label(form.logo) }}
-          
-            {{ form_errors(form.logo) }}
-            {{ form_widget(form.logo) }}
-        {{ form_widget(form) }}
-
-        <input type="submit" value="Submit" />
-        
-	<a href="{{ path('superjobs_home_recruiter_intro') }}">Annuler</a>
-    </form>
+<input type="submit" value="Submit" class="btn btn-primary" />
+    <a href="{{ path('superjobs_home_recruiter_intro') }}">Revenir</a>
+    <br/>.
+</form>
 {% endblock %}

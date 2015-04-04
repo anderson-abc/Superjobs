@@ -4,14 +4,12 @@ namespace Superjobs\HomeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 use Superjobs\HomeBundle\Entity\Jobs;
 use Superjobs\HomeBundle\Form\JobsType;
 
 class RecuiterController extends Controller
 {
-    // la fonction intro contient deja la liste des jobs en mode bref description
     public function introAction()
     {
         return $this->render('SuperjobsHomeBundle:Recruiter:intro.html.twig');
@@ -19,7 +17,6 @@ class RecuiterController extends Controller
 
     public function addAction()
     {
-
         $em = $this->getDoctrine()->getManager();
     	$Jobs = new Jobs;
         $form = $this->createForm(new JobsType, $Jobs);
@@ -44,7 +41,6 @@ class RecuiterController extends Controller
                 // sending email until here ...
                 $Jobs->setIsCreated('true');
 
-
                 $em->persist($Jobs);
                 $em->flush();
 
@@ -55,13 +51,11 @@ class RecuiterController extends Controller
                 return $this->redirect($this->generateUrl('superjobs_home_homepage'));
             }
         }
-
         return $this->render('SuperjobsHomeBundle:Recruiter:add.html.twig',
             array('form' => $form->createView()));
-
     }
 
-    function detailsAction($id, Request $request){     
+    function detailsAction($id, Request $request){
 
         $id = $request->query->get('tag');
         //$em = $this->getDoctrine()->getEntityManager();
@@ -70,8 +64,7 @@ class RecuiterController extends Controller
             throw $this->createNotFoundException(
                 'Ce job n\'existe plus : '.$id
             );
-        }        
-        
+        }               
         return $this->render('SuperjobsHomeBundle:Recruiter:details.html.twig',
             array('job' => $job));
     }

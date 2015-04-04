@@ -5,6 +5,7 @@ namespace Superjobs\HomeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Jobs
@@ -32,11 +33,11 @@ class Jobs
     private $title;
 
     /**
-     * @var integer
+     * @var array
      *
-     * @ORM\Column(name="id_category", type="integer")
+     * @ORM\Column(name="categories", type="array")
      */
-    private $idCategory;
+    private $Categories;
 
     /**
      * @var string
@@ -135,6 +136,7 @@ class Jobs
 
         $now   = new DateTime;
         $clone = clone $this->createdAt;   
+        $this->Categories = new ArrayCollection();
         $this->expiresAt = $clone->modify( '+30 day' );
         $this->updatedAt = $clone->modify( '+30 day' );
 
@@ -148,29 +150,6 @@ class Jobs
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set idCategory
-     *
-     * @param integer $idCategory
-     * @return Jobs
-     */
-    public function setIdCategory($idCategory)
-    {
-        $this->idCategory = $idCategory;
-
-        return $this;
-    }
-
-    /**
-     * Get idCategory
-     *
-     * @return integer 
-     */
-    public function getIdCategory()
-    {
-        return $this->idCategory;
     }
 
     /**
@@ -493,5 +472,28 @@ class Jobs
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set Categories
+     *
+     * @param array $categories
+     * @return Jobs
+     */
+    public function setCategories($categories)
+    {
+        $this->Categories = $categories;
+
+        return $this;
+    }
+
+    /**
+     * Get Categories
+     *
+     * @return array 
+     */
+    public function getCategories()
+    {
+        return $this->Categories;
     }
 }
