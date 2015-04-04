@@ -16,7 +16,11 @@ class JobsType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('Categories')
+            ->add('Categories', 'collection', array(
+                    'type'         => new CategoryType(),
+                    'allow_add'    => true,
+                    'allow_delete' => true
+                  ))
             ->add('type')
             ->add('company')
             ->add('logo', 'file', array('label' => 'Company logo', 'required' => false))

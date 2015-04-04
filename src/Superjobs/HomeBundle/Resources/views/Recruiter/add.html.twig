@@ -23,9 +23,9 @@ function callback_tinymce_init(editor){
     <label for="exampleInputEmail1">
         Catégorie
 {#        {{ form_label(form.idCategory) }}#}
-    {{ form_widget(form.idCategory, { 'attr': {'class': 'form-control'} }) }}
+    {{ form_widget(form.Categories, { 'attr': {'class': 'form-control'} }) }}
     </label>
-    {{ form_errors(form.idCategory) }}
+    {{ form_errors(form.Categories) }}
   </div>
 
   <div class="form-group">

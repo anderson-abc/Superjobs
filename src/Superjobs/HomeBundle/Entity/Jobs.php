@@ -35,7 +35,7 @@ class Jobs
     /**
      * @var array
      *
-     * @ORM\Column(name="categories", type="array")
+     * @ORM\Column(name="categories", type="int")
      */
     private $Categories;
 
