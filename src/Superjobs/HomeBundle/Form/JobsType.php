@@ -5,6 +5,7 @@ namespace Superjobs\HomeBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Superjobs\HomeBundle\Entity\JobsRepository; 
 
 class JobsType extends AbstractType
 {
@@ -16,10 +17,11 @@ class JobsType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('Categories', 'collection', array(
-                    'type'         => new CategoryType(),
-                    'allow_add'    => true,
-                    'allow_delete' => true
+            ->add('Categories', 'entity', array(
+                    'class'    => 'SuperjobsHomeBundle:Category',
+                    'property' => 'name',
+                    'expanded' => true,
+                    'multiple' => true
                   ))
             ->add('type')
             ->add('company')

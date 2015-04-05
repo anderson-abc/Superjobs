@@ -4,20 +4,19 @@
 
 <center><h2>Welcome to SuperJobs!</h2></center>
 
-<article>
-	
-    {% for job in jobs %}
-            <header>
-                <a href="{{ path('superjobs_home_recruiter_job_details', { 'tag': job.id }) }}"><h2>{{ job.title }}</h2></a>
-                <time>{{ job.createdAt|date('d M Y')}}</time>
-            </header>
+<div class="row-fluid">
+    <div class="span12">
+        {% for job in jobs %}
+            <a href="{{ path('superjobs_home_recruiter_job_details', { 'tag': job.id }) }}"><h2>{{ job.title }}</h2></a>
+            <time>{{ job.createdAt|date('d M Y')}}</time>
             <div>
-                    <a href="{{ job.url }}">{{ job.url }}</a>
-                    <p>
-                            {{ job.skills }}
-                    </p>
+                <a href="{{ job.url }}">{{ job.url }}</a>
+                <p>
+                        {{ job.skills }}
+                </p>
             </div>
-    {% endfor %}
-</article>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}

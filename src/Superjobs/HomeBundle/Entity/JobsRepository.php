@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class JobsRepository extends EntityRepository
 {
+    public function getCreatedQueryBuilder()
+    {
+      return $this
+        ->createQueryBuilder('a')
+        ->where('a.published = :published')
+        ->setParameter('is_created', true)
+      ;
+    }
 }
