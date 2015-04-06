@@ -18,7 +18,7 @@
         {# <h2 class="form-signin-heading">Please sign in</h2> #}
         <legend><center>Connexion</center></legend>
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-
+        
         <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
         <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"
         class="form-control" placeholder="{{ 'security.login.username'|trans }}" autofocus />
