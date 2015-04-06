@@ -5,7 +5,6 @@ namespace Superjobs\HomeBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Superjobs\HomeBundle\Entity\JobsRepository; 
 
 class JobsType extends AbstractType
 {
