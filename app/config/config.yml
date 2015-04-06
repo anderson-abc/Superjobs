@@ -94,8 +94,3 @@ stfalcon_tinymce:
         simple:
             theme: "modern"
             
-genemu_form:
-    tinymce:
-        script_url: 'asset[bundles/superjobshome/js/jquery.tinymce.js]'
-        enabled: true
-        theme:   advanced
