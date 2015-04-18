@@ -23,15 +23,16 @@ class RecuiterController extends Controller
 
         $request = $this->getRequest();
 		
-        if ($request->isMethod('Post')) {
+        if ($request->isMethod('Post')){
             $form->bind($request);
 
-            if($form->isValid()) {
+            if($form->isValid()){
 
                 $Jobs = $form->getData();
-//                $logo_file = $this->getRequest()->request->get('blabla');
-//                $form['logo']->getData()->move();
+                $logo_file = $this->getRequest()->request->get('blabla');
+                $form['logo']->getData()->move();
 
+                
                 // this is for sending simple email
                 // $message = \Swift_Message::newInstance()
                 //     ->setSubject('Hello Email')
