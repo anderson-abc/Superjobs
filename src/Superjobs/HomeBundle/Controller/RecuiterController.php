@@ -29,7 +29,6 @@ class RecuiterController extends Controller
             if($form->isValid()) {
 
                 $Jobs = $form->getData();
-                
 //                $logo_file = $this->getRequest()->request->get('blabla');
 //                $form['logo']->getData()->move();
 
