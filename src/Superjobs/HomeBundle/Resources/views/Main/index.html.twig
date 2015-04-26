@@ -1,12 +1,15 @@
 {% extends "SuperjobsHomeBundle::layout.html.twig" %}
 {% block container %}
 <center><h2>Welcome to SuperJobs!</h2>
+    
     <form class="form-search">
         <div class="input-append">
-          <input type="text" class="search-query">
-          <button class="btn btn-primary" type="submit">Recherche</button>
+          <input type="text" class="span6 search-query">
+{#          <input class="form-control" id="inputDefault" type="text">#}
+          <button type="submit" class="btn">Search</button>
         </div>
-    </form>    
+    </form>   
+    
 </center>       
 {# total items count #}
 <div class="count">
@@ -15,6 +18,7 @@
 {# table body #}
 {% for article in pagination %}
 <div class="row">    
+{#    <div {% if loop.index is odd %}class="color"{% endif %}>#}
         <div class="col-xs-2">
             <time class="calendar">
                 <em>{{ article.createdAt|date('Y')}}</em>
@@ -34,8 +38,8 @@
 {% endfor %}
 {# display navigation #}
 <center>
-<div class="navigation">
-    {{ knp_pagination_render(pagination) }}
+<div class="pagination">
+    {{ knp_pagination_render(pagination, "", {}, { "prev_label": "Previous", "next_label": "Next", "first_label": "First", "last_label": "Last"}) }}
 </div>
 </center>
 {% endblock %}

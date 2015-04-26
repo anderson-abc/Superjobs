@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Superjobs\HomeBundle\Entity\Jobs;
 use Superjobs\HomeBundle\Form\JobsType;
 
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+
 class RecuiterController extends Controller
 {
     public function introAction()
@@ -17,6 +19,9 @@ class RecuiterController extends Controller
 
     public function addAction()
     {
+        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+            throw new AccessDeniedException();
+        } else {
         $em = $this->getDoctrine()->getManager();
     	$Jobs = new Jobs;
         $form = $this->createForm(new JobsType, $Jobs);
@@ -56,6 +61,7 @@ class RecuiterController extends Controller
         }
         return $this->render('SuperjobsHomeBundle:Recruiter:add.html.twig',
             array('form' => $form->createView()));
+        }
     }
 
     function detailsAction($id, Request $request){
