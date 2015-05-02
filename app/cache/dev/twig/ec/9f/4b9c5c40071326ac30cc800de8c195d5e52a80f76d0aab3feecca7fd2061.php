@@ -36,36 +36,96 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
     public function block_container($context, array $blocks = array())
     {
         // line 4
-        echo "\t
+        echo "
+    <!-- Full Width Image Header -->
+    <header class=\"header-image\">
+        <div class=\"headline\">
+            <div class=\"container\">
+                <h2>Chercher les ninjas</h2>
+                <h2>de l'Informatique</h2>
+            </div>
+        </div>
+    </header>
 
-\t<center><h2>
-\t\t\tRecruter les meilleurs talents
-\t</h2></center>
-\t<p>
-                <h2>Pourquoi lancer offre ici</h2>
-\tNous proposons 3 services qui vous permettent d'atteindre le maximum de
-\tcandidats à la recherche d'un emploi ou à l'écoute du marché
-\t</p>
+    <!-- Page Content -->
+    <div class=\"container\">
 
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"
-Section 1.10.32 du \"De Finibus Bonorum et Malorum\" de Ciceron (45 av. J.-C.)
-<br><br>
-\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"
-</p>
+        <hr class=\"featurette-divider\">
 
-<center>
-<a href=\"";
-        // line 23
-        echo $this->env->getExtension('routing')->getPath("superjobs_home_recruiter_add");
-        echo "\">Lancer une offre</a>
- ou 
-<a href=\"";
+        <!-- First Featurette -->
+        <div class=\"featurette\" id=\"about\">
+            <img class=\"featurette-image img-circle img-responsive pull-right\" src=\"";
+        // line 22
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/img/offre-emploi.jpg"), "html", null, true);
+        echo "\">
+            <h2 class=\"featurette-heading\">
+                <span class=\"text-muted\">
+                    <a href=\"";
         // line 25
         echo $this->env->getExtension('routing')->getPath("superjobs_home_recruiter_add");
-        echo "\">Consulter CVthéque</a>
+        echo "\">
+                        Lancer une offre
+                    </a>
+                </span> Gratuitement !<br/>
+            </h2>
+            <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
 
-</center>";
+        <hr class=\"featurette-divider\">
+
+        <!-- Second Featurette -->
+        <div class=\"featurette\" id=\"services\">
+            <img class=\"featurette-image img-circle img-responsive pull-left\" src=\"";
+        // line 37
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/img/talents.jpg"), "html", null, true);
+        echo "\" width=\"50%\">
+            
+            <h2 class=\"featurette-heading\">Chercher des talents<br/>
+                <span class=\"text-muted\">
+                    <a href=\"";
+        // line 41
+        echo $this->env->getExtension('routing')->getPath("superjobs_home_recruiter_add");
+        echo "\">
+                        Consulter CVthéque
+                    </a>                
+                </span>
+            </h2>
+            <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class=\"featurette-divider\">
+
+        <!-- Third Featurette -->
+        <div class=\"featurette\" id=\"contact\">
+            <img class=\"featurette-image img-circle img-responsive pull-right\" src=\"";
+        // line 53
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/img/test-technique.jpg"), "html", null, true);
+        echo "\">
+            <h2 class=\"featurette-heading\">
+                <span class=\"text-muted\">
+                    Tests techniques
+                </span>Gratuitement !<br/>
+            </h2>
+            <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class=\"featurette-divider\">
+
+        <!-- Footer -->
+        <footer>
+            <div class=\"row\">
+                <div class=\"col-lg-12\">
+                    <p>Copyright &copy; Irmasoft 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+
+
+";
     }
 
     public function getTemplateName()
@@ -80,6 +140,6 @@ Section 1.10.32 du \"De Finibus Bonorum et Malorum\" de Ciceron (45 av. J.-C.)
 
     public function getDebugInfo()
     {
-        return array (  65 => 25,  60 => 23,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  102 => 53,  87 => 41,  80 => 37,  65 => 25,  59 => 22,  39 => 4,  36 => 3,  11 => 1,);
     }
 }

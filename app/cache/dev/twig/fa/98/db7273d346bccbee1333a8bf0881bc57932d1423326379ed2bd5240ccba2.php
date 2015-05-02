@@ -42,11 +42,11 @@ class __TwigTemplate_fa98db7273d346bccbee1333a8bf0881bc57932d1423326379ed2bd5240
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'label');
         echo "
                     </label>
-        <div class=\"col-md-4\">
+                <div class=\"col-md-4\">
                 ";
         // line 20
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'widget', array("attr" => array("class" => "form-control")));
-        echo "
+        echo "<br/>
                 </div>
                 ";
         // line 22

@@ -17,9 +17,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="{{ asset('bundles/superjobshome/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('bundles/superjobshome/css/font-awsome.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('bundles/superjobshome/css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ asset('bundles/superjobshome/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{ asset('bundles/superjobshome/css/Calendar.css')}}" rel="stylesheet">
+    <link href="{{ asset('bundles/superjobshome/css/one-page-wonder.css')}}" rel="stylesheet">
     
     <title>Superjobs - Site de recrutement </title>
 
@@ -33,7 +34,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ path("superjobs_home_homepage") }}">SuperJobs</a>
+      <a class="navbar-brand" href="{{ path("superjobs_home_homepage") }}">Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -81,13 +82,8 @@
       <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="{{ path('fos_user_security_login') }}">
-            Entreprise
-          </a>
-        </li>
-        <li>
           <a href="{{ path('superjobs_home_recruiter_intro') }}">
-            Lancer offre
+            Entreprise
           </a>
         </li>
       </ul>
@@ -103,12 +99,10 @@
     {% block container %}  
     {% endblock %}     
   </div>
-
     <script src="{{ asset('bundles/stfalcontinymce/js/init.jquery.js') }}"></script>
     <script src="{{ asset('bundles/stfalcontinymce/js/init.standard.js') }}"></script>
-    <script src="{{ asset('bundles/stfalcontinymce/vendor/jquery.tinymce.min.js') }}"></script>
+    <script src="{{ asset('bundles/stfalcontinymce/vendor/tinymce/jquery.tinymce.min.js') }}"></script>
     <script src="{{ asset('bundles/superjobshome/js/jquery.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/bootstrap.min.js')}}"></script>
-
 </body>
 </html>

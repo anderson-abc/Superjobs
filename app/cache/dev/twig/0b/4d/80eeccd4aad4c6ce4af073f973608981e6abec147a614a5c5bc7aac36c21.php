@@ -38,7 +38,7 @@ class __TwigTemplate_0b4d80eeccd4aad4c6ce4af073f973608981e6abec147a614a5c5bc7aac
     <meta name=\"author\" content=\"\">
     <link href=\"";
         // line 20
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/bootstrap.min.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/bootstrap.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
         // line 21
@@ -53,7 +53,7 @@ class __TwigTemplate_0b4d80eeccd4aad4c6ce4af073f973608981e6abec147a614a5c5bc7aac
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/dashboard.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     
-    <title>Superjobs - Site de recrutement </title>
+    <title>Superjobs - Offres d'emploi </title>
 
 <nav class=\"navbar navbar-default\">
   <div class=\"container-fluid\">
@@ -115,17 +115,9 @@ class __TwigTemplate_0b4d80eeccd4aad4c6ce4af073f973608981e6abec147a614a5c5bc7aac
         <li>
           <a href=\"";
         // line 65
-        echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
-        echo "\">
-            Entreprise
-          </a>
-        </li>
-        <li>
-          <a href=\"";
-        // line 70
         echo $this->env->getExtension('routing')->getPath("superjobs_home_recruiter_intro");
         echo "\">
-            Lancer offre
+            Entreprise
           </a>
         </li>        
       </ul>
@@ -136,22 +128,22 @@ class __TwigTemplate_0b4d80eeccd4aad4c6ce4af073f973608981e6abec147a614a5c5bc7aac
 </head>
 <body>
         ";
-        // line 81
+        // line 76
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
         foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-            // line 82
+            // line 77
             echo "            ";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 83
+                // line 78
                 echo "                <div class=\"flash-";
                 echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                 echo "\">
                   <p class=\"bg-info\">
                     ";
-                // line 85
+                // line 80
                 echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                 echo "
                   <p class=\"bg-info\">
@@ -161,36 +153,36 @@ class __TwigTemplate_0b4d80eeccd4aad4c6ce4af073f973608981e6abec147a614a5c5bc7aac
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 89
+            // line 84
             echo "        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 90
+        // line 85
         echo "    </p>
         <div class=\"container\">
             ";
-        // line 92
+        // line 87
         $this->displayBlock('fos_user_content', $context, $blocks);
-        // line 94
+        // line 89
         echo "        </div>
  <script src=\"";
-        // line 95
+        // line 90
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/jquery.js"), "html", null, true);
         echo "\"></script>
   <script src=\"";
-        // line 96
+        // line 91
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 </body>
 </html>";
     }
 
-    // line 92
+    // line 87
     public function block_fos_user_content($context, array $blocks = array())
     {
-        // line 93
+        // line 88
         echo "            ";
     }
 
@@ -206,6 +198,6 @@ class __TwigTemplate_0b4d80eeccd4aad4c6ce4af073f973608981e6abec147a614a5c5bc7aac
 
     public function getDebugInfo()
     {
-        return array (  194 => 93,  191 => 92,  184 => 96,  180 => 95,  177 => 94,  175 => 92,  171 => 90,  165 => 89,  155 => 85,  149 => 83,  144 => 82,  140 => 81,  126 => 70,  118 => 65,  113 => 62,  104 => 56,  100 => 55,  92 => 50,  86 => 47,  82 => 45,  80 => 44,  70 => 37,  53 => 23,  49 => 22,  45 => 21,  41 => 20,  20 => 1,);
+        return array (  186 => 88,  183 => 87,  176 => 91,  172 => 90,  169 => 89,  167 => 87,  163 => 85,  157 => 84,  147 => 80,  141 => 78,  136 => 77,  132 => 76,  118 => 65,  113 => 62,  104 => 56,  100 => 55,  92 => 50,  86 => 47,  82 => 45,  80 => 44,  70 => 37,  53 => 23,  49 => 22,  45 => 21,  41 => 20,  20 => 1,);
     }
 }

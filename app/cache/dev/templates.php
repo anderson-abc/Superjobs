@@ -145,6 +145,7 @@
   'KnpPaginatorBundle:Pagination:twitter_bootstrap_pagination.html.twig' => '/var/www/html/superjobs/vendor/knplabs/knp-paginator-bundle/Knp/Bundle/PaginatorBundle/Resources/views/Pagination/twitter_bootstrap_pagination.html.twig',
   'KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig' => '/var/www/html/superjobs/vendor/knplabs/knp-paginator-bundle/Knp/Bundle/PaginatorBundle/Resources/views/Pagination/twitter_bootstrap_v3_pagination.html.twig',
   'KnpPaginatorBundle:Pagination:filtration.html.twig' => '/var/www/html/superjobs/vendor/knplabs/knp-paginator-bundle/Knp/Bundle/PaginatorBundle/Resources/views/Pagination/filtration.html.twig',
+  'FOSElasticaBundle:Collector:elastica.html.twig' => '/var/www/html/superjobs/vendor/friendsofsymfony/elastica-bundle/Resources/views/Collector/elastica.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => '/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views/Profiler/dump.html.twig',
   'WebProfilerBundle:Collector:time.html.twig' => '/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/time.html.twig',
   'WebProfilerBundle:Collector:config.html.twig' => '/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/config.html.twig',

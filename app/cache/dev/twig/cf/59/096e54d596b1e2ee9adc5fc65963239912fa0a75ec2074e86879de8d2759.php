@@ -28,12 +28,12 @@ class __TwigTemplate_cf59096e54d596b1e2ee9adc5fc65963239912fa0a75ec2074e86879de8
       <hr>
       
       <ul class=\"nav nav-stacked\">
-        <li class=\"active\"><a href=\"#\">";
+        <li class=\"active\"><a href=\"#\"><i class=\"glyphicon glyphicon-home\"></i> ";
         // line 14
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "username", array()), "html", null, true);
         echo " </a></li>
-        <li><a href=\"#\">Messages <span class=\"badge\">3</span></a></li>
-        <li><a href=\"#\">CV reçus <span class=\"badge\">11</span></a></li>
+        <li><a href=\"#\"><i class=\"glyphicon glyphicon-envelope\"></i> Messages <span class=\"badge\">3</span></a></li>
+        <li><a href=\"#\"><i class=\"fa fa-file\"></i> CV reçus <span class=\"badge\">11</span></a></li>
         <li><a href=\"javascript:;\"><i class=\"glyphicon glyphicon-book\"></i> Books</a></li>
         <li><a href=\"javascript:;\"><i class=\"glyphicon glyphicon-briefcase\"></i> Tools</a></li>
         <li><a href=\"javascript:;\"><i class=\"glyphicon glyphicon-time\"></i> Real-time</a></li>

@@ -17,12 +17,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="{{ asset('bundles/superjobshome/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('bundles/superjobshome/css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{ asset('bundles/superjobshome/css/font-awsome.min.css')}}" rel="stylesheet">
     <link href="{{ asset('bundles/superjobshome/css/signin.css')}}" rel="stylesheet">
     <link href="{{ asset('bundles/superjobshome/css/dashboard.css')}}" rel="stylesheet">
     
-    <title>Superjobs - Site de recrutement </title>
+    <title>Superjobs - Offres d'emploi </title>
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -62,13 +62,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="{{ path('fos_user_security_login') }}">
-            Entreprise
-          </a>
-        </li>
-        <li>
           <a href="{{ path('superjobs_home_recruiter_intro') }}">
-            Lancer offre
+            Entreprise
           </a>
         </li>        
       </ul>
