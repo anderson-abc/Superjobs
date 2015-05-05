@@ -1,15 +1,30 @@
 {% extends "SuperjobsHomeBundle::layout.html.twig" %}
 {% block container %}
-<center><h2>Welcome to SuperJobs!</h2>
-    
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" >
+    <div class="container">
+        <div class="row"><center>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Superjobs</h1>
+                    <span class="subheading">Postez votre offre d'emploi facilement et gratuitement</span>
+                    <hr class="small">                    
+                </div>
+            </div></center>
+        </div>
+    </div>
+</header>
+
+<center><br/>
     <form class="form-search">
         <div class="input-append">
-          <input type="text" class="span6 search-query">
+          Chercher votre offre : <input type="text" class="span6 search-query">
 {#          <input class="form-control" id="inputDefault" type="text">#}
           <button type="submit" class="btn">Search</button>
         </div>
-    </form>   
-    
+    </form>
 </center>       
 {# total items count #}
 <div class="count">
