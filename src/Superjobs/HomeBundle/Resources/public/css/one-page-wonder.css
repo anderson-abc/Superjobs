@@ -47,10 +47,6 @@
     font-size: 50px;
 }
 
-footer {
-    margin: 50px 0;
-}
-
 @media(max-width:1200px) {
     .headline h1 {
         font-size: 140px;

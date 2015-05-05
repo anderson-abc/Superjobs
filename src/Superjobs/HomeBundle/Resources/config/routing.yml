@@ -18,4 +18,12 @@ superjobs_home_recruiter_job_details:
     requirements:
         _method:  GET|POST
         id: \d+
-        
+
+superjobs_home_resume_template:
+    path:     /applicant/profile
+    defaults: { _controller: SuperjobsHomeBundle:Applicant:profile }
+
+superjobs_home_team_template:
+    path:     /applicant/team
+    defaults: { _controller: SuperjobsHomeBundle:Applicant:team }
+    
