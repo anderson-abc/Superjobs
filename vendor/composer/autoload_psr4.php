@@ -11,8 +11,5 @@ return array(
     'Symfony\\Bundle\\AsseticBundle\\' => array($vendorDir . '/symfony/assetic-bundle'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'FOS\\UserBundle\\' => array($vendorDir . '/friendsofsymfony/user-bundle'),
-    'FOS\\ElasticaBundle\\' => array($vendorDir . '/friendsofsymfony/elastica-bundle'),
-    'Elastica\\Test\\' => array($vendorDir . '/ruflin/elastica/test/lib/Elastica/Test'),
-    'Elastica\\' => array($vendorDir . '/ruflin/elastica/lib/Elastica'),
     'Doctrine\\Bundle\\DoctrineBundle\\' => array($vendorDir . '/doctrine/doctrine-bundle'),
 );

@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Collector:events.html.twig */
+/* @WebProfiler/Collector/events.html.twig */
 class __TwigTemplate_61ac62b7420f1d35ca38efbc6dd48f58aae155f050e1eb815ddb15c5154426d9 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,15 +8,7 @@ class __TwigTemplate_61ac62b7420f1d35ca38efbc6dd48f58aae155f050e1eb815ddb15c5154
         parent::__construct($env);
 
         // line 1
-        try {
-            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
-        } catch (Twig_Error_Loader $e) {
-            $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
-
-            throw $e;
-        }
-
+        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "@WebProfiler/Collector/events.html.twig", 1);
         $this->blocks = array(
             'menu' => array($this, 'block_menu'),
             'panel' => array($this, 'block_panel'),
@@ -32,7 +24,7 @@ class __TwigTemplate_61ac62b7420f1d35ca38efbc6dd48f58aae155f050e1eb815ddb15c5154
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
-        $context["__internal_6b11a0386f29963564d78f513a072dc867f88aa7446e0d7495a1ec2fc54a4c63"] = $this;
+        $context["__internal_6b6b178cd165253fb41f476a34d66fb4d20f6d074d45c36b054953a8f9ce5482"] = $this;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
@@ -93,7 +85,7 @@ class __TwigTemplate_61ac62b7420f1d35ca38efbc6dd48f58aae155f050e1eb815ddb15c5154
             echo "</code></td>
                 <td><code>";
             // line 34
-            echo $context["__internal_6b11a0386f29963564d78f513a072dc867f88aa7446e0d7495a1ec2fc54a4c63"]->getdisplay_listener($context["listener"]);
+            echo $context["__internal_6b6b178cd165253fb41f476a34d66fb4d20f6d074d45c36b054953a8f9ce5482"]->getdisplay_listener($context["listener"]);
             echo "</code></td>
             </tr>
         ";
@@ -131,7 +123,7 @@ class __TwigTemplate_61ac62b7420f1d35ca38efbc6dd48f58aae155f050e1eb815ddb15c5154
                 echo "</code></td>
                     <td><code>";
                 // line 51
-                echo $context["__internal_6b11a0386f29963564d78f513a072dc867f88aa7446e0d7495a1ec2fc54a4c63"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
+                echo $context["__internal_6b6b178cd165253fb41f476a34d66fb4d20f6d074d45c36b054953a8f9ce5482"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
                 echo "</code></td>
                 </tr>
             ";
@@ -224,7 +216,7 @@ class __TwigTemplate_61ac62b7420f1d35ca38efbc6dd48f58aae155f050e1eb815ddb15c5154
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Collector:events.html.twig";
+        return "@WebProfiler/Collector/events.html.twig";
     }
 
     public function isTraitable()
@@ -234,6 +226,6 @@ class __TwigTemplate_61ac62b7420f1d35ca38efbc6dd48f58aae155f050e1eb815ddb15c5154
 
     public function getDebugInfo()
     {
-        return array (  214 => 78,  201 => 77,  198 => 76,  195 => 75,  184 => 74,  181 => 73,  179 => 72,  176 => 71,  173 => 70,  162 => 69,  147 => 56,  143 => 54,  134 => 51,  130 => 50,  127 => 49,  122 => 48,  120 => 47,  113 => 42,  111 => 41,  105 => 37,  96 => 34,  92 => 33,  89 => 32,  85 => 31,  76 => 24,  73 => 23,  64 => 16,  58 => 14,  55 => 13,  52 => 12,  44 => 6,  41 => 5,  37 => 1,  35 => 3,  11 => 1,);
+        return array (  206 => 78,  193 => 77,  190 => 76,  187 => 75,  176 => 74,  173 => 73,  171 => 72,  168 => 71,  165 => 70,  154 => 69,  139 => 56,  135 => 54,  126 => 51,  122 => 50,  119 => 49,  114 => 48,  112 => 47,  105 => 42,  103 => 41,  97 => 37,  88 => 34,  84 => 33,  81 => 32,  77 => 31,  68 => 24,  65 => 23,  56 => 16,  50 => 14,  47 => 13,  44 => 12,  36 => 6,  33 => 5,  29 => 1,  27 => 3,  11 => 1,);
     }
 }

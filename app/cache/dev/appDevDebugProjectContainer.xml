@@ -4,7 +4,7 @@
     <parameter key="kernel.root_dir">/var/www/html/superjobs/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.name">ap_</parameter>
+    <parameter key="kernel.name">app</parameter>
     <parameter key="kernel.cache_dir">/var/www/html/superjobs/app/cache/dev</parameter>
     <parameter key="kernel.logs_dir">/var/www/html/superjobs/app/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
@@ -22,8 +22,6 @@
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="StfalconTinymceBundle">Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
-      <parameter key="JMSSerializerBundle">JMS\SerializerBundle\JMSSerializerBundle</parameter>
-      <parameter key="FOSElasticaBundle">FOS\ElasticaBundle\FOSElasticaBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -664,66 +662,10 @@
     <parameter key="knp_paginator.class">Knp\Component\Pager\Paginator</parameter>
     <parameter key="knp_paginator.templating.helper.pagination.class">Knp\Bundle\PaginatorBundle\Templating\PaginationHelper</parameter>
     <parameter key="knp_paginator.helper.processor.class">Knp\Bundle\PaginatorBundle\Helper\Processor</parameter>
-    <parameter key="knp_paginator.template.pagination">KnpPaginatorBundle:Pagination:sliding.html.twig</parameter>
+    <parameter key="knp_paginator.template.pagination">KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig</parameter>
     <parameter key="knp_paginator.template.filtration">KnpPaginatorBundle:Pagination:filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">KnpPaginatorBundle:Pagination:sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">5</parameter>
-    <parameter key="jms_serializer.metadata.file_locator.class">Metadata\Driver\FileLocator</parameter>
-    <parameter key="jms_serializer.metadata.annotation_driver.class">JMS\Serializer\Metadata\Driver\AnnotationDriver</parameter>
-    <parameter key="jms_serializer.metadata.chain_driver.class">Metadata\Driver\DriverChain</parameter>
-    <parameter key="jms_serializer.metadata.yaml_driver.class">JMS\Serializer\Metadata\Driver\YamlDriver</parameter>
-    <parameter key="jms_serializer.metadata.xml_driver.class">JMS\Serializer\Metadata\Driver\XmlDriver</parameter>
-    <parameter key="jms_serializer.metadata.php_driver.class">JMS\Serializer\Metadata\Driver\PhpDriver</parameter>
-    <parameter key="jms_serializer.metadata.doctrine_type_driver.class">JMS\Serializer\Metadata\Driver\DoctrineTypeDriver</parameter>
-    <parameter key="jms_serializer.metadata.lazy_loading_driver.class">Metadata\Driver\LazyLoadingDriver</parameter>
-    <parameter key="jms_serializer.metadata.metadata_factory.class">Metadata\MetadataFactory</parameter>
-    <parameter key="jms_serializer.metadata.cache.file_cache.class">Metadata\Cache\FileCache</parameter>
-    <parameter key="jms_serializer.event_dispatcher.class">JMS\Serializer\EventDispatcher\LazyEventDispatcher</parameter>
-    <parameter key="jms_serializer.camel_case_naming_strategy.class">JMS\Serializer\Naming\CamelCaseNamingStrategy</parameter>
-    <parameter key="jms_serializer.serialized_name_annotation_strategy.class">JMS\Serializer\Naming\SerializedNameAnnotationStrategy</parameter>
-    <parameter key="jms_serializer.cache_naming_strategy.class">JMS\Serializer\Naming\CacheNamingStrategy</parameter>
-    <parameter key="jms_serializer.doctrine_object_constructor.class">JMS\Serializer\Construction\DoctrineObjectConstructor</parameter>
-    <parameter key="jms_serializer.unserialize_object_constructor.class">JMS\Serializer\Construction\UnserializeObjectConstructor</parameter>
-    <parameter key="jms_serializer.version_exclusion_strategy.class">JMS\Serializer\Exclusion\VersionExclusionStrategy</parameter>
-    <parameter key="jms_serializer.serializer.class">JMS\Serializer\Serializer</parameter>
-    <parameter key="jms_serializer.twig_extension.class">JMS\Serializer\Twig\SerializerExtension</parameter>
-    <parameter key="jms_serializer.templating.helper.class">JMS\SerializerBundle\Templating\SerializerHelper</parameter>
-    <parameter key="jms_serializer.json_serialization_visitor.class">JMS\Serializer\JsonSerializationVisitor</parameter>
-    <parameter key="jms_serializer.json_serialization_visitor.options">0</parameter>
-    <parameter key="jms_serializer.json_deserialization_visitor.class">JMS\Serializer\JsonDeserializationVisitor</parameter>
-    <parameter key="jms_serializer.xml_serialization_visitor.class">JMS\Serializer\XmlSerializationVisitor</parameter>
-    <parameter key="jms_serializer.xml_deserialization_visitor.class">JMS\Serializer\XmlDeserializationVisitor</parameter>
-    <parameter key="jms_serializer.xml_deserialization_visitor.doctype_whitelist" type="collection"/>
-    <parameter key="jms_serializer.yaml_serialization_visitor.class">JMS\Serializer\YamlSerializationVisitor</parameter>
-    <parameter key="jms_serializer.handler_registry.class">JMS\Serializer\Handler\LazyHandlerRegistry</parameter>
-    <parameter key="jms_serializer.datetime_handler.class">JMS\Serializer\Handler\DateHandler</parameter>
-    <parameter key="jms_serializer.array_collection_handler.class">JMS\Serializer\Handler\ArrayCollectionHandler</parameter>
-    <parameter key="jms_serializer.php_collection_handler.class">JMS\Serializer\Handler\PhpCollectionHandler</parameter>
-    <parameter key="jms_serializer.form_error_handler.class">JMS\Serializer\Handler\FormErrorHandler</parameter>
-    <parameter key="jms_serializer.constraint_violation_handler.class">JMS\Serializer\Handler\ConstraintViolationHandler</parameter>
-    <parameter key="jms_serializer.doctrine_proxy_subscriber.class">JMS\Serializer\EventDispatcher\Subscriber\DoctrineProxySubscriber</parameter>
-    <parameter key="fos_elastica.client.class">FOS\ElasticaBundle\Elastica\Client</parameter>
-    <parameter key="fos_elastica.logger.class">FOS\ElasticaBundle\Logger\ElasticaLogger</parameter>
-    <parameter key="fos_elastica.data_collector.class">FOS\ElasticaBundle\DataCollector\ElasticaDataCollector</parameter>
-    <parameter key="fos_elastica.mapping_builder.class">FOS\ElasticaBundle\Index\MappingBuilder</parameter>
-    <parameter key="fos_elastica.property_accessor.class">Symfony\Component\PropertyAccess\PropertyAccessor</parameter>
-    <parameter key="fos_elastica.alias_processor.class">FOS\ElasticaBundle\Index\AliasProcessor</parameter>
-    <parameter key="fos_elastica.finder.class">FOS\ElasticaBundle\Finder\TransformedFinder</parameter>
-    <parameter key="fos_elastica.index.class">FOS\ElasticaBundle\Elastica\Index</parameter>
-    <parameter key="fos_elastica.indexable.class">FOS\ElasticaBundle\Provider\Indexable</parameter>
-    <parameter key="fos_elastica.index_manager.class">FOS\ElasticaBundle\Index\IndexManager</parameter>
-    <parameter key="fos_elastica.resetter.class">FOS\ElasticaBundle\Index\Resetter</parameter>
-    <parameter key="fos_elastica.type.class">Elastica\Type</parameter>
-    <parameter key="fos_elastica.object_persister.class">FOS\ElasticaBundle\Persister\ObjectPersister</parameter>
-    <parameter key="fos_elastica.object_serializer_persister.class">FOS\ElasticaBundle\Persister\ObjectSerializerPersister</parameter>
-    <parameter key="fos_elastica.provider_registry.class">FOS\ElasticaBundle\Provider\ProviderRegistry</parameter>
-    <parameter key="fos_elastica.elastica_to_model_transformer.collection.class">FOS\ElasticaBundle\Transformer\ElasticaToModelTransformerCollection</parameter>
-    <parameter key="fos_elastica.model_to_elastica_transformer.class">FOS\ElasticaBundle\Transformer\ModelToElasticaAutoTransformer</parameter>
-    <parameter key="fos_elastica.model_to_elastica_identifier_transformer.class">FOS\ElasticaBundle\Transformer\ModelToElasticaIdentifierTransformer</parameter>
-    <parameter key="fos_elastica.provider.prototype.orm.class">FOS\ElasticaBundle\Doctrine\ORM\Provider</parameter>
-    <parameter key="fos_elastica.listener.prototype.orm.class">FOS\ElasticaBundle\Doctrine\Listener</parameter>
-    <parameter key="fos_elastica.elastica_to_model_transformer.prototype.orm.class">FOS\ElasticaBundle\Doctrine\ORM\ElasticaToModelTransformer</parameter>
-    <parameter key="fos_elastica.manager.orm.class">FOS\ElasticaBundle\Doctrine\RepositoryManager</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -789,10 +731,6 @@
       <parameter key="data_collector.doctrine" type="collection">
         <parameter>db</parameter>
         <parameter>@Doctrine/Collector/db.html.twig</parameter>
-      </parameter>
-      <parameter key="fos_elastica.data_collector" type="collection">
-        <parameter>elastica</parameter>
-        <parameter>FOSElasticaBundle:Collector:elastica</parameter>
       </parameter>
       <parameter key="data_collector.dump" type="collection">
         <parameter>dump</parameter>
@@ -2843,9 +2781,6 @@
         </argument>
       </call>
       <call method="add">
-        <argument type="service" id="fos_elastica.data_collector"/>
-      </call>
-      <call method="add">
         <argument type="service" id="data_collector.dump"/>
       </call>
     </service>
@@ -3164,14 +3099,6 @@
         </argument>
         <argument>1</argument>
       </call>
-      <call method="addListenerService">
-        <argument>knp_pager.items</argument>
-        <argument type="collection">
-          <argument>fos_elastica.paginator.subscriber</argument>
-          <argument>items</argument>
-        </argument>
-        <argument>1</argument>
-      </call>
     </service>
     <service id="debug.controller_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableControllerResolver">
       <argument type="service">
@@ -3215,7 +3142,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>55453cdece80c</argument>
+            <argument>554f414462bfb</argument>
           </service>
         </argument>
       </argument>
@@ -3573,7 +3500,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>55453cdece80c</argument>
+            <argument>554f414462bfb</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3831,14 +3758,6 @@
       </call>
       <call method="addExtension">
         <argument type="service">
-          <service class="JMS\Serializer\Twig\SerializerExtension" public="false">
-            <tag name="twig.extension"/>
-            <argument type="service" id="jms_serializer"/>
-          </service>
-        </argument>
-      </call>
-      <call method="addExtension">
-        <argument type="service">
           <service class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
             <tag name="twig.extension"/>
             <argument type="service" id="var_dumper.cloner"/>
@@ -4052,27 +3971,6 @@
               </service>
             </argument>
           </call>
-          <call method="addEventSubscriber">
-            <argument type="service">
-              <service class="FOS\ElasticaBundle\Doctrine\Listener" public="false">
-                <tag name="doctrine.event_subscriber"/>
-                <argument type="service" id="fos_elastica.object_persister.superjobs.jobs"/>
-                <argument type="collection">
-                  <argument>postPersist</argument>
-                  <argument>postUpdate</argument>
-                  <argument>preRemove</argument>
-                  <argument>postFlush</argument>
-                </argument>
-                <argument type="service" id="fos_elastica.indexable"/>
-                <argument type="collection">
-                  <argument key="identifier">id</argument>
-                  <argument key="indexName">superjobs</argument>
-                  <argument key="typeName">Jobs</argument>
-                </argument>
-                <argument>null</argument>
-              </service>
-            </argument>
-          </call>
         </service>
       </argument>
       <argument type="collection"/>
@@ -4267,7 +4165,7 @@
       <argument type="service" id="fos_user.user_manager"/>
     </service>
     <service id="fos_user.security.login_manager" class="FOS\UserBundle\Security\LoginManager">
-      <argument type="service" id="security.context"/>
+      <argument type="service" id="security.token_storage"/>
       <argument type="service" id="security.user_checker"/>
       <argument type="service" id="security.authentication.session_strategy"/>
       <argument type="service" id="service_container"/>
@@ -4396,7 +4294,7 @@
       <tag name="knp_paginator.subscriber"/>
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
       <argument type="collection">
-        <argument key="defaultPaginationTemplate">KnpPaginatorBundle:Pagination:sliding.html.twig</argument>
+        <argument key="defaultPaginationTemplate">KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig</argument>
         <argument key="defaultSortableTemplate">KnpPaginatorBundle:Pagination:sortable_link.html.twig</argument>
         <argument key="defaultFiltrationTemplate">KnpPaginatorBundle:Pagination:filtration.html.twig</argument>
         <argument key="defaultPageRange">5</argument>
@@ -4414,546 +4312,6 @@
     <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
-    </service>
-    <service id="jms_serializer.doctrine_proxy_subscriber" class="JMS\Serializer\EventDispatcher\Subscriber\DoctrineProxySubscriber">
-      <tag name="jms_serializer.event_subscriber"/>
-    </service>
-    <service id="jms_serializer.handler_registry" class="JMS\Serializer\Handler\LazyHandlerRegistry">
-      <argument type="service" id="service_container"/>
-      <argument type="collection">
-        <argument key="2" type="collection">
-          <argument key="DateTime" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.datetime_handler</argument>
-              <argument>deserializeDateTimeFromjson</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.datetime_handler</argument>
-              <argument>deserializeDateTimeFromxml</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.datetime_handler</argument>
-              <argument>deserializeDateTimeFromyml</argument>
-            </argument>
-          </argument>
-          <argument key="ArrayCollection" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-          </argument>
-          <argument key="Doctrine\Common\Collections\ArrayCollection" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-          </argument>
-          <argument key="Doctrine\ORM\PersistentCollection" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-          </argument>
-          <argument key="Doctrine\ODM\MongoDB\PersistentCollection" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-          </argument>
-          <argument key="Doctrine\ODM\PHPCR\PersistentCollection" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>deserializeCollection</argument>
-            </argument>
-          </argument>
-          <argument key="PhpCollection\Sequence" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>deserializeSequence</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>deserializeSequence</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>deserializeSequence</argument>
-            </argument>
-          </argument>
-          <argument key="PhpCollection\Map" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>deserializeMap</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>deserializeMap</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>deserializeMap</argument>
-            </argument>
-          </argument>
-        </argument>
-        <argument key="1" type="collection">
-          <argument key="DateTime" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.datetime_handler</argument>
-              <argument>serializeDateTime</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.datetime_handler</argument>
-              <argument>serializeDateTime</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.datetime_handler</argument>
-              <argument>serializeDateTime</argument>
-            </argument>
-          </argument>
-          <argument key="DateInterval" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.datetime_handler</argument>
-              <argument>serializeDateInterval</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.datetime_handler</argument>
-              <argument>serializeDateInterval</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.datetime_handler</argument>
-              <argument>serializeDateInterval</argument>
-            </argument>
-          </argument>
-          <argument key="ArrayCollection" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-          </argument>
-          <argument key="Doctrine\Common\Collections\ArrayCollection" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-          </argument>
-          <argument key="Doctrine\ORM\PersistentCollection" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-          </argument>
-          <argument key="Doctrine\ODM\MongoDB\PersistentCollection" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-          </argument>
-          <argument key="Doctrine\ODM\PHPCR\PersistentCollection" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.array_collection_handler</argument>
-              <argument>serializeCollection</argument>
-            </argument>
-          </argument>
-          <argument key="PhpCollection\Sequence" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>serializeSequence</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>serializeSequence</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>serializeSequence</argument>
-            </argument>
-          </argument>
-          <argument key="PhpCollection\Map" type="collection">
-            <argument key="json" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>serializeMap</argument>
-            </argument>
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>serializeMap</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.php_collection_handler</argument>
-              <argument>serializeMap</argument>
-            </argument>
-          </argument>
-          <argument key="Symfony\Component\Form\Form" type="collection">
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.form_error_handler</argument>
-              <argument>serializeFormToxml</argument>
-            </argument>
-            <argument key="json" type="collection">
-              <argument>jms_serializer.form_error_handler</argument>
-              <argument>serializeFormTojson</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.form_error_handler</argument>
-              <argument>serializeFormToyml</argument>
-            </argument>
-          </argument>
-          <argument key="Symfony\Component\Form\FormError" type="collection">
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.form_error_handler</argument>
-              <argument>serializeFormErrorToxml</argument>
-            </argument>
-            <argument key="json" type="collection">
-              <argument>jms_serializer.form_error_handler</argument>
-              <argument>serializeFormErrorTojson</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.form_error_handler</argument>
-              <argument>serializeFormErrorToyml</argument>
-            </argument>
-          </argument>
-          <argument key="Symfony\Component\Validator\ConstraintViolationList" type="collection">
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.constraint_violation_handler</argument>
-              <argument>serializeListToxml</argument>
-            </argument>
-            <argument key="json" type="collection">
-              <argument>jms_serializer.constraint_violation_handler</argument>
-              <argument>serializeListTojson</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.constraint_violation_handler</argument>
-              <argument>serializeListToyml</argument>
-            </argument>
-          </argument>
-          <argument key="Symfony\Component\Validator\ConstraintViolation" type="collection">
-            <argument key="xml" type="collection">
-              <argument>jms_serializer.constraint_violation_handler</argument>
-              <argument>serializeViolationToxml</argument>
-            </argument>
-            <argument key="json" type="collection">
-              <argument>jms_serializer.constraint_violation_handler</argument>
-              <argument>serializeViolationTojson</argument>
-            </argument>
-            <argument key="yml" type="collection">
-              <argument>jms_serializer.constraint_violation_handler</argument>
-              <argument>serializeViolationToyml</argument>
-            </argument>
-          </argument>
-        </argument>
-      </argument>
-    </service>
-    <service id="jms_serializer.datetime_handler" class="JMS\Serializer\Handler\DateHandler">
-      <tag name="jms_serializer.subscribing_handler"/>
-      <argument>Y-m-d\TH:i:sO</argument>
-      <argument>Europe/Paris</argument>
-    </service>
-    <service id="jms_serializer.array_collection_handler" class="JMS\Serializer\Handler\ArrayCollectionHandler">
-      <tag name="jms_serializer.subscribing_handler"/>
-    </service>
-    <service id="jms_serializer.php_collection_handler" class="JMS\Serializer\Handler\PhpCollectionHandler">
-      <tag name="jms_serializer.subscribing_handler"/>
-    </service>
-    <service id="jms_serializer.form_error_handler" class="JMS\Serializer\Handler\FormErrorHandler">
-      <tag name="jms_serializer.subscribing_handler"/>
-      <argument type="service" id="translator"/>
-    </service>
-    <service id="jms_serializer.constraint_violation_handler" class="JMS\Serializer\Handler\ConstraintViolationHandler">
-      <tag name="jms_serializer.subscribing_handler"/>
-    </service>
-    <service id="jms_serializer.unserialize_object_constructor" class="JMS\Serializer\Construction\UnserializeObjectConstructor" public="false"/>
-    <service id="jms_serializer.templating.helper.serializer" class="JMS\SerializerBundle\Templating\SerializerHelper">
-      <tag name="templating.helper" alias="jms_serializer"/>
-      <argument type="service" id="jms_serializer"/>
-    </service>
-    <service id="jms_serializer.json_serialization_visitor" class="JMS\Serializer\JsonSerializationVisitor">
-      <tag name="jms_serializer.serialization_visitor" format="json"/>
-      <argument type="service" id="jms_serializer.naming_strategy"/>
-      <call method="setOptions">
-        <argument>0</argument>
-      </call>
-    </service>
-    <service id="jms_serializer.json_deserialization_visitor" class="JMS\Serializer\JsonDeserializationVisitor">
-      <tag name="jms_serializer.deserialization_visitor" format="json"/>
-      <argument type="service" id="jms_serializer.naming_strategy"/>
-      <argument type="service" id="jms_serializer.unserialize_object_constructor"/>
-    </service>
-    <service id="jms_serializer.xml_serialization_visitor" class="JMS\Serializer\XmlSerializationVisitor">
-      <tag name="jms_serializer.serialization_visitor" format="xml"/>
-      <argument type="service" id="jms_serializer.naming_strategy"/>
-    </service>
-    <service id="jms_serializer.xml_deserialization_visitor" class="JMS\Serializer\XmlDeserializationVisitor">
-      <tag name="jms_serializer.deserialization_visitor" format="xml"/>
-      <argument type="service" id="jms_serializer.naming_strategy"/>
-      <argument type="service" id="jms_serializer.unserialize_object_constructor"/>
-      <call method="setDoctypeWhitelist">
-        <argument type="collection"/>
-      </call>
-    </service>
-    <service id="jms_serializer.yaml_serialization_visitor" class="JMS\Serializer\YamlSerializationVisitor">
-      <tag name="jms_serializer.serialization_visitor" format="yml"/>
-      <argument type="service" id="jms_serializer.naming_strategy"/>
-    </service>
-    <service id="fos_elastica.config_manager" class="FOS\ElasticaBundle\Configuration\ConfigManager">
-      <argument type="collection">
-        <argument type="service">
-          <service class="FOS\ElasticaBundle\Configuration\Source\ContainerSource" public="false">
-            <tag name="fos_elastica.config_source"/>
-            <argument type="collection">
-              <argument key="superjobs" type="collection">
-                <argument key="elasticsearch_name">superjobs</argument>
-                <argument key="reference" type="service" id="fos_elastica.index.superjobs"/>
-                <argument key="name">superjobs</argument>
-                <argument key="settings" type="collection"/>
-                <argument key="type_prototype" type="collection"/>
-                <argument key="use_alias">false</argument>
-                <argument key="types" type="collection">
-                  <argument key="Jobs" type="collection">
-                    <argument key="name">Jobs</argument>
-                    <argument key="mapping" type="collection">
-                      <argument key="dynamic_templates" type="collection"/>
-                      <argument key="properties" type="collection"/>
-                    </argument>
-                    <argument key="config" type="collection">
-                      <argument key="persistence" type="collection">
-                        <argument key="driver">orm</argument>
-                        <argument key="model">Superjobs\HomeBundle\Entity\Jobs</argument>
-                        <argument key="provider" type="collection">
-                          <argument key="batch_size">100</argument>
-                          <argument key="clear_object_manager">true</argument>
-                          <argument key="debug_logging">true</argument>
-                          <argument key="query_builder_method">createQueryBuilder</argument>
-                        </argument>
-                        <argument key="listener" type="collection">
-                          <argument key="insert">true</argument>
-                          <argument key="update">true</argument>
-                          <argument key="delete">true</argument>
-                          <argument key="flush">true</argument>
-                          <argument key="immediate">false</argument>
-                          <argument key="logger">false</argument>
-                        </argument>
-                        <argument key="identifier">id</argument>
-                        <argument key="elastica_to_model_transformer" type="collection">
-                          <argument key="hydrate">true</argument>
-                          <argument key="ignore_missing">false</argument>
-                          <argument key="query_builder_method">createQueryBuilder</argument>
-                        </argument>
-                        <argument key="model_to_elastica_transformer" type="collection"/>
-                      </argument>
-                      <argument key="serializer" type="collection">
-                        <argument key="groups" type="collection"/>
-                      </argument>
-                      <argument key="index_analyzer">null</argument>
-                      <argument key="search_analyzer">null</argument>
-                    </argument>
-                  </argument>
-                </argument>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-      </argument>
-    </service>
-    <service id="fos_elastica.data_collector" class="FOS\ElasticaBundle\DataCollector\ElasticaDataCollector">
-      <tag name="data_collector" template="FOSElasticaBundle:Collector:elastica" id="elastica"/>
-      <argument type="service" id="fos_elastica.logger"/>
-    </service>
-    <service id="fos_elastica.paginator.subscriber" class="FOS\ElasticaBundle\Subscriber\PaginateElasticaQuerySubscriber">
-      <tag name="knp_paginator.subscriber"/>
-      <call method="setRequest">
-        <argument type="service" id="request" on-invalid="null" strict="false"/>
-      </call>
-    </service>
-    <service id="fos_elastica.logger" class="FOS\ElasticaBundle\Logger\ElasticaLogger">
-      <tag name="monolog.logger" channel="elastica"/>
-      <argument type="service" id="monolog.logger.elastica" on-invalid="null"/>
-      <argument>true</argument>
-    </service>
-    <service id="fos_elastica.mapping_builder" class="FOS\ElasticaBundle\Index\MappingBuilder"/>
-    <service id="fos_elastica.property_accessor" class="Symfony\Component\PropertyAccess\PropertyAccessor"/>
-    <service id="fos_elastica.alias_processor" class="FOS\ElasticaBundle\Index\AliasProcessor"/>
-    <service id="fos_elastica.indexable" class="FOS\ElasticaBundle\Provider\Indexable">
-      <argument type="collection"/>
-      <argument type="service" id="service_container"/>
-    </service>
-    <service id="fos_elastica.index_manager" class="FOS\ElasticaBundle\Index\IndexManager">
-      <argument type="collection">
-        <argument key="superjobs" type="service" id="fos_elastica.index.superjobs"/>
-      </argument>
-      <argument type="service" id="fos_elastica.index.superjobs"/>
-    </service>
-    <service id="fos_elastica.resetter" class="FOS\ElasticaBundle\Index\Resetter">
-      <argument type="service" id="fos_elastica.config_manager"/>
-      <argument type="service" id="fos_elastica.index_manager"/>
-      <argument type="service" id="fos_elastica.alias_processor"/>
-      <argument type="service" id="fos_elastica.mapping_builder"/>
-    </service>
-    <service id="fos_elastica.provider_registry" class="FOS\ElasticaBundle\Provider\ProviderRegistry">
-      <call method="setContainer">
-        <argument type="service" id="service_container"/>
-      </call>
-      <call method="addProvider">
-        <argument>superjobs</argument>
-        <argument>Jobs</argument>
-        <argument>fos_elastica.provider.superjobs.jobs</argument>
-      </call>
-    </service>
-    <service id="fos_elastica.client.default" class="FOS\ElasticaBundle\Elastica\Client">
-      <tag name="fos_elastica.client"/>
-      <argument type="collection">
-        <argument key="connections" type="collection">
-          <argument type="collection">
-            <argument key="host">localhost</argument>
-            <argument key="port">9200</argument>
-            <argument key="logger">fos_elastica.logger</argument>
-            <argument key="headers" type="collection"/>
-          </argument>
-        </argument>
-        <argument key="connectionStrategy">Simple</argument>
-      </argument>
-      <argument></argument>
-      <call method="setStopwatch">
-        <argument type="service" id="debug.stopwatch" on-invalid="null"/>
-      </call>
-      <call method="setLogger">
-        <argument type="service" id="fos_elastica.logger"/>
-      </call>
-    </service>
-    <service id="fos_elastica.index.superjobs" class="FOS\ElasticaBundle\Elastica\Index" factory-method="getIndex" factory-service="fos_elastica.client.default">
-      <tag name="superjobs"/>
-      <argument>superjobs</argument>
-    </service>
-    <service id="fos_elastica.index.superjobs.jobs" class="Elastica\Type" factory-method="getType" factory-service="fos_elastica.index.superjobs">
-      <argument>Jobs</argument>
-      <call method="setSerializer">
-        <argument type="collection">
-          <argument type="service" id="fos_elastica.index.superjobs.jobs.serializer.callback"/>
-          <argument>serialize</argument>
-        </argument>
-      </call>
-    </service>
-    <service id="fos_elastica.manager.orm" class="FOS\ElasticaBundle\Doctrine\RepositoryManager">
-      <argument type="service" id="doctrine"/>
-      <argument type="service" id="annotation_reader"/>
-    </service>
-    <service id="fos_elastica.object_persister.superjobs.jobs" class="FOS\ElasticaBundle\Persister\ObjectSerializerPersister">
-      <argument type="service" id="fos_elastica.index.superjobs.jobs"/>
-      <argument type="service">
-        <service class="FOS\ElasticaBundle\Transformer\ModelToElasticaIdentifierTransformer" public="false">
-          <argument type="collection">
-            <argument key="identifier">id</argument>
-          </argument>
-          <call method="setPropertyAccessor">
-            <argument type="service" id="fos_elastica.property_accessor"/>
-          </call>
-        </service>
-      </argument>
-      <argument>Superjobs\HomeBundle\Entity\Jobs</argument>
-      <argument type="collection">
-        <argument type="service" id="fos_elastica.index.superjobs.jobs.serializer.callback"/>
-        <argument>serialize</argument>
-      </argument>
-    </service>
-    <service id="fos_elastica.provider.superjobs.jobs" class="FOS\ElasticaBundle\Doctrine\ORM\Provider">
-      <tag name="fos_elastica.provider" index="superjobs" type="Jobs"/>
-      <argument type="service" id="fos_elastica.object_persister.superjobs.jobs"/>
-      <argument type="service" id="fos_elastica.indexable"/>
-      <argument>Superjobs\HomeBundle\Entity\Jobs</argument>
-      <argument type="collection">
-        <argument key="batch_size">100</argument>
-        <argument key="clear_object_manager">true</argument>
-        <argument key="debug_logging">true</argument>
-        <argument key="query_builder_method">createQueryBuilder</argument>
-        <argument key="indexName">superjobs</argument>
-        <argument key="typeName">Jobs</argument>
-      </argument>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id="fos_elastica.index.superjobs.jobs.serializer.callback" class="FOS\ElasticaBundle\Serializer\Callback" public="false">
-      <call method="setSerializer">
-        <argument type="service" id="jms_serializer"/>
-      </call>
-      <call method="setGroups">
-        <argument type="collection"/>
-      </call>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig"/>
@@ -5030,10 +4388,6 @@
         <argument key="data_collector.doctrine" type="collection">
           <argument>db</argument>
           <argument>@Doctrine/Collector/db.html.twig</argument>
-        </argument>
-        <argument key="fos_elastica.data_collector" type="collection">
-          <argument>elastica</argument>
-          <argument>FOSElasticaBundle:Collector:elastica</argument>
         </argument>
         <argument key="data_collector.dump" type="collection">
           <argument>dump</argument>
@@ -5205,18 +4559,6 @@
         <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
-    <service id="monolog.logger.elastica" class="Symfony\Bridge\Monolog\Logger">
-      <argument>elastica</argument>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.console"/>
-      </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.main"/>
-      </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
-      </call>
-    </service>
     <service id="monolog.handler.debug" class="Symfony\Bridge\Monolog\Handler\DebugHandler">
       <argument>100</argument>
       <argument>true</argument>
@@ -5254,7 +4596,6 @@
           <argument key="security">templating.helper.security</argument>
           <argument key="assetic">assetic.helper.dynamic</argument>
           <argument key="knp_pagination">knp_paginator.templating.helper.pagination</argument>
-          <argument key="jms_serializer">jms_serializer.templating.helper.serializer</argument>
         </argument>
       </call>
     </service>
@@ -5355,10 +4696,6 @@
       <call method="addPath">
         <argument>/var/www/html/superjobs/vendor/knplabs/knp-paginator-bundle/Knp/Bundle/PaginatorBundle/Resources/views</argument>
         <argument>KnpPaginator</argument>
-      </call>
-      <call method="addPath">
-        <argument>/var/www/html/superjobs/vendor/friendsofsymfony/elastica-bundle/Resources/views</argument>
-        <argument>FOSElastica</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -5482,181 +4819,6 @@
       <argument type="service" id="fos_user.entity_manager"/>
       <argument>Superjobs\UserBundle\Entity\Groups</argument>
     </service>
-    <service id="jms_serializer.metadata_driver" class="JMS\Serializer\Metadata\Driver\DoctrineTypeDriver">
-      <argument type="service">
-        <service class="Metadata\Driver\DriverChain" public="false">
-          <argument type="collection">
-            <argument type="service">
-              <service class="JMS\Serializer\Metadata\Driver\YamlDriver" public="false">
-                <argument type="service">
-                  <service class="Metadata\Driver\FileLocator" public="false">
-                    <argument type="collection">
-                      <argument key="Symfony\Bundle\FrameworkBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SecurityBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\TwigBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\MonologBundle">/var/www/html/superjobs/vendor/symfony/monolog-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SwiftmailerBundle">/var/www/html/superjobs/vendor/symfony/swiftmailer-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\AsseticBundle">/var/www/html/superjobs/vendor/symfony/assetic-bundle/Resources/config/serializer</argument>
-                      <argument key="Doctrine\Bundle\DoctrineBundle">/var/www/html/superjobs/vendor/doctrine/doctrine-bundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\FrameworkExtraBundle">/var/www/html/superjobs/vendor/sensio/framework-extra-bundle/Sensio/Bundle/FrameworkExtraBundle/Resources/config/serializer</argument>
-                      <argument key="AppBundle">/var/www/html/superjobs/src/AppBundle/Resources/config/serializer</argument>
-                      <argument key="Superjobs\HomeBundle">/var/www/html/superjobs/src/Superjobs/HomeBundle/Resources/config/serializer</argument>
-                      <argument key="Superjobs\UserBundle">/var/www/html/superjobs/src/Superjobs/UserBundle/Resources/config/serializer</argument>
-                      <argument key="FOS\UserBundle">/var/www/html/superjobs/vendor/friendsofsymfony/user-bundle/Resources/config/serializer</argument>
-                      <argument key="Stfalcon\Bundle\TinymceBundle">/var/www/html/superjobs/vendor/stfalcon/tinymce-bundle/Stfalcon/Bundle/TinymceBundle/Resources/config/serializer</argument>
-                      <argument key="Knp\Bundle\PaginatorBundle">/var/www/html/superjobs/vendor/knplabs/knp-paginator-bundle/Knp/Bundle/PaginatorBundle/Resources/config/serializer</argument>
-                      <argument key="JMS\SerializerBundle">/var/www/html/superjobs/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer</argument>
-                      <argument key="FOS\ElasticaBundle">/var/www/html/superjobs/vendor/friendsofsymfony/elastica-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\DebugBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\WebProfilerBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\DistributionBundle">/var/www/html/superjobs/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\GeneratorBundle">/var/www/html/superjobs/vendor/sensio/generator-bundle/Sensio/Bundle/GeneratorBundle/Resources/config/serializer</argument>
-                    </argument>
-                  </service>
-                </argument>
-              </service>
-            </argument>
-            <argument type="service">
-              <service class="JMS\Serializer\Metadata\Driver\XmlDriver" public="false">
-                <argument type="service">
-                  <service class="Metadata\Driver\FileLocator" public="false">
-                    <argument type="collection">
-                      <argument key="Symfony\Bundle\FrameworkBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SecurityBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\TwigBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\MonologBundle">/var/www/html/superjobs/vendor/symfony/monolog-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SwiftmailerBundle">/var/www/html/superjobs/vendor/symfony/swiftmailer-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\AsseticBundle">/var/www/html/superjobs/vendor/symfony/assetic-bundle/Resources/config/serializer</argument>
-                      <argument key="Doctrine\Bundle\DoctrineBundle">/var/www/html/superjobs/vendor/doctrine/doctrine-bundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\FrameworkExtraBundle">/var/www/html/superjobs/vendor/sensio/framework-extra-bundle/Sensio/Bundle/FrameworkExtraBundle/Resources/config/serializer</argument>
-                      <argument key="AppBundle">/var/www/html/superjobs/src/AppBundle/Resources/config/serializer</argument>
-                      <argument key="Superjobs\HomeBundle">/var/www/html/superjobs/src/Superjobs/HomeBundle/Resources/config/serializer</argument>
-                      <argument key="Superjobs\UserBundle">/var/www/html/superjobs/src/Superjobs/UserBundle/Resources/config/serializer</argument>
-                      <argument key="FOS\UserBundle">/var/www/html/superjobs/vendor/friendsofsymfony/user-bundle/Resources/config/serializer</argument>
-                      <argument key="Stfalcon\Bundle\TinymceBundle">/var/www/html/superjobs/vendor/stfalcon/tinymce-bundle/Stfalcon/Bundle/TinymceBundle/Resources/config/serializer</argument>
-                      <argument key="Knp\Bundle\PaginatorBundle">/var/www/html/superjobs/vendor/knplabs/knp-paginator-bundle/Knp/Bundle/PaginatorBundle/Resources/config/serializer</argument>
-                      <argument key="JMS\SerializerBundle">/var/www/html/superjobs/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer</argument>
-                      <argument key="FOS\ElasticaBundle">/var/www/html/superjobs/vendor/friendsofsymfony/elastica-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\DebugBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\WebProfilerBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\DistributionBundle">/var/www/html/superjobs/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\GeneratorBundle">/var/www/html/superjobs/vendor/sensio/generator-bundle/Sensio/Bundle/GeneratorBundle/Resources/config/serializer</argument>
-                    </argument>
-                  </service>
-                </argument>
-              </service>
-            </argument>
-            <argument type="service">
-              <service class="JMS\Serializer\Metadata\Driver\PhpDriver" public="false">
-                <argument type="service">
-                  <service class="Metadata\Driver\FileLocator" public="false">
-                    <argument type="collection">
-                      <argument key="Symfony\Bundle\FrameworkBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SecurityBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\TwigBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\MonologBundle">/var/www/html/superjobs/vendor/symfony/monolog-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\SwiftmailerBundle">/var/www/html/superjobs/vendor/symfony/swiftmailer-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\AsseticBundle">/var/www/html/superjobs/vendor/symfony/assetic-bundle/Resources/config/serializer</argument>
-                      <argument key="Doctrine\Bundle\DoctrineBundle">/var/www/html/superjobs/vendor/doctrine/doctrine-bundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\FrameworkExtraBundle">/var/www/html/superjobs/vendor/sensio/framework-extra-bundle/Sensio/Bundle/FrameworkExtraBundle/Resources/config/serializer</argument>
-                      <argument key="AppBundle">/var/www/html/superjobs/src/AppBundle/Resources/config/serializer</argument>
-                      <argument key="Superjobs\HomeBundle">/var/www/html/superjobs/src/Superjobs/HomeBundle/Resources/config/serializer</argument>
-                      <argument key="Superjobs\UserBundle">/var/www/html/superjobs/src/Superjobs/UserBundle/Resources/config/serializer</argument>
-                      <argument key="FOS\UserBundle">/var/www/html/superjobs/vendor/friendsofsymfony/user-bundle/Resources/config/serializer</argument>
-                      <argument key="Stfalcon\Bundle\TinymceBundle">/var/www/html/superjobs/vendor/stfalcon/tinymce-bundle/Stfalcon/Bundle/TinymceBundle/Resources/config/serializer</argument>
-                      <argument key="Knp\Bundle\PaginatorBundle">/var/www/html/superjobs/vendor/knplabs/knp-paginator-bundle/Knp/Bundle/PaginatorBundle/Resources/config/serializer</argument>
-                      <argument key="JMS\SerializerBundle">/var/www/html/superjobs/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer</argument>
-                      <argument key="FOS\ElasticaBundle">/var/www/html/superjobs/vendor/friendsofsymfony/elastica-bundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\DebugBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer</argument>
-                      <argument key="Symfony\Bundle\WebProfilerBundle">/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\DistributionBundle">/var/www/html/superjobs/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/config/serializer</argument>
-                      <argument key="Sensio\Bundle\GeneratorBundle">/var/www/html/superjobs/vendor/sensio/generator-bundle/Sensio/Bundle/GeneratorBundle/Resources/config/serializer</argument>
-                    </argument>
-                  </service>
-                </argument>
-              </service>
-            </argument>
-            <argument type="service">
-              <service class="JMS\Serializer\Metadata\Driver\AnnotationDriver" public="false">
-                <argument type="service" id="annotation_reader"/>
-              </service>
-            </argument>
-          </argument>
-        </service>
-      </argument>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id="jms_serializer.naming_strategy" class="JMS\Serializer\Naming\CacheNamingStrategy">
-      <argument type="service">
-        <service class="JMS\Serializer\Naming\SerializedNameAnnotationStrategy" public="false">
-          <argument type="service">
-            <service class="JMS\Serializer\Naming\CamelCaseNamingStrategy" public="false">
-              <argument>_</argument>
-              <argument>true</argument>
-            </service>
-          </argument>
-        </service>
-      </argument>
-    </service>
-    <service id="jms_serializer" class="JMS\Serializer\Serializer">
-      <argument type="service">
-        <service class="Metadata\MetadataFactory" public="false">
-          <argument type="service">
-            <service class="Metadata\Driver\LazyLoadingDriver" public="false">
-              <argument type="service" id="service_container"/>
-              <argument>jms_serializer.metadata_driver</argument>
-            </service>
-          </argument>
-          <argument>Metadata\ClassHierarchyMetadata</argument>
-          <argument>true</argument>
-          <call method="setCache">
-            <argument type="service">
-              <service class="Metadata\Cache\FileCache" public="false">
-                <argument>/var/www/html/superjobs/app/cache/dev/jms_serializer</argument>
-              </service>
-            </argument>
-          </call>
-        </service>
-      </argument>
-      <argument type="service" id="jms_serializer.handler_registry"/>
-      <argument type="service" id="jms_serializer.unserialize_object_constructor"/>
-      <argument type="service">
-        <service class="PhpCollection\Map">
-          <argument type="collection">
-            <argument key="json" type="service" id="jms_serializer.json_serialization_visitor"/>
-            <argument key="xml" type="service" id="jms_serializer.xml_serialization_visitor"/>
-            <argument key="yml" type="service" id="jms_serializer.yaml_serialization_visitor"/>
-          </argument>
-        </service>
-      </argument>
-      <argument type="service">
-        <service class="PhpCollection\Map">
-          <argument type="collection">
-            <argument key="json" type="service" id="jms_serializer.json_deserialization_visitor"/>
-            <argument key="xml" type="service" id="jms_serializer.xml_deserialization_visitor"/>
-          </argument>
-        </service>
-      </argument>
-      <argument type="service">
-        <service class="JMS\Serializer\EventDispatcher\LazyEventDispatcher" public="false">
-          <argument type="service" id="service_container"/>
-          <call method="setListeners">
-            <argument type="collection">
-              <argument key="serializer.pre_serialize" type="collection">
-                <argument type="collection">
-                  <argument type="collection">
-                    <argument>jms_serializer.doctrine_proxy_subscriber</argument>
-                    <argument>onPreSerialize</argument>
-                  </argument>
-                  <argument>null</argument>
-                  <argument>null</argument>
-                </argument>
-              </argument>
-            </argument>
-          </call>
-        </service>
-      </argument>
-    </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
     <service id="debug.templating.engine.twig" alias="templating"/>
@@ -5672,11 +4834,6 @@
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
     <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.email_canonicalizer"/>
-    <service id="serializer" alias="jms_serializer"/>
-    <service id="fos_elastica.serializer" alias="jms_serializer"/>
-    <service id="fos_elastica.client" alias="fos_elastica.client.default"/>
-    <service id="fos_elastica.index" alias="fos_elastica.index.superjobs"/>
-    <service id="fos_elastica.manager" alias="fos_elastica.manager.orm"/>
     <service id="sensio.distribution.webconfigurator" alias="sensio_distribution.webconfigurator"/>
     <service id="console.command.sensiolabs_security_command_securitycheckercommand" alias="sensio_distribution.security_checker.command"/>
   </services>

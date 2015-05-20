@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Collector:ajax.html.twig */
+/* @WebProfiler/Collector/ajax.html.twig */
 class __TwigTemplate_bbc8ee8bf1be7594601dd44df0130983d6df993e0b5dd0cd2798412d7bed7904 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,15 +8,7 @@ class __TwigTemplate_bbc8ee8bf1be7594601dd44df0130983d6df993e0b5dd0cd2798412d7be
         parent::__construct($env);
 
         // line 1
-        try {
-            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
-        } catch (Twig_Error_Loader $e) {
-            $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
-
-            throw $e;
-        }
-
+        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "@WebProfiler/Collector/ajax.html.twig", 1);
         $this->blocks = array(
             'toolbar' => array($this, 'block_toolbar'),
         );
@@ -64,12 +56,12 @@ class __TwigTemplate_bbc8ee8bf1be7594601dd44df0130983d6df993e0b5dd0cd2798412d7be
     ") ? '' : new Twig_Markup($tmp, $this->env->getCharset());
         // line 29
         echo "    ";
-        $this->env->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig")->display(array_merge($context, array("link" => false)));
+        $this->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig", "@WebProfiler/Collector/ajax.html.twig", 29)->display(array_merge($context, array("link" => false)));
     }
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Collector:ajax.html.twig";
+        return "@WebProfiler/Collector/ajax.html.twig";
     }
 
     public function isTraitable()
@@ -79,6 +71,6 @@ class __TwigTemplate_bbc8ee8bf1be7594601dd44df0130983d6df993e0b5dd0cd2798412d7be
 
     public function getDebugInfo()
     {
-        return array (  66 => 29,  46 => 10,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  58 => 29,  38 => 10,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

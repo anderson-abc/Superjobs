@@ -8,15 +8,7 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
         parent::__construct($env);
 
         // line 1
-        try {
-            $this->parent = $this->env->loadTemplate("SuperjobsHomeBundle::layout.html.twig");
-        } catch (Twig_Error_Loader $e) {
-            $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
-
-            throw $e;
-        }
-
+        $this->parent = $this->loadTemplate("SuperjobsHomeBundle::layout.html.twig", "SuperjobsHomeBundle:Recruiter:intro.html.twig", 1);
         $this->blocks = array(
             'container' => array($this, 'block_container'),
         );
@@ -36,32 +28,88 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
     public function block_container($context, array $blocks = array())
     {
         // line 4
-        echo "
-    <!-- Full Width Image Header -->
-    <header class=\"header-image\">
-        <div class=\"headline\">
+        echo "<style type=\"text/css\">
+    .timer {
+        font-size: 48px;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-align:center;
+        line-height:80px;
+        color: #EE3733;
+    }
+  .example {
+    position: relative;
+    padding: 25px;
+    margin: 25px 0;
+    line-height: 1em;
+    background-color: #eee;
+  }
+  .example h2 {
+    margin-right: 100px;
+  }
+
+  .example p {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: 20px;
+  }
+
+  .red {
+    color: #c00;
+  }
+</style>
+    <header class=\"intro-header\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <center>
+";
+        // line 41
+        echo "        <div class=\"headline\">
             <div class=\"container\">
-                <h2>Chercher les ninjas</h2>
-                <h2>de l'Informatique</h2>
+                <h2>ESPACE RECRUTEURS</h2>
+                <span class=\"subheading\">Chercher les ninjas de l'Informatique</span>
+                <hr class=\"small\">  
             </div>
         </div>
-    </header>
-
+    ";
+        // line 53
+        echo "            </center>
+        </div>
+    </div>
+</header>
+    <center>
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-xs-12 col-sm-3 col-md-3\">
+                <p><b class=\"timer\" id=\"earth\" data-to=\"268\" data-speed=\"10000\"></b><br/> PROFILES</p>
+            </div>
+            <div class=\"col-xs-12 col-sm-3 col-md-3\">
+                <p><b class=\"timer\" id=\"earth\" data-to=\"110\" data-speed=\"10000\"></b><br/> JOBS</p>
+            </div>
+            <div class=\"col-xs-12 col-sm-3 col-md-3\">
+                <p><b class=\"timer\" id=\"earth\" data-to=\"15\" data-speed=\"10000\"></b><br/> ENTREPRISES</p>
+            </div>
+            <div class=\"col-xs-12 col-sm-3 col-md-3\">
+                <p><b class=\"timer\" id=\"earth\" data-to=\"121\" data-speed=\"10000\"></b><br/> CVs</p>
+            </div>
+        </div>
+    </div>
+    </center>
+   
     <!-- Page Content -->
     <div class=\"container\">
-
         <hr class=\"featurette-divider\">
-
         <!-- First Featurette -->
         <div class=\"featurette\" id=\"about\">
             <img class=\"featurette-image img-circle img-responsive pull-right\" src=\"";
-        // line 22
+        // line 81
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/img/offre-emploi.jpg"), "html", null, true);
         echo "\">
             <h2 class=\"featurette-heading\">
                 <span class=\"text-muted\">
                     <a href=\"";
-        // line 25
+        // line 84
         echo $this->env->getExtension('routing')->getPath("superjobs_home_recruiter_add");
         echo "\">
                         Lancer une offre
@@ -76,17 +124,18 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
         <!-- Second Featurette -->
         <div class=\"featurette\" id=\"services\">
             <img class=\"featurette-image img-circle img-responsive pull-left\" src=\"";
-        // line 37
+        // line 96
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/img/talents.jpg"), "html", null, true);
         echo "\" width=\"50%\">
             
             <h2 class=\"featurette-heading\">Chercher des talents<br/>
                 <span class=\"text-muted\">
-                    <a href=\"";
-        // line 41
-        echo $this->env->getExtension('routing')->getPath("superjobs_home_recruiter_add");
-        echo "\">
-                        Consulter CVthéque
+";
+        // line 101
+        echo "                        <a href=\"";
+        echo $this->env->getExtension('routing')->getPath("superjobs_home_team_template");
+        echo "\">                        
+                        { CVthéque }
                     </a>                
                 </span>
             </h2>
@@ -98,7 +147,7 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
         <!-- Third Featurette -->
         <div class=\"featurette\" id=\"contact\">
             <img class=\"featurette-image img-circle img-responsive pull-right\" src=\"";
-        // line 53
+        // line 113
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/img/test-technique.jpg"), "html", null, true);
         echo "\">
             <h2 class=\"featurette-heading\">
@@ -119,11 +168,35 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
                 </div>
             </div>
         </footer>
-
     </div>
     <!-- /.container -->
-
-
+<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js\"></script>
+<script type=\"text/javascript\">
+    \$(document).ready(function() {
+      // custom formatting example
+      \$('#earth').data('countToOptions', {
+        formatter: function (value, options) {
+          return value.toFixed(options.decimals).replace(/\\B(?=(?:\\d{3})+(?!\\d))/g, ',');
+        }
+      });
+      
+      // start all the timers
+      \$('.timer').each(count);
+      
+      // restart a timer when a button is clicked
+      \$('.restart').click(function (event) {
+        event.preventDefault();
+        var target = \$(this).data('target');
+        count.call(\$(target));
+      });
+      
+      function count(options) {
+        var \$this = \$(this);
+        options = \$.extend({}, options || {}, \$this.data('countToOptions') || {});
+        \$this.countTo(options);
+      }
+    });
+  </script>
 
 ";
     }
@@ -140,6 +213,6 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
 
     public function getDebugInfo()
     {
-        return array (  102 => 53,  87 => 41,  80 => 37,  65 => 25,  59 => 22,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  151 => 113,  135 => 101,  128 => 96,  113 => 84,  107 => 81,  77 => 53,  68 => 41,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

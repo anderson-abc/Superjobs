@@ -17,10 +17,10 @@ class MainController extends Controller
         
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-            $jobs,
-            $request->query->get('page', 1)/*page number*/,
-            5/*limit per page*/
-        );
+                            $jobs,
+                            $request->query->get('page', 1)/*page number*/,
+                            5/*limit per page*/
+                        );
              
         return $this->render('SuperjobsHomeBundle:Main:index.html.twig', array(
             'pagination' => $pagination

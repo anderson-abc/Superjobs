@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Collector:form.html.twig */
+/* @WebProfiler/Collector/form.html.twig */
 class __TwigTemplate_f684869250b11f23b8533bcf351affb6b2cbf4b9af76e62eb38c7b74dcc1aad5 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,15 +8,7 @@ class __TwigTemplate_f684869250b11f23b8533bcf351affb6b2cbf4b9af76e62eb38c7b74dcc
         parent::__construct($env);
 
         // line 1
-        try {
-            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
-        } catch (Twig_Error_Loader $e) {
-            $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
-
-            throw $e;
-        }
-
+        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "@WebProfiler/Collector/form.html.twig", 1);
         $this->blocks = array(
             'toolbar' => array($this, 'block_toolbar'),
             'menu' => array($this, 'block_menu'),
@@ -32,7 +24,7 @@ class __TwigTemplate_f684869250b11f23b8533bcf351affb6b2cbf4b9af76e62eb38c7b74dcc
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
-        $context["__internal_05608b37faeb47537edc3b7e0bf8fb6eca24a6c1988e42a9293c2a394f0c7049"] = $this;
+        $context["__internal_4468d5862558eb7a48c783799047fc8617fa8e86282f1418319fb5d29c79350e"] = $this;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
@@ -68,7 +60,7 @@ class __TwigTemplate_f684869250b11f23b8533bcf351affb6b2cbf4b9af76e62eb38c7b74dcc
             echo "
         ";
             // line 12
-            $this->env->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig")->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
+            $this->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig", "@WebProfiler/Collector/form.html.twig", 12)->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
             // line 13
             echo "    ";
         }
@@ -269,7 +261,7 @@ class __TwigTemplate_f684869250b11f23b8533bcf351affb6b2cbf4b9af76e62eb38c7b74dcc
             foreach ($context['_seq'] as $context["formName"] => $context["formData"]) {
                 // line 188
                 echo "                    ";
-                echo $context["__internal_05608b37faeb47537edc3b7e0bf8fb6eca24a6c1988e42a9293c2a394f0c7049"]->getform_tree_entry($context["formName"], $context["formData"], true);
+                echo $context["__internal_4468d5862558eb7a48c783799047fc8617fa8e86282f1418319fb5d29c79350e"]->getform_tree_entry($context["formName"], $context["formData"], true);
                 echo "
                 ";
             }
@@ -287,7 +279,7 @@ class __TwigTemplate_f684869250b11f23b8533bcf351affb6b2cbf4b9af76e62eb38c7b74dcc
             foreach ($context['_seq'] as $context["formName"] => $context["formData"]) {
                 // line 194
                 echo "                ";
-                echo $context["__internal_05608b37faeb47537edc3b7e0bf8fb6eca24a6c1988e42a9293c2a394f0c7049"]->getform_tree_details($context["formName"], $context["formData"], $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms_by_hash", array()));
+                echo $context["__internal_4468d5862558eb7a48c783799047fc8617fa8e86282f1418319fb5d29c79350e"]->getform_tree_details($context["formName"], $context["formData"], $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms_by_hash", array()));
                 echo "
             ";
             }
@@ -1179,7 +1171,7 @@ $context["trace"], "message", array(), "any", true, true)) {
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Collector:form.html.twig";
+        return "@WebProfiler/Collector/form.html.twig";
     }
 
     public function isTraitable()
@@ -1189,6 +1181,6 @@ $context["trace"], "message", array(), "any", true, true)) {
 
     public function getDebugInfo()
     {
-        return array (  1163 => 676,  1159 => 675,  1155 => 673,  1150 => 670,  1141 => 667,  1137 => 666,  1134 => 665,  1130 => 664,  1121 => 658,  1112 => 652,  1109 => 651,  1107 => 650,  1104 => 649,  1099 => 646,  1090 => 643,  1086 => 642,  1083 => 641,  1079 => 640,  1070 => 634,  1061 => 628,  1058 => 627,  1056 => 626,  1053 => 625,  1049 => 623,  1045 => 621,  1041 => 619,  1033 => 616,  1027 => 614,  1023 => 612,  1021 => 611,  1016 => 609,  1012 => 608,  1009 => 607,  1005 => 606,  997 => 600,  995 => 599,  991 => 598,  982 => 592,  979 => 591,  977 => 590,  974 => 589,  970 => 587,  966 => 585,  960 => 581,  956 => 579,  950 => 577,  948 => 576,  940 => 571,  934 => 567,  930 => 565,  924 => 563,  922 => 562,  916 => 558,  914 => 557,  910 => 556,  901 => 550,  898 => 549,  896 => 548,  893 => 547,  886 => 542,  882 => 540,  876 => 538,  874 => 537,  866 => 532,  860 => 528,  856 => 526,  850 => 524,  848 => 523,  840 => 518,  831 => 512,  828 => 511,  826 => 510,  823 => 509,  818 => 506,  810 => 503,  803 => 501,  790 => 500,  784 => 498,  779 => 496,  774 => 495,  772 => 494,  769 => 493,  766 => 492,  763 => 491,  759 => 490,  757 => 489,  755 => 488,  750 => 486,  747 => 485,  743 => 483,  740 => 482,  722 => 481,  718 => 479,  712 => 477,  708 => 475,  706 => 474,  703 => 473,  701 => 472,  696 => 470,  693 => 469,  689 => 468,  680 => 462,  671 => 456,  667 => 454,  665 => 453,  661 => 451,  653 => 449,  651 => 448,  647 => 447,  637 => 445,  624 => 444,  612 => 441,  608 => 439,  599 => 437,  595 => 436,  586 => 435,  584 => 434,  580 => 432,  574 => 430,  571 => 429,  560 => 428,  556 => 426,  550 => 424,  548 => 423,  544 => 422,  541 => 421,  528 => 420,  306 => 200,  302 => 198,  298 => 196,  289 => 194,  285 => 193,  280 => 190,  271 => 188,  267 => 187,  260 => 182,  258 => 181,  102 => 27,  99 => 26,  94 => 23,  88 => 21,  86 => 20,  81 => 17,  78 => 16,  73 => 13,  71 => 12,  68 => 11,  53 => 9,  50 => 8,  47 => 7,  44 => 6,  41 => 5,  37 => 1,  35 => 3,  11 => 1,);
+        return array (  1155 => 676,  1151 => 675,  1147 => 673,  1142 => 670,  1133 => 667,  1129 => 666,  1126 => 665,  1122 => 664,  1113 => 658,  1104 => 652,  1101 => 651,  1099 => 650,  1096 => 649,  1091 => 646,  1082 => 643,  1078 => 642,  1075 => 641,  1071 => 640,  1062 => 634,  1053 => 628,  1050 => 627,  1048 => 626,  1045 => 625,  1041 => 623,  1037 => 621,  1033 => 619,  1025 => 616,  1019 => 614,  1015 => 612,  1013 => 611,  1008 => 609,  1004 => 608,  1001 => 607,  997 => 606,  989 => 600,  987 => 599,  983 => 598,  974 => 592,  971 => 591,  969 => 590,  966 => 589,  962 => 587,  958 => 585,  952 => 581,  948 => 579,  942 => 577,  940 => 576,  932 => 571,  926 => 567,  922 => 565,  916 => 563,  914 => 562,  908 => 558,  906 => 557,  902 => 556,  893 => 550,  890 => 549,  888 => 548,  885 => 547,  878 => 542,  874 => 540,  868 => 538,  866 => 537,  858 => 532,  852 => 528,  848 => 526,  842 => 524,  840 => 523,  832 => 518,  823 => 512,  820 => 511,  818 => 510,  815 => 509,  810 => 506,  802 => 503,  795 => 501,  782 => 500,  776 => 498,  771 => 496,  766 => 495,  764 => 494,  761 => 493,  758 => 492,  755 => 491,  751 => 490,  749 => 489,  747 => 488,  742 => 486,  739 => 485,  735 => 483,  732 => 482,  714 => 481,  710 => 479,  704 => 477,  700 => 475,  698 => 474,  695 => 473,  693 => 472,  688 => 470,  685 => 469,  681 => 468,  672 => 462,  663 => 456,  659 => 454,  657 => 453,  653 => 451,  645 => 449,  643 => 448,  639 => 447,  629 => 445,  616 => 444,  604 => 441,  600 => 439,  591 => 437,  587 => 436,  578 => 435,  576 => 434,  572 => 432,  566 => 430,  563 => 429,  552 => 428,  548 => 426,  542 => 424,  540 => 423,  536 => 422,  533 => 421,  520 => 420,  298 => 200,  294 => 198,  290 => 196,  281 => 194,  277 => 193,  272 => 190,  263 => 188,  259 => 187,  252 => 182,  250 => 181,  94 => 27,  91 => 26,  86 => 23,  80 => 21,  78 => 20,  73 => 17,  70 => 16,  65 => 13,  63 => 12,  60 => 11,  45 => 9,  42 => 8,  39 => 7,  36 => 6,  33 => 5,  29 => 1,  27 => 3,  11 => 1,);
     }
 }

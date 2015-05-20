@@ -1,18 +1,31 @@
 {% extends "SuperjobsHomeBundle::layout.html.twig" %}
 {% block container %}
-
+{#<style>
+    .intro-header{
+        background-image: url('../img/header-bg.jpg');
+    }
+</style>#}
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
-        <div class="row"><center>
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Superjobs</h1>
+        <div class="row">
+            <center>
+{#            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">#}
+{#                <div class="site-heading">#}
+        <div class="headline">
+            <div class="container">
+                <h2>Superjobs</h2>
+                <span class="subheading">Postez votre offre d'emploi facilement et gratuitement</span>
+                <hr class="small">  
+            </div>
+        </div>
+    {#                <h2>Superjobs</h2>
                     <span class="subheading">Postez votre offre d'emploi facilement et gratuitement</span>
-                    <hr class="small">                    
-                </div>
-            </div></center>
+                    <hr class="small">                    #}
+{#                </div>#}
+{#            </div>#}
+            </center>
         </div>
     </div>
 </header>

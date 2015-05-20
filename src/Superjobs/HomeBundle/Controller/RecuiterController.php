@@ -27,26 +27,31 @@ class RecuiterController extends Controller
         $form = $this->createForm(new JobsType, $Jobs);
 
         $request = $this->getRequest();
-		
         if ($request->isMethod('Post')){
             $form->bind($request);
+//            var_dump($form);
+//            die;
 
             if($form->isValid()){
 
                 $Jobs = $form->getData();
-                $logo_file = $this->getRequest()->request->get('blabla');
-                $form['logo']->getData()->move();
+//                echo "<pre>";
+//                var_dump($Jobs);
+//                echo "</pre>";
+//                die;
+//                $logo_file = $this->getRequest()->request->get('blabla');
+//                $form['logo']->getData()->move();
 
                 
-                // this is for sending simple email
-                // $message = \Swift_Message::newInstance()
-                //     ->setSubject('Hello Email')
-                //     ->setFrom('amrihafedh@yahoo.fr')
-                //     ->setTo($this->container->getParameter('SuperjobsHomeBundle.Jobs.add'))
-                //     ->setBody($this->renderView('SuperjobsHomeBundle:Recruiter:addEmail.txt.twig', 
-                //         array('add' => $Jobs)));
-                // $this->get('mailer')->send($message);
-                // sending email until here ...
+//                 this is for sending simple email
+//                 $message = \Swift_Message::newInstance()
+//                     ->setSubject('Hello Email')
+//                     ->setFrom('amrihafedh@yahoo.fr')
+//                     ->setTo($this->container->getParameter('SuperjobsHomeBundle.Jobs.add'))
+//                     ->setBody($this->renderView('SuperjobsHomeBundle:Recruiter:addEmail.txt.twig', 
+//                         array('add' => $Jobs)));
+//                 $this->get('mailer')->send($message);
+//                 sending email until here ...
                 $Jobs->setIsCreated('true');
 
                 $em->persist($Jobs);

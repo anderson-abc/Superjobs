@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Collector:router.html.twig */
+/* @WebProfiler/Collector/router.html.twig */
 class __TwigTemplate_cc310ce45eefe3a114a6028a954fe0da61bca09e8558b6a943057a99494fa19e extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,15 +8,7 @@ class __TwigTemplate_cc310ce45eefe3a114a6028a954fe0da61bca09e8558b6a943057a99494
         parent::__construct($env);
 
         // line 1
-        try {
-            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
-        } catch (Twig_Error_Loader $e) {
-            $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
-
-            throw $e;
-        }
-
+        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "@WebProfiler/Collector/router.html.twig", 1);
         $this->blocks = array(
             'toolbar' => array($this, 'block_toolbar'),
             'menu' => array($this, 'block_menu'),
@@ -62,7 +54,7 @@ class __TwigTemplate_cc310ce45eefe3a114a6028a954fe0da61bca09e8558b6a943057a99494
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Collector:router.html.twig";
+        return "@WebProfiler/Collector/router.html.twig";
     }
 
     public function isTraitable()
@@ -72,6 +64,6 @@ class __TwigTemplate_cc310ce45eefe3a114a6028a954fe0da61bca09e8558b6a943057a99494
 
     public function getDebugInfo()
     {
-        return array (  57 => 14,  54 => 13,  46 => 7,  43 => 6,  38 => 3,  11 => 1,);
+        return array (  49 => 14,  46 => 13,  38 => 7,  35 => 6,  30 => 3,  11 => 1,);
     }
 }

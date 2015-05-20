@@ -157,23 +157,23 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
           </a>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
-
 </head>
 <body>
   <br/><br/>
   <div class=\"container\">
     
     ";
-        // line 99
+        // line 98
         $this->displayBlock('container', $context, $blocks);
-        // line 100
+        // line 99
         echo "     
-  </div>
-    <script src=\"";
+  </div>  
+";
         // line 102
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/stfalcontinymce/js/init.jquery.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
@@ -182,7 +182,7 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
         echo "\"></script>
     <script src=\"";
         // line 104
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/stfalcontinymce/vendor/tinymce/jquery.tinymce.min.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/jquery.tinymce.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
         // line 105
@@ -191,6 +191,10 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
     <script src=\"";
         // line 106
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 107
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/jquery.countTo.js"), "html", null, true);
         echo "\"></script>
 </body>
 </html>";
@@ -203,7 +207,7 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
         echo "              ";
     }
 
-    // line 99
+    // line 98
     public function block_container($context, array $blocks = array())
     {
         echo "  
@@ -222,6 +226,6 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
 
     public function getDebugInfo()
     {
-        return array (  207 => 99,  203 => 76,  200 => 75,  193 => 106,  189 => 105,  185 => 104,  181 => 103,  177 => 102,  173 => 100,  171 => 99,  154 => 85,  144 => 77,  142 => 75,  137 => 72,  130 => 68,  126 => 67,  123 => 66,  120 => 65,  118 => 64,  115 => 63,  105 => 56,  101 => 55,  93 => 50,  87 => 47,  83 => 45,  81 => 44,  71 => 37,  54 => 23,  50 => 22,  46 => 21,  42 => 20,  21 => 1,);
+        return array (  211 => 98,  207 => 76,  204 => 75,  197 => 107,  193 => 106,  189 => 105,  185 => 104,  181 => 103,  176 => 102,  172 => 99,  170 => 98,  154 => 85,  144 => 77,  142 => 75,  137 => 72,  130 => 68,  126 => 67,  123 => 66,  120 => 65,  118 => 64,  115 => 63,  105 => 56,  101 => 55,  93 => 50,  87 => 47,  83 => 45,  81 => 44,  71 => 37,  54 => 23,  50 => 22,  46 => 21,  42 => 20,  21 => 1,);
     }
 }

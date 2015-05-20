@@ -87,10 +87,9 @@
           </a>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
-
 </head>
 <body>
   <br/><br/>
@@ -98,11 +97,13 @@
     
     {% block container %}  
     {% endblock %}     
-  </div>
+  </div>  
+{#    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>#}
     <script src="{{ asset('bundles/stfalcontinymce/js/init.jquery.js') }}"></script>
     <script src="{{ asset('bundles/stfalcontinymce/js/init.standard.js') }}"></script>
-    <script src="{{ asset('bundles/stfalcontinymce/vendor/tinymce/jquery.tinymce.min.js') }}"></script>
+    <script src="{{ asset('bundles/superjobshome/js/jquery.tinymce.js') }}"></script>
     <script src="{{ asset('bundles/superjobshome/js/jquery.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('bundles/superjobshome/js/jquery.countTo.js')}}"></script>
 </body>
 </html>

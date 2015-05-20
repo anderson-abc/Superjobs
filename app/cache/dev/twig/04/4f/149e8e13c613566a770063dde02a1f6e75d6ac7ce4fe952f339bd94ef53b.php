@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Collector:memory.html.twig */
+/* @WebProfiler/Collector/memory.html.twig */
 class __TwigTemplate_044f149e8e13c613566a770063dde02a1f6e75d6ac7ce4fe952f339bd94ef53b extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,15 +8,7 @@ class __TwigTemplate_044f149e8e13c613566a770063dde02a1f6e75d6ac7ce4fe952f339bd94
         parent::__construct($env);
 
         // line 1
-        try {
-            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
-        } catch (Twig_Error_Loader $e) {
-            $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
-
-            throw $e;
-        }
-
+        $this->parent = $this->loadTemplate("@WebProfiler/Profiler/layout.html.twig", "@WebProfiler/Collector/memory.html.twig", 1);
         $this->blocks = array(
             'toolbar' => array($this, 'block_toolbar'),
         );
@@ -65,12 +57,12 @@ class __TwigTemplate_044f149e8e13c613566a770063dde02a1f6e75d6ac7ce4fe952f339bd94
         $context["text"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
         // line 16
         echo "    ";
-        $this->env->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig")->display(array_merge($context, array("link" => false)));
+        $this->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig", "@WebProfiler/Collector/memory.html.twig", 16)->display(array_merge($context, array("link" => false)));
     }
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Collector:memory.html.twig";
+        return "@WebProfiler/Collector/memory.html.twig";
     }
 
     public function isTraitable()
@@ -80,6 +72,6 @@ class __TwigTemplate_044f149e8e13c613566a770063dde02a1f6e75d6ac7ce4fe952f339bd94
 
     public function getDebugInfo()
     {
-        return array (  67 => 16,  59 => 13,  55 => 11,  52 => 10,  46 => 7,  42 => 5,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  59 => 16,  51 => 13,  47 => 11,  44 => 10,  38 => 7,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

@@ -166,17 +166,39 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
         not_superjobs_home_recruiter_job_details:
 
-        // homepage
-        if ($pathinfo === '/app/example') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+        if (0 === strpos($pathinfo, '/app')) {
+            if (0 === strpos($pathinfo, '/applicant')) {
+                // superjobs_home_resume_template
+                if ($pathinfo === '/applicant/profile') {
+                    return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\ApplicantController::profileAction',  '_route' => 'superjobs_home_resume_template',);
+                }
+
+                // superjobs_home_team_template
+                if ($pathinfo === '/applicant/team') {
+                    return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\ApplicantController::teamAction',  '_route' => 'superjobs_home_team_template',);
+                }
+
+            }
+
+            // homepage
+            if ($pathinfo === '/app/example') {
+                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login
                 if ($pathinfo === '/login') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_fos_user_security_login;
+                    }
+
                     return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
                 }
+                not_fos_user_security_login:
 
                 // fos_user_security_check
                 if ($pathinfo === '/login_check') {
@@ -193,8 +215,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             // fos_user_security_logout
             if ($pathinfo === '/logout') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_fos_user_security_logout;
+                }
+
                 return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
             }
+            not_fos_user_security_logout:
 
         }
 
@@ -216,8 +244,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             // fos_user_profile_edit
             if ($pathinfo === '/profile/edit') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_fos_user_profile_edit;
+                }
+
                 return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'fos_user_profile_edit',);
             }
+            not_fos_user_profile_edit:
 
         }
 
@@ -225,12 +259,18 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             if (0 === strpos($pathinfo, '/register')) {
                 // fos_user_registration_register
                 if (rtrim($pathinfo, '/') === '/register') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_fos_user_registration_register;
+                    }
+
                     if (substr($pathinfo, -1) !== '/') {
                         return $this->redirect($pathinfo.'/', 'fos_user_registration_register');
                     }
 
                     return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
                 }
+                not_fos_user_registration_register:
 
                 if (0 === strpos($pathinfo, '/register/c')) {
                     // fos_user_registration_check_email
@@ -347,8 +387,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             // fos_user_group_new
             if ($pathinfo === '/group/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_fos_user_group_new;
+                }
+
                 return array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::newAction',  '_route' => 'fos_user_group_new',);
             }
+            not_fos_user_group_new:
 
             // fos_user_group_show
             if (preg_match('#^/group/(?P<groupName>[^/]++)$#s', $pathinfo, $matches)) {
@@ -363,8 +409,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             // fos_user_group_edit
             if (preg_match('#^/group/(?P<groupName>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_fos_user_group_edit;
+                }
+
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_group_edit')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::editAction',));
             }
+            not_fos_user_group_edit:
 
             // fos_user_group_delete
             if (preg_match('#^/group/(?P<groupName>[^/]++)/delete$#s', $pathinfo, $matches)) {

@@ -108,23 +108,23 @@ knp_paginator:
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
 
 # ElasticaBundle configuration
-fos_elastica:
-    clients:
-        default: { host: localhost, port: 9200 }
-    serializer:
-        callback_class: FOS\ElasticaBundle\Serializer\Callback
-        serializer: serializer
-    indexes:
-        superjobs:
-            client: default
-            types:
-                Jobs:
-                    mappings: ~
-                    persistence:
-                        driver: orm # orm, mongodb, propel are available
-                        model:  Superjobs\HomeBundle\Entity\Jobs
-                        provider: ~
-                        listener: ~ # by default, listens to "insert", "update" and "delete"                        
+#fos_elastica:
+#    clients:
+#        default: { host: localhost, port: 9200 }
+#    serializer:
+#        callback_class: FOS\ElasticaBundle\Serializer\Callback
+#        serializer: serializer
+#    indexes:
+#        superjobs:
+#            client: default
+#            types:
+#                Jobs:
+#                    mappings: ~
+#                    persistence:
+#                        driver: orm # orm, mongodb, propel are available
+#                        model:  Superjobs\HomeBundle\Entity\Jobs
+#                        provider: ~
+#                        listener: ~ # by default, listens to "insert", "update" and "delete"                        
 #                        finder: ~
 #                        repository: Afsy\Bundle\CoreBundle\SearchRepository\ArticleRepository
 #                Author:

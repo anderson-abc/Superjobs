@@ -8,15 +8,7 @@ class __TwigTemplate_df3e1b3dda6d71a5c3c9ed85023bb94c89665c8fd15611f1d5bb3bbc185
         parent::__construct($env);
 
         // line 1
-        try {
-            $this->parent = $this->env->loadTemplate("SuperjobsHomeBundle::layout.html.twig");
-        } catch (Twig_Error_Loader $e) {
-            $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
-
-            throw $e;
-        }
-
+        $this->parent = $this->loadTemplate("SuperjobsHomeBundle::layout.html.twig", "SuperjobsHomeBundle:Recruiter:add.html.twig", 1);
         $this->blocks = array(
             'container' => array($this, 'block_container'),
         );
@@ -240,6 +232,6 @@ function callback_tinymce_init(editor){
 
     public function getDebugInfo()
     {
-        return array (  224 => 96,  217 => 92,  211 => 89,  207 => 88,  203 => 87,  197 => 84,  192 => 82,  188 => 81,  180 => 76,  175 => 74,  171 => 73,  163 => 68,  158 => 66,  154 => 65,  146 => 60,  141 => 58,  137 => 57,  129 => 52,  124 => 50,  120 => 49,  112 => 44,  107 => 42,  103 => 41,  95 => 36,  90 => 34,  86 => 33,  78 => 28,  72 => 26,  65 => 21,  61 => 19,  58 => 17,  52 => 15,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  216 => 96,  209 => 92,  203 => 89,  199 => 88,  195 => 87,  189 => 84,  184 => 82,  180 => 81,  172 => 76,  167 => 74,  163 => 73,  155 => 68,  150 => 66,  146 => 65,  138 => 60,  133 => 58,  129 => 57,  121 => 52,  116 => 50,  112 => 49,  104 => 44,  99 => 42,  95 => 41,  87 => 36,  82 => 34,  78 => 33,  70 => 28,  64 => 26,  57 => 21,  53 => 19,  50 => 17,  44 => 15,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

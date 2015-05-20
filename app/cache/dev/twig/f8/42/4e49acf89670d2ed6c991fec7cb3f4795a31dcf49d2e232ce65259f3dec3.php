@@ -8,15 +8,7 @@ class __TwigTemplate_f8424e49acf89670d2ed6c991fec7cb3f4795a31dcf49d2e232ce65259f
         parent::__construct($env);
 
         // line 1
-        try {
-            $this->parent = $this->env->loadTemplate("SuperjobsHomeBundle::layout.html.twig");
-        } catch (Twig_Error_Loader $e) {
-            $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
-
-            throw $e;
-        }
-
+        $this->parent = $this->loadTemplate("SuperjobsHomeBundle::layout.html.twig", "SuperjobsHomeBundle:Recruiter:details.html.twig", 1);
         $this->blocks = array(
             'container' => array($this, 'block_container'),
         );
@@ -80,6 +72,6 @@ class __TwigTemplate_f8424e49acf89670d2ed6c991fec7cb3f4795a31dcf49d2e232ce65259f
 
     public function getDebugInfo()
     {
-        return array (  62 => 16,  57 => 14,  51 => 11,  43 => 6,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  54 => 16,  49 => 14,  43 => 11,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
