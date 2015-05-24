@@ -27,12 +27,8 @@ class JobsType extends AbstractType
             ->add('logo', 'file', array('label' => 'Company logo', 'required' => false))
             ->add('url', 'url')
             ->add('location')
-            ->add('description', 'textarea', array(
-                    'attr' => array(
-                        'class' => 'tinymce',
-                        'data-theme' => 'bbcode' // Skip it if you want to use default theme
-                    )
-                ))
+            ->add('description', 'textarea', array('attr' => array('class' => 'ckeditor')))
+            ->add('captcha', 'genemu_captcha',array('mapped' => false,))
             ->add('skills')
         ;
     }
