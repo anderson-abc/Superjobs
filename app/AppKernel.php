@@ -20,7 +20,6 @@ class AppKernel extends Kernel
             new Superjobs\HomeBundle\SuperjobsHomeBundle(),
             new Superjobs\UserBundle\SuperjobsUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         );
         
