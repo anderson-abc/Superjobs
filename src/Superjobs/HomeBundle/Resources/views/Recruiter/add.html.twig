@@ -6,17 +6,10 @@
 	Remplissez ce truc
     </h2>
     </centre>
-<script>
-function callback_tinymce_init(editor){
-    editor.settings.entity_encoding = 'raw';
-}
-</script>
 
 <form role="form" action="{{ path('superjobs_home_recruiter_add') }}" method="post"{{ form_enctype(form) }} >
     {# {{ tinymce_init() }} #}
-    {{ tinymce_init({'use_callback_tinymce_init': true, 
-                     'theme': {'simple': {'menubar': false}}})
-                     }}
+
 
 {{ form_errors(form) }}
   <div class="form-group">
@@ -89,6 +82,11 @@ function callback_tinymce_init(editor){
 {{ form_widget(form.description) }}
    <br/>     
 
+   
+{{ form_widget(form.captcha) }}
+   <br/><br/>
+   
+   
 {{ form_rest(form) }} 
 
 
@@ -96,4 +94,5 @@ function callback_tinymce_init(editor){
     <a href="{{ path('superjobs_home_recruiter_intro') }}">Revenir</a>
     <br/>.
 </form>
+
 {% endblock %}
