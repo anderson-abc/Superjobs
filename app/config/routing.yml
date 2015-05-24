@@ -16,3 +16,9 @@ fos_user:
 fos_user_group:
     resource: "@FOSUserBundle/Resources/config/routing/group.xml"
     prefix: /group
+
+genemu_base64:
+    resource: "@GenemuFormBundle/Resources/config/routing/base64.xml"
+
+genemu_upload:
+    resource: "@GenemuFormBundle/Resources/config/routing/upload.xml"
