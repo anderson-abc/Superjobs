@@ -27,6 +27,7 @@ class RecuiterController extends Controller
         $form = $this->createForm(new JobsType, $Jobs);
 
         $request = $this->getRequest();
+               
         if ($request->isMethod('Post')){
             $form->bind($request);
             if($form->isValid()){
