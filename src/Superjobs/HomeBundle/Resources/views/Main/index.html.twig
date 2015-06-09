@@ -30,11 +30,11 @@
 <div class="count">
     {{ pagination.getTotalItemCount }} Offres d'emploi
 </div>
-{# table body #}
+    <div class="row">  
+        <div class="col-xs-12 col-md-8">
 {% for article in pagination %}
     <div class="items">
-<div class="row">    
-{#    <div {% if loop.index is odd %}class="color"{% endif %}>#}
+    <div class="row">    
         <div class="col-xs-2">
             <time class="calendar">
                 <em>{{ article.createdAt|date('Y')}}</em>
@@ -49,16 +49,22 @@
             <br/>
             Type : {{ article.type }} | Poste à : {{ article.location }} | Societé : {{ article.company }}            
         </div>
-</div>
+    </div>
     </div>
 <hr style="margin:0px;">
 {% endfor %}
-{# display navigation #}
-<center>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <img src="{{ asset('bundles/superjobshome/img/publicité.jpg')}}" width="100%">
+            
+        </div>
+</div>
+        <center>
 <div class="pagination">
     {{ knp_pagination_render(pagination, "", {}, { "prev_label": "Previous", "next_label": "Next", "first_label": "First", "last_label": "Last"}) }}
 </div>
-</center>
+        </center>
+
 <style>
 .items:hover {
     background-color: #E5E9ED;
