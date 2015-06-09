@@ -32,6 +32,7 @@
 </div>
 {# table body #}
 {% for article in pagination %}
+    <div class="items">
 <div class="row">    
 {#    <div {% if loop.index is odd %}class="color"{% endif %}>#}
         <div class="col-xs-2">
@@ -49,6 +50,7 @@
             Type : {{ article.type }} | Poste à : {{ article.location }} | Societé : {{ article.company }}            
         </div>
 </div>
+    </div>
 <hr style="margin:0px;">
 {% endfor %}
 {# display navigation #}
@@ -58,8 +60,8 @@
 </div>
 </center>
 <style>
-.row:hover {
-    background-color: #E1E1E8;
+.items:hover {
+    background-color: #E5E9ED;
 }
 </style>
 {% endblock %}
