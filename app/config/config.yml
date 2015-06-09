@@ -134,6 +134,15 @@ knp_paginator:
         pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig     # sliding pagination controls template
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
 
+pugx_multi_user:
+    users:
+        Recuiter:
+            entity: 
+                class: Superjobs\UserBundle\Entity\Recuiter
+
+        Applicant:
+            entity: 
+                class: Superjobs\UserBundle\Entity\Applicant
 # ElasticaBundle configuration
 #fos_elastica:
 #    clients:
