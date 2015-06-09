@@ -19,7 +19,7 @@ class MainController extends Controller
         $pagination = $paginator->paginate(
                             $jobs,
                             $request->query->get('page', 1)/*page number*/,
-                            5/*limit per page*/
+                            11/*limit per page*/
                         );
              
         return $this->render('SuperjobsHomeBundle:Main:index.html.twig', array(
