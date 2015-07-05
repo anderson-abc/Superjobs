@@ -3,18 +3,18 @@ superjobs_home_homepage:
     defaults: { _controller: SuperjobsHomeBundle:Main:index }
 
 superjobs_home_recruiter_intro:
-    path:     /recuiter/intro
-    defaults: { _controller: SuperjobsHomeBundle:Recuiter:intro }
+    path:     /recruiter/intro
+    defaults: { _controller: SuperjobsHomeBundle:Recruiter:intro }
 
 superjobs_home_recruiter_add:
-    path:     /recuiter/add
-    defaults: { _controller: SuperjobsHomeBundle:Recuiter:add }
+    path:     /recruiter/add
+    defaults: { _controller: SuperjobsHomeBundle:Recruiter:add }
     requirements:
         _method:  GET|POST
 
 superjobs_home_recruiter_job_details:
     path:     /jobs/{id}
-    defaults: { _controller: SuperjobsHomeBundle:Recuiter:details, id: 1 }
+    defaults: { _controller: SuperjobsHomeBundle:Recruiter:details, id: 1 }
     requirements:
         _method:  GET|POST
         id: \d+

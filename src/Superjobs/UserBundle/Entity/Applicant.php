@@ -3,15 +3,15 @@
 namespace Superjobs\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use PUGX\MultiUserBundle\Validator\Constraints\UniqueEntity;
+//use PUGX\MultiUserBundle\Validator\Constraints\UniqueEntity;
 
 /**
  * Applicant
  *
- * @ORM\Table()
+ * @ORM\Table(name="Applicant")
  * @ORM\Entity
  */
-class Applicant
+class Applicant extends User
 {
     /**
      * @var integer
@@ -20,21 +20,21 @@ class Applicant
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
      */
-    private $email;
+    protected $email;
 
 
     /**

@@ -20,8 +20,9 @@
       <parameter key="SuperjobsHomeBundle">Superjobs\HomeBundle\SuperjobsHomeBundle</parameter>
       <parameter key="SuperjobsUserBundle">Superjobs\UserBundle\SuperjobsUserBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
-      <parameter key="StfalconTinymceBundle">Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
+      <parameter key="GenemuFormBundle">Genemu\Bundle\FormBundle\GenemuFormBundle</parameter>
+      <parameter key="PUGXMultiUserBundle">PUGX\MultiUserBundle\PUGXMultiUserBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -333,6 +334,9 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>GenemuFormBundle:Form:div_layout.html.twig</parameter>
+      <parameter>GenemuFormBundle:Form:jquery_layout.html.twig</parameter>
+      <parameter>GenemuFormBundle:Form:stylesheet_layout.html.twig</parameter>
     </parameter>
     <parameter key="debug.templating.engine.twig.class">Symfony\Bundle\TwigBundle\Debug\TimedTwigEngine</parameter>
     <parameter key="twig.options" type="collection">
@@ -567,6 +571,8 @@
     <parameter key="doctrine.orm.listeners.attach_entity_listeners.class">Doctrine\ORM\Tools\AttachEntityListenersListener</parameter>
     <parameter key="doctrine.orm.naming_strategy.default.class">Doctrine\ORM\Mapping\DefaultNamingStrategy</parameter>
     <parameter key="doctrine.orm.naming_strategy.underscore.class">Doctrine\ORM\Mapping\UnderscoreNamingStrategy</parameter>
+    <parameter key="doctrine.orm.quote_strategy.default.class">Doctrine\ORM\Mapping\DefaultQuoteStrategy</parameter>
+    <parameter key="doctrine.orm.quote_strategy.ansi.class">Doctrine\ORM\Mapping\AnsiQuoteStrategy</parameter>
     <parameter key="doctrine.orm.entity_listener_resolver.class">Doctrine\ORM\Mapping\DefaultEntityListenerResolver</parameter>
     <parameter key="doctrine.orm.second_level_cache.default_cache_factory.class">Doctrine\ORM\Cache\DefaultCacheFactory</parameter>
     <parameter key="doctrine.orm.second_level_cache.default_region.class">Doctrine\ORM\Cache\Region\DefaultRegion</parameter>
@@ -637,35 +643,133 @@
       <parameter>Registration</parameter>
       <parameter>Default</parameter>
     </parameter>
-    <parameter key="stfalcon_tinymce.config" type="collection">
-      <parameter key="include_jquery">true</parameter>
-      <parameter key="tinymce_jquery">true</parameter>
-      <parameter key="selector">.tinymce</parameter>
-      <parameter key="tinymce_buttons" type="collection">
-        <parameter key="irmasoft" type="collection">
-          <parameter key="title">irmasoft</parameter>
-          <parameter key="image">http://stfalcon.com/favicon.ico</parameter>
-          <parameter key="text">null</parameter>
-          <parameter key="icon">null</parameter>
-        </parameter>
-      </parameter>
-      <parameter key="use_callback_tinymce_init">true</parameter>
-      <parameter key="language">fr</parameter>
-      <parameter key="theme" type="collection">
-        <parameter key="simple" type="collection">
-          <parameter key="theme">modern</parameter>
-        </parameter>
-      </parameter>
-      <parameter key="external_plugins" type="collection"/>
-    </parameter>
-    <parameter key="stfalcon_tinymce.twig.extension.class">Stfalcon\Bundle\TinymceBundle\Twig\Extension\StfalconTinymceExtension</parameter>
     <parameter key="knp_paginator.class">Knp\Component\Pager\Paginator</parameter>
-    <parameter key="knp_paginator.templating.helper.pagination.class">Knp\Bundle\PaginatorBundle\Templating\PaginationHelper</parameter>
     <parameter key="knp_paginator.helper.processor.class">Knp\Bundle\PaginatorBundle\Helper\Processor</parameter>
     <parameter key="knp_paginator.template.pagination">KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig</parameter>
     <parameter key="knp_paginator.template.filtration">KnpPaginatorBundle:Pagination:filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">KnpPaginatorBundle:Pagination:sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="genemu.form.recaptcha.public_key"></parameter>
+    <parameter key="genemu.form.recaptcha.private_key"></parameter>
+    <parameter key="genemu.form.recaptcha.server_url"></parameter>
+    <parameter key="genemu.form.recaptcha.code"></parameter>
+    <parameter key="genemu.form.recaptcha.options" type="collection"/>
+    <parameter key="genemu.form.recaptcha.validation.options" type="collection"/>
+    <parameter key="genemu.form.captcha.options" type="collection">
+      <parameter key="enabled">true</parameter>
+      <parameter key="width">100</parameter>
+      <parameter key="height">40</parameter>
+      <parameter key="length">4</parameter>
+      <parameter key="format">png</parameter>
+      <parameter key="chars" type="collection">
+        <parameter key="1">1</parameter>
+        <parameter key="2">2</parameter>
+        <parameter key="3">3</parameter>
+        <parameter key="4">4</parameter>
+        <parameter key="5">5</parameter>
+        <parameter key="6">6</parameter>
+        <parameter key="7">7</parameter>
+        <parameter key="8">8</parameter>
+        <parameter key="9">9</parameter>
+      </parameter>
+      <parameter key="font_size">18</parameter>
+      <parameter key="font_color" type="collection">
+        <parameter>252525</parameter>
+        <parameter>8B8787</parameter>
+        <parameter>550707</parameter>
+        <parameter>3526E6</parameter>
+        <parameter>88531E</parameter>
+      </parameter>
+      <parameter key="fonts" type="collection">
+        <parameter>/var/www/html/superjobs/app/../web/bundles/genemuform/fonts/akbar.ttf</parameter>
+        <parameter>/var/www/html/superjobs/app/../web/bundles/genemuform/fonts/brushcut.ttf</parameter>
+        <parameter>/var/www/html/superjobs/app/../web/bundles/genemuform/fonts/molten.ttf</parameter>
+        <parameter>/var/www/html/superjobs/app/../web/bundles/genemuform/fonts/planetbe.ttf</parameter>
+        <parameter>/var/www/html/superjobs/app/../web/bundles/genemuform/fonts/whoobub.ttf</parameter>
+      </parameter>
+      <parameter key="background_color">DDDDDD</parameter>
+      <parameter key="border_color">000000</parameter>
+      <parameter key="grayscale">false</parameter>
+      <parameter key="driver">gd</parameter>
+      <parameter key="code">null</parameter>
+    </parameter>
+    <parameter key="genemu.form.tinymce.configs" type="collection">
+      <parameter key="script_url">bundles/superjobshome/js/tinymce.min.js</parameter>
+      <parameter key="theme">advanced</parameter>
+    </parameter>
+    <parameter key="genemu.form.color.options" type="collection"/>
+    <parameter key="genemu.form.date.options" type="collection"/>
+    <parameter key="genemu.form.rating.options" type="collection"/>
+    <parameter key="genemu.form.file.root_dir">/var/www/html/superjobs/app/../web</parameter>
+    <parameter key="genemu.form.file.folder">upload</parameter>
+    <parameter key="genemu.form.file.upload_dir">/var/www/html/superjobs/app/../web/upload</parameter>
+    <parameter key="genemu.form.file.options" type="collection">
+      <parameter key="script">genemu_upload</parameter>
+      <parameter key="swf">uploadify/uploadify.swf</parameter>
+      <parameter key="cancelImg">/bundles/genemuform/images/cancel.png</parameter>
+      <parameter key="folder">upload</parameter>
+    </parameter>
+    <parameter key="genemu.form.image.selected"></parameter>
+    <parameter key="genemu.form.image.thumbnails" type="collection"/>
+    <parameter key="genemu.form.image.filters" type="collection"/>
+    <parameter key="pugx_user_discriminator_users" type="collection">
+      <parameter key="Recruiter" type="collection">
+        <parameter key="entity" type="collection">
+          <parameter key="class">Superjobs\UserBundle\Entity\Recruiter</parameter>
+          <parameter key="factory">PUGX\MultiUserBundle\Model\UserFactory</parameter>
+        </parameter>
+        <parameter key="registration" type="collection">
+          <parameter key="form" type="collection">
+            <parameter key="type">null</parameter>
+            <parameter key="name">fos_user_registration_form</parameter>
+            <parameter key="validation_groups" type="collection">
+              <parameter>Registration</parameter>
+              <parameter>Default</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="template">null</parameter>
+        </parameter>
+        <parameter key="profile" type="collection">
+          <parameter key="form" type="collection">
+            <parameter key="type">null</parameter>
+            <parameter key="name">fos_user_profile_form</parameter>
+            <parameter key="validation_groups" type="collection">
+              <parameter>Profile</parameter>
+              <parameter>Default</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="template">null</parameter>
+        </parameter>
+      </parameter>
+      <parameter key="Applicant" type="collection">
+        <parameter key="entity" type="collection">
+          <parameter key="class">Superjobs\UserBundle\Entity\Applicant</parameter>
+          <parameter key="factory">PUGX\MultiUserBundle\Model\UserFactory</parameter>
+        </parameter>
+        <parameter key="registration" type="collection">
+          <parameter key="form" type="collection">
+            <parameter key="type">null</parameter>
+            <parameter key="name">fos_user_registration_form</parameter>
+            <parameter key="validation_groups" type="collection">
+              <parameter>Registration</parameter>
+              <parameter>Default</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="template">null</parameter>
+        </parameter>
+        <parameter key="profile" type="collection">
+          <parameter key="form" type="collection">
+            <parameter key="type">null</parameter>
+            <parameter key="name">fos_user_profile_form</parameter>
+            <parameter key="validation_groups" type="collection">
+              <parameter>Profile</parameter>
+              <parameter>Default</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="template">null</parameter>
+        </parameter>
+      </parameter>
+    </parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -2111,6 +2215,24 @@
         <argument>nb</argument>
         <argument>FOSUserBundle</argument>
       </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/superjobs/vendor/genemu/form-bundle/Genemu/Bundle/FormBundle/Resources/translations/validators.de.yml</argument>
+        <argument>de</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/superjobs/vendor/genemu/form-bundle/Genemu/Bundle/FormBundle/Resources/translations/validators.en.yml</argument>
+        <argument>en</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/var/www/html/superjobs/vendor/genemu/form-bundle/Genemu/Bundle/FormBundle/Resources/translations/validators.fr.yml</argument>
+        <argument>fr</argument>
+        <argument>validators</argument>
+      </call>
     </service>
     <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
       <tag name="translation.loader" alias="php"/>
@@ -2369,6 +2491,46 @@
               <argument key="fos_user_change_password">fos_user.change_password.form.type</argument>
               <argument key="fos_user_resetting">fos_user.resetting.form.type</argument>
               <argument key="fos_user_group">fos_user.group.form.type</argument>
+              <argument key="genemu_recaptcha">genemu.form.core.type.recaptcha</argument>
+              <argument key="genemu_captcha">genemu.form.core.type.captcha</argument>
+              <argument key="genemu_plain">genemu.form.core.type.plain</argument>
+              <argument key="genemu_tinymce">genemu.form.core.type.tinymce</argument>
+              <argument key="genemu_ajaxmodel">genemu.form.model.type.ajaxmodel</argument>
+              <argument key="genemu_jquerycolor">genemu.form.jquery.type.color</argument>
+              <argument key="genemu_jquerydate">genemu.form.jquery.type.date</argument>
+              <argument key="genemu_jqueryfile">genemu.form.jquery.type.file</argument>
+              <argument key="genemu_jquerygeolocation">genemu.form.jquery.type.geolocation</argument>
+              <argument key="genemu_jqueryimage">genemu.form.jquery.type.image</argument>
+              <argument key="genemu_jqueryrating">genemu.form.jquery.type.rating</argument>
+              <argument key="genemu_jqueryslider">genemu.form.jquery.type.slider</argument>
+              <argument key="genemu_ajaxentity">genemu.form.entity.type.ajaxentity</argument>
+              <argument key="genemu_jquerychosen_choice">genemu.form.jquery.type.chosen.choice</argument>
+              <argument key="genemu_jquerychosen_language">genemu.form.jquery.type.chosen.language</argument>
+              <argument key="genemu_jquerychosen_country">genemu.form.jquery.type.chosen.country</argument>
+              <argument key="genemu_jquerychosen_timezone">genemu.form.jquery.type.chosen.timezone</argument>
+              <argument key="genemu_jquerychosen_locale">genemu.form.jquery.type.chosen.locale</argument>
+              <argument key="genemu_jquerychosen_entity">genemu.form.jquery.type.chosen.entity</argument>
+              <argument key="genemu_jquerychosen_document">genemu.form.jquery.type.chosen.document</argument>
+              <argument key="genemu_jquerychosen_model">genemu.form.jquery.type.chosen.model</argument>
+              <argument key="genemu_jquerychosen_currency">genemu.form.jquery.type.chosen.currency</argument>
+              <argument key="genemu_jqueryautocompleter_choice">genemu.form.jquery.type.autocompleter.choice</argument>
+              <argument key="genemu_jqueryautocompleter_language">genemu.form.jquery.type.autocompleter.language</argument>
+              <argument key="genemu_jqueryautocompleter_country">genemu.form.jquery.type.autocompleter.country</argument>
+              <argument key="genemu_jqueryautocompleter_timezone">genemu.form.jquery.type.autocompleter.timezone</argument>
+              <argument key="genemu_jqueryautocompleter_locale">genemu.form.jquery.type.autocompleter.locale</argument>
+              <argument key="genemu_jqueryautocompleter_entity">genemu.form.jquery.type.autocompleter.entity</argument>
+              <argument key="genemu_jqueryautocompleter_document">genemu.form.jquery.type.autocompleter.document</argument>
+              <argument key="genemu_jqueryautocompleter_model">genemu.form.jquery.type.autocompleter.model</argument>
+              <argument key="genemu_jqueryautocompleter_currency">genemu.form.jquery.type.autocompleter.currency</argument>
+              <argument key="genemu_jquerytokeninput_choice">genemu.form.jquery.type.tokeninput.choice</argument>
+              <argument key="genemu_jquerytokeninput_language">genemu.form.jquery.type.tokeninput.language</argument>
+              <argument key="genemu_jquerytokeninput_country">genemu.form.jquery.type.tokeninput.country</argument>
+              <argument key="genemu_jquerytokeninput_timezone">genemu.form.jquery.type.tokeninput.timezone</argument>
+              <argument key="genemu_jquerytokeninput_locale">genemu.form.jquery.type.tokeninput.locale</argument>
+              <argument key="genemu_jquerytokeninput_entity">genemu.form.jquery.type.tokeninput.entity</argument>
+              <argument key="genemu_jquerytokeninput_document">genemu.form.jquery.type.tokeninput.document</argument>
+              <argument key="genemu_jquerytokeninput_model">genemu.form.jquery.type.tokeninput.model</argument>
+              <argument key="genemu_jquerytokeninput_currency">genemu.form.jquery.type.tokeninput.currency</argument>
             </argument>
             <argument type="collection">
               <argument key="form" type="collection">
@@ -2621,6 +2783,7 @@
               <argument key="Symfony\Component\Validator\Constraints\EmailValidator">validator.email</argument>
               <argument key="security.validator.user_password">security.validator.user_password</argument>
               <argument key="doctrine.orm.validator.unique">doctrine.orm.validator.unique</argument>
+              <argument key="pugx.orm.validator.unique">pugx_multi_user.orm.validator.unique</argument>
             </argument>
           </service>
         </argument>
@@ -2652,7 +2815,7 @@
           <argument type="service">
             <service class="FOS\UserBundle\Validator\Initializer" public="false">
               <tag name="validator.initializer"/>
-              <argument type="service" id="fos_user.user_manager"/>
+              <argument type="service" id="pugx_user.manager.orm_user_manager"/>
             </service>
           </argument>
         </argument>
@@ -2908,7 +3071,7 @@
       <tag name="monolog.logger" channel="php"/>
       <argument></argument>
       <argument type="service" id="monolog.logger.php" on-invalid="null"/>
-      <argument></argument>
+      <argument>null</argument>
       <argument>null</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -3052,6 +3215,10 @@
         <argument>FOS\UserBundle\EventListener\ResettingListener</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>pugx_multi_user.listener.authentication</argument>
+        <argument>PUGX\MultiUserBundle\Listener\AuthenticationListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>debug.dump_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\DumpListener</argument>
       </call>
@@ -3142,7 +3309,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>554f414462bfb</argument>
+            <argument>5599442352828</argument>
           </service>
         </argument>
       </argument>
@@ -3500,7 +3667,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>554f414462bfb</argument>
+            <argument>5599442352828</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3703,18 +3870,7 @@
         <argument type="service">
           <service class="Symfony\Bridge\Twig\Extension\FormExtension" public="false">
             <tag name="twig.extension"/>
-            <argument type="service">
-              <service class="Symfony\Bridge\Twig\Form\TwigRenderer" public="false">
-                <argument type="service">
-                  <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
-                    <argument type="collection">
-                      <argument>form_div_layout.html.twig</argument>
-                    </argument>
-                  </service>
-                </argument>
-                <argument type="service" id="form.csrf_provider" on-invalid="null"/>
-              </service>
-            </argument>
+            <argument type="service" id="twig.form.renderer"/>
           </service>
         </argument>
       </call>
@@ -3751,10 +3907,10 @@
         </argument>
       </call>
       <call method="addExtension">
-        <argument type="service" id="twig.extension.stfalcon_tinymce"/>
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
       </call>
       <call method="addExtension">
-        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+        <argument type="service" id="genemu.twig.extension.form"/>
       </call>
       <call method="addExtension">
         <argument type="service">
@@ -3775,6 +3931,19 @@
         <argument>app</argument>
         <argument type="service" id="templating.globals"/>
       </call>
+    </service>
+    <service id="twig.form.renderer" class="Symfony\Bridge\Twig\Form\TwigRenderer" public="false">
+      <argument type="service">
+        <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
+          <argument type="collection">
+            <argument>form_div_layout.html.twig</argument>
+            <argument>GenemuFormBundle:Form:div_layout.html.twig</argument>
+            <argument>GenemuFormBundle:Form:jquery_layout.html.twig</argument>
+            <argument>GenemuFormBundle:Form:stylesheet_layout.html.twig</argument>
+          </argument>
+        </service>
+      </argument>
+      <argument type="service" id="form.csrf_provider" on-invalid="null"/>
     </service>
     <service id="twig.translation.extractor" class="Symfony\Bridge\Twig\Translation\TwigExtractor">
       <tag name="translation.extractor" alias="twig"/>
@@ -4096,6 +4265,11 @@
               <service class="Doctrine\ORM\Mapping\DefaultNamingStrategy" public="false"/>
             </argument>
           </call>
+          <call method="setQuoteStrategy">
+            <argument type="service">
+              <service class="Doctrine\ORM\Mapping\DefaultQuoteStrategy" public="false"/>
+            </argument>
+          </call>
           <call method="setEntityListenerResolver">
             <argument type="service" id="doctrine.orm.default_entity_listener_resolver"/>
           </call>
@@ -4162,7 +4336,7 @@
     </service>
     <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
       <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="fos_user.user_manager"/>
+      <argument type="service" id="pugx_user.manager.orm_user_manager"/>
     </service>
     <service id="fos_user.security.login_manager" class="FOS\UserBundle\Security\LoginManager">
       <argument type="service" id="security.token_storage"/>
@@ -4171,10 +4345,10 @@
       <argument type="service" id="service_container"/>
     </service>
     <service id="fos_user.user_provider.username_email" class="FOS\UserBundle\Security\EmailUserProvider" public="false">
-      <argument type="service" id="fos_user.user_manager"/>
+      <argument type="service" id="pugx_user.manager.orm_user_manager"/>
     </service>
     <service id="fos_user.util.user_manipulator" class="FOS\UserBundle\Util\UserManipulator">
-      <argument type="service" id="fos_user.user_manager"/>
+      <argument type="service" id="pugx_user.manager.orm_user_manager"/>
     </service>
     <service id="fos_user.listener.authentication" class="FOS\UserBundle\EventListener\AuthenticationListener">
       <tag name="kernel.event_subscriber"/>
@@ -4190,31 +4364,13 @@
       <tag name="form.type" alias="fos_user_username"/>
       <argument type="service">
         <service class="FOS\UserBundle\Form\DataTransformer\UserToUsernameTransformer" public="false">
-          <argument type="service" id="fos_user.user_manager"/>
+          <argument type="service" id="pugx_user.manager.orm_user_manager"/>
         </service>
-      </argument>
-    </service>
-    <service id="fos_user.profile.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
-      <argument type="service" id="form.factory"/>
-      <argument>fos_user_profile_form</argument>
-      <argument>fos_user_profile</argument>
-      <argument type="collection">
-        <argument>Profile</argument>
-        <argument>Default</argument>
       </argument>
     </service>
     <service id="fos_user.profile.form.type" class="FOS\UserBundle\Form\Type\ProfileFormType">
       <tag name="form.type" alias="fos_user_profile"/>
       <argument>Superjobs\UserBundle\Entity\User</argument>
-    </service>
-    <service id="fos_user.registration.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
-      <argument type="service" id="form.factory"/>
-      <argument>fos_user_registration_form</argument>
-      <argument>fos_user_registration</argument>
-      <argument type="collection">
-        <argument>Registration</argument>
-        <argument>Default</argument>
-      </argument>
     </service>
     <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
       <tag name="form.type" alias="fos_user_registration"/>
@@ -4264,10 +4420,6 @@
       <tag name="form.type" alias="fos_user_group"/>
       <argument>Superjobs\UserBundle\Entity\Groups</argument>
     </service>
-    <service id="twig.extension.stfalcon_tinymce" class="Stfalcon\Bundle\TinymceBundle\Twig\Extension\StfalconTinymceExtension">
-      <tag name="twig.extension" alias="stfalcon_tinymce"/>
-      <argument type="service" id="service_container"/>
-    </service>
     <service id="knp_paginator" class="Knp\Component\Pager\Paginator">
       <argument type="service" id="debug.event_dispatcher"/>
       <call method="setDefaultPaginatorOptions">
@@ -4301,23 +4453,342 @@
       </argument>
     </service>
     <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
-      <argument type="service" id="templating.helper.router"/>
+      <argument type="service" id="router"/>
       <argument type="service" id="translator"/>
-    </service>
-    <service id="knp_paginator.templating.helper.pagination" class="Knp\Bundle\PaginatorBundle\Templating\PaginationHelper">
-      <tag name="templating.helper" alias="knp_pagination"/>
-      <argument type="service" id="knp_paginator.helper.processor"/>
-      <argument type="service" id="debug.templating.engine.php"/>
     </service>
     <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
+    </service>
+    <service id="genemu.twig.extension.form" class="Genemu\Bundle\FormBundle\Twig\Extension\FormExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="twig.form.renderer"/>
+    </service>
+    <service id="genemu.gd.captcha" class="Genemu\Bundle\FormBundle\Gd\Type\Captcha">
+      <argument type="service" id="session"/>
+      <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+    </service>
+    <service id="genemu.form.type_recaptcha.validator" class="Genemu\Bundle\FormBundle\Form\Core\Validator\ReCaptchaValidator">
+      <argument type="service" id="request" strict="false"/>
+      <argument></argument>
+      <argument type="collection"/>
+    </service>
+    <service id="genemu.form.core.type.recaptcha" class="Genemu\Bundle\FormBundle\Form\Core\Type\ReCaptchaType">
+      <tag name="form.type" alias="genemu_recaptcha"/>
+      <argument type="service" id="genemu.form.type_recaptcha.validator"/>
+      <argument></argument>
+      <argument></argument>
+      <argument type="collection"/>
+    </service>
+    <service id="genemu.form.core.type.captcha" class="Genemu\Bundle\FormBundle\Form\Core\Type\CaptchaType">
+      <tag name="form.type" alias="genemu_captcha"/>
+      <argument type="service" id="genemu.gd.captcha"/>
+      <argument type="collection">
+        <argument key="enabled">true</argument>
+        <argument key="width">100</argument>
+        <argument key="height">40</argument>
+        <argument key="length">4</argument>
+        <argument key="format">png</argument>
+        <argument key="chars" type="collection">
+          <argument key="1">1</argument>
+          <argument key="2">2</argument>
+          <argument key="3">3</argument>
+          <argument key="4">4</argument>
+          <argument key="5">5</argument>
+          <argument key="6">6</argument>
+          <argument key="7">7</argument>
+          <argument key="8">8</argument>
+          <argument key="9">9</argument>
+        </argument>
+        <argument key="font_size">18</argument>
+        <argument key="font_color" type="collection">
+          <argument>252525</argument>
+          <argument>8B8787</argument>
+          <argument>550707</argument>
+          <argument>3526E6</argument>
+          <argument>88531E</argument>
+        </argument>
+        <argument key="fonts" type="collection">
+          <argument>/var/www/html/superjobs/app/../web/bundles/genemuform/fonts/akbar.ttf</argument>
+          <argument>/var/www/html/superjobs/app/../web/bundles/genemuform/fonts/brushcut.ttf</argument>
+          <argument>/var/www/html/superjobs/app/../web/bundles/genemuform/fonts/molten.ttf</argument>
+          <argument>/var/www/html/superjobs/app/../web/bundles/genemuform/fonts/planetbe.ttf</argument>
+          <argument>/var/www/html/superjobs/app/../web/bundles/genemuform/fonts/whoobub.ttf</argument>
+        </argument>
+        <argument key="background_color">DDDDDD</argument>
+        <argument key="border_color">000000</argument>
+        <argument key="grayscale">false</argument>
+        <argument key="driver">gd</argument>
+        <argument key="code">null</argument>
+      </argument>
+    </service>
+    <service id="genemu.form.core.type.plain" class="Genemu\Bundle\FormBundle\Form\Core\Type\PlainType">
+      <tag name="form.type" alias="genemu_plain"/>
+    </service>
+    <service id="genemu.form.core.type.tinymce" class="Genemu\Bundle\FormBundle\Form\Core\Type\TinymceType">
+      <tag name="form.type" alias="genemu_tinymce"/>
+      <argument type="collection">
+        <argument key="script_url">bundles/superjobshome/js/tinymce.min.js</argument>
+        <argument key="theme">advanced</argument>
+      </argument>
+    </service>
+    <service id="genemu.form.model.type.ajaxmodel" class="Genemu\Bundle\FormBundle\Form\Model\Type\AjaxModelType">
+      <tag name="form.type" alias="genemu_ajaxmodel"/>
+    </service>
+    <service id="genemu.form.jquery.type.color" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ColorType">
+      <tag name="form.type" alias="genemu_jquerycolor"/>
+      <argument type="collection"/>
+    </service>
+    <service id="genemu.form.jquery.type.date" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\DateType">
+      <tag name="form.type" alias="genemu_jquerydate"/>
+      <argument type="collection"/>
+    </service>
+    <service id="genemu.form.jquery.type.file" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\FileType">
+      <tag name="form.type" alias="genemu_jqueryfile"/>
+      <argument type="collection">
+        <argument key="script">genemu_upload</argument>
+        <argument key="swf">uploadify/uploadify.swf</argument>
+        <argument key="cancelImg">/bundles/genemuform/images/cancel.png</argument>
+        <argument key="folder">upload</argument>
+      </argument>
+      <argument>/var/www/html/superjobs/app/../web</argument>
+    </service>
+    <service id="genemu.form.jquery.type.geolocation" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\GeolocationType">
+      <tag name="form.type" alias="genemu_jquerygeolocation"/>
+    </service>
+    <service id="genemu.form.jquery.type.image" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ImageType">
+      <tag name="form.type" alias="genemu_jqueryimage"/>
+      <argument></argument>
+      <argument type="collection"/>
+      <argument type="collection"/>
+    </service>
+    <service id="genemu.form.jquery.type.rating" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\RatingType">
+      <tag name="form.type" alias="genemu_jqueryrating"/>
+      <argument type="collection"/>
+    </service>
+    <service id="genemu.form.jquery.type.slider" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\SliderType">
+      <tag name="form.type" alias="genemu_jqueryslider"/>
+    </service>
+    <service id="genemu.form.entity.type.ajaxentity" class="Genemu\Bundle\FormBundle\Form\Doctrine\Type\AjaxEntityType">
+      <tag name="form.type" alias="genemu_ajaxentity"/>
+      <argument type="service" id="doctrine" on-invalid="ignore"/>
+    </service>
+    <service id="genemu.form.jquery.type.chosen.choice" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ChosenType">
+      <tag name="form.type" alias="genemu_jquerychosen_choice"/>
+      <argument>choice</argument>
+    </service>
+    <service id="genemu.form.jquery.type.chosen.language" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ChosenType">
+      <tag name="form.type" alias="genemu_jquerychosen_language"/>
+      <argument>language</argument>
+    </service>
+    <service id="genemu.form.jquery.type.chosen.country" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ChosenType">
+      <tag name="form.type" alias="genemu_jquerychosen_country"/>
+      <argument>country</argument>
+    </service>
+    <service id="genemu.form.jquery.type.chosen.timezone" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ChosenType">
+      <tag name="form.type" alias="genemu_jquerychosen_timezone"/>
+      <argument>timezone</argument>
+    </service>
+    <service id="genemu.form.jquery.type.chosen.locale" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ChosenType">
+      <tag name="form.type" alias="genemu_jquerychosen_locale"/>
+      <argument>locale</argument>
+    </service>
+    <service id="genemu.form.jquery.type.chosen.entity" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ChosenType">
+      <tag name="form.type" alias="genemu_jquerychosen_entity"/>
+      <argument>entity</argument>
+    </service>
+    <service id="genemu.form.jquery.type.chosen.document" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ChosenType">
+      <tag name="form.type" alias="genemu_jquerychosen_document"/>
+      <argument>document</argument>
+    </service>
+    <service id="genemu.form.jquery.type.chosen.model" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ChosenType">
+      <tag name="form.type" alias="genemu_jquerychosen_model"/>
+      <argument>model</argument>
+    </service>
+    <service id="genemu.form.jquery.type.chosen.currency" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\ChosenType">
+      <tag name="form.type" alias="genemu_jquerychosen_currency"/>
+      <argument>currency</argument>
+    </service>
+    <service id="genemu.form.jquery.type.autocompleter.choice" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\AutocompleterType">
+      <tag name="form.type" alias="genemu_jqueryautocompleter_choice"/>
+      <argument>choice</argument>
+    </service>
+    <service id="genemu.form.jquery.type.autocompleter.language" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\AutocompleterType">
+      <tag name="form.type" alias="genemu_jqueryautocompleter_language"/>
+      <argument>language</argument>
+    </service>
+    <service id="genemu.form.jquery.type.autocompleter.country" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\AutocompleterType">
+      <tag name="form.type" alias="genemu_jqueryautocompleter_country"/>
+      <argument>country</argument>
+    </service>
+    <service id="genemu.form.jquery.type.autocompleter.timezone" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\AutocompleterType">
+      <tag name="form.type" alias="genemu_jqueryautocompleter_timezone"/>
+      <argument>timezone</argument>
+    </service>
+    <service id="genemu.form.jquery.type.autocompleter.locale" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\AutocompleterType">
+      <tag name="form.type" alias="genemu_jqueryautocompleter_locale"/>
+      <argument>locale</argument>
+    </service>
+    <service id="genemu.form.jquery.type.autocompleter.entity" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\AutocompleterType">
+      <tag name="form.type" alias="genemu_jqueryautocompleter_entity"/>
+      <argument>entity</argument>
+    </service>
+    <service id="genemu.form.jquery.type.autocompleter.document" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\AutocompleterType">
+      <tag name="form.type" alias="genemu_jqueryautocompleter_document"/>
+      <argument>document</argument>
+    </service>
+    <service id="genemu.form.jquery.type.autocompleter.model" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\AutocompleterType">
+      <tag name="form.type" alias="genemu_jqueryautocompleter_model"/>
+      <argument>model</argument>
+    </service>
+    <service id="genemu.form.jquery.type.autocompleter.currency" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\AutocompleterType">
+      <tag name="form.type" alias="genemu_jqueryautocompleter_currency"/>
+      <argument>currency</argument>
+    </service>
+    <service id="genemu.form.jquery.type.tokeninput.choice" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\TokeninputType">
+      <tag name="form.type" alias="genemu_jquerytokeninput_choice"/>
+      <argument>choice</argument>
+    </service>
+    <service id="genemu.form.jquery.type.tokeninput.language" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\TokeninputType">
+      <tag name="form.type" alias="genemu_jquerytokeninput_language"/>
+      <argument>language</argument>
+    </service>
+    <service id="genemu.form.jquery.type.tokeninput.country" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\TokeninputType">
+      <tag name="form.type" alias="genemu_jquerytokeninput_country"/>
+      <argument>country</argument>
+    </service>
+    <service id="genemu.form.jquery.type.tokeninput.timezone" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\TokeninputType">
+      <tag name="form.type" alias="genemu_jquerytokeninput_timezone"/>
+      <argument>timezone</argument>
+    </service>
+    <service id="genemu.form.jquery.type.tokeninput.locale" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\TokeninputType">
+      <tag name="form.type" alias="genemu_jquerytokeninput_locale"/>
+      <argument>locale</argument>
+    </service>
+    <service id="genemu.form.jquery.type.tokeninput.entity" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\TokeninputType">
+      <tag name="form.type" alias="genemu_jquerytokeninput_entity"/>
+      <argument>entity</argument>
+    </service>
+    <service id="genemu.form.jquery.type.tokeninput.document" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\TokeninputType">
+      <tag name="form.type" alias="genemu_jquerytokeninput_document"/>
+      <argument>document</argument>
+    </service>
+    <service id="genemu.form.jquery.type.tokeninput.model" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\TokeninputType">
+      <tag name="form.type" alias="genemu_jquerytokeninput_model"/>
+      <argument>model</argument>
+    </service>
+    <service id="genemu.form.jquery.type.tokeninput.currency" class="Genemu\Bundle\FormBundle\Form\JQuery\Type\TokeninputType">
+      <tag name="form.type" alias="genemu_jquerytokeninput_currency"/>
+      <argument>currency</argument>
+    </service>
+    <service id="pugx_user.manager.user_discriminator" class="PUGX\MultiUserBundle\Model\UserDiscriminator">
+      <argument type="service" id="session"/>
+      <argument type="collection">
+        <argument key="Recruiter" type="collection">
+          <argument key="entity" type="collection">
+            <argument key="class">Superjobs\UserBundle\Entity\Recruiter</argument>
+            <argument key="factory">PUGX\MultiUserBundle\Model\UserFactory</argument>
+          </argument>
+          <argument key="registration" type="collection">
+            <argument key="form" type="collection">
+              <argument key="type">null</argument>
+              <argument key="name">fos_user_registration_form</argument>
+              <argument key="validation_groups" type="collection">
+                <argument>Registration</argument>
+                <argument>Default</argument>
+              </argument>
+            </argument>
+            <argument key="template">null</argument>
+          </argument>
+          <argument key="profile" type="collection">
+            <argument key="form" type="collection">
+              <argument key="type">null</argument>
+              <argument key="name">fos_user_profile_form</argument>
+              <argument key="validation_groups" type="collection">
+                <argument>Profile</argument>
+                <argument>Default</argument>
+              </argument>
+            </argument>
+            <argument key="template">null</argument>
+          </argument>
+        </argument>
+        <argument key="Applicant" type="collection">
+          <argument key="entity" type="collection">
+            <argument key="class">Superjobs\UserBundle\Entity\Applicant</argument>
+            <argument key="factory">PUGX\MultiUserBundle\Model\UserFactory</argument>
+          </argument>
+          <argument key="registration" type="collection">
+            <argument key="form" type="collection">
+              <argument key="type">null</argument>
+              <argument key="name">fos_user_registration_form</argument>
+              <argument key="validation_groups" type="collection">
+                <argument>Registration</argument>
+                <argument>Default</argument>
+              </argument>
+            </argument>
+            <argument key="template">null</argument>
+          </argument>
+          <argument key="profile" type="collection">
+            <argument key="form" type="collection">
+              <argument key="type">null</argument>
+              <argument key="name">fos_user_profile_form</argument>
+              <argument key="validation_groups" type="collection">
+                <argument>Profile</argument>
+                <argument>Default</argument>
+              </argument>
+            </argument>
+            <argument key="template">null</argument>
+          </argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="pugx_multi_user.registration_manager" class="PUGX\MultiUserBundle\Controller\RegistrationManager">
+      <argument type="service" id="pugx_user.manager.user_discriminator"/>
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="pugx_multi_user.registration_controller"/>
+      <argument type="service" id="fos_user.registration.form.factory"/>
+    </service>
+    <service id="pugx_multi_user.profile_manager" class="PUGX\MultiUserBundle\Controller\ProfileManager">
+      <argument type="service" id="pugx_user.manager.user_discriminator"/>
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="pugx_multi_user.profile_controller"/>
+      <argument type="service" id="fos_user.profile.form.factory"/>
+    </service>
+    <service id="pugx_multi_user.registration_controller" class="FOS\UserBundle\Controller\RegistrationController"/>
+    <service id="pugx_multi_user.profile_controller" class="FOS\UserBundle\Controller\ProfileController"/>
+    <service id="pugx_multi_user.registration_form_factory" class="PUGX\MultiUserBundle\Form\FormFactory">
+      <argument type="service" id="pugx_user.manager.user_discriminator"/>
+      <argument type="service" id="form.factory"/>
+      <argument>registration</argument>
+    </service>
+    <service id="pugx_multi_user.profile_form_factory" class="PUGX\MultiUserBundle\Form\FormFactory">
+      <argument type="service" id="pugx_user.manager.user_discriminator"/>
+      <argument type="service" id="form.factory"/>
+      <argument>profile</argument>
+    </service>
+    <service id="pugx_multi_user.listener.authentication" class="PUGX\MultiUserBundle\Listener\AuthenticationListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="pugx_user.manager.user_discriminator"/>
+    </service>
+    <service id="pugx_multi_user.orm.validator.unique" class="PUGX\MultiUserBundle\Validator\Constraints\UniqueEntityValidator">
+      <tag name="validator.constraint_validator" alias="pugx.orm.validator.unique"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="pugx_user.manager.orm_user_manager" class="PUGX\MultiUserBundle\Doctrine\UserManager">
+      <argument type="service" id="security.encoder_factory"/>
+      <argument type="service" id="fos_user.util.email_canonicalizer"/>
+      <argument type="service" id="fos_user.util.email_canonicalizer"/>
+      <argument type="service" id="fos_user.entity_manager"/>
+      <argument>Superjobs\UserBundle\Entity\User</argument>
+      <argument type="service" id="pugx_user.manager.user_discriminator"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
       <argument>null</argument>
       <argument>UTF-8</argument>
+      <argument type="service" id="request_stack"/>
+      <argument>null</argument>
     </service>
     <service id="debug.dump_listener" class="Symfony\Component\HttpKernel\EventListener\DumpListener">
       <tag name="kernel.event_subscriber"/>
@@ -4331,6 +4802,10 @@
       <call method="setMaxString">
         <argument>-1</argument>
       </call>
+    </service>
+    <service id="var_dumper.cli_dumper" class="Symfony\Component\VarDumper\Dumper\CliDumper">
+      <argument>null</argument>
+      <argument>UTF-8</argument>
     </service>
     <service id="web_profiler.controller.profiler" class="Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController">
       <argument type="service" id="router" on-invalid="null"/>
@@ -4413,7 +4888,7 @@
       <argument>2</argument>
       <argument>bottom</argument>
       <argument type="service" id="router" on-invalid="ignore"/>
-      <argument>^/bundles|^/_wdt</argument>
+      <argument>^/(app(_[\w]+)?\.php/)?_wdt</argument>
     </service>
     <service id="sensio_distribution.webconfigurator" class="Sensio\Bundle\DistributionBundle\Configurator\Configurator">
       <argument>/var/www/html/superjobs/app</argument>
@@ -4563,6 +5038,16 @@
       <argument>100</argument>
       <argument>true</argument>
     </service>
+    <service id="fos_user.registration.form.factory" class="PUGX\MultiUserBundle\Form\FormFactory">
+      <argument type="service" id="pugx_user.manager.user_discriminator"/>
+      <argument type="service" id="form.factory"/>
+      <argument>registration</argument>
+    </service>
+    <service id="fos_user.profile.form.factory" class="PUGX\MultiUserBundle\Form\FormFactory">
+      <argument type="service" id="pugx_user.manager.user_discriminator"/>
+      <argument type="service" id="form.factory"/>
+      <argument>profile</argument>
+    </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
       <argument>/var/www/html/superjobs/app/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
@@ -4595,7 +5080,6 @@
           <argument key="logout_url">templating.helper.logout_url</argument>
           <argument key="security">templating.helper.security</argument>
           <argument key="assetic">assetic.helper.dynamic</argument>
-          <argument key="knp_pagination">knp_paginator.templating.helper.pagination</argument>
         </argument>
       </call>
     </service>
@@ -4690,12 +5174,12 @@
         <argument>FOSUser</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/superjobs/vendor/stfalcon/tinymce-bundle/Stfalcon/Bundle/TinymceBundle/Resources/views</argument>
-        <argument>StfalconTinymce</argument>
+        <argument>/var/www/html/superjobs/vendor/knplabs/knp-paginator-bundle/Resources/views</argument>
+        <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
-        <argument>/var/www/html/superjobs/vendor/knplabs/knp-paginator-bundle/Knp/Bundle/PaginatorBundle/Resources/views</argument>
-        <argument>KnpPaginator</argument>
+        <argument>/var/www/html/superjobs/vendor/genemu/form-bundle/Genemu/Bundle/FormBundle/Resources/views</argument>
+        <argument>GenemuForm</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -4808,13 +5292,6 @@
     <service id="fos_user.util.token_generator" class="FOS\UserBundle\Util\TokenGenerator">
       <argument type="service" id="logger" on-invalid="ignore"/>
     </service>
-    <service id="fos_user.user_manager" class="FOS\UserBundle\Doctrine\UserManager">
-      <argument type="service" id="security.encoder_factory"/>
-      <argument type="service" id="fos_user.util.email_canonicalizer"/>
-      <argument type="service" id="fos_user.util.email_canonicalizer"/>
-      <argument type="service" id="fos_user.entity_manager"/>
-      <argument>Superjobs\UserBundle\Entity\User</argument>
-    </service>
     <service id="fos_user.group_manager" class="FOS\UserBundle\Doctrine\GroupManager">
       <argument type="service" id="fos_user.entity_manager"/>
       <argument>Superjobs\UserBundle\Entity\Groups</argument>
@@ -4834,6 +5311,9 @@
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
     <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.email_canonicalizer"/>
+    <service id="fos_user.user_manager" alias="pugx_user.manager.orm_user_manager"/>
+    <service id="pugx_user_discriminator" alias="pugx_user.manager.user_discriminator"/>
+    <service id="pugx_user_manager" alias="pugx_user.manager.orm_user_manager"/>
     <service id="sensio.distribution.webconfigurator" alias="sensio_distribution.webconfigurator"/>
     <service id="console.command.sensiolabs_security_command_securitycheckercommand" alias="sensio_distribution.security_checker.command"/>
   </services>

@@ -127,6 +127,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/register')) {
+            // applicant_registration
+            if ($pathinfo === '/register/Recruiter') {
+                return array (  '_controller' => 'Superjobs\\UserBundle\\Controller\\RegistrationApplicantController::registerAction',  '_route' => 'applicant_registration',);
+            }
+
+            // recruiter_registration
+            if ($pathinfo === '/register/Applicant') {
+                return array (  '_controller' => 'Superjobs\\UserBundle\\Controller\\RegistrationRecruiterController::registerAction',  '_route' => 'recruiter_registration',);
+            }
+
+        }
+
         // superjobs_home_homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -136,20 +149,20 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\MainController::indexAction',  '_route' => 'superjobs_home_homepage',);
         }
 
-        if (0 === strpos($pathinfo, '/recuiter')) {
+        if (0 === strpos($pathinfo, '/recruiter')) {
             // superjobs_home_recruiter_intro
-            if ($pathinfo === '/recuiter/intro') {
-                return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\RecuiterController::introAction',  '_route' => 'superjobs_home_recruiter_intro',);
+            if ($pathinfo === '/recruiter/intro') {
+                return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\RecruiterController::introAction',  '_route' => 'superjobs_home_recruiter_intro',);
             }
 
             // superjobs_home_recruiter_add
-            if ($pathinfo === '/recuiter/add') {
+            if ($pathinfo === '/recruiter/add') {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                     goto not_superjobs_home_recruiter_add;
                 }
 
-                return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\RecuiterController::addAction',  '_route' => 'superjobs_home_recruiter_add',);
+                return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\RecruiterController::addAction',  '_route' => 'superjobs_home_recruiter_add',);
             }
             not_superjobs_home_recruiter_add:
 
@@ -162,7 +175,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 goto not_superjobs_home_recruiter_job_details;
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'superjobs_home_recruiter_job_details')), array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\RecuiterController::detailsAction',  'id' => 1,));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'superjobs_home_recruiter_job_details')), array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\RecruiterController::detailsAction',  'id' => 1,));
         }
         not_superjobs_home_recruiter_job_details:
 
@@ -373,61 +386,85 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
         not_fos_user_change_password:
 
-        if (0 === strpos($pathinfo, '/group')) {
-            // fos_user_group_list
-            if ($pathinfo === '/group/list') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_group_list;
+        if (0 === strpos($pathinfo, '/g')) {
+            if (0 === strpos($pathinfo, '/group')) {
+                // fos_user_group_list
+                if ($pathinfo === '/group/list') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_fos_user_group_list;
+                    }
+
+                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::listAction',  '_route' => 'fos_user_group_list',);
+                }
+                not_fos_user_group_list:
+
+                // fos_user_group_new
+                if ($pathinfo === '/group/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_fos_user_group_new;
+                    }
+
+                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::newAction',  '_route' => 'fos_user_group_new',);
+                }
+                not_fos_user_group_new:
+
+                // fos_user_group_show
+                if (preg_match('#^/group/(?P<groupName>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_fos_user_group_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_group_show')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::showAction',));
+                }
+                not_fos_user_group_show:
+
+                // fos_user_group_edit
+                if (preg_match('#^/group/(?P<groupName>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_fos_user_group_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_group_edit')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::editAction',));
+                }
+                not_fos_user_group_edit:
+
+                // fos_user_group_delete
+                if (preg_match('#^/group/(?P<groupName>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_fos_user_group_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_group_delete')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::deleteAction',));
+                }
+                not_fos_user_group_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/genemu')) {
+                // genemu_captcha_refresh
+                if ($pathinfo === '/genemu-captcha-refresh') {
+                    return array (  '_controller' => 'Genemu\\Bundle\\FormBundle\\Controller\\Base64Controller::refreshCaptchaAction',  '_route' => 'genemu_captcha_refresh',);
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::listAction',  '_route' => 'fos_user_group_list',);
-            }
-            not_fos_user_group_list:
+                if (0 === strpos($pathinfo, '/genemu_')) {
+                    // genemu_base64
+                    if ($pathinfo === '/genemu_base64') {
+                        return array (  '_controller' => 'Genemu\\Bundle\\FormBundle\\Controller\\Base64Controller::base64Action',  '_route' => 'genemu_base64',);
+                    }
 
-            // fos_user_group_new
-            if ($pathinfo === '/group/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_fos_user_group_new;
+                    // genemu_upload
+                    if ($pathinfo === '/genemu_upload') {
+                        return array (  '_controller' => 'Genemu\\Bundle\\FormBundle\\Controller\\UploadController::uploadAction',  '_route' => 'genemu_upload',);
+                    }
+
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::newAction',  '_route' => 'fos_user_group_new',);
             }
-            not_fos_user_group_new:
-
-            // fos_user_group_show
-            if (preg_match('#^/group/(?P<groupName>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_group_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_group_show')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::showAction',));
-            }
-            not_fos_user_group_show:
-
-            // fos_user_group_edit
-            if (preg_match('#^/group/(?P<groupName>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_fos_user_group_edit;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_group_edit')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::editAction',));
-            }
-            not_fos_user_group_edit:
-
-            // fos_user_group_delete
-            if (preg_match('#^/group/(?P<groupName>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_group_delete;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_group_delete')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::deleteAction',));
-            }
-            not_fos_user_group_delete:
 
         }
 

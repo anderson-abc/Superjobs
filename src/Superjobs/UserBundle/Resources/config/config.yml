@@ -1,37 +1,35 @@
 ## YAML Template.
-#---
-# Acme/UserBundle/Resources/config/config.yml
 fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Superjobs\UserBundle\Entity\User
     service:
         user_manager: pugx_user_manager
-        
+                
 pugx_multi_user:
     users:
-        Recuiter:
-            entity: 
-                class: Superjobs\UserBundle\Entity\Recuiter
-#          factory: 
-            registration:
-                form: 
-                    type: Superjobs\UserBundle\Form\Type\RegistrationRecuiterFormType
-                    name: fos_user_registration_form
-                    validation_groups:  [Registration, Default]
-                template: SuperjobsUserBundle:Registration:Recuiter.form.html.twig
-            profile:
-                form:
-                    type: Recuiter\UserBundle\Form\Type\ProfileRecuiterFormType
-                    name: fos_user_profile_form
-                    validation_groups:  [Profile, Default] 
         Applicant:
             entity: 
                 class: Superjobs\UserBundle\Entity\Applicant
+#          factory: 
             registration:
                 form: 
                     type: Superjobs\UserBundle\Form\Type\RegistrationApplicantFormType
-                template: SuperjobsUserBundle:Registration:Applicant.form.html.twig
+                    name: applicant_registration_form
+                    validation_groups:  [Registration, Default]
+                template: SuperjobsUserBundle:Registration:applicant.form.html.twig
+            profile:
+                form:
+                    type: Superjobs\UserBundle\Form\Type\ProfileApplicantFormType
+                    name: fos_user_profile_form
+                    validation_groups:  [Profile, Default] 
+        Recruiter:
+            entity: 
+                class: Superjobs\UserBundle\Entity\Recruiter
+            registration:
+                form: 
+                    type: Superjobs\UserBundle\Form\Type\RegistrationRecruiterFormType
+                template: SuperjobsUserBundle:Registration:recruiter.form.html.twig
             profile:
                 form: 
-                    type: Superjobs\UserBundle\Form\Type\ProfileApplicantFormType
+                    type: Superjobs\UserBundle\Form\Type\ProfileRecruiterFormType

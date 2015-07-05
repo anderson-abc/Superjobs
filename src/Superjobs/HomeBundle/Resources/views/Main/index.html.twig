@@ -30,8 +30,8 @@
 <div class="count">
     {{ pagination.getTotalItemCount }} Offres d'emploi
 </div>
-    <div class="row">  
-        <div class="col-xs-12 col-md-8">
+<div class="row">  
+    <div class="col-xs-12 col-md-8">
 {% for article in pagination %}
     <div class="items">
     <div class="row">    
@@ -53,17 +53,16 @@
     </div>
 <hr style="margin:0px;">
 {% endfor %}
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <img src="{{ asset('bundles/superjobshome/img/publicité.jpg')}}" width="100%">
-            
-        </div>
+    </div>
+    <div class="col-xs-6 col-md-4">
+        <img src="{{ asset('bundles/superjobshome/img/publicité.jpg')}}" width="100%">
+    </div>
 </div>
-        <center>
+<center>
 <div class="pagination">
     {{ knp_pagination_render(pagination, "", {}, { "prev_label": "Previous", "next_label": "Next", "first_label": "First", "last_label": "Last"}) }}
 </div>
-        </center>
+</center>
 
 <style>
 .items:hover {
