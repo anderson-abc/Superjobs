@@ -3,9 +3,9 @@
 #     defaults: { _controller: SuperjobsUserBundle:Default:index }
 
 applicant_registration:
-    pattern:  /register/Recruiter
+    pattern:  /register/Applicant
     defaults: { _controller: SuperjobsUserBundle:RegistrationApplicant:register }
 
 recruiter_registration:
-    pattern:  /register/Applicant
+    pattern:  /register/Recruiter
     defaults: { _controller: SuperjobsUserBundle:RegistrationRecruiter:register }

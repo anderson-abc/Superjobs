@@ -129,12 +129,12 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         if (0 === strpos($pathinfo, '/register')) {
             // applicant_registration
-            if ($pathinfo === '/register/Recruiter') {
+            if ($pathinfo === '/register/Applicant') {
                 return array (  '_controller' => 'Superjobs\\UserBundle\\Controller\\RegistrationApplicantController::registerAction',  '_route' => 'applicant_registration',);
             }
 
             // recruiter_registration
-            if ($pathinfo === '/register/Applicant') {
+            if ($pathinfo === '/register/Recruiter') {
                 return array (  '_controller' => 'Superjobs\\UserBundle\\Controller\\RegistrationRecruiterController::registerAction',  '_route' => 'recruiter_registration',);
             }
 
