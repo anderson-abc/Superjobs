@@ -26,4 +26,18 @@ class MainController extends Controller
             'pagination' => $pagination
                 ));
     }
+    
+    function detailsAction($id, Request $request){
+
+        $id = $request->query->get('tag');
+        //$em = $this->getDoctrine()->getEntityManager();
+        $job = $this->getDoctrine()->getRepository("SuperjobsHomeBundle:Jobs")->findOneBy(array('id'=>$id));
+        if (!$job) {
+            throw $this->createNotFoundException(
+                'Ce job n\'existe plus : '.$id
+            );
+        }               
+        return $this->render('SuperjobsHomeBundle:Main:details.html.twig',
+            array('job' => $job));
+    }
 }

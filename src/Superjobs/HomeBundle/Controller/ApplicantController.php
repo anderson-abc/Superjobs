@@ -7,6 +7,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ApplicantController extends Controller
 {
+    public function introAction()
+    {             
+        return $this->render('SuperjobsHomeBundle:Applicant:intro.html.twig');
+    }
     public function profileAction()
     {             
         return $this->render('SuperjobsHomeBundle:Applicant:Profile.html.twig');

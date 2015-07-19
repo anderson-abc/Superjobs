@@ -1,151 +1,160 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    
-<!--######################################################################################
-      _                _                                  _                     _
-   __| | _____   _____| | ___  _ __  _ __ ___   ___ _ __ | |_    __ _  ___  ___| | _____
-  / _` |/ _ \ \ / / _ \ |/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __|  / _` |/ _ \/ _ \ |/ / __|
- | (_| |  __/\ V /  __/ | (_) | |_) | | | | | |  __/ | | | |_  | (_| |  __/  __/   <\__ \
-  \__,_|\___| \_/ \___|_|\___/| .__/|_| |_| |_|\___|_| |_|\__|  \__, |\___|\___|_|\_\___/
-                              |_|                               |___/
-#######################################################################################-->
+    <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Superjobs, recrutements, jobs, cv, informatique">
-    <meta name="author" content="Irmasoft">
-    <link href="{{ asset('bundles/superjobshome/css/bootstrap.css')}}" rel="stylesheet">
-    <link href="{{ asset('bundles/superjobshome/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('bundles/superjobshome/css/Calendar.css')}}" rel="stylesheet">
-    <link href="{{ asset('bundles/superjobshome/css/one-page-wonder.css')}}" rel="stylesheet">
-    <link href="{{ asset('bundles/superjobshome/css/sticky-footer-navbar.css')}}" rel="stylesheet">
-    
-    <title>Superjobs - Site de recrutement </title>
+        <!--######################################################################################
+              _                _                                  _                     _
+           __| | _____   _____| | ___  _ __  _ __ ___   ___ _ __ | |_    __ _  ___  ___| | _____
+          / _` |/ _ \ \ / / _ \ |/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __|  / _` |/ _ \/ _ \ |/ / __|
+         | (_| |  __/\ V /  __/ | (_) | |_) | | | | | |  __/ | | | |_  | (_| |  __/  __/   <\__ \
+          \__,_|\___| \_/ \___|_|\___/| .__/|_| |_| |_|\___|_| |_|\__|  \__, |\___|\___|_|\_\___/
+                                      |_|                               |___/
+        #######################################################################################-->
 
-<nav class="navbar navbar-default navbar-fixed-top" style="box-shadow: 0px 3px 5px 0px rgba(102, 102, 102, 0.5);">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ path("superjobs_home_homepage") }}">Home</a>
-    </div>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Superjobs, recrutements, jobs, cv, informatique">
+        <meta name="author" content="Irmasoft">
+        <link href="{{ asset('bundles/superjobshome/css/bootstrap.css')}}" rel="stylesheet">
+        <link href="{{ asset('bundles/superjobshome/css/font-awesome.min.css')}}" rel="stylesheet">
+        <link href="{{ asset('bundles/superjobshome/css/Calendar.css')}}" rel="stylesheet">
+        <link href="{{ asset('bundles/superjobshome/css/one-page-wonder.css')}}" rel="stylesheet">
+        <link href="{{ asset('bundles/superjobshome/css/sticky-footer-navbar.css')}}" rel="stylesheet">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+        <title>Superjobs - Site de recrutement </title>
 
-              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            { {{ app.user.username }} } <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li>
-                <a href="{{ path('fos_user_profile_show') }}">
-                  Mon compte
-                </a>
-            </li>
-            <li>
-              <a href="{{ path('fos_user_security_logout') }}">
-                  {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-              </a>
-            </li>
-          </ul>
-        </li>
-
-              {% endif %}
-        <li>
-              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-              {% else %}
-                  <li>
-                    <a href="{{ path('fos_user_security_login') }}">
-                      {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
-                    </a>
-                  </li>
-              {% endif %}
-        </li>
-        <li>
-          <div>
-              {% block fos_user_content %}
-              {% endblock fos_user_content %}
-          </div>
-        </li>
-      </ul>
-
-
-      <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="{{ path('superjobs_home_recruiter_intro') }}">
-            Entreprise
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-</head>
-<body>
-  <br/><br/>
-  <div class="container">
-    
-    {% block container %}  
-    {% endblock %}     
-  </div>
-    <footer class="footer" style="padding-top:  50px;">
-      <div class="container">          
-        <div class="row">
-            <div class="col-md-3">                
-                <b>Home</b><br/>
-                A propos<br/>
-                CGU<br/>
-                Aide / FAQ<br/>
-                Press <br/>
-                Contact<br/>
+    <nav class="navbar navbar-default navbar-fixed-top" style="box-shadow: 0px 3px 5px 0px rgba(102, 102, 102, 0.5);">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                {#      <a class="navbar-brand" href="{{ path("superjobs_home_homepage") }}">Home</a>#}
             </div>
-            <div class="col-md-3">
-                <b>Candidat</b><br/>
-                Chercher un offre d'emploi<br/>
-                Liste des entreprise qui recrutent<br/>
-                Optimiser mes recherches<br/>
-                Créer mon profil<br/>
-                Je m'entraine<br/>
-            </div>
-            <div class="col-md-3">
-                <b>Entreprise</b><br/>
-                Lancer une offre<br/>
-                Selectionner des profils<br/>
-                Passer un test à un candidat<br/>
-                Télétravail<br/>
-            </div>
-            <div class="col-md-3">
-                Newsletter<br/>
-                <input type="text" class=""><br/>
-                Twitter - Facebook - Google+<br/>
-                Feedback
-                
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                { {{ app.user.username }} } <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ path('fos_user_profile_show') }}">
+                                        Mon compte
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}">
+                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}                    
+                        <li>
+                        <li>
+                            <a href="{{ path('superjobs_home_intro_template') }}">
+                                CANDIDAT
+                            </a>
+                        </li>
+                    {% endif %}
+                    {#              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                  {% else %}
+                                      <li>
+                                        <a href="{{ path('fos_user_security_login') }}">
+                                          {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                                        </a>
+                                      </li>
+                                  {% endif %}#}
+                    </li>
+                    <li>
+                        <div>
+                            {% block fos_user_content %}
+                            {% endblock fos_user_content %}
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-center" style="margin-left: 37%;">
+                    <li>
+                        <a href="{{ path('superjobs_home_homepage') }}">
+                            SUPERJOBS
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{ path('superjobs_home_recruiter_intro') }}">
+                            ENTREPRISE
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-          <hr>
-        <center>
-            Copyright © 2015 Tous droits réservés.<br/>Made with ♥ by <a href="http://www.irmasoft.com" target="blanc">Irmasoft.com</a>
-        </center>
-      </div>
+    </nav>
+</head>
+<body>
+    <br/><br/>
+    <div class="container">
+
+        {% block container %}  
+        {% endblock %}     
+    </div>
+    <footer class="footer" style="padding-top:  50px;">
+        <div class="container">          
+            <div class="row">
+                <div class="col-md-3">
+                    <b>Home</b><br/>
+                    A propos<br/>
+                    CGU<br/>
+                    Aide / FAQ<br/>
+                    Press <br/>
+                    Contact<br/>
+                </div>
+                <div class="col-md-3">
+                    <b>Candidat</b><br/>
+                    Chercher un offre d'emploi<br/>
+                    Liste des entreprise qui recrutent<br/>
+                    Optimiser mes recherches<br/>
+                    Créer mon profil<br/>
+                    Je m'entraine<br/>
+                </div>
+                <div class="col-md-3">
+                    <b>Entreprise</b><br/>
+                    Lancer une offre<br/>
+                    Selectionner des profils<br/>
+                    Passer un test à un candidat<br/>
+                    Télétravail<br/>
+                </div>
+                <div class="col-md-3">
+                    Newsletter<br/>
+                    <input type="text" class=""><br/>
+                    Twitter - Facebook - Google+<br/>
+                    Feedback
+
+                </div>
+            </div>
+            <hr>
+            <center>
+                Copyright © 2015 Tous droits réservés.<br/>Made with ♥ by <a href="http://www.irmasoft.com" target="blanc">Irmasoft.com</a>
+            </center>
+        </div>
     </footer>
     <br/>
 
-    
-    
-{#  <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>#}
+
+
+    {#  <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>#}
     <script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
     <script src="{{ asset('bundles/superjobshome/js/jquery.js')}}"></script>
-{#    <script src="{{ asset('bundles/superjobshome/js/tinymce.min.js')}}"></script>#}
+    {#    <script src="{{ asset('bundles/superjobshome/js/tinymce.min.js')}}"></script>#}
     <script src="{{ asset('bundles/superjobshome/js/jquery.uploadify.v2.1.4.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/jquery.countTo.js')}}"></script>

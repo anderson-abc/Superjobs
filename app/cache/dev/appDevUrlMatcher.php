@@ -136,6 +136,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\MainController::indexAction',  '_route' => 'superjobs_home_homepage',);
         }
 
+        // superjobs_home_recruiter_job_details
+        if (0 === strpos($pathinfo, '/jobs') && preg_match('#^/jobs(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_superjobs_home_recruiter_job_details;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'superjobs_home_recruiter_job_details')), array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\MainController::detailsAction',  'id' => 1,));
+        }
+        not_superjobs_home_recruiter_job_details:
+
         if (0 === strpos($pathinfo, '/recruiter')) {
             // superjobs_home_recruiter_intro
             if ($pathinfo === '/recruiter/intro') {
@@ -155,19 +166,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // superjobs_home_recruiter_job_details
-        if (0 === strpos($pathinfo, '/jobs') && preg_match('#^/jobs(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
-            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                goto not_superjobs_home_recruiter_job_details;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'superjobs_home_recruiter_job_details')), array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\RecruiterController::detailsAction',  'id' => 1,));
-        }
-        not_superjobs_home_recruiter_job_details:
-
         if (0 === strpos($pathinfo, '/app')) {
             if (0 === strpos($pathinfo, '/applicant')) {
+                // superjobs_home_intro_template
+                if ($pathinfo === '/applicant/intro') {
+                    return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\ApplicantController::introAction',  '_route' => 'superjobs_home_intro_template',);
+                }
+
                 // superjobs_home_resume_template
                 if ($pathinfo === '/applicant/profile') {
                     return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\ApplicantController::profileAction',  '_route' => 'superjobs_home_resume_template',);
