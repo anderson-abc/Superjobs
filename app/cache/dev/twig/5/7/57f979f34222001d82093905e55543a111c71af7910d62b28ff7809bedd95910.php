@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Security:login.html.twig */
+/* SuperjobsUserBundle:Security:login.html.twig */
 class __TwigTemplate_57f979f34222001d82093905e55543a111c71af7910d62b28ff7809bedd95910 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_57f979f34222001d82093905e55543a111c71af7910d62b28ff7809bedd
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("FOSUserBundle::layout.html.twig", "FOSUserBundle:Security:login.html.twig", 1);
+        $this->parent = $this->loadTemplate("FOSUserBundle::layout.html.twig", "SuperjobsUserBundle:Security:login.html.twig", 1);
         $this->blocks = array(
             'fos_user_content' => array($this, 'block_fos_user_content'),
         );
@@ -119,7 +119,7 @@ class __TwigTemplate_57f979f34222001d82093905e55543a111c71af7910d62b28ff7809bedd
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Security:login.html.twig";
+        return "SuperjobsUserBundle:Security:login.html.twig";
     }
 
     public function isTraitable()

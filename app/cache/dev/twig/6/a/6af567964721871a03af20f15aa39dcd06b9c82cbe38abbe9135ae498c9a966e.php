@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Resetting:request.html.twig */
+/* SuperjobsUserBundle:Resetting:request.html.twig */
 class __TwigTemplate_6af567964721871a03af20f15aa39dcd06b9c82cbe38abbe9135ae498c9a966e extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_6af567964721871a03af20f15aa39dcd06b9c82cbe38abbe9135ae498c9
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("FOSUserBundle::layout.html.twig", "FOSUserBundle:Resetting:request.html.twig", 1);
+        $this->parent = $this->loadTemplate("FOSUserBundle::layout.html.twig", "SuperjobsUserBundle:Resetting:request.html.twig", 1);
         $this->blocks = array(
             'fos_user_content' => array($this, 'block_fos_user_content'),
         );
@@ -28,12 +28,12 @@ class __TwigTemplate_6af567964721871a03af20f15aa39dcd06b9c82cbe38abbe9135ae498c9
     public function block_fos_user_content($context, array $blocks = array())
     {
         // line 4
-        $this->loadTemplate("FOSUserBundle:Resetting:request_content.html.twig", "FOSUserBundle:Resetting:request.html.twig", 4)->display($context);
+        $this->loadTemplate("FOSUserBundle:Resetting:request_content.html.twig", "SuperjobsUserBundle:Resetting:request.html.twig", 4)->display($context);
     }
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Resetting:request.html.twig";
+        return "SuperjobsUserBundle:Resetting:request.html.twig";
     }
 
     public function isTraitable()

@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Resetting:request_content.html.twig */
+/* SuperjobsUserBundle:Resetting:request_content.html.twig */
 class __TwigTemplate_e556b9433b70b50aecaac89b14afe0b6b2e91a4380cd6816fa46f1b5bb8b9f0d extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -65,7 +65,7 @@ class __TwigTemplate_e556b9433b70b50aecaac89b14afe0b6b2e91a4380cd6816fa46f1b5bb8
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Resetting:request_content.html.twig";
+        return "SuperjobsUserBundle:Resetting:request_content.html.twig";
     }
 
     public function isTraitable()
