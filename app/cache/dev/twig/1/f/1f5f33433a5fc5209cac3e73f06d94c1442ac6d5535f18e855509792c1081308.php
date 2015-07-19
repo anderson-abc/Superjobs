@@ -126,7 +126,7 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
             echo "                  <li>
                     <a href=\"";
             // line 67
-            echo $this->env->getExtension('routing')->getPath("recruiter_registration");
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
             echo "\">
                       ";
             // line 68
@@ -181,7 +181,7 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
                 <b>Home</b><br/>
                 A propos<br/>
                 CGU<br/>
-                FAQ<br/>
+                Aide / FAQ<br/>
                 Press <br/>
                 Contact<br/>
             </div>

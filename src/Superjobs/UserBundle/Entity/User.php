@@ -11,11 +11,8 @@ use FOS\UserBundle\Model\User as BaseUser;
  *
  * @ORM\Table(name="fos_user")
  * @ORM\Entity
- * @ORM\InheritanceType("JOINED")
- * @ORM\DiscriminatorColumn(name="type", type="string")
- * @ORM\DiscriminatorMap({"Applicant" = "Applicant", "Recruiter" = "Recruiter"})
  */
-abstract class User extends BaseUser
+class User extends BaseUser
 {
     /**
      * @ORM\Id
@@ -23,4 +20,20 @@ abstract class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+}
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

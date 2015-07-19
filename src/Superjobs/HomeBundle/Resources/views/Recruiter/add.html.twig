@@ -8,14 +8,11 @@
     </centre>
 
 <form role="form" action="{{ path('superjobs_home_recruiter_add') }}" method="post"{{ form_enctype(form) }} >
-    {# {{ tinymce_init() }} #}
-
 
 {{ form_errors(form) }}
   <div class="form-group">
     <label for="exampleInputEmail1">
         Catégorie
-{#        {{ form_label(form.idCategory) }}#}
     {{ form_widget(form.Categories) }}
     </label>
     {{ form_errors(form.Categories) }}

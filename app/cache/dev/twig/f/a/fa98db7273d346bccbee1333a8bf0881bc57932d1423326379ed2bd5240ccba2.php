@@ -1,6 +1,6 @@
 <?php
 
-/* SuperjobsUserBundle:Registration:register_content.html.twig */
+/* FOSUserBundle:Registration:register_content.html.twig */
 class __TwigTemplate_fa98db7273d346bccbee1333a8bf0881bc57932d1423326379ed2bd5240ccba2 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -133,7 +133,7 @@ class __TwigTemplate_fa98db7273d346bccbee1333a8bf0881bc57932d1423326379ed2bd5240
 
     public function getTemplateName()
     {
-        return "SuperjobsUserBundle:Registration:register_content.html.twig";
+        return "FOSUserBundle:Registration:register_content.html.twig";
     }
 
     public function isTraitable()

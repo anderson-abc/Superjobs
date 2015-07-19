@@ -17,12 +17,14 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
+            
             new Superjobs\HomeBundle\SuperjobsHomeBundle(),
             new Superjobs\UserBundle\SuperjobsUserBundle(),
+            
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
-            new PUGX\MultiUserBundle\PUGXMultiUserBundle(),
+//            new PUGX\MultiUserBundle\PUGXMultiUserBundle(),
         );
         
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

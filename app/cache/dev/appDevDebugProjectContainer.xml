@@ -4,7 +4,7 @@
     <parameter key="kernel.root_dir">/var/www/html/superjobs/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.name">ap_</parameter>
+    <parameter key="kernel.name">app</parameter>
     <parameter key="kernel.cache_dir">/var/www/html/superjobs/app/cache/dev</parameter>
     <parameter key="kernel.logs_dir">/var/www/html/superjobs/app/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
@@ -22,7 +22,6 @@
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
       <parameter key="GenemuFormBundle">Genemu\Bundle\FormBundle\GenemuFormBundle</parameter>
-      <parameter key="PUGXMultiUserBundle">PUGX\MultiUserBundle\PUGXMultiUserBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -712,64 +711,6 @@
     <parameter key="genemu.form.image.selected"></parameter>
     <parameter key="genemu.form.image.thumbnails" type="collection"/>
     <parameter key="genemu.form.image.filters" type="collection"/>
-    <parameter key="pugx_user_discriminator_users" type="collection">
-      <parameter key="Recruiter" type="collection">
-        <parameter key="entity" type="collection">
-          <parameter key="class">Superjobs\UserBundle\Entity\Recruiter</parameter>
-          <parameter key="factory">PUGX\MultiUserBundle\Model\UserFactory</parameter>
-        </parameter>
-        <parameter key="registration" type="collection">
-          <parameter key="form" type="collection">
-            <parameter key="type">null</parameter>
-            <parameter key="name">fos_user_registration_form</parameter>
-            <parameter key="validation_groups" type="collection">
-              <parameter>Registration</parameter>
-              <parameter>Default</parameter>
-            </parameter>
-          </parameter>
-          <parameter key="template">null</parameter>
-        </parameter>
-        <parameter key="profile" type="collection">
-          <parameter key="form" type="collection">
-            <parameter key="type">null</parameter>
-            <parameter key="name">fos_user_profile_form</parameter>
-            <parameter key="validation_groups" type="collection">
-              <parameter>Profile</parameter>
-              <parameter>Default</parameter>
-            </parameter>
-          </parameter>
-          <parameter key="template">null</parameter>
-        </parameter>
-      </parameter>
-      <parameter key="Applicant" type="collection">
-        <parameter key="entity" type="collection">
-          <parameter key="class">Superjobs\UserBundle\Entity\Applicant</parameter>
-          <parameter key="factory">PUGX\MultiUserBundle\Model\UserFactory</parameter>
-        </parameter>
-        <parameter key="registration" type="collection">
-          <parameter key="form" type="collection">
-            <parameter key="type">null</parameter>
-            <parameter key="name">fos_user_registration_form</parameter>
-            <parameter key="validation_groups" type="collection">
-              <parameter>Registration</parameter>
-              <parameter>Default</parameter>
-            </parameter>
-          </parameter>
-          <parameter key="template">null</parameter>
-        </parameter>
-        <parameter key="profile" type="collection">
-          <parameter key="form" type="collection">
-            <parameter key="type">null</parameter>
-            <parameter key="name">fos_user_profile_form</parameter>
-            <parameter key="validation_groups" type="collection">
-              <parameter>Profile</parameter>
-              <parameter>Default</parameter>
-            </parameter>
-          </parameter>
-          <parameter key="template">null</parameter>
-        </parameter>
-      </parameter>
-    </parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -1575,6 +1516,12 @@
       </call>
       <call method="addResource">
         <argument>xlf</argument>
+        <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.lt.xlf</argument>
+        <argument>lt</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
         <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sr_Cyrl.xlf</argument>
         <argument>sr_Cyrl</argument>
         <argument>security</argument>
@@ -1611,6 +1558,12 @@
       </call>
       <call method="addResource">
         <argument>xlf</argument>
+        <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.th.xlf</argument>
+        <argument>th</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
         <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.pt_PT.xlf</argument>
         <argument>pt_PT</argument>
         <argument>security</argument>
@@ -1619,6 +1572,18 @@
         <argument>xlf</argument>
         <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ar.xlf</argument>
         <argument>ar</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.hr.xlf</argument>
+        <argument>hr</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.id.xlf</argument>
+        <argument>id</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
@@ -1641,6 +1606,12 @@
       </call>
       <call method="addResource">
         <argument>xlf</argument>
+        <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.vi.xlf</argument>
+        <argument>vi</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
         <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.nl.xlf</argument>
         <argument>nl</argument>
         <argument>security</argument>
@@ -1659,8 +1630,20 @@
       </call>
       <call method="addResource">
         <argument>xlf</argument>
+        <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.bg.xlf</argument>
+        <argument>bg</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
         <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.az.xlf</argument>
         <argument>az</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.zh_CN.xlf</argument>
+        <argument>zh_CN</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
@@ -1673,6 +1656,12 @@
         <argument>xlf</argument>
         <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.it.xlf</argument>
         <argument>it</argument>
+        <argument>security</argument>
+      </call>
+      <call method="addResource">
+        <argument>xlf</argument>
+        <argument>/var/www/html/superjobs/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ja.xlf</argument>
+        <argument>ja</argument>
         <argument>security</argument>
       </call>
       <call method="addResource">
@@ -2783,7 +2772,6 @@
               <argument key="Symfony\Component\Validator\Constraints\EmailValidator">validator.email</argument>
               <argument key="security.validator.user_password">security.validator.user_password</argument>
               <argument key="doctrine.orm.validator.unique">doctrine.orm.validator.unique</argument>
-              <argument key="pugx.orm.validator.unique">pugx_multi_user.orm.validator.unique</argument>
             </argument>
           </service>
         </argument>
@@ -2815,7 +2803,7 @@
           <argument type="service">
             <service class="FOS\UserBundle\Validator\Initializer" public="false">
               <tag name="validator.initializer"/>
-              <argument type="service" id="pugx_user.manager.orm_user_manager"/>
+              <argument type="service" id="fos_user.user_manager"/>
             </service>
           </argument>
         </argument>
@@ -3215,10 +3203,6 @@
         <argument>FOS\UserBundle\EventListener\ResettingListener</argument>
       </call>
       <call method="addSubscriberService">
-        <argument>pugx_multi_user.listener.authentication</argument>
-        <argument>PUGX\MultiUserBundle\Listener\AuthenticationListener</argument>
-      </call>
-      <call method="addSubscriberService">
         <argument>debug.dump_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\DumpListener</argument>
       </call>
@@ -3309,7 +3293,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>55aae8019c3c3</argument>
+            <argument>55aafc36d927b5.86315564</argument>
           </service>
         </argument>
       </argument>
@@ -3667,7 +3651,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>55aae8019c3c3</argument>
+            <argument>55aafc36d927b5.86315564</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -4336,7 +4320,7 @@
     </service>
     <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
       <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="pugx_user.manager.orm_user_manager"/>
+      <argument type="service" id="fos_user.user_manager"/>
     </service>
     <service id="fos_user.security.login_manager" class="FOS\UserBundle\Security\LoginManager">
       <argument type="service" id="security.token_storage"/>
@@ -4345,10 +4329,10 @@
       <argument type="service" id="service_container"/>
     </service>
     <service id="fos_user.user_provider.username_email" class="FOS\UserBundle\Security\EmailUserProvider" public="false">
-      <argument type="service" id="pugx_user.manager.orm_user_manager"/>
+      <argument type="service" id="fos_user.user_manager"/>
     </service>
     <service id="fos_user.util.user_manipulator" class="FOS\UserBundle\Util\UserManipulator">
-      <argument type="service" id="pugx_user.manager.orm_user_manager"/>
+      <argument type="service" id="fos_user.user_manager"/>
     </service>
     <service id="fos_user.listener.authentication" class="FOS\UserBundle\EventListener\AuthenticationListener">
       <tag name="kernel.event_subscriber"/>
@@ -4364,13 +4348,31 @@
       <tag name="form.type" alias="fos_user_username"/>
       <argument type="service">
         <service class="FOS\UserBundle\Form\DataTransformer\UserToUsernameTransformer" public="false">
-          <argument type="service" id="pugx_user.manager.orm_user_manager"/>
+          <argument type="service" id="fos_user.user_manager"/>
         </service>
+      </argument>
+    </service>
+    <service id="fos_user.profile.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_profile_form</argument>
+      <argument>fos_user_profile</argument>
+      <argument type="collection">
+        <argument>Profile</argument>
+        <argument>Default</argument>
       </argument>
     </service>
     <service id="fos_user.profile.form.type" class="FOS\UserBundle\Form\Type\ProfileFormType">
       <tag name="form.type" alias="fos_user_profile"/>
       <argument>Superjobs\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.registration.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_registration_form</argument>
+      <argument>fos_user_registration</argument>
+      <argument type="collection">
+        <argument>Registration</argument>
+        <argument>Default</argument>
+      </argument>
     </service>
     <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
       <tag name="form.type" alias="fos_user_registration"/>
@@ -4681,107 +4683,6 @@
       <tag name="form.type" alias="genemu_jquerytokeninput_currency"/>
       <argument>currency</argument>
     </service>
-    <service id="pugx_user.manager.user_discriminator" class="PUGX\MultiUserBundle\Model\UserDiscriminator">
-      <argument type="service" id="session"/>
-      <argument type="collection">
-        <argument key="Recruiter" type="collection">
-          <argument key="entity" type="collection">
-            <argument key="class">Superjobs\UserBundle\Entity\Recruiter</argument>
-            <argument key="factory">PUGX\MultiUserBundle\Model\UserFactory</argument>
-          </argument>
-          <argument key="registration" type="collection">
-            <argument key="form" type="collection">
-              <argument key="type">null</argument>
-              <argument key="name">fos_user_registration_form</argument>
-              <argument key="validation_groups" type="collection">
-                <argument>Registration</argument>
-                <argument>Default</argument>
-              </argument>
-            </argument>
-            <argument key="template">null</argument>
-          </argument>
-          <argument key="profile" type="collection">
-            <argument key="form" type="collection">
-              <argument key="type">null</argument>
-              <argument key="name">fos_user_profile_form</argument>
-              <argument key="validation_groups" type="collection">
-                <argument>Profile</argument>
-                <argument>Default</argument>
-              </argument>
-            </argument>
-            <argument key="template">null</argument>
-          </argument>
-        </argument>
-        <argument key="Applicant" type="collection">
-          <argument key="entity" type="collection">
-            <argument key="class">Superjobs\UserBundle\Entity\Applicant</argument>
-            <argument key="factory">PUGX\MultiUserBundle\Model\UserFactory</argument>
-          </argument>
-          <argument key="registration" type="collection">
-            <argument key="form" type="collection">
-              <argument key="type">null</argument>
-              <argument key="name">fos_user_registration_form</argument>
-              <argument key="validation_groups" type="collection">
-                <argument>Registration</argument>
-                <argument>Default</argument>
-              </argument>
-            </argument>
-            <argument key="template">null</argument>
-          </argument>
-          <argument key="profile" type="collection">
-            <argument key="form" type="collection">
-              <argument key="type">null</argument>
-              <argument key="name">fos_user_profile_form</argument>
-              <argument key="validation_groups" type="collection">
-                <argument>Profile</argument>
-                <argument>Default</argument>
-              </argument>
-            </argument>
-            <argument key="template">null</argument>
-          </argument>
-        </argument>
-      </argument>
-    </service>
-    <service id="pugx_multi_user.registration_manager" class="PUGX\MultiUserBundle\Controller\RegistrationManager">
-      <argument type="service" id="pugx_user.manager.user_discriminator"/>
-      <argument type="service" id="service_container"/>
-      <argument type="service" id="pugx_multi_user.registration_controller"/>
-      <argument type="service" id="fos_user.registration.form.factory"/>
-    </service>
-    <service id="pugx_multi_user.profile_manager" class="PUGX\MultiUserBundle\Controller\ProfileManager">
-      <argument type="service" id="pugx_user.manager.user_discriminator"/>
-      <argument type="service" id="service_container"/>
-      <argument type="service" id="pugx_multi_user.profile_controller"/>
-      <argument type="service" id="fos_user.profile.form.factory"/>
-    </service>
-    <service id="pugx_multi_user.registration_controller" class="FOS\UserBundle\Controller\RegistrationController"/>
-    <service id="pugx_multi_user.profile_controller" class="FOS\UserBundle\Controller\ProfileController"/>
-    <service id="pugx_multi_user.registration_form_factory" class="PUGX\MultiUserBundle\Form\FormFactory">
-      <argument type="service" id="pugx_user.manager.user_discriminator"/>
-      <argument type="service" id="form.factory"/>
-      <argument>registration</argument>
-    </service>
-    <service id="pugx_multi_user.profile_form_factory" class="PUGX\MultiUserBundle\Form\FormFactory">
-      <argument type="service" id="pugx_user.manager.user_discriminator"/>
-      <argument type="service" id="form.factory"/>
-      <argument>profile</argument>
-    </service>
-    <service id="pugx_multi_user.listener.authentication" class="PUGX\MultiUserBundle\Listener\AuthenticationListener">
-      <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="pugx_user.manager.user_discriminator"/>
-    </service>
-    <service id="pugx_multi_user.orm.validator.unique" class="PUGX\MultiUserBundle\Validator\Constraints\UniqueEntityValidator">
-      <tag name="validator.constraint_validator" alias="pugx.orm.validator.unique"/>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id="pugx_user.manager.orm_user_manager" class="PUGX\MultiUserBundle\Doctrine\UserManager">
-      <argument type="service" id="security.encoder_factory"/>
-      <argument type="service" id="fos_user.util.email_canonicalizer"/>
-      <argument type="service" id="fos_user.util.email_canonicalizer"/>
-      <argument type="service" id="fos_user.entity_manager"/>
-      <argument>Superjobs\UserBundle\Entity\User</argument>
-      <argument type="service" id="pugx_user.manager.user_discriminator"/>
-    </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
@@ -5038,16 +4939,6 @@
       <argument>100</argument>
       <argument>true</argument>
     </service>
-    <service id="fos_user.registration.form.factory" class="PUGX\MultiUserBundle\Form\FormFactory">
-      <argument type="service" id="pugx_user.manager.user_discriminator"/>
-      <argument type="service" id="form.factory"/>
-      <argument>registration</argument>
-    </service>
-    <service id="fos_user.profile.form.factory" class="PUGX\MultiUserBundle\Form\FormFactory">
-      <argument type="service" id="pugx_user.manager.user_discriminator"/>
-      <argument type="service" id="form.factory"/>
-      <argument>profile</argument>
-    </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
       <argument>/var/www/html/superjobs/app/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
@@ -5292,6 +5183,13 @@
     <service id="fos_user.util.token_generator" class="FOS\UserBundle\Util\TokenGenerator">
       <argument type="service" id="logger" on-invalid="ignore"/>
     </service>
+    <service id="fos_user.user_manager" class="FOS\UserBundle\Doctrine\UserManager">
+      <argument type="service" id="security.encoder_factory"/>
+      <argument type="service" id="fos_user.util.email_canonicalizer"/>
+      <argument type="service" id="fos_user.util.email_canonicalizer"/>
+      <argument type="service" id="fos_user.entity_manager"/>
+      <argument>Superjobs\UserBundle\Entity\User</argument>
+    </service>
     <service id="fos_user.group_manager" class="FOS\UserBundle\Doctrine\GroupManager">
       <argument type="service" id="fos_user.entity_manager"/>
       <argument>Superjobs\UserBundle\Entity\Groups</argument>
@@ -5311,9 +5209,6 @@
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
     <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.email_canonicalizer"/>
-    <service id="fos_user.user_manager" alias="pugx_user.manager.orm_user_manager"/>
-    <service id="pugx_user_discriminator" alias="pugx_user.manager.user_discriminator"/>
-    <service id="pugx_user_manager" alias="pugx_user.manager.orm_user_manager"/>
     <service id="sensio.distribution.webconfigurator" alias="sensio_distribution.webconfigurator"/>
     <service id="console.command.sensiolabs_security_command_securitycheckercommand" alias="sensio_distribution.security_checker.command"/>
   </services>

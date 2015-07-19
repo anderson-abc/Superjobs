@@ -150,7 +150,9 @@ ini_set('session.cookie_lifetime', $lifetime);
 if ($destroy) {
 $this->metadataBag->stampNew();
 }
-return session_regenerate_id($destroy);
+$isRegenerated = session_regenerate_id($destroy);
+$this->loadSession();
+return $isRegenerated;
 }
 public function save()
 {
@@ -1625,14 +1627,13 @@ throw new \InvalidArgumentException(sprintf('The file "%s" does not exist.', $na
 }
 return $name;
 }
+$paths = $this->paths;
+if (null !== $currentPath) {
+array_unshift($paths, $currentPath);
+}
+$paths = array_unique($paths);
 $filepaths = array();
-if (null !== $currentPath && file_exists($file = $currentPath.DIRECTORY_SEPARATOR.$name)) {
-if (true === $first) {
-return $file;
-}
-$filepaths[] = $file;
-}
-foreach ($this->paths as $path) {
+foreach ($paths as $path) {
 if (file_exists($file = $path.DIRECTORY_SEPARATOR.$name)) {
 if (true === $first) {
 return $file;
@@ -1641,9 +1642,9 @@ $filepaths[] = $file;
 }
 }
 if (!$filepaths) {
-throw new \InvalidArgumentException(sprintf('The file "%s" does not exist (in: %s%s).', $name, null !== $currentPath ? $currentPath.', ':'', implode(', ', $this->paths)));
+throw new \InvalidArgumentException(sprintf('The file "%s" does not exist (in: %s).', $name, implode(', ', $paths)));
 }
-return array_values(array_unique($filepaths));
+return $filepaths;
 }
 private function isAbsolutePath($file)
 {
@@ -5023,9 +5024,34 @@ return @json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 return @json_encode($data);
 }
 if (version_compare(PHP_VERSION,'5.4.0','>=')) {
-return json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+$json = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+} else {
+$json = json_encode($data);
 }
-return json_encode($data);
+if ($json === false) {
+$this->throwEncodeError(json_last_error(), $data);
+}
+return $json;
+}
+private function throwEncodeError($code, $data)
+{
+switch ($code) {
+case JSON_ERROR_DEPTH:
+$msg ='Maximum stack depth exceeded';
+break;
+case JSON_ERROR_STATE_MISMATCH:
+$msg ='Underflow or the modes mismatch';
+break;
+case JSON_ERROR_CTRL_CHAR:
+$msg ='Unexpected control character found';
+break;
+case JSON_ERROR_UTF8:
+$msg ='Malformed UTF-8 characters, possibly incorrectly encoded';
+break;
+default:
+$msg ='Unknown error';
+}
+throw new \RuntimeException('JSON encoding failed: '.$msg.'. Encoding: '.var_export($data, true));
 }
 }
 }
@@ -5279,6 +5305,16 @@ parent::__construct($level, $bubble);
 if (is_resource($stream)) {
 $this->stream = $stream;
 } elseif (is_string($stream)) {
+$dir = $this->getDirFromStream($stream);
+if (null !== $dir && !is_dir($dir)) {
+$this->errorMessage = null;
+set_error_handler(array($this,'customErrorHandler'));
+$status = mkdir($dir, 0777, true);
+restore_error_handler();
+if (false === $status) {
+throw new \UnexpectedValueException(sprintf('There is no existing directory at "%s" and its not buildable: '.$this->errorMessage, $dir));
+}
+}
 $this->url = $stream;
 } else {
 throw new \InvalidArgumentException('A stream must either be a resource or a string.');
@@ -5321,7 +5357,18 @@ flock($this->stream, LOCK_UN);
 }
 private function customErrorHandler($code, $msg)
 {
-$this->errorMessage = preg_replace('{^fopen\(.*?\): }','', $msg);
+$this->errorMessage = preg_replace('{^(fopen|mkdir)\(.*?\): }','', $msg);
+}
+private function getDirFromStream($stream)
+{
+$pos = strpos($stream,'://');
+if ($pos === false) {
+return dirname($stream);
+}
+if ('file://'=== substr($stream, 0, 7)) {
+return dirname(substr($stream, 7));
+}
+return;
 }
 }
 }
@@ -5497,124 +5544,41 @@ public function getRecords()
 {
 return $this->records;
 }
-public function hasEmergency($record)
+protected function hasRecordRecords($level)
 {
-return $this->hasRecord($record, Logger::EMERGENCY);
-}
-public function hasAlert($record)
-{
-return $this->hasRecord($record, Logger::ALERT);
-}
-public function hasCritical($record)
-{
-return $this->hasRecord($record, Logger::CRITICAL);
-}
-public function hasError($record)
-{
-return $this->hasRecord($record, Logger::ERROR);
-}
-public function hasWarning($record)
-{
-return $this->hasRecord($record, Logger::WARNING);
-}
-public function hasNotice($record)
-{
-return $this->hasRecord($record, Logger::NOTICE);
-}
-public function hasInfo($record)
-{
-return $this->hasRecord($record, Logger::INFO);
-}
-public function hasDebug($record)
-{
-return $this->hasRecord($record, Logger::DEBUG);
-}
-public function hasEmergencyRecords()
-{
-return isset($this->recordsByLevel[Logger::EMERGENCY]);
-}
-public function hasAlertRecords()
-{
-return isset($this->recordsByLevel[Logger::ALERT]);
-}
-public function hasCriticalRecords()
-{
-return isset($this->recordsByLevel[Logger::CRITICAL]);
-}
-public function hasErrorRecords()
-{
-return isset($this->recordsByLevel[Logger::ERROR]);
-}
-public function hasWarningRecords()
-{
-return isset($this->recordsByLevel[Logger::WARNING]);
-}
-public function hasNoticeRecords()
-{
-return isset($this->recordsByLevel[Logger::NOTICE]);
-}
-public function hasInfoRecords()
-{
-return isset($this->recordsByLevel[Logger::INFO]);
-}
-public function hasDebugRecords()
-{
-return isset($this->recordsByLevel[Logger::DEBUG]);
+return isset($this->recordsByLevel[$level]);
 }
 protected function hasRecord($record, $level)
 {
-if (!isset($this->recordsByLevel[$level])) {
-return false;
-}
 if (is_array($record)) {
 $record = $record['message'];
 }
-foreach ($this->recordsByLevel[$level] as $rec) {
-if ($rec['message'] === $record) {
-return true;
-}
-}
-return false;
-}
-public function hasEmergencyThatContains($message)
-{
-return $this->hasRecordThatContains($message, Logger::EMERGENCY);
-}
-public function hasAlertThatContains($message)
-{
-return $this->hasRecordThatContains($message, Logger::ALERT);
-}
-public function hasCriticalThatContains($message)
-{
-return $this->hasRecordThatContains($message, Logger::CRITICAL);
-}
-public function hasErrorThatContains($message)
-{
-return $this->hasRecordThatContains($message, Logger::ERROR);
-}
-public function hasWarningThatContains($message)
-{
-return $this->hasRecordThatContains($message, Logger::WARNING);
-}
-public function hasNoticeThatContains($message)
-{
-return $this->hasRecordThatContains($message, Logger::NOTICE);
-}
-public function hasInfoThatContains($message)
-{
-return $this->hasRecordThatContains($message, Logger::INFO);
-}
-public function hasDebugThatContains($message)
-{
-return $this->hasRecordThatContains($message, Logger::DEBUG);
+return $this->hasRecordThatPasses(function($rec) use ($record) {
+return $rec['message'] === $record;
+}, $level);
 }
 public function hasRecordThatContains($message, $level)
 {
+return $this->hasRecordThatPasses(function($rec) use ($message) {
+return strpos($rec['message'], $message) !== false;
+}, $level);
+}
+public function hasRecordThatMatches($regex, $level)
+{
+return $this->hasRecordThatPasses(function($rec) use ($regex) {
+return preg_match($regex, $rec['message']) > 0;
+}, $level);
+}
+public function hasRecordThatPasses($predicate, $level)
+{
+if (!is_callable($predicate)) {
+throw new \InvalidArgumentException("Expected a callable for hasRecordThatSucceeds");
+}
 if (!isset($this->recordsByLevel[$level])) {
 return false;
 }
-foreach ($this->recordsByLevel[$level] as $rec) {
-if (strpos($rec['message'], $message) !== false) {
+foreach ($this->recordsByLevel[$level] as $i => $rec) {
+if (call_user_func($predicate, $rec, $i)) {
 return true;
 }
 }
@@ -5624,6 +5588,18 @@ protected function write(array $record)
 {
 $this->recordsByLevel[$record['level']][] = $record;
 $this->records[] = $record;
+}
+public function __call($method, $args)
+{
+if (preg_match('/(.*)(Debug|Info|Notice|Warning|Error|Critical|Alert|Emergency)(.*)/', $method, $matches) > 0) {
+$genericMethod = $matches[1] .'Record'. $matches[3];
+$level = constant('Monolog\Logger::'. strtoupper($matches[2]));
+if (method_exists($this, $genericMethod)) {
+$args[] = $level;
+return call_user_func_array(array($this, $genericMethod), $args);
+}
+}
+throw new \BadMethodCallException('Call to undefined method '. get_class($this) .'::'. $method .'()');
 }
 }
 }

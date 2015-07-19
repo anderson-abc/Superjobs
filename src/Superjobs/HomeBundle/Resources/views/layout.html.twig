@@ -64,7 +64,7 @@
               {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
               {% else %}
                   <li>
-                    <a href="{{ path('recruiter_registration') }}">
+                    <a href="{{ path('fos_user_security_login') }}">
                       {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
                     </a>
                   </li>
@@ -105,7 +105,7 @@
                 <b>Home</b><br/>
                 A propos<br/>
                 CGU<br/>
-                FAQ<br/>
+                Aide / FAQ<br/>
                 Press <br/>
                 Contact<br/>
             </div>

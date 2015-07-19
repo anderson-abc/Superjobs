@@ -80,8 +80,6 @@ fos_user:
     user_class: Superjobs\UserBundle\Entity\User
     group:
         group_class: Superjobs\UserBundle\Entity\Groups
-    service:
-        user_manager: pugx_user_manager
         
 genemu_form:
     tinymce:
@@ -120,68 +118,3 @@ knp_paginator:
     template:
         pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig     # sliding pagination controls template
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
-
-pugx_multi_user:
-    users:
-        Recruiter:
-            entity: 
-                class: Superjobs\UserBundle\Entity\Recruiter
-
-        Applicant:
-            entity: 
-                class: Superjobs\UserBundle\Entity\Applicant
-#                
-                
-#pugx_multi_user:
-#    users:
-#        Applicant:
-#            entity: 
-#                class: Superjobs\UserBundle\Entity\Applicant
-##          factory: 
-#            registration:
-#                form: 
-#                    type: Superjobs\UserBundle\Form\Type\RegistrationApplicantFormType
-#                    name: applicant_registration_form
-#                    validation_groups:  [Registration, Default]
-#                template: SuperjobsUserBundle:Registration:applicant.form.html.twig
-#            profile:
-#                form:
-#                    type: Superjobs\UserBundle\Form\Type\ProfileApplicantFormType
-#                    name: fos_user_profile_form
-#                    validation_groups:  [Profile, Default] 
-#        Recruiter:
-#            entity: 
-#                class: Superjobs\UserBundle\Entity\Recruiter
-#            registration:
-#                form: 
-#                    type: Superjobs\UserBundle\Form\Type\RegistrationRecruiterFormType
-#                template: SuperjobsUserBundle:Registration:recruiter.form.html.twig
-#            profile:
-#                form: 
-#                    type: Superjobs\UserBundle\Form\Type\ProfileRecruiterFormType
-# ElasticaBundle configuration
-#fos_elastica:
-#    clients:
-#        default: { host: localhost, port: 9200 }
-#    serializer:
-#        callback_class: FOS\ElasticaBundle\Serializer\Callback
-#        serializer: serializer
-#    indexes:
-#        superjobs:
-#            client: default
-#            types:
-#                Jobs:
-#                    mappings: ~
-#                    persistence:
-#                        driver: orm # orm, mongodb, propel are available
-#                        model:  Superjobs\HomeBundle\Entity\Jobs
-#                        provider: ~
-#                        listener: ~ # by default, listens to "insert", "update" and "delete"                        
-#                        finder: ~
-#                        repository: Afsy\Bundle\CoreBundle\SearchRepository\ArticleRepository
-#                Author:
-#                    mappings: ~
-#                    persistence:
-#                        driver: orm
-#                        model:  Afsy\Bundle\CoreBundle\Entity\Author
-#                        provider: ~
