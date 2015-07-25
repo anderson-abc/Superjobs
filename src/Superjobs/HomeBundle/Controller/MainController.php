@@ -27,6 +27,11 @@ class MainController extends Controller
                 ));
     }
     
+    public function feedbackAction()
+    {       
+        return $this->render('SuperjobsHomeBundle:Main:feedback.html.twig');
+    }
+    
     function detailsAction($id, Request $request){
 
         $id = $request->query->get('tag');

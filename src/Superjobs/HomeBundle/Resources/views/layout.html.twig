@@ -21,10 +21,10 @@
         <link href="{{ asset('bundles/superjobshome/css/Calendar.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/one-page-wonder.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/sticky-footer-navbar.css')}}" rel="stylesheet">
-
+        <link href="{{ asset('bundles/superjobshome/css/feedback.css')}}" rel="stylesheet">
         <title>Superjobs - Site de recrutement </title>
 
-    <nav class="navbar navbar-default navbar-fixed-top" style="box-shadow: 0px 3px 5px 0px rgba(102, 102, 102, 0.5);">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="box-shadow: 0px 3px 5px 0px rgba(102, 102, 102, 0.5);">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -137,8 +137,7 @@
                     Newsletter<br/>
                     <input type="text" class=""><br/>
                     Twitter - Facebook - Google+<br/>
-                    Feedback
-
+                    <a href="{{ path('superjobs_home_feedback') }}">Feedback</a>
                 </div>
             </div>
             <hr>
@@ -152,11 +151,37 @@
 
 
     {#  <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>#}
-    <script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
+    <script src="http://cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
     <script src="{{ asset('bundles/superjobshome/js/jquery.js')}}"></script>
     {#    <script src="{{ asset('bundles/superjobshome/js/tinymce.min.js')}}"></script>#}
     <script src="{{ asset('bundles/superjobshome/js/jquery.uploadify.v2.1.4.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/jquery.countTo.js')}}"></script>
+    <script src="{{ asset('bundles/superjobshome/js/feedback.js')}}"></script>
+    <script>
+              // custom formatting example
+      $('#earth').data('countToOptions', {
+        formatter: function (value, options) {
+          return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+        }
+      });
+      
+      // start all the timers
+      $('.timer').each(count);
+      
+      // restart a timer when a button is clicked
+      $('.restart').click(function (event) {
+        event.preventDefault();
+        var target = $(this).data('target');
+        count.call($(target));
+      });
+      
+      function count(options) {
+        var $this = $(this);
+        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+        $this.countTo(options);
+      }
+      
+    </script>
 </body>
 </html>

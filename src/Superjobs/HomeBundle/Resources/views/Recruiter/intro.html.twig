@@ -58,16 +58,16 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3">
-                <p><b class="timer" id="earth" data-to="268" data-speed="10000"></b><br/> PROFILES</p>
+                <p><b class="timer" id="earth" data-to="268" data-speed="2000"></b><br/> PROFILES</p>
             </div>
             <div class="col-xs-12 col-sm-3 col-md-3">
-                <p><b class="timer" id="earth" data-to="110" data-speed="10000"></b><br/> JOBS</p>
+                <p><b class="timer" id="earth" data-to="110" data-speed="2000"></b><br/> JOBS</p>
             </div>
             <div class="col-xs-12 col-sm-3 col-md-3">
-                <p><b class="timer" id="earth" data-to="15" data-speed="10000"></b><br/> ENTREPRISES</p>
+                <p><b class="timer" id="earth" data-to="15" data-speed="2000"></b><br/> ENTREPRISES</p>
             </div>
             <div class="col-xs-12 col-sm-3 col-md-3">
-                <p><b class="timer" id="earth" data-to="121" data-speed="10000"></b><br/> CVs</p>
+                <p><b class="timer" id="earth" data-to="121" data-speed="2000"></b><br/> CVs</p>
             </div>
         </div>
     </div>
@@ -86,7 +86,9 @@
                     </a>
                 </span> Gratuitement !<br/>
             </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                        <p class="lead"><b>Bienvenue</b><br/>
+
+                            Le site de Superjobs vous propose de déposer des offres de jobs, de stages, d’emploi et d’alternance. Une solution simple et rapide qui saura répondre à toutes vos problématiques de recrutement ! <br/>Publiez rapidement et gratuitement autant d’offres que vous voulez.</p>
         </div>
 
         <hr class="featurette-divider">
@@ -99,11 +101,11 @@
                 <span class="text-muted">
 {#                    <a href="{{ path('superjobs_home_resume_template') }}">#}
                         <a href="{{ path('superjobs_home_team_template') }}">                        
-                        { CVthéque }
+                        { CVthèque }
                     </a>                
                 </span>
             </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p class="lead">Accédez en une seule recherche à des profils qualifiés issus des principales CVthèques, des réseaux sociaux, des profils publics disponibles sur Internet et de votre propre base de CVs.</p>
         </div>
 
         <hr class="featurette-divider">
@@ -116,7 +118,9 @@
                     Tests techniques
                 </span>Gratuitement !<br/>
             </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p class="lead">
+Ce site regroupe plusieurs QCM dans le domaine de l'informatique. Ces QCM s'adressent à des étudiants ou des ingénieurs souhaitant s'entraîner avant de passer l'entretien d'embauche .
+A la fin de chacun de ces tests, une notation et une correction vous seront proposées. Celles-ci vous permettront d'accroître vos connaissances et d'évaluer votre niveau.</p>
         </div>
 
         <hr class="featurette-divider">
@@ -130,33 +134,5 @@
             </div>
         </footer>
     </div>
-    <!-- /.container -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-      // custom formatting example
-      $('#earth').data('countToOptions', {
-        formatter: function (value, options) {
-          return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
-        }
-      });
-      
-      // start all the timers
-      $('.timer').each(count);
-      
-      // restart a timer when a button is clicked
-      $('.restart').click(function (event) {
-        event.preventDefault();
-        var target = $(this).data('target');
-        count.call($(target));
-      });
-      
-      function count(options) {
-        var $this = $(this);
-        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-        $this.countTo(options);
-      }
-    });
-  </script>
 
 {% endblock %}

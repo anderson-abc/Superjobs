@@ -56,10 +56,13 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
         // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/sticky-footer-navbar.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-
+        <link href=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/feedback.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
         <title>Superjobs - Site de recrutement </title>
 
-    <nav class=\"navbar navbar-default navbar-fixed-top\" style=\"box-shadow: 0px 3px 5px 0px rgba(102, 102, 102, 0.5);\">
+    <nav class=\"navbar navbar-inverse navbar-fixed-top\" style=\"box-shadow: 0px 3px 5px 0px rgba(102, 102, 102, 0.5);\">
         <div class=\"container-fluid\">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class=\"navbar-header\">
@@ -201,8 +204,10 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
                     Newsletter<br/>
                     <input type=\"text\" class=\"\"><br/>
                     Twitter - Facebook - Google+<br/>
-                    Feedback
-
+                    <a href=\"";
+        // line 140
+        echo $this->env->getExtension('routing')->getPath("superjobs_home_feedback");
+        echo "\">Feedback</a>
                 </div>
             </div>
             <hr>
@@ -216,25 +221,54 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
 
 
     ";
-        // line 155
-        echo "    <script src=\"//cdn.ckeditor.com/4.4.7/basic/ckeditor.js\"></script>
+        // line 154
+        echo "    <script src=\"http://cdn.ckeditor.com/4.4.7/basic/ckeditor.js\"></script>
     <script src=\"";
-        // line 156
+        // line 155
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/jquery.js"), "html", null, true);
         echo "\"></script>
     ";
-        // line 158
+        // line 157
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/jquery.uploadify.v2.1.4.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 159
+        // line 158
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 160
+        // line 159
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/jquery.countTo.js"), "html", null, true);
         echo "\"></script>
+    <script src=\"";
+        // line 160
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/feedback.js"), "html", null, true);
+        echo "\"></script>
+    <script>
+              // custom formatting example
+      \$('#earth').data('countToOptions', {
+        formatter: function (value, options) {
+          return value.toFixed(options.decimals).replace(/\\B(?=(?:\\d{3})+(?!\\d))/g, ',');
+        }
+      });
+      
+      // start all the timers
+      \$('.timer').each(count);
+      
+      // restart a timer when a button is clicked
+      \$('.restart').click(function (event) {
+        event.preventDefault();
+        var target = \$(this).data('target');
+        count.call(\$(target));
+      });
+      
+      function count(options) {
+        var \$this = \$(this);
+        options = \$.extend({}, options || {}, \$this.data('countToOptions') || {});
+        \$this.countTo(options);
+      }
+      
+    </script>
 </body>
 </html>";
     }
@@ -265,6 +299,6 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
 
     public function getDebugInfo()
     {
-        return array (  250 => 107,  246 => 81,  243 => 80,  236 => 160,  232 => 159,  227 => 158,  223 => 156,  220 => 155,  172 => 108,  170 => 107,  154 => 94,  144 => 87,  137 => 82,  135 => 80,  130 => 77,  128 => 69,  120 => 64,  115 => 61,  106 => 56,  102 => 55,  94 => 50,  88 => 47,  84 => 45,  82 => 44,  74 => 38,  57 => 23,  53 => 22,  49 => 21,  45 => 20,  41 => 19,  21 => 1,);
+        return array (  284 => 107,  280 => 81,  277 => 80,  245 => 160,  241 => 159,  237 => 158,  232 => 157,  228 => 155,  225 => 154,  209 => 140,  175 => 108,  173 => 107,  157 => 94,  147 => 87,  140 => 82,  138 => 80,  133 => 77,  131 => 69,  123 => 64,  118 => 61,  109 => 56,  105 => 55,  97 => 50,  91 => 47,  87 => 45,  85 => 44,  77 => 38,  61 => 24,  57 => 23,  53 => 22,  49 => 21,  45 => 20,  41 => 19,  21 => 1,);
     }
 }

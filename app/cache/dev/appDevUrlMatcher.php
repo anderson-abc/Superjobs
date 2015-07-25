@@ -136,6 +136,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\MainController::indexAction',  '_route' => 'superjobs_home_homepage',);
         }
 
+        // superjobs_home_feedback
+        if ($pathinfo === '/feedback') {
+            return array (  '_controller' => 'Superjobs\\HomeBundle\\Controller\\MainController::feedbackAction',  '_route' => 'superjobs_home_feedback',);
+        }
+
         // superjobs_home_recruiter_job_details
         if (0 === strpos($pathinfo, '/jobs') && preg_match('#^/jobs(?:/(?P<id>\\d+))?$#s', $pathinfo, $matches)) {
             if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
