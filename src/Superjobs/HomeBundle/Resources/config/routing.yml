@@ -16,6 +16,10 @@ superjobs_home_recruiter_job_details:
 superjobs_home_recruiter_intro:
     path:     /recruiter/intro
     defaults: { _controller: SuperjobsHomeBundle:Recruiter:intro }
+    
+superjobs_home_recruiter_intro:
+    path:     /recruiter/subscribe
+    defaults: { _controller: SuperjobsHomeBundle:Recruiter:subscribe }
 
 superjobs_home_recruiter_add:
     path:     /recruiter/add

@@ -36,7 +36,7 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
             <div class=\"container\">
                 <div class=\"Heading\">
                 <h2>Superjobs</h2>
-                <span class=\"subheading\">Postez votre offre d'emploi facilement et gratuitement</span>
+                <span class=\"subheading\">Publier votre offre d'emploi facilement et gratuitement</span>
                 <hr class=\"small\">  
                 </div>
             </div>
