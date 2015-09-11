@@ -23,12 +23,21 @@ class __TwigTemplate_ddbf2ea039ac67109b831f539988f31c082db95414d78231fd1a9de9e8f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_aa7a7ac15a2f7526532268eed5a3db145331f18313c9a82a9cb0fcc376461a71 = $this->env->getExtension("native_profiler");
+        $__internal_aa7a7ac15a2f7526532268eed5a3db145331f18313c9a82a9cb0fcc376461a71->enter($__internal_aa7a7ac15a2f7526532268eed5a3db145331f18313c9a82a9cb0fcc376461a71_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Doctrine/Collector/db.html.twig"));
+
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_aa7a7ac15a2f7526532268eed5a3db145331f18313c9a82a9cb0fcc376461a71->leave($__internal_aa7a7ac15a2f7526532268eed5a3db145331f18313c9a82a9cb0fcc376461a71_prof);
+
     }
 
     // line 3
     public function block_toolbar($context, array $blocks = array())
     {
+        $__internal_a0369ec28ef64fb93a75f0eb8791e1089925010bed22057020f7cef031a1d944 = $this->env->getExtension("native_profiler");
+        $__internal_a0369ec28ef64fb93a75f0eb8791e1089925010bed22057020f7cef031a1d944->enter($__internal_a0369ec28ef64fb93a75f0eb8791e1089925010bed22057020f7cef031a1d944_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "toolbar"));
+
         // line 4
         echo "    ";
         ob_start();
@@ -134,11 +143,17 @@ class __TwigTemplate_ddbf2ea039ac67109b831f539988f31c082db95414d78231fd1a9de9e8f
         // line 45
         echo "    ";
         $this->loadTemplate("WebProfilerBundle:Profiler:toolbar_item.html.twig", "@Doctrine/Collector/db.html.twig", 45)->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
+        
+        $__internal_a0369ec28ef64fb93a75f0eb8791e1089925010bed22057020f7cef031a1d944->leave($__internal_a0369ec28ef64fb93a75f0eb8791e1089925010bed22057020f7cef031a1d944_prof);
+
     }
 
     // line 48
     public function block_menu($context, array $blocks = array())
     {
+        $__internal_1c049164775a88bba46166c971af19e1fccd714984b4338ff11a453a915354f1 = $this->env->getExtension("native_profiler");
+        $__internal_1c049164775a88bba46166c971af19e1fccd714984b4338ff11a453a915354f1->enter($__internal_1c049164775a88bba46166c971af19e1fccd714984b4338ff11a453a915354f1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
+
         // line 49
         echo "<span class=\"label\">
     <span class=\"icon\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAcCAYAAAB/E6/TAAABLUlEQVR42u3TP0vDQBiA8UK/gDiLzi0IhU4OEunk5OQUAhGSOBUCzqWfIKSzX8DRySF0URCcMjWLIJjFD9Cpk/D6HITecEPUuzhIAz8CIdyTP/f2iqI4qaqqDx8l5Ic2uIeP/bquezCokOAFF+oCN3t4gPzSEjc4NEPaCldQbzjELTYW0RJzHDchwwem+ons6ZBpLSJ7nueJC22h0V+FzmwWV0ee59vQNV67CGVZJmEYbkNjfpY6X6I0Qo4/3RMmTdDDspuQVsJvgkP3IdMbIkIjLPBoadG2646iKJI0Ta2wxm6OdnP0/Tk6DYJgHcfxpw21RtscDTDDnaVZ26474GkkSRIrrPEv5sgMTfHe+cA2O6wPH6vOBpYQNALneHb96XTEDI6dzpEZ0VzO0Rf3pP5LMLI4tAAAAABJRU5ErkJggg==\" alt=\"\" /></span>
@@ -155,11 +170,17 @@ class __TwigTemplate_ddbf2ea039ac67109b831f539988f31c082db95414d78231fd1a9de9e8f
     </span>
 </span>
 ";
+        
+        $__internal_1c049164775a88bba46166c971af19e1fccd714984b4338ff11a453a915354f1->leave($__internal_1c049164775a88bba46166c971af19e1fccd714984b4338ff11a453a915354f1_prof);
+
     }
 
     // line 59
     public function block_panel($context, array $blocks = array())
     {
+        $__internal_0cf4e0493b1409a9f957304e0dfa4e4ec0d50a608f82f464b69fe8bf221b00e9 = $this->env->getExtension("native_profiler");
+        $__internal_0cf4e0493b1409a9f957304e0dfa4e4ec0d50a608f82f464b69fe8bf221b00e9->enter($__internal_0cf4e0493b1409a9f957304e0dfa4e4ec0d50a608f82f464b69fe8bf221b00e9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "panel"));
+
         // line 60
         echo "    ";
         if (("explain" == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
@@ -192,11 +213,17 @@ class __TwigTemplate_ddbf2ea039ac67109b831f539988f31c082db95414d78231fd1a9de9e8f
         </div>
     ";
         }
+        
+        $__internal_0cf4e0493b1409a9f957304e0dfa4e4ec0d50a608f82f464b69fe8bf221b00e9->leave($__internal_0cf4e0493b1409a9f957304e0dfa4e4ec0d50a608f82f464b69fe8bf221b00e9_prof);
+
     }
 
     // line 84
     public function block_queries($context, array $blocks = array())
     {
+        $__internal_7b71243911c444f1846d7b5079310258ecda0758dd95c96629644bc4597fe9a8 = $this->env->getExtension("native_profiler");
+        $__internal_7b71243911c444f1846d7b5079310258ecda0758dd95c96629644bc4597fe9a8->enter($__internal_7b71243911c444f1846d7b5079310258ecda0758dd95c96629644bc4597fe9a8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "queries"));
+
         // line 85
         echo "    <h2>Queries</h2>
 
@@ -233,7 +260,10 @@ class __TwigTemplate_ddbf2ea039ac67109b831f539988f31c082db95414d78231fd1a9de9e8f
             } else {
                 // line 94
                 echo "            <p>
-                <button type=\"button\" class=\"sf-button\" onclick=\"expandAllQueries(this);\" data-action=\"expand\">
+                <button type=\"button\" class=\"sf-button\" onclick=\"expandAllQueries(this);\" data-action=\"expand\" data-connection=\"";
+                // line 95
+                echo twig_escape_filter($this->env, $this->getAttribute($context["loop"], "index", array()), "html", null, true);
+                echo "\">
                     <span class=\"border-l\">
                         <span class=\"border-r\">
                             <span class=\"btn-bg\">Expand all queries</span>
@@ -633,12 +663,13 @@ class __TwigTemplate_ddbf2ea039ac67109b831f539988f31c082db95414d78231fd1a9de9e8f
         }
 
         function expandAllQueries(button) {
-            var queries = document.getElementsByClassName('query-section'),
+            var conn = button.getAttribute('data-connection'),
+                queries = document.querySelectorAll('#queries-' + conn + ' .query-section'),
                 i = queries.length,
                 action = button.getAttribute('data-action');
 
             if (action == 'expand') {
-                button.getElementsByClassName('btn-bg')[0].innerHTML = 'Collapse all queries';
+                button.querySelector('.btn-bg').innerHTML = 'Collapse all queries';
 
                 while (i--) {
                     if (queries[i].getAttribute('data-state') == 'collapsed') {
@@ -646,7 +677,7 @@ class __TwigTemplate_ddbf2ea039ac67109b831f539988f31c082db95414d78231fd1a9de9e8f
                     }
                 }
             } else {
-                button.getElementsByClassName('btn-bg')[0].innerHTML = 'Expand all queries';
+                button.querySelector('.btn-bg').innerHTML = 'Expand all queries';
 
                 while (i--) {
                     if (queries[i].getAttribute('data-state') == 'expanded') {
@@ -756,6 +787,9 @@ class __TwigTemplate_ddbf2ea039ac67109b831f539988f31c082db95414d78231fd1a9de9e8f
 
     //]]></script>
 ";
+        
+        $__internal_7b71243911c444f1846d7b5079310258ecda0758dd95c96629644bc4597fe9a8->leave($__internal_7b71243911c444f1846d7b5079310258ecda0758dd95c96629644bc4597fe9a8_prof);
+
     }
 
     public function getTemplateName()
@@ -770,6 +804,6 @@ class __TwigTemplate_ddbf2ea039ac67109b831f539988f31c082db95414d78231fd1a9de9e8f
 
     public function getDebugInfo()
     {
-        return array (  613 => 237,  607 => 236,  602 => 233,  594 => 230,  590 => 228,  586 => 226,  577 => 224,  573 => 223,  570 => 222,  568 => 221,  563 => 219,  560 => 218,  556 => 217,  546 => 209,  542 => 207,  540 => 206,  535 => 205,  531 => 204,  526 => 201,  520 => 197,  517 => 196,  514 => 195,  512 => 194,  509 => 193,  507 => 192,  504 => 191,  501 => 190,  499 => 189,  496 => 188,  494 => 187,  491 => 186,  488 => 185,  486 => 184,  483 => 183,  481 => 182,  478 => 181,  475 => 180,  473 => 179,  468 => 176,  462 => 172,  459 => 171,  456 => 170,  454 => 169,  449 => 166,  443 => 162,  440 => 161,  437 => 160,  435 => 159,  430 => 156,  416 => 155,  411 => 152,  395 => 149,  387 => 147,  385 => 146,  382 => 145,  378 => 143,  364 => 137,  362 => 136,  350 => 133,  346 => 132,  340 => 129,  334 => 128,  329 => 126,  323 => 125,  317 => 122,  311 => 121,  302 => 117,  297 => 115,  293 => 114,  284 => 113,  267 => 112,  263 => 111,  256 => 107,  252 => 106,  246 => 103,  235 => 94,  229 => 90,  227 => 89,  222 => 88,  205 => 87,  201 => 85,  198 => 84,  190 => 79,  177 => 68,  173 => 66,  171 => 65,  170 => 64,  169 => 62,  167 => 61,  164 => 60,  161 => 59,  153 => 54,  149 => 53,  143 => 49,  140 => 48,  135 => 45,  132 => 44,  124 => 41,  115 => 37,  108 => 33,  104 => 31,  102 => 30,  95 => 28,  88 => 24,  81 => 20,  77 => 18,  74 => 17,  71 => 16,  67 => 14,  64 => 13,  58 => 11,  55 => 10,  49 => 8,  47 => 7,  39 => 6,  36 => 5,  33 => 4,  30 => 3,  21 => 1,);
+        return array (  643 => 237,  637 => 236,  632 => 233,  624 => 230,  620 => 228,  616 => 226,  607 => 224,  603 => 223,  600 => 222,  598 => 221,  593 => 219,  590 => 218,  586 => 217,  576 => 209,  572 => 207,  570 => 206,  565 => 205,  561 => 204,  556 => 201,  550 => 197,  547 => 196,  544 => 195,  542 => 194,  539 => 193,  537 => 192,  534 => 191,  531 => 190,  529 => 189,  526 => 188,  524 => 187,  521 => 186,  518 => 185,  516 => 184,  513 => 183,  511 => 182,  508 => 181,  505 => 180,  503 => 179,  498 => 176,  492 => 172,  489 => 171,  486 => 170,  484 => 169,  479 => 166,  473 => 162,  470 => 161,  467 => 160,  465 => 159,  460 => 156,  446 => 155,  441 => 152,  425 => 149,  417 => 147,  415 => 146,  412 => 145,  408 => 143,  394 => 137,  392 => 136,  380 => 133,  376 => 132,  370 => 129,  364 => 128,  359 => 126,  353 => 125,  347 => 122,  341 => 121,  332 => 117,  327 => 115,  323 => 114,  314 => 113,  297 => 112,  293 => 111,  286 => 107,  282 => 106,  276 => 103,  265 => 95,  262 => 94,  256 => 90,  254 => 89,  249 => 88,  232 => 87,  228 => 85,  222 => 84,  211 => 79,  198 => 68,  194 => 66,  192 => 65,  191 => 64,  190 => 62,  188 => 61,  185 => 60,  179 => 59,  168 => 54,  164 => 53,  158 => 49,  152 => 48,  144 => 45,  141 => 44,  133 => 41,  124 => 37,  117 => 33,  113 => 31,  111 => 30,  104 => 28,  97 => 24,  90 => 20,  86 => 18,  83 => 17,  80 => 16,  76 => 14,  73 => 13,  67 => 11,  64 => 10,  58 => 8,  56 => 7,  48 => 6,  45 => 5,  42 => 4,  36 => 3,  21 => 1,);
     }
 }

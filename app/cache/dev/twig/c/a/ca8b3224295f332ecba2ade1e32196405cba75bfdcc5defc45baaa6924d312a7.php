@@ -15,6 +15,9 @@ class __TwigTemplate_ca8b3224295f332ecba2ade1e32196405cba75bfdcc5defc45baaa6924d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_8befac2fae114846539f71d77449fe5fb26cd340563284bf5690f7e0bc257dca = $this->env->getExtension("native_profiler");
+        $__internal_8befac2fae114846539f71d77449fe5fb26cd340563284bf5690f7e0bc257dca->enter($__internal_8befac2fae114846539f71d77449fe5fb26cd340563284bf5690f7e0bc257dca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/toolbar.css.twig"));
+
         // line 1
         echo ".sf-minitoolbar {
     display: none;
@@ -139,7 +142,7 @@ class __TwigTemplate_ca8b3224295f332ecba2ade1e32196405cba75bfdcc5defc45baaa6924d
 
 .sf-toolbar-block .sf-toolbar-info-piece b {
     display: inline-block;
-    width: 110px;
+    min-width: 110px;
     vertical-align: top;
 }
 
@@ -232,12 +235,12 @@ class __TwigTemplate_ca8b3224295f332ecba2ade1e32196405cba75bfdcc5defc45baaa6924d
     content: \"\";
 }
 
-.sf-toolbar-block .sf-toolbar-icon img {
+.sf-toolbar-block .sf-toolbar-icon img, .sf-toolbar-block .sf-toolbar-icon svg {
     border-width: 0;
     vertical-align: middle;
 }
 
-.sf-toolbar-block .sf-toolbar-icon img + span {
+.sf-toolbar-block .sf-toolbar-icon img + span, .sf-toolbar-block .sf-toolbar-icon svg + span {
     margin-left: 5px;
     margin-top: 2px;
 }
@@ -333,7 +336,7 @@ class __TwigTemplate_ca8b3224295f332ecba2ade1e32196405cba75bfdcc5defc45baaa6924d
     text-align: right;
 }
 .sf-ajax-request-error {
-    color: #a33;
+    color: #a33 !important;
 }
 .sf-ajax-request-loading {
     -webkit-animation: sf-blink .5s ease-in-out infinite;
@@ -471,6 +474,9 @@ class __TwigTemplate_ca8b3224295f332ecba2ade1e32196405cba75bfdcc5defc45baaa6924d
     }
 }
 ";
+        
+        $__internal_8befac2fae114846539f71d77449fe5fb26cd340563284bf5690f7e0bc257dca->leave($__internal_8befac2fae114846539f71d77449fe5fb26cd340563284bf5690f7e0bc257dca_prof);
+
     }
 
     public function getTemplateName()
@@ -485,6 +491,6 @@ class __TwigTemplate_ca8b3224295f332ecba2ade1e32196405cba75bfdcc5defc45baaa6924d
 
     public function getDebugInfo()
     {
-        return array (  429 => 401,  417 => 391,  415 => 390,  412 => 389,  370 => 349,  368 => 348,  19 => 1,);
+        return array (  432 => 401,  420 => 391,  418 => 390,  415 => 389,  373 => 349,  371 => 348,  22 => 1,);
     }
 }

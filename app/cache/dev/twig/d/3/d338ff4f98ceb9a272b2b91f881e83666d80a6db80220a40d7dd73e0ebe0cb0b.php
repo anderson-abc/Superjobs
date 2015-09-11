@@ -23,12 +23,21 @@ class __TwigTemplate_d338ff4f98ceb9a272b2b91f881e83666d80a6db80220a40d7dd73e0ebe
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_7a8e48add1985ba83b41aa7224b6ba8210a8a7880fe10c66193c555c8719d5e5 = $this->env->getExtension("native_profiler");
+        $__internal_7a8e48add1985ba83b41aa7224b6ba8210a8a7880fe10c66193c555c8719d5e5->enter($__internal_7a8e48add1985ba83b41aa7224b6ba8210a8a7880fe10c66193c555c8719d5e5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Security/Collector/security.html.twig"));
+
         $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_7a8e48add1985ba83b41aa7224b6ba8210a8a7880fe10c66193c555c8719d5e5->leave($__internal_7a8e48add1985ba83b41aa7224b6ba8210a8a7880fe10c66193c555c8719d5e5_prof);
+
     }
 
     // line 3
     public function block_toolbar($context, array $blocks = array())
     {
+        $__internal_d4d02903f2b9fc49e714058a3e8a4a1ec80e3d96ee455d989c59c53f495f8679 = $this->env->getExtension("native_profiler");
+        $__internal_d4d02903f2b9fc49e714058a3e8a4a1ec80e3d96ee455d989c59c53f495f8679->enter($__internal_d4d02903f2b9fc49e714058a3e8a4a1ec80e3d96ee455d989c59c53f495f8679_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "toolbar"));
+
         // line 4
         echo "    ";
         if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "tokenClass", array())) {
@@ -106,7 +115,7 @@ class __TwigTemplate_d338ff4f98ceb9a272b2b91f881e83666d80a6db80220a40d7dd73e0ebe
         echo "    ";
         ob_start();
         // line 34
-        echo "        <img width=\"24\" height=\"28\" alt=\"Security\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAcCAYAAAB75n/uAAAC70lEQVR42u2V3UtTYRzHu+mFwCwK+gO6CEryPlg7yiYx50vDqUwjFIZDSYUk2ZTmCysHvg9ZVggOQZiRScsR4VwXTjEwdKZWk8o6gd5UOt0mbev7g/PAkLONIOkiBx+25/v89vuc85zn2Q5Fo9F95UDwnwhS5HK5TyqVRv8m1JN6k+AiC+fn54cwbgFNIrTQ/J9IqDcJJDGBHsgDgYBSq9W6ysvLPf39/SSUUU7zsQ1yc3MjmN90OBzfRkZG1umzQqGIxPSTkIBjgdDkaGNjoza2kcFgUCE/QvMsq6io2PV6vQu1tbV8Xl7etkql2qqvr/+MbDE/Pz8s9OP2Cjhwwmw29+4R3Kec1WZnZ4fn5uamc3Jyttra2qbH8ero6JgdHh5+CvFHq9X6JZHgzODgoCVW0NPTY0N+ltU2Nzdv4GqXsYSrPp+vDw80aLFYxru6uhyQ/rDb7a8TCVJDodB1jUazTVlxcXGQ5/mbyE+z2u7u7veY38BVT3Z2djopm5qa6isrK/tQWVn5qb29fSGR4DC4PDAwMEsZHuArjGnyGKutq6v7ajQaF6urq9/MzMz0QuSemJiwQDwGkR0POhhXgILjNTU1TaWlpTxlOp1uyWQyaUjMajMzM8Nut/tJQUHBOpZppbCwkM/KytrBznuL9xDVxBMo8KXHYnu6qKjIivmrbIy67x6Px4Yd58W672ApfzY0NCyNjo7OZmRkiAv8fr+O47iwmABXtoXaG3uykF6vX7bZbF6cgZWqqiqezYkKcNtmjO+CF2AyhufgjsvlMiU7vXEF+4C4ALf9CwdrlVAqlcFkTdRqdQSHLUDgBEeSCrArAsiGwENs0XfJBE6ncxm1D8Aj/B6tigkkJSUlmxSwLYhMDeRsyyUCd+lHrWxtbe2aTCbbZTn1ZD92F0Cr8GBfgnsgDZwDt8EzMBmHMXBLqD0PDMAh9Gql3iRIESQSIAXp4CRIBZeEjIvDFZAm1J4C6UK9ROiZcvCn/+8FvwHtDdJEaRY+oQAAAABJRU5ErkJggg==\" />
+        echo "        <svg width=\"24\" height=\"28\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 24 28\" enable-background=\"new 0 0 24 28\" xml:space=\"preserve\"><g><path fill=\"#3F3F3F\" d=\"M8.6 14.6c0-0.4 0-0.6 0-0.9c0.2-0.1 0.5-0.6 0.5-1.1c0.1 0 0.3-0.1 0.4-0.6c0-0.3-0.1-0.4-0.2-0.5 c0.2-0.6 0.6-2.6-0.8-2.8C8.4 8.4 8 8.3 7.5 8.3c-2 0-2.2 1.5-1.8 3.2c-0.1 0-0.2 0.2-0.2 0.5c0.1 0.5 0.3 0.6 0.4 0.6 c0 0.5 0.4 1 0.5 1.1c0 0.3 0 0.6 0 0.9c-0.4 1.1-3 0.8-3.2 2.8h8.5C11.7 15.3 9 15.6 8.6 14.6z\"/><path fill=\"#3F3F3F\" d=\"M18 10.7c-0.2 0-0.4 0-0.5 0.1c-0.2 0.1-0.3 0.2-0.5 0.5c-0.2 0.2-0.3 0.5-0.4 0.8s-0.1 0.6-0.1 0.8 c0 0.4 0.1 0.7 0.3 0.9c0.2 0.2 0.4 0.3 0.6 0.3c0.2 0 0.3 0 0.5-0.1c0.2-0.1 0.3-0.2 0.5-0.4c0.2-0.2 0.3-0.4 0.4-0.7 c0.1-0.3 0.2-0.6 0.2-0.9c0-0.4-0.1-0.7-0.3-0.9C18.5 10.8 18.2 10.7 18 10.7z\"/><path fill=\"#3F3F3F\" d=\"M22.2 6H1.8C1.3 6 1 6.3 1 6.8v14.4c0 0.4 0.3 0.8 0.8 0.8h3.8v-0.8c-0.4 0-0.8-0.3-0.8-0.8 c0-0.4 0.3-0.8 0.8-0.8h1.5c0.4 0 0.8 0.3 0.8 0.8c0 0.4-0.3 0.8-0.8 0.8v0.8h9.9v-0.8c-0.4 0-0.8-0.3-0.8-0.8 c0-0.4 0.3-0.8 0.8-0.8h1.5c0.4 0 0.8 0.3 0.8 0.8c0 0.4-0.3 0.8-0.8 0.8v0.8h3.8c0.4 0 0.8-0.3 0.8-0.8V6.8C23 6.3 22.7 6 22.2 6z M12.4 17.4c0 0.4-0.3 0.8-0.8 0.8H3.3c-0.4 0-0.8-0.3-0.8-0.8V8.3c0-0.4 0.3-0.8 0.8-0.8h8.3c0.4 0 0.8 0.3 0.8 0.8V17.4z M21.4 15.6c-0.4 0.3-0.8 0.6-1.3 0.7c-0.5 0.2-1.1 0.3-1.8 0.3c-0.6 0-1.2-0.1-1.8-0.2c-0.5-0.2-1-0.4-1.4-0.7 c-0.4-0.3-0.7-0.7-0.9-1.1c-0.2-0.5-0.4-1.1-0.4-1.8c0-0.7 0.1-1.4 0.4-2c0.4-0.8 0.9-1.4 1.5-1.8c0.6-0.4 1.4-0.6 2.4-0.6 c0.7 0 1.4 0.1 1.9 0.4c0.6 0.3 1 0.7 1.3 1.3c0.3 0.5 0.4 1 0.4 1.6c0 0.8-0.3 1.6-0.9 2.2c-0.5 0.6-1.1 0.9-1.7 0.9 c-0.2 0-0.4 0-0.5-0.1c-0.1-0.1-0.2-0.1-0.3-0.3c0-0.1-0.1-0.2-0.1-0.4c-0.2 0.2-0.4 0.4-0.6 0.5c-0.2 0.1-0.5 0.2-0.7 0.2 c-0.3 0-0.5-0.1-0.7-0.2c-0.2-0.1-0.4-0.4-0.6-0.7c-0.2-0.3-0.2-0.7-0.2-1c0-0.5 0.1-0.9 0.4-1.4c0.2-0.5 0.5-0.8 0.9-1 c0.3-0.2 0.7-0.3 1-0.3c0.3 0 0.5 0.1 0.7 0.2c0.2 0.1 0.4 0.3 0.6 0.6l0.1-0.7h0.8l-0.6 2.9c-0.1 0.4-0.1 0.6-0.1 0.7 c0 0.1 0 0.1 0.1 0.2c0.1 0.1 0.1 0.1 0.2 0.1c0.2 0 0.4-0.1 0.6-0.3c0.3-0.2 0.6-0.5 0.8-0.9c0.2-0.4 0.3-0.8 0.3-1.2 c0-0.5-0.1-0.9-0.4-1.3c-0.2-0.4-0.6-0.8-1.1-1s-1-0.4-1.6-0.4c-0.7 0-1.3 0.2-1.8 0.5c-0.6 0.3-1 0.8-1.3 1.4 c-0.3 0.6-0.5 1.2-0.5 1.9c0 0.7 0.2 1.3 0.5 1.8c0.3 0.5 0.8 0.9 1.3 1.1c0.6 0.2 1.2 0.4 1.9 0.4c0.8 0 1.4-0.1 1.9-0.4 c0.5-0.3 0.9-0.6 1.1-0.9h0.8C22 14.9 21.8 15.3 21.4 15.6z\"/></g></svg>
         <span class=\"sf-toolbar-status sf-toolbar-status-";
         // line 35
         echo twig_escape_filter($this->env, (isset($context["color_code"]) ? $context["color_code"] : $this->getContext($context, "color_code")), "html", null, true);
@@ -124,22 +133,34 @@ class __TwigTemplate_d338ff4f98ceb9a272b2b91f881e83666d80a6db80220a40d7dd73e0ebe
         // line 38
         echo "    ";
         $this->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig", "@Security/Collector/security.html.twig", 38)->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
+        
+        $__internal_d4d02903f2b9fc49e714058a3e8a4a1ec80e3d96ee455d989c59c53f495f8679->leave($__internal_d4d02903f2b9fc49e714058a3e8a4a1ec80e3d96ee455d989c59c53f495f8679_prof);
+
     }
 
     // line 41
     public function block_menu($context, array $blocks = array())
     {
+        $__internal_43463308306e4f89fba782e4cee9a704c319f387df53315123e010b8264021b6 = $this->env->getExtension("native_profiler");
+        $__internal_43463308306e4f89fba782e4cee9a704c319f387df53315123e010b8264021b6->enter($__internal_43463308306e4f89fba782e4cee9a704c319f387df53315123e010b8264021b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
+
         // line 42
         echo "<span class=\"label\">
-    <span class=\"icon\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAeCAYAAABaKIzgAAADqUlEQVR42u2YXUiTYRTHs6wbg4Toru4iI7qIrgoFv3XOj0BRpoE4U5n4AV6UOg0UhhaKwvLCr2ZeTPwIsbL50Yb5Oc0hrFU2WY55sUJB2wK3qbn+J15jvJhvay9S4MWfPe95znme357znPOOHXO73f+FjkD/OdDQ0FBf5DPo6bi4OC0Wch+WaD/a11vQyxR82KJ9vQUN2QvWarUWPE9CY4xeu1yucfqkZ5Ymyd8H0BBvQcM8gqsgAdmgqJaWlgdRUVEOgUBgLy4uHpqamhLDHsHMC8h/PwihUOiuqKhwNTU12eVyuV0mkzkSEhJ2WaBhvoAKIH/Gfi45Ofmj5+KJiYnvYQ+kwmD8BGzI0tLSzfX19ZmJiQlNa2vrbG1traGnp2fObDbPNTY22vkAZQdfjY2NdbJBpqenKWV+BOsZS6qsrLSvra31ZmVlLdFzUlKSDRnZonF0dLQTV2WEfPgGvYmUu9igSL+ITpMNKhKJtm02mzI9Pd2CNNt0Ol2P1Wp9otfrB1Qqlaazs3M4LS3ts8lkGuQb9EZeXt4q6+5tOxwOIeZOskGbm5uNdXV1wzQeGBgYWlhYaKD7nZGRYYJfaUFBwWJ4ePgOxg/xucsn6BW1Wv0Ui/4Cxam8oS8AHWeDjoyMvMzOzjbjNB2wS4uKijRkl0gkeqfTmY5r5ED/dNjtdhmzVyhfoGehXJziDtOkv+P5LnSeINmg/f39zwC1kpqa+hX2O4A2kl2j0SgxV0vjhoYGPb5sH9+p99/Y2IiLiYn5CYq79w22WOjUfqBVVVU6hUIxRWnFPb4Hyfv6+sbb29ubl5eXJR0dHaMGg0GBzsFbMfnV19efEYvFtwGn25sjgJycnOdQJHxOsEGR2q2lpaXHiLNS3y0pKXm1V/2ZmZm6wsLCWap8vtpTRHV19XUs+OWgtwpAPtTU1FyCf7inPTc314gsPAKkiR0THx+/ib76Dmvv8gF6KyUlRUdjLsFvBv5JbDtOdBG9VI6qV7e1tVm6u7st8/Pzc0aj8YVUKl2h4uQDVEIt5E9AqYrhn7ffHNqSKz8/34BTny0rK3uLwvoUGRm5zdsrtKurq436HDQKjR2gYahGqVS2UJwX8h30b3UEygXK/m3K9bvTy1j+QfE26cVcIonGHHAcsfyABqNCV3+z2AUSF5i3sbQf7estaBB0H1J5VPUgVA5dZFTO2MY4xR2rYvYL8hY0gAkKhsI8dA0KJNGYsXGLOzaY2S/g6A+II1CWfgAh4q3QhpOWjAAAAABJRU5ErkJggg==\" alt=\"\" /></span>
+    <span class=\"icon\"><svg width=\"42\" height=\"30\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 42 30\" enable-background=\"new 0 0 42 30\" xml:space=\"preserve\"><g><path fill=\"#3F3F3F\" d=\"M16.1 15.3c0-0.5 0-0.8 0-1.2c0.2-0.1 0.6-0.8 0.7-1.4c0.2 0 0.4-0.2 0.5-0.8c0-0.4-0.1-0.5-0.2-0.6 c0.3-0.8 0.8-3.4-1.1-3.7C15.7 7.2 15.2 7 14.6 7c-2.6 0-2.9 2-2.4 4.2c-0.1 0.1-0.3 0.3-0.2 0.6c0.1 0.7 0.3 0.8 0.5 0.8 c0.1 0.6 0.5 1.3 0.7 1.4c0 0.4 0 0.8 0 1.2c-0.5 1.4-4 1-4.2 3.7h11.2C20.1 16.3 16.6 16.7 16.1 15.3z\"/><path fill=\"#3F3F3F\" d=\"M28.3 10.2c-0.2 0-0.5 0.1-0.7 0.2c-0.2 0.1-0.4 0.3-0.6 0.6c-0.2 0.3-0.4 0.6-0.5 1s-0.2 0.7-0.2 1.1 c0 0.5 0.1 0.9 0.4 1.2s0.5 0.4 0.8 0.4c0.2 0 0.4-0.1 0.7-0.2c0.2-0.1 0.5-0.3 0.7-0.6s0.4-0.6 0.5-1c0.1-0.4 0.2-0.8 0.2-1.2 c0-0.5-0.1-0.9-0.4-1.2C29 10.3 28.7 10.2 28.3 10.2z\"/><path fill=\"#3F3F3F\" d=\"M34 4H7C6.4 4 6 4.4 6 5v19c0 0.6 0.4 1 1 1h5v-1c-0.6 0-1-0.4-1-1c0-0.6 0.4-1 1-1h2c0.6 0 1 0.4 1 1 c0 0.6-0.4 1-1 1v1h13v-1c-0.6 0-1-0.4-1-1c0-0.6 0.4-1 1-1h2c0.6 0 1 0.4 1 1c0 0.6-0.4 1-1 1v1h5c0.6 0 1-0.4 1-1V5 C35 4.4 34.6 4 34 4z M21 19c0 0.6-0.4 1-1 1H9c-0.6 0-1-0.4-1-1V7c0-0.6 0.4-1 1-1h11c0.6 0 1 0.4 1 1V19z M32.9 16.6 c-0.5 0.4-1 0.7-1.7 1c-0.6 0.2-1.4 0.4-2.3 0.4c-0.8 0-1.6-0.1-2.3-0.3c-0.7-0.2-1.3-0.5-1.8-1c-0.5-0.4-0.9-0.9-1.1-1.5 c-0.3-0.7-0.5-1.5-0.5-2.3c0-0.9 0.2-1.8 0.6-2.6c0.5-1 1.1-1.8 2-2.4C26.5 7.3 27.6 7 28.8 7c0.9 0 1.8 0.2 2.5 0.6 c0.7 0.4 1.3 1 1.8 1.7c0.4 0.7 0.6 1.4 0.6 2.1c0 1.1-0.4 2.1-1.2 2.9c-0.7 0.8-1.4 1.2-2.3 1.2c-0.3 0-0.5 0-0.6-0.1 c-0.2-0.1-0.3-0.2-0.4-0.3c0-0.1-0.1-0.3-0.1-0.5c-0.2 0.3-0.5 0.5-0.8 0.7c-0.3 0.2-0.6 0.3-0.9 0.3c-0.3 0-0.7-0.1-1-0.3 c-0.3-0.2-0.6-0.5-0.8-0.9c-0.2-0.4-0.3-0.9-0.3-1.3c0-0.6 0.2-1.2 0.5-1.8c0.3-0.6 0.7-1.1 1.2-1.4c0.5-0.3 0.9-0.5 1.3-0.5 c0.3 0 0.6 0.1 0.9 0.3c0.3 0.2 0.6 0.4 0.8 0.8l0.2-0.9h1l-0.8 3.8c-0.1 0.5-0.2 0.8-0.2 0.9c0 0.1 0 0.2 0.1 0.3 c0.1 0.1 0.2 0.1 0.3 0.1c0.2 0 0.5-0.1 0.8-0.3c0.4-0.3 0.8-0.7 1-1.2c0.3-0.5 0.4-1 0.4-1.6c0-0.6-0.2-1.2-0.5-1.8 c-0.3-0.6-0.8-1-1.5-1.3s-1.4-0.5-2.1-0.5c-0.9 0-1.7 0.2-2.4 0.6c-0.7 0.4-1.3 1-1.7 1.8C24.2 11 24 11.9 24 12.7 c0 0.9 0.2 1.7 0.6 2.4c0.4 0.7 1 1.2 1.8 1.5c0.8 0.3 1.6 0.5 2.5 0.5c1 0 1.8-0.2 2.5-0.5c0.7-0.3 1.2-0.7 1.5-1.2h1 C33.7 15.8 33.4 16.2 32.9 16.6z\"/></g></svg></span>
     <strong>Security</strong>
 </span>
 ";
+        
+        $__internal_43463308306e4f89fba782e4cee9a704c319f387df53315123e010b8264021b6->leave($__internal_43463308306e4f89fba782e4cee9a704c319f387df53315123e010b8264021b6_prof);
+
     }
 
     // line 48
     public function block_panel($context, array $blocks = array())
     {
+        $__internal_2be6d5cbb3b3175cc13b156be89869fbca5a1cc2b35a2811e5c3c7764285dbc4 = $this->env->getExtension("native_profiler");
+        $__internal_2be6d5cbb3b3175cc13b156be89869fbca5a1cc2b35a2811e5c3c7764285dbc4->enter($__internal_2be6d5cbb3b3175cc13b156be89869fbca5a1cc2b35a2811e5c3c7764285dbc4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "panel"));
+
         // line 49
         echo "    <h2>Security</h2>
     ";
@@ -184,34 +205,50 @@ class __TwigTemplate_d338ff4f98ceb9a272b2b91f881e83666d80a6db80220a40d7dd73e0ebe
             </tr>
             ";
             // line 70
-            if (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "tokenClass", array()) != null)) {
+            if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "supportsRoleHierarchy", array())) {
                 // line 71
                 echo "            <tr>
-                <th>Token class</th>
+                <th>Inherited Roles</th>
                 <td>";
                 // line 73
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "tokenClass", array()), "html", null, true);
+                echo twig_escape_filter($this->env, $this->env->getExtension('yaml')->encode($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "inheritedRoles", array())), "html", null, true);
                 echo "</td>
             </tr>
             ";
             }
             // line 76
+            echo "            ";
+            if (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "tokenClass", array()) != null)) {
+                // line 77
+                echo "            <tr>
+                <th>Token class</th>
+                <td>";
+                // line 79
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "tokenClass", array()), "html", null, true);
+                echo "</td>
+            </tr>
+            ";
+            }
+            // line 82
             echo "        </table>
     ";
-        } elseif ($this->getAttribute(        // line 77
+        } elseif ($this->getAttribute(        // line 83
 (isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "enabled", array())) {
-            // line 78
+            // line 84
             echo "        <p>
             <em>No token</em>
         </p>
     ";
         } else {
-            // line 82
+            // line 88
             echo "        <p>
             <em>The security component is disabled</em>
         </p>
     ";
         }
+        
+        $__internal_2be6d5cbb3b3175cc13b156be89869fbca5a1cc2b35a2811e5c3c7764285dbc4->leave($__internal_2be6d5cbb3b3175cc13b156be89869fbca5a1cc2b35a2811e5c3c7764285dbc4_prof);
+
     }
 
     public function getTemplateName()
@@ -226,6 +263,6 @@ class __TwigTemplate_d338ff4f98ceb9a272b2b91f881e83666d80a6db80220a40d7dd73e0ebe
 
     public function getDebugInfo()
     {
-        return array (  210 => 82,  204 => 78,  202 => 77,  199 => 76,  193 => 73,  189 => 71,  187 => 70,  182 => 68,  176 => 64,  173 => 63,  168 => 62,  164 => 60,  162 => 59,  154 => 54,  149 => 51,  147 => 50,  144 => 49,  141 => 48,  133 => 42,  130 => 41,  125 => 38,  122 => 37,  116 => 36,  112 => 35,  109 => 34,  106 => 33,  103 => 32,  99 => 30,  95 => 28,  92 => 27,  86 => 24,  82 => 22,  80 => 21,  73 => 19,  64 => 15,  60 => 13,  57 => 12,  54 => 11,  51 => 10,  48 => 9,  45 => 8,  42 => 7,  39 => 6,  36 => 5,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  244 => 88,  238 => 84,  236 => 83,  233 => 82,  227 => 79,  223 => 77,  220 => 76,  214 => 73,  210 => 71,  208 => 70,  203 => 68,  197 => 64,  194 => 63,  189 => 62,  185 => 60,  183 => 59,  175 => 54,  170 => 51,  168 => 50,  165 => 49,  159 => 48,  148 => 42,  142 => 41,  134 => 38,  131 => 37,  125 => 36,  121 => 35,  118 => 34,  115 => 33,  112 => 32,  108 => 30,  104 => 28,  101 => 27,  95 => 24,  91 => 22,  89 => 21,  82 => 19,  73 => 15,  69 => 13,  66 => 12,  63 => 11,  60 => 10,  57 => 9,  54 => 8,  51 => 7,  48 => 6,  45 => 5,  42 => 4,  36 => 3,  11 => 1,);
     }
 }

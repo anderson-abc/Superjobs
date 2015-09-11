@@ -33,24 +33,27 @@
 <div class="row">  
     <div class="col-xs-12 col-md-8">
 {% for article in pagination %}
-    <div class="items">
-    <div class="row">    
-        <div class="col-xs-2">
+<div class="items">
+    <div class="row">
+        <div class="col-md-2">
             <time class="calendar">
                 <em>{{ article.createdAt|date('Y')}}</em>
                 <strong>{{ article.createdAt|date('M')}}</strong>
                 <span>{{ article.createdAt|date('d')}}</span>
-            </time>
-        </div>    
-        <div class="col-xs-10">            
+            </time>        
+        </div>
+        <div class="col-md-2 vertical" style="height:10em">
+            <i class="fa fa-compress"></i> {{ article.type }}<br/>
+            <i class="fa fa-map-marker"></i> {{ article.location }}<br/>
+            <i class="fa fa-building"></i> {{ article.company }}<br/>    
+        </div>
+        <div class="col-md-8 vertical" style="height:10em">
             <a href="{{ path('superjobs_home_recruiter_job_details', { 'tag': article.id }) }}">
                 <h4>{{ article.title }}</h4>
             </a>
-            <br/>
-            Type : {{ article.type }} | Poste à : {{ article.location }} | Societé : {{ article.company }}            
         </div>
     </div>
-    </div>
+</div>
 <hr style="margin:0px;">
 {% endfor %}
     </div>

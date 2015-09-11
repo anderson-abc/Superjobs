@@ -17,6 +17,9 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_04d3cd695af3b7ec14bc21fc44d02668a9d9a726ef4231cbfa3ffb376fcf4e42 = $this->env->getExtension("native_profiler");
+        $__internal_04d3cd695af3b7ec14bc21fc44d02668a9d9a726ef4231cbfa3ffb376fcf4e42->enter($__internal_04d3cd695af3b7ec14bc21fc44d02668a9d9a726ef4231cbfa3ffb376fcf4e42_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SuperjobsHomeBundle::layout.html.twig"));
+
         // line 1
         echo "<!DOCTYPE html>
 <html lang=\"fr\">
@@ -38,27 +41,27 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
         <meta name=\"author\" content=\"Irmasoft\">
         <link href=\"";
         // line 19
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/bootstrap.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/css/bootstrap.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
         // line 20
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/font-awesome.min.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/css/font-awesome.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
         // line 21
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/Calendar.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/css/Calendar.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
         // line 22
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/one-page-wonder.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/css/one-page-wonder.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
         // line 23
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/sticky-footer-navbar.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/css/sticky-footer-navbar.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
         // line 24
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/css/feedback.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/css/feedback.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <title>Superjobs - Site de recrutement </title>
 
@@ -225,24 +228,24 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
         echo "    <script src=\"http://cdn.ckeditor.com/4.4.7/basic/ckeditor.js\"></script>
     <script src=\"";
         // line 155
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/jquery.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/js/jquery.js"), "html", null, true);
         echo "\"></script>
     ";
         // line 157
         echo "    <script src=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/jquery.uploadify.v2.1.4.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/js/jquery.uploadify.v2.1.4.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
         // line 158
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/bootstrap.min.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
         // line 159
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/jquery.countTo.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/js/jquery.countTo.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
         // line 160
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/js/feedback.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/js/feedback.js"), "html", null, true);
         echo "\"></script>
     <script>
               // custom formatting example
@@ -271,20 +274,35 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
     </script>
 </body>
 </html>";
+        
+        $__internal_04d3cd695af3b7ec14bc21fc44d02668a9d9a726ef4231cbfa3ffb376fcf4e42->leave($__internal_04d3cd695af3b7ec14bc21fc44d02668a9d9a726ef4231cbfa3ffb376fcf4e42_prof);
+
     }
 
     // line 80
     public function block_fos_user_content($context, array $blocks = array())
     {
+        $__internal_67e577291b3f8757913157eac842126792213921672412bc82ba94d942fd4c47 = $this->env->getExtension("native_profiler");
+        $__internal_67e577291b3f8757913157eac842126792213921672412bc82ba94d942fd4c47->enter($__internal_67e577291b3f8757913157eac842126792213921672412bc82ba94d942fd4c47_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+
         // line 81
         echo "                            ";
+        
+        $__internal_67e577291b3f8757913157eac842126792213921672412bc82ba94d942fd4c47->leave($__internal_67e577291b3f8757913157eac842126792213921672412bc82ba94d942fd4c47_prof);
+
     }
 
     // line 107
     public function block_container($context, array $blocks = array())
     {
+        $__internal_ebb2247127d30cc11b8df8c3c49d14ded761f102a7d03c05f3255c10066c71c9 = $this->env->getExtension("native_profiler");
+        $__internal_ebb2247127d30cc11b8df8c3c49d14ded761f102a7d03c05f3255c10066c71c9->enter($__internal_ebb2247127d30cc11b8df8c3c49d14ded761f102a7d03c05f3255c10066c71c9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "container"));
+
         echo "  
         ";
+        
+        $__internal_ebb2247127d30cc11b8df8c3c49d14ded761f102a7d03c05f3255c10066c71c9->leave($__internal_ebb2247127d30cc11b8df8c3c49d14ded761f102a7d03c05f3255c10066c71c9_prof);
+
     }
 
     public function getTemplateName()
@@ -299,6 +317,6 @@ class __TwigTemplate_1f5f33433a5fc5209cac3e73f06d94c1442ac6d5535f18e855509792c10
 
     public function getDebugInfo()
     {
-        return array (  284 => 107,  280 => 81,  277 => 80,  245 => 160,  241 => 159,  237 => 158,  232 => 157,  228 => 155,  225 => 154,  209 => 140,  175 => 108,  173 => 107,  157 => 94,  147 => 87,  140 => 82,  138 => 80,  133 => 77,  131 => 69,  123 => 64,  118 => 61,  109 => 56,  105 => 55,  97 => 50,  91 => 47,  87 => 45,  85 => 44,  77 => 38,  61 => 24,  57 => 23,  53 => 22,  49 => 21,  45 => 20,  41 => 19,  21 => 1,);
+        return array (  296 => 107,  289 => 81,  283 => 80,  248 => 160,  244 => 159,  240 => 158,  235 => 157,  231 => 155,  228 => 154,  212 => 140,  178 => 108,  176 => 107,  160 => 94,  150 => 87,  143 => 82,  141 => 80,  136 => 77,  134 => 69,  126 => 64,  121 => 61,  112 => 56,  108 => 55,  100 => 50,  94 => 47,  90 => 45,  88 => 44,  80 => 38,  64 => 24,  60 => 23,  56 => 22,  52 => 21,  48 => 20,  44 => 19,  24 => 1,);
     }
 }

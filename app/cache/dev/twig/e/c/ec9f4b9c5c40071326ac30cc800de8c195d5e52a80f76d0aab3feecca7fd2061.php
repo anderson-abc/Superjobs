@@ -21,12 +21,21 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_d70c7b79b4334292102e20a6150603f15b2b8aafd8f80cb3017508da36cb9dbf = $this->env->getExtension("native_profiler");
+        $__internal_d70c7b79b4334292102e20a6150603f15b2b8aafd8f80cb3017508da36cb9dbf->enter($__internal_d70c7b79b4334292102e20a6150603f15b2b8aafd8f80cb3017508da36cb9dbf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SuperjobsHomeBundle:Recruiter:intro.html.twig"));
+
         $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_d70c7b79b4334292102e20a6150603f15b2b8aafd8f80cb3017508da36cb9dbf->leave($__internal_d70c7b79b4334292102e20a6150603f15b2b8aafd8f80cb3017508da36cb9dbf_prof);
+
     }
 
     // line 3
     public function block_container($context, array $blocks = array())
     {
+        $__internal_6000b56a3b42951d86c91bb6ea4e7e4d1e291fc4c6e54a917f69e086cf339408 = $this->env->getExtension("native_profiler");
+        $__internal_6000b56a3b42951d86c91bb6ea4e7e4d1e291fc4c6e54a917f69e086cf339408->enter($__internal_6000b56a3b42951d86c91bb6ea4e7e4d1e291fc4c6e54a917f69e086cf339408_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "container"));
+
         // line 4
         echo "<style type=\"text/css\">
     .timer {
@@ -104,7 +113,7 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
         <div class=\"featurette\" id=\"about\">
             <img class=\"featurette-image img-circle img-responsive pull-right\" src=\"";
         // line 81
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/img/offre-emploi.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/img/offre-emploi.jpg"), "html", null, true);
         echo "\">
             <h2 class=\"featurette-heading\">
                 <span class=\"text-muted\">
@@ -127,7 +136,7 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
         <div class=\"featurette\" id=\"services\">
             <img class=\"featurette-image img-circle img-responsive pull-left\" src=\"";
         // line 98
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/img/talents.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/img/talents.jpg"), "html", null, true);
         echo "\" width=\"50%\">
             
             <h2 class=\"featurette-heading\">Chercher des talents<br/>
@@ -150,7 +159,7 @@ class __TwigTemplate_ec9f4b9c5c40071326ac30cc800de8c195d5e52a80f76d0aab3feecca7f
         <div class=\"featurette\" id=\"contact\">
             <img class=\"featurette-image img-circle img-responsive pull-right\" src=\"";
         // line 115
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/img/test-technique.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/img/test-technique.jpg"), "html", null, true);
         echo "\">
             <h2 class=\"featurette-heading\">
                 <span class=\"text-muted\">
@@ -175,6 +184,9 @@ A la fin de chacun de ces tests, une notation et une correction vous seront prop
     </div>
 
 ";
+        
+        $__internal_6000b56a3b42951d86c91bb6ea4e7e4d1e291fc4c6e54a917f69e086cf339408->leave($__internal_6000b56a3b42951d86c91bb6ea4e7e4d1e291fc4c6e54a917f69e086cf339408_prof);
+
     }
 
     public function getTemplateName()
@@ -189,6 +201,6 @@ A la fin de chacun de ces tests, une notation et une correction vous seront prop
 
     public function getDebugInfo()
     {
-        return array (  153 => 115,  137 => 103,  130 => 98,  113 => 84,  107 => 81,  77 => 53,  68 => 41,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  162 => 115,  146 => 103,  139 => 98,  122 => 84,  116 => 81,  86 => 53,  77 => 41,  40 => 4,  34 => 3,  11 => 1,);
     }
 }

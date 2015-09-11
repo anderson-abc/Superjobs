@@ -23,15 +23,24 @@ class __TwigTemplate_760db0e59df9ca1694736c537fa46f560e46e7eaaebab24c9fa8d9393da
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_a82d6763639466ea581bb91f219f71846c4e5ec5b011c7e0a6c13d3ebfb3e5b9 = $this->env->getExtension("native_profiler");
+        $__internal_a82d6763639466ea581bb91f219f71846c4e5ec5b011c7e0a6c13d3ebfb3e5b9->enter($__internal_a82d6763639466ea581bb91f219f71846c4e5ec5b011c7e0a6c13d3ebfb3e5b9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Collector/logger.html.twig"));
+
         // line 3
         $context["logger"] = $this;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_a82d6763639466ea581bb91f219f71846c4e5ec5b011c7e0a6c13d3ebfb3e5b9->leave($__internal_a82d6763639466ea581bb91f219f71846c4e5ec5b011c7e0a6c13d3ebfb3e5b9_prof);
+
     }
 
     // line 5
     public function block_toolbar($context, array $blocks = array())
     {
+        $__internal_c2a958385b780cfe6d13b89c99da4a3968d737a1b00bd133b1aacaaebed8fe4c = $this->env->getExtension("native_profiler");
+        $__internal_c2a958385b780cfe6d13b89c99da4a3968d737a1b00bd133b1aacaaebed8fe4c->enter($__internal_c2a958385b780cfe6d13b89c99da4a3968d737a1b00bd133b1aacaaebed8fe4c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "toolbar"));
+
         // line 6
         echo "    ";
         if ((($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors", array()) || $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countdeprecations", array())) || $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "countscreams", array()))) {
@@ -39,7 +48,7 @@ class __TwigTemplate_760db0e59df9ca1694736c537fa46f560e46e7eaaebab24c9fa8d9393da
             echo "        ";
             ob_start();
             // line 8
-            echo "            <img width=\"15\" height=\"28\" alt=\"Logs\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAAA4klEQVQ4y2P4//8/AyWYYXgYwOPp6Xnc3t7+P7EYpB6k7+zZs2ADNEjRjIwDAgKWgAywIUfz8+fPVzg7O/8AGeCATQEQnAfi/SAah/wcV1dXvAYUgORANA75ehcXl+/4DHAABRIe+ZrhbgAhTHsDiEgHBA0glA6GfSDiw5mZma+A+sphBlhVVFQ88vHx+Xfu3Ll7QP5haOjjwtuAuGHv3r3NIMNABqh8+/atsaur666vr+9XUlwSHx//AGQANxCbAnEWyGQicRMQ9wBxIQM0qjiBWAFqkB00/glhayBWHwb1AgB38EJsUtxtWwAAAABJRU5ErkJggg==\" />
+            echo "            <svg width=\"16\" height=\"28\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 16 28\" enable-background=\"new 0 0 16 28\" xml:space=\"preserve\"><g><path fill=\"#3F3F3F\" d=\"M15 6h-1V5c0-0.5-0.5-1-1-1H2C1.4 4 1 4.4 1 5v2v13c0 1.6 1.3 3 3 3h11c0.5 0 1-0.5 1-1V7 C16 6.5 15.5 6 15 6z M6 15h3v3H6V15z M6 13V7h3v6H6z M15 21c0 0.6-0.4 1-1 1H5c-0.9 0-1.7-0.4-2.2-1H13c0.6 0 1-0.4 1-1V7 c0.5 0 1 0.5 1 1V21z\"/></g></svg>
             ";
             // line 9
             if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "counterrors", array())) {
@@ -120,14 +129,20 @@ class __TwigTemplate_760db0e59df9ca1694736c537fa46f560e46e7eaaebab24c9fa8d9393da
             // line 38
             echo "    ";
         }
+        
+        $__internal_c2a958385b780cfe6d13b89c99da4a3968d737a1b00bd133b1aacaaebed8fe4c->leave($__internal_c2a958385b780cfe6d13b89c99da4a3968d737a1b00bd133b1aacaaebed8fe4c_prof);
+
     }
 
     // line 41
     public function block_menu($context, array $blocks = array())
     {
+        $__internal_63951fae46f75e71c7822679c8b9992667b6666bd6a32beedf1f6ddd10cb9d02 = $this->env->getExtension("native_profiler");
+        $__internal_63951fae46f75e71c7822679c8b9992667b6666bd6a32beedf1f6ddd10cb9d02->enter($__internal_63951fae46f75e71c7822679c8b9992667b6666bd6a32beedf1f6ddd10cb9d02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
+
         // line 42
         echo "<span class=\"label\">
-    <span class=\"icon\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAgCAYAAAAMq2gFAAABjElEQVRIx2MIDw+vd3R0/GFvb/+fGtjFxeVJSUmJ1f///5nv37/PAMMMzs7OVLMEhoODgy/k5+cHJCYmagAtZAJbRG1L0DEwxCYALeOgiUXbt2+/X1NT8xTEdnd3/wi0SI4mFgHBDCBeCLXoF5BtwkCEpvNAvB8JnydCTwgQR0It+g1kWxNjUQEQOyDhAiL0gNUiWWRDjEUOyMkUZsCoRaMWjVpEvEVkFkGjFmEUqgc+fvx4hVYWIReqzi9evKileaoDslnu3LkTNLQtGk3edLPIycnpL9Bge5pb1NXVdQNosDmGRcAm7F+QgKur6783b95cBQoeRGv1kII3QPOdAoZF8+fPP4PUqnx55syZVKCEI1rLh1hsAbWEZ8aMGaUoFoFcMG3atKdIjfSPISEhawICAlaQgwMDA1f6+/sfB5rzE2Sej4/PD3C7DkjoAHHVoUOHLpSVlX3w8vL6Sa34Alr6Z8WKFaCoMARZxAHEoFZ/HBD3A/FyIF4BxMvIxCC964F4G6hZDMTxQCwJAGWE8pur5kFDAAAAAElFTkSuQmCC\" alt=\"Logger\"></span>
+    <span class=\"icon\"><svg width=\"26\" height=\"32\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 26 32\" enable-background=\"new 0 0 26 32\" xml:space=\"preserve\"><path fill=\"#3F3F3F\" d=\"M23.6 3.4h-1.7V1.7c0-0.9-0.8-1.7-1.7-1.7H1.7C0.8 0 0 0.8 0 1.7v3.4v21.9C0 29.7 2.3 32 5.1 32h18.5 c0.9 0 1.7-0.8 1.7-1.7V5.1C25.3 4.1 24.5 3.4 23.6 3.4z M8.4 18.5h5.1v5.1H8.4V18.5z M8.4 15.2V5.1h5.1v10.1H8.4z M23.6 28.6 c0 0.9-0.8 1.7-1.7 1.7H6.7c-1.5 0-2.8-0.7-3.7-1.7h17.2c0.9 0 1.7-0.8 1.7-1.7V5.1c0.9 0 1.7 0.8 1.7 1.7V28.6z\"/></svg></span>
     <strong>Logs</strong>
     ";
         // line 45
@@ -147,11 +162,17 @@ class __TwigTemplate_760db0e59df9ca1694736c537fa46f560e46e7eaaebab24c9fa8d9393da
         // line 51
         echo "</span>
 ";
+        
+        $__internal_63951fae46f75e71c7822679c8b9992667b6666bd6a32beedf1f6ddd10cb9d02->leave($__internal_63951fae46f75e71c7822679c8b9992667b6666bd6a32beedf1f6ddd10cb9d02_prof);
+
     }
 
     // line 54
     public function block_panel($context, array $blocks = array())
     {
+        $__internal_8d45d14161fc6c954195e4d61faacb3da3b9621ac8b473fc7a6c1f02fce8195e = $this->env->getExtension("native_profiler");
+        $__internal_8d45d14161fc6c954195e4d61faacb3da3b9621ac8b473fc7a6c1f02fce8195e->enter($__internal_8d45d14161fc6c954195e4d61faacb3da3b9621ac8b473fc7a6c1f02fce8195e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "panel"));
+
         // line 55
         echo "    <h2>Logs</h2>
 
@@ -271,7 +292,7 @@ class __TwigTemplate_760db0e59df9ca1694736c537fa46f560e46e7eaaebab24c9fa8d9393da
                         echo " scream";
                     } elseif (($this->getAttribute($context["log"], "priority", array()) >= 400)) {
                         echo " error";
-                    } elseif (($this->getAttribute($context["log"], "priority", array()) >= 300)) {
+                    } elseif ((($this->getAttribute($context["log"], "priority", array()) >= 300) || (isset($context["is_deprecation"]) ? $context["is_deprecation"] : $this->getContext($context, "is_deprecation")))) {
                         echo " warning";
                     }
                     echo "\">
@@ -312,6 +333,9 @@ class __TwigTemplate_760db0e59df9ca1694736c537fa46f560e46e7eaaebab24c9fa8d9393da
         </p>
     ";
         }
+        
+        $__internal_8d45d14161fc6c954195e4d61faacb3da3b9621ac8b473fc7a6c1f02fce8195e->leave($__internal_8d45d14161fc6c954195e4d61faacb3da3b9621ac8b473fc7a6c1f02fce8195e_prof);
+
     }
 
     // line 112
@@ -328,6 +352,9 @@ class __TwigTemplate_760db0e59df9ca1694736c537fa46f560e46e7eaaebab24c9fa8d9393da
 
         ob_start();
         try {
+            $__internal_03ba7bb7b5ae03dd8a67cf824289cddd3efd4ac2cbb7383645f06b22dc47856a = $this->env->getExtension("native_profiler");
+            $__internal_03ba7bb7b5ae03dd8a67cf824289cddd3efd4ac2cbb7383645f06b22dc47856a->enter($__internal_03ba7bb7b5ae03dd8a67cf824289cddd3efd4ac2cbb7383645f06b22dc47856a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "display_message"));
+
             // line 113
             echo "    ";
             echo twig_escape_filter($this->env, (((isset($context["is_deprecation"]) ? $context["is_deprecation"] : $this->getContext($context, "is_deprecation"))) ? ("DEPRECATED") : ($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "priorityName", array()))), "html", null, true);
@@ -348,8 +375,19 @@ class __TwigTemplate_760db0e59df9ca1694736c537fa46f560e46e7eaaebab24c9fa8d9393da
                 echo "
         ";
                 // line 119
-                if ((isset($context["stack"]) ? $context["stack"] : $this->getContext($context, "stack"))) {
+                if ($this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", false, true), "errorCount", array(), "any", true, true)) {
                     // line 120
+                    echo "        (";
+                    echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context", array()), "errorCount", array()), "html", null, true);
+                    echo "x)
+        ";
+                }
+                // line 122
+                echo "
+        ";
+                // line 123
+                if ((isset($context["stack"]) ? $context["stack"] : $this->getContext($context, "stack"))) {
+                    // line 124
                     echo "            <a href=\"#\" onclick=\"Sfjs.toggle('";
                     echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), "html", null, true);
                     echo "', document.getElementById('";
@@ -358,100 +396,103 @@ class __TwigTemplate_760db0e59df9ca1694736c537fa46f560e46e7eaaebab24c9fa8d9393da
                     echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), "html", null, true);
                     echo "-off')); return false;\">
                 <img class=\"toggle\" id=\"";
-                    // line 121
+                    // line 125
                     echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), "html", null, true);
                     echo "-off\" alt=\"-\" src=\"data:image/gif;base64,R0lGODlhEgASAMQSANft94TG57Hb8GS44ez1+mC24IvK6ePx+Wa44dXs92+942e54o3L6W2844/M6dnu+P/+/l614P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABIALAAAAAASABIAQAVCoCQBTBOd6Kk4gJhGBCTPxysJb44K0qD/ER/wlxjmisZkMqBEBW5NHrMZmVKvv9hMVsO+hE0EoNAstEYGxG9heIhCADs=\" style=\"display:none\">
                 <img class=\"toggle\" id=\"";
-                    // line 122
+                    // line 126
                     echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), "html", null, true);
                     echo "-on\" alt=\"+\" src=\"data:image/gif;base64,R0lGODlhEgASAMQTANft99/v+Ga44bHb8ITG52S44dXs9+z1+uPx+YvK6WC24G+944/M6W28443L6dnu+Ge54v/+/l614P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABMALAAAAAASABIAQAVS4DQBTiOd6LkwgJgeUSzHSDoNaZ4PU6FLgYBA5/vFID/DbylRGiNIZu74I0h1hNsVxbNuUV4d9SsZM2EzWe1qThVzwWFOAFCQFa1RQq6DJB4iIQA7\" style=\"display:inline\">
             </a>
         ";
                 }
-                // line 125
+                // line 129
                 echo "
         ";
-                // line 126
+                // line 130
                 $context['_parent'] = (array) $context;
                 $context['_seq'] = twig_ensure_traversable((isset($context["stack"]) ? $context["stack"] : $this->getContext($context, "stack")));
                 foreach ($context['_seq'] as $context["index"] => $context["call"]) {
                     if (($context["index"] > 1)) {
-                        // line 127
+                        // line 131
                         echo "            ";
                         if (($context["index"] == 2)) {
-                            // line 128
+                            // line 132
                             echo "                <ul class=\"sf-call-stack\" id=\"";
                             echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id")), "html", null, true);
                             echo "\" style=\"display: none\">
             ";
                         }
-                        // line 130
+                        // line 134
                         echo "            ";
                         if ($this->getAttribute($context["call"], "class", array(), "any", true, true)) {
-                            // line 131
-                            echo "                ";
-                            $context["from"] = (($this->env->getExtension('code')->abbrClass($this->getAttribute($context["call"], "class", array())) . "::") . $this->env->getExtension('code')->abbrMethod($this->getAttribute($context["call"], "function", array())));
-                            // line 132
-                            echo "            ";
-                        } elseif ($this->getAttribute($context["call"], "function", array(), "any", true, true)) {
-                            // line 133
-                            echo "                ";
-                            $context["from"] = $this->env->getExtension('code')->abbrMethod($this->getAttribute($context["call"], "function", array()));
-                            // line 134
-                            echo "            ";
-                        } elseif ($this->getAttribute($context["call"], "file", array(), "any", true, true)) {
                             // line 135
                             echo "                ";
-                            $context["from"] = $this->getAttribute($context["call"], "file", array());
+                            $context["from"] = (($this->env->getExtension('code')->abbrClass($this->getAttribute($context["call"], "class", array())) . "::") . $this->env->getExtension('code')->abbrMethod($this->getAttribute($context["call"], "function", array())));
                             // line 136
                             echo "            ";
-                        } else {
+                        } elseif ($this->getAttribute($context["call"], "function", array(), "any", true, true)) {
                             // line 137
                             echo "                ";
-                            $context["from"] = "-";
+                            $context["from"] = $this->env->getExtension('code')->abbrMethod($this->getAttribute($context["call"], "function", array()));
                             // line 138
                             echo "            ";
+                        } elseif ($this->getAttribute($context["call"], "file", array(), "any", true, true)) {
+                            // line 139
+                            echo "                ";
+                            $context["from"] = $this->getAttribute($context["call"], "file", array());
+                            // line 140
+                            echo "            ";
+                        } else {
+                            // line 141
+                            echo "                ";
+                            $context["from"] = "-";
+                            // line 142
+                            echo "            ";
                         }
-                        // line 139
+                        // line 143
                         echo "
             <li>Called from ";
-                        // line 140
+                        // line 144
                         echo ((($this->getAttribute($context["call"], "file", array(), "any", true, true) && $this->getAttribute($context["call"], "line", array(), "any", true, true))) ? ($this->env->getExtension('code')->formatFile($this->getAttribute($context["call"], "file", array()), $this->getAttribute($context["call"], "line", array()), (isset($context["from"]) ? $context["from"] : $this->getContext($context, "from")))) : ((isset($context["from"]) ? $context["from"] : $this->getContext($context, "from"))));
                         echo "</li>
 
             ";
-                        // line 142
+                        // line 146
                         if (($context["index"] == (twig_length_filter($this->env, (isset($context["stack"]) ? $context["stack"] : $this->getContext($context, "stack"))) - 1))) {
-                            // line 143
+                            // line 147
                             echo "                </ul>
             ";
                         }
-                        // line 145
+                        // line 149
                         echo "        ";
                     }
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['index'], $context['call'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 146
+                // line 150
                 echo "    ";
             } else {
-                // line 147
+                // line 151
                 echo "        ";
                 if (($this->getAttribute((isset($context["log"]) ? $context["log"] : null), "context", array(), "any", true, true) &&  !twig_test_empty($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context", array())))) {
-                    // line 148
+                    // line 152
                     echo "            <br />
             <small>
                 <strong>Context</strong>: ";
-                    // line 150
+                    // line 154
                     echo twig_escape_filter($this->env, twig_jsonencode_filter($this->getAttribute((isset($context["log"]) ? $context["log"] : $this->getContext($context, "log")), "context", array()), (64 | 256)), "html", null, true);
                     echo "
             </small>
         ";
                 }
-                // line 153
+                // line 157
                 echo "    ";
             }
+            
+            $__internal_03ba7bb7b5ae03dd8a67cf824289cddd3efd4ac2cbb7383645f06b22dc47856a->leave($__internal_03ba7bb7b5ae03dd8a67cf824289cddd3efd4ac2cbb7383645f06b22dc47856a_prof);
+
         } catch (Exception $e) {
             ob_end_clean();
 
@@ -473,6 +514,6 @@ class __TwigTemplate_760db0e59df9ca1694736c537fa46f560e46e7eaaebab24c9fa8d9393da
 
     public function getDebugInfo()
     {
-        return array (  453 => 153,  447 => 150,  443 => 148,  440 => 147,  437 => 146,  430 => 145,  426 => 143,  424 => 142,  419 => 140,  416 => 139,  413 => 138,  410 => 137,  407 => 136,  404 => 135,  401 => 134,  398 => 133,  395 => 132,  392 => 131,  389 => 130,  383 => 128,  380 => 127,  375 => 126,  372 => 125,  366 => 122,  362 => 121,  353 => 120,  351 => 119,  348 => 118,  345 => 117,  342 => 116,  340 => 115,  332 => 113,  318 => 112,  310 => 105,  306 => 103,  299 => 101,  286 => 100,  280 => 97,  268 => 96,  265 => 95,  262 => 94,  259 => 93,  240 => 92,  238 => 91,  235 => 90,  233 => 89,  222 => 80,  214 => 78,  211 => 77,  208 => 76,  205 => 75,  202 => 74,  187 => 72,  184 => 71,  181 => 70,  178 => 69,  173 => 68,  162 => 58,  160 => 57,  156 => 55,  153 => 54,  148 => 51,  142 => 48,  139 => 47,  136 => 46,  134 => 45,  129 => 42,  126 => 41,  121 => 38,  118 => 37,  115 => 36,  109 => 33,  105 => 31,  102 => 30,  96 => 27,  92 => 25,  89 => 24,  83 => 21,  79 => 19,  76 => 18,  73 => 17,  62 => 15,  59 => 14,  56 => 13,  53 => 12,  50 => 11,  47 => 10,  45 => 9,  42 => 8,  39 => 7,  36 => 6,  33 => 5,  29 => 1,  27 => 3,  11 => 1,);
+        return array (  491 => 157,  485 => 154,  481 => 152,  478 => 151,  475 => 150,  468 => 149,  464 => 147,  462 => 146,  457 => 144,  454 => 143,  451 => 142,  448 => 141,  445 => 140,  442 => 139,  439 => 138,  436 => 137,  433 => 136,  430 => 135,  427 => 134,  421 => 132,  418 => 131,  413 => 130,  410 => 129,  404 => 126,  400 => 125,  391 => 124,  389 => 123,  386 => 122,  380 => 120,  378 => 119,  375 => 118,  372 => 117,  369 => 116,  367 => 115,  359 => 113,  342 => 112,  331 => 105,  327 => 103,  320 => 101,  307 => 100,  301 => 97,  289 => 96,  286 => 95,  283 => 94,  280 => 93,  261 => 92,  259 => 91,  256 => 90,  254 => 89,  243 => 80,  235 => 78,  232 => 77,  229 => 76,  226 => 75,  223 => 74,  208 => 72,  205 => 71,  202 => 70,  199 => 69,  194 => 68,  183 => 58,  181 => 57,  177 => 55,  171 => 54,  163 => 51,  157 => 48,  154 => 47,  151 => 46,  149 => 45,  144 => 42,  138 => 41,  130 => 38,  127 => 37,  124 => 36,  118 => 33,  114 => 31,  111 => 30,  105 => 27,  101 => 25,  98 => 24,  92 => 21,  88 => 19,  85 => 18,  82 => 17,  71 => 15,  68 => 14,  65 => 13,  62 => 12,  59 => 11,  56 => 10,  54 => 9,  51 => 8,  48 => 7,  45 => 6,  39 => 5,  32 => 1,  30 => 3,  11 => 1,);
     }
 }

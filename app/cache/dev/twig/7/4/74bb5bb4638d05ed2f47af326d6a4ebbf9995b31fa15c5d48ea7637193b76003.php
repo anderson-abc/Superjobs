@@ -21,12 +21,21 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_481bbaa62c0c57d4de10bc3010250ee36702d648719d51ee15be6ad31af3889a = $this->env->getExtension("native_profiler");
+        $__internal_481bbaa62c0c57d4de10bc3010250ee36702d648719d51ee15be6ad31af3889a->enter($__internal_481bbaa62c0c57d4de10bc3010250ee36702d648719d51ee15be6ad31af3889a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SuperjobsHomeBundle:Main:index.html.twig"));
+
         $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_481bbaa62c0c57d4de10bc3010250ee36702d648719d51ee15be6ad31af3889a->leave($__internal_481bbaa62c0c57d4de10bc3010250ee36702d648719d51ee15be6ad31af3889a_prof);
+
     }
 
     // line 2
     public function block_container($context, array $blocks = array())
     {
+        $__internal_e0cf0b2043a501ef4c619e37c381a13444b912dd304c0c0ffaab978a1f41a41d = $this->env->getExtension("native_profiler");
+        $__internal_e0cf0b2043a501ef4c619e37c381a13444b912dd304c0c0ffaab978a1f41a41d->enter($__internal_e0cf0b2043a501ef4c619e37c381a13444b912dd304c0c0ffaab978a1f41a41d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "container"));
+
         // line 3
         echo "
 <header class=\"intro-header\">
@@ -71,9 +80,9 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
         $context['_seq'] = twig_ensure_traversable((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
             // line 36
-            echo "    <div class=\"items\">
-    <div class=\"row\">    
-        <div class=\"col-xs-2\">
+            echo "<div class=\"items\">
+    <div class=\"row\">
+        <div class=\"col-md-2\">
             <time class=\"calendar\">
                 <em>";
             // line 40
@@ -87,49 +96,54 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
             // line 42
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["article"], "createdAt", array()), "d"), "html", null, true);
             echo "</span>
-            </time>
-        </div>    
-        <div class=\"col-xs-10\">            
-            <a href=\"";
+            </time>        
+        </div>
+        <div class=\"col-md-2 vertical\" style=\"height:10em\">
+            <i class=\"fa fa-compress\"></i> ";
             // line 46
+            echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "type", array()), "html", null, true);
+            echo "<br/>
+            <i class=\"fa fa-map-marker\"></i> ";
+            // line 47
+            echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "location", array()), "html", null, true);
+            echo "<br/>
+            <i class=\"fa fa-building\"></i> ";
+            // line 48
+            echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "company", array()), "html", null, true);
+            echo "<br/>    
+        </div>
+        <div class=\"col-md-8 vertical\" style=\"height:10em\">
+            <a href=\"";
+            // line 51
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("superjobs_home_recruiter_job_details", array("tag" => $this->getAttribute($context["article"], "id", array()))), "html", null, true);
             echo "\">
                 <h4>";
-            // line 47
+            // line 52
             echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "title", array()), "html", null, true);
             echo "</h4>
             </a>
-            <br/>
-            Type : ";
-            // line 50
-            echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "type", array()), "html", null, true);
-            echo " | Poste à : ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "location", array()), "html", null, true);
-            echo " | Societé : ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "company", array()), "html", null, true);
-            echo "            
         </div>
     </div>
-    </div>
+</div>
 <hr style=\"margin:0px;\">
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 59
         echo "    </div>
     <div class=\"col-xs-6 col-md-4\">
         <img src=\"";
-        // line 58
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/superjobshome/img/publicité.jpg"), "html", null, true);
+        // line 61
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/img/publicité.jpg"), "html", null, true);
         echo "\" width=\"100%\">
     </div>
 </div>
 <center>
 <div class=\"pagination\">
     ";
-        // line 63
+        // line 66
         echo $this->env->getExtension('knp_pagination')->render((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "", array(), array("prev_label" => "Previous", "next_label" => "Next", "first_label" => "First", "last_label" => "Last"));
         echo "
 </div>
@@ -141,6 +155,9 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
 }
 </style>
 ";
+        
+        $__internal_e0cf0b2043a501ef4c619e37c381a13444b912dd304c0c0ffaab978a1f41a41d->leave($__internal_e0cf0b2043a501ef4c619e37c381a13444b912dd304c0c0ffaab978a1f41a41d_prof);
+
     }
 
     public function getTemplateName()
@@ -155,6 +172,6 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
 
     public function getDebugInfo()
     {
-        return array (  133 => 63,  125 => 58,  121 => 56,  105 => 50,  99 => 47,  95 => 46,  88 => 42,  84 => 41,  80 => 40,  74 => 36,  70 => 35,  63 => 31,  60 => 30,  54 => 25,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  147 => 66,  139 => 61,  135 => 59,  122 => 52,  118 => 51,  112 => 48,  108 => 47,  104 => 46,  97 => 42,  93 => 41,  89 => 40,  83 => 36,  79 => 35,  72 => 31,  69 => 30,  63 => 25,  40 => 3,  34 => 2,  11 => 1,);
     }
 }

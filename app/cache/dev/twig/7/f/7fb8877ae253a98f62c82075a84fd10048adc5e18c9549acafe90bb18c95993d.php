@@ -23,12 +23,21 @@ class __TwigTemplate_7fb8877ae253a98f62c82075a84fd10048adc5e18c9549acafe90bb18c9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_392727554699c37f7faa1e5a4636836d98e3903b4deb15edfe1f5e8c060d6407 = $this->env->getExtension("native_profiler");
+        $__internal_392727554699c37f7faa1e5a4636836d98e3903b4deb15edfe1f5e8c060d6407->enter($__internal_392727554699c37f7faa1e5a4636836d98e3903b4deb15edfe1f5e8c060d6407_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Swiftmailer/Collector/swiftmailer.html.twig"));
+
         $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_392727554699c37f7faa1e5a4636836d98e3903b4deb15edfe1f5e8c060d6407->leave($__internal_392727554699c37f7faa1e5a4636836d98e3903b4deb15edfe1f5e8c060d6407_prof);
+
     }
 
     // line 3
     public function block_toolbar($context, array $blocks = array())
     {
+        $__internal_52e017b93d87c59d57695ba362d52187c61303a2a7631cfd0f4105a9308bd83a = $this->env->getExtension("native_profiler");
+        $__internal_52e017b93d87c59d57695ba362d52187c61303a2a7631cfd0f4105a9308bd83a->enter($__internal_52e017b93d87c59d57695ba362d52187c61303a2a7631cfd0f4105a9308bd83a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "toolbar"));
+
         // line 4
         echo "    ";
         if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "messageCount", array())) {
@@ -93,11 +102,17 @@ class __TwigTemplate_7fb8877ae253a98f62c82075a84fd10048adc5e18c9549acafe90bb18c9
             // line 28
             echo "    ";
         }
+        
+        $__internal_52e017b93d87c59d57695ba362d52187c61303a2a7631cfd0f4105a9308bd83a->leave($__internal_52e017b93d87c59d57695ba362d52187c61303a2a7631cfd0f4105a9308bd83a_prof);
+
     }
 
     // line 31
     public function block_menu($context, array $blocks = array())
     {
+        $__internal_d472ba33f399dc84ef9523381a224a2f47bab552dfe4646a9f86671d5050df2f = $this->env->getExtension("native_profiler");
+        $__internal_d472ba33f399dc84ef9523381a224a2f47bab552dfe4646a9f86671d5050df2f->enter($__internal_d472ba33f399dc84ef9523381a224a2f47bab552dfe4646a9f86671d5050df2f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "menu"));
+
         // line 32
         echo "<span class=\"label\">
     <span class=\"icon\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAeCAYAAABaKIzgAAAEDElEQVR42u2XWUhUURjHy6isILAebO+lonpJ8qkHM3NFVFxAUVFM0RSXUKnwwdAQn3wQE0MyA1MwBEUQcxvHZTTTHNcZl9DUGqd0JBOzcsZ7+n8XJ0Z0GueOVwg68GfmnLn3O7/7Lee7s4cxZpHq6uos0bb3+Q+6DrG3u7v7RHt7u3tbW9uD5ubm8qamJnlDQ4NKIpG8HhkZOU3X7BYoD9Tb22sjk8mcWltb70ul0pcAegugBfzOjKmzs/MJ7j0kCujw8PBhADkAKAVAz+EZGYA+08bmCN79qdFo7sGmjaWg+wgIIUtoaWl5CqDmxsbGj7SJpYK3uYWFBRnsDmEfWyGg+zs6OkIBNEoGxVB9fT2bnZ1VIHff03xmZuY29rUyF9QWT6sWC5I0OTk5rVAo3unnSqXyEfa1Nhf0Kp5UKRYk8lsDD0oM1/r6+l5h32Pmgl5UqVTP5ubmlEgBHRlCobC8vDzm5eXFHB0dRZWzs/OXsLCwu5SCpkBPo4DaMVRI9rbp6Wk1vnP+/v5kaFfk4eGhAcdJU6Dn+/v7q9aTnpPL5YqVlRV5eXm5Fk+7Gx7lCgsL68Fx2RToWST7C8McQgr8yMrKWkLu/hQz/LDNIZojycnJb8BxwRTocYT8oSEoQs8bSkpK0k5MTGgiIiK4nYYMDg7mcBLIo6OjP9Ec44opUGvIF+eoTg/a1dX1x2BISMgyKncpLS1tbacgU1NT2djY2HxoaOi8fg3jhilQK+gmQvBVD4qQbzDs4+ND6bBWUFCgtRQyJyeHdwSKdcODY9zaTgu9jheMcWOgJFdXV1ZZWclqamp0bm5uQoqGVVRUrFHBuru782tCQC+hW0j/BkpCPlGXIY9wfn5+5hQN5T3dS+cz5btg0DNTU1NFpkBra2tZaWkpy8jIYOPj4ywmJmY7RcMGBwdZZmYmKykpoa7ELPGozeLiYrIetKenZ5OhuLg4ft3T05OfJyQk8LDp6el/LRq6JiUlheb8vXgzY7m5uYJBD0LeeDnRApQ8sKloqK3GxsZuWEPrYzhiWHFx8ZZFMzo6yiIjIw1DTTZ+qNXqMRcXF0GgVpADKltDoCisDcbj4+NZfn7+ll5D9fKeprYbFRXFwsPDWVVV1SodPwEBAVueEtnZ2QNIhTkhoKRrAxhb5WhRURFzcnIyGmIcX9rq6uoPq6urAzqdrresrGwIHtMZux62OOT6AD4FgZ5bXl5+DMhv6P16j/KhCwoK2vHO5O3t/SsxMfG7ENAjkAOUBUkMvMVDiiFKDSGge6Gj0CUoGmffpvwSEfg7dUch/0LtkWcdvr6+a2JDBgYG6tDt6DXPTgjoKegOVAo1QVKR1AgVQ8GQrRDQA+uw9ushuSWSyLYdQRr7K/JP6DcTwr8i7Fj8pwAAAABJRU5ErkJggg==\" alt=\"Configuration\" /></span>
@@ -110,11 +125,17 @@ class __TwigTemplate_7fb8877ae253a98f62c82075a84fd10048adc5e18c9549acafe90bb18c9
     </span>
 </span>
 ";
+        
+        $__internal_d472ba33f399dc84ef9523381a224a2f47bab552dfe4646a9f86671d5050df2f->leave($__internal_d472ba33f399dc84ef9523381a224a2f47bab552dfe4646a9f86671d5050df2f_prof);
+
     }
 
     // line 41
     public function block_panel($context, array $blocks = array())
     {
+        $__internal_528c2aa5351ccb20c0c75948869eee120bebc89009e18c46b879e22956e7ffa5 = $this->env->getExtension("native_profiler");
+        $__internal_528c2aa5351ccb20c0c75948869eee120bebc89009e18c46b879e22956e7ffa5->enter($__internal_528c2aa5351ccb20c0c75948869eee120bebc89009e18c46b879e22956e7ffa5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "panel"));
+
         // line 42
         echo "    <h2>Messages</h2>
 
@@ -275,6 +296,9 @@ class __TwigTemplate_7fb8877ae253a98f62c82075a84fd10048adc5e18c9549acafe90bb18c9
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['name'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        
+        $__internal_528c2aa5351ccb20c0c75948869eee120bebc89009e18c46b879e22956e7ffa5->leave($__internal_528c2aa5351ccb20c0c75948869eee120bebc89009e18c46b879e22956e7ffa5_prof);
+
     }
 
     public function getTemplateName()
@@ -289,6 +313,6 @@ class __TwigTemplate_7fb8877ae253a98f62c82075a84fd10048adc5e18c9549acafe90bb18c9
 
     public function getDebugInfo()
     {
-        return array (  273 => 96,  269 => 94,  254 => 92,  246 => 90,  243 => 88,  240 => 86,  238 => 85,  235 => 83,  230 => 82,  227 => 81,  224 => 79,  221 => 77,  219 => 76,  217 => 75,  208 => 73,  204 => 72,  199 => 71,  182 => 70,  179 => 69,  173 => 65,  171 => 64,  163 => 62,  159 => 61,  154 => 58,  143 => 55,  138 => 54,  135 => 53,  131 => 52,  119 => 42,  116 => 41,  108 => 36,  102 => 32,  99 => 31,  94 => 28,  91 => 27,  87 => 25,  78 => 22,  71 => 18,  67 => 17,  63 => 15,  59 => 14,  54 => 12,  50 => 10,  47 => 9,  42 => 7,  39 => 6,  36 => 5,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  294 => 96,  290 => 94,  275 => 92,  267 => 90,  264 => 88,  261 => 86,  259 => 85,  256 => 83,  251 => 82,  248 => 81,  245 => 79,  242 => 77,  240 => 76,  238 => 75,  229 => 73,  225 => 72,  220 => 71,  203 => 70,  200 => 69,  194 => 65,  192 => 64,  184 => 62,  180 => 61,  175 => 58,  164 => 55,  159 => 54,  156 => 53,  152 => 52,  140 => 42,  134 => 41,  123 => 36,  117 => 32,  111 => 31,  103 => 28,  100 => 27,  96 => 25,  87 => 22,  80 => 18,  76 => 17,  72 => 15,  68 => 14,  63 => 12,  59 => 10,  56 => 9,  51 => 7,  48 => 6,  45 => 5,  42 => 4,  36 => 3,  11 => 1,);
     }
 }

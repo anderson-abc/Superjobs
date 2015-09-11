@@ -15,6 +15,9 @@ class __TwigTemplate_f6f161874860868cbf2081afe070060d65987d80991df708f4e3d4a5f31
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_fee0b859a5a57ae7c3a3443f8ca00a3ac23210890a025113a8495fa8ba0d9ff4 = $this->env->getExtension("native_profiler");
+        $__internal_fee0b859a5a57ae7c3a3443f8ca00a3ac23210890a025113a8495fa8ba0d9ff4->enter($__internal_fee0b859a5a57ae7c3a3443f8ca00a3ac23210890a025113a8495fa8ba0d9ff4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig"));
+
         // line 16
         echo "
 ";
@@ -188,6 +191,9 @@ class __TwigTemplate_f6f161874860868cbf2081afe070060d65987d80991df708f4e3d4a5f31
             echo "    </ul>
 ";
         }
+        
+        $__internal_fee0b859a5a57ae7c3a3443f8ca00a3ac23210890a025113a8495fa8ba0d9ff4->leave($__internal_fee0b859a5a57ae7c3a3443f8ca00a3ac23210890a025113a8495fa8ba0d9ff4_prof);
+
     }
 
     public function getTemplateName()
@@ -202,6 +208,6 @@ class __TwigTemplate_f6f161874860868cbf2081afe070060d65987d80991df708f4e3d4a5f31
 
     public function getDebugInfo()
     {
-        return array (  188 => 84,  182 => 81,  179 => 80,  171 => 77,  168 => 76,  166 => 75,  163 => 74,  155 => 71,  152 => 70,  149 => 69,  141 => 66,  138 => 65,  132 => 61,  129 => 60,  126 => 59,  124 => 58,  121 => 57,  114 => 55,  108 => 52,  105 => 51,  97 => 48,  94 => 47,  91 => 46,  87 => 45,  84 => 44,  81 => 43,  75 => 39,  73 => 38,  68 => 36,  65 => 35,  63 => 34,  58 => 32,  55 => 31,  53 => 30,  50 => 29,  44 => 26,  41 => 25,  33 => 22,  30 => 21,  28 => 20,  24 => 18,  22 => 17,  19 => 16,);
+        return array (  191 => 84,  185 => 81,  182 => 80,  174 => 77,  171 => 76,  169 => 75,  166 => 74,  158 => 71,  155 => 70,  152 => 69,  144 => 66,  141 => 65,  135 => 61,  132 => 60,  129 => 59,  127 => 58,  124 => 57,  117 => 55,  111 => 52,  108 => 51,  100 => 48,  97 => 47,  94 => 46,  90 => 45,  87 => 44,  84 => 43,  78 => 39,  76 => 38,  71 => 36,  68 => 35,  66 => 34,  61 => 32,  58 => 31,  56 => 30,  53 => 29,  47 => 26,  44 => 25,  36 => 22,  33 => 21,  31 => 20,  27 => 18,  25 => 17,  22 => 16,);
     }
 }

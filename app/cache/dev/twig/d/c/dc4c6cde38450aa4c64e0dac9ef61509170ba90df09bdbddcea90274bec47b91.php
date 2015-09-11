@@ -15,6 +15,9 @@ class __TwigTemplate_dc4c6cde38450aa4c64e0dac9ef61509170ba90df09bdbddcea90274bec
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_813616f9e84d809546d4f37d9ce9bcbfd07fd81bbf7f8691a81c48f10ea40e6a = $this->env->getExtension("native_profiler");
+        $__internal_813616f9e84d809546d4f37d9ce9bcbfd07fd81bbf7f8691a81c48f10ea40e6a->enter($__internal_813616f9e84d809546d4f37d9ce9bcbfd07fd81bbf7f8691a81c48f10ea40e6a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/toolbar_js.html.twig"));
+
         // line 1
         echo "<div id=\"sfwdt";
         echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
@@ -123,6 +126,9 @@ class __TwigTemplate_dc4c6cde38450aa4c64e0dac9ef61509170ba90df09bdbddcea90274bec
     })();
 /*]]>*/</script>
 ";
+        
+        $__internal_813616f9e84d809546d4f37d9ce9bcbfd07fd81bbf7f8691a81c48f10ea40e6a->leave($__internal_813616f9e84d809546d4f37d9ce9bcbfd07fd81bbf7f8691a81c48f10ea40e6a_prof);
+
     }
 
     public function getTemplateName()
@@ -137,6 +143,6 @@ class __TwigTemplate_dc4c6cde38450aa4c64e0dac9ef61509170ba90df09bdbddcea90274bec
 
     public function getDebugInfo()
     {
-        return array (  117 => 61,  83 => 30,  79 => 29,  75 => 28,  70 => 26,  66 => 25,  62 => 24,  50 => 15,  46 => 14,  42 => 12,  32 => 6,  30 => 5,  26 => 3,  24 => 2,  19 => 1,);
+        return array (  120 => 61,  86 => 30,  82 => 29,  78 => 28,  73 => 26,  69 => 25,  65 => 24,  53 => 15,  49 => 14,  45 => 12,  35 => 6,  33 => 5,  29 => 3,  27 => 2,  22 => 1,);
     }
 }

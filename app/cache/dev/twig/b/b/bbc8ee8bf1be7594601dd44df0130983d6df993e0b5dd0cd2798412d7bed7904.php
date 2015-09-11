@@ -21,16 +21,25 @@ class __TwigTemplate_bbc8ee8bf1be7594601dd44df0130983d6df993e0b5dd0cd2798412d7be
 
     protected function doDisplay(array $context, array $blocks = array())
     {
+        $__internal_ae7a822382b27c7d455dd6ff72c2450f8240630058345042e35630f3cd8adead = $this->env->getExtension("native_profiler");
+        $__internal_ae7a822382b27c7d455dd6ff72c2450f8240630058345042e35630f3cd8adead->enter($__internal_ae7a822382b27c7d455dd6ff72c2450f8240630058345042e35630f3cd8adead_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Collector/ajax.html.twig"));
+
         $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_ae7a822382b27c7d455dd6ff72c2450f8240630058345042e35630f3cd8adead->leave($__internal_ae7a822382b27c7d455dd6ff72c2450f8240630058345042e35630f3cd8adead_prof);
+
     }
 
     // line 3
     public function block_toolbar($context, array $blocks = array())
     {
+        $__internal_31482c4c70e48180a19e78c8fb7483291b52384d27e4ff1b05df166f14476525 = $this->env->getExtension("native_profiler");
+        $__internal_31482c4c70e48180a19e78c8fb7483291b52384d27e4ff1b05df166f14476525->enter($__internal_31482c4c70e48180a19e78c8fb7483291b52384d27e4ff1b05df166f14476525_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "toolbar"));
+
         // line 4
         echo "    ";
         $context["icon"] = ('' === $tmp = "        <span>
-            <img width=\"13\" height=\"28\" alt=\"AJAX requests\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAcCAYAAAB75n/uAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gUJDAkZ7bv96AAAAP1JREFUSMftlr0NgzAQhZ8RovIQeIdUkdJFWcINFAyQJl0UpU2TAShwwxZ0kVKxAwxBRXOpQEBsfkMRiets2e/T+ex3ZkSENcPCyvH/ALs5KMsXPfZnJJz3bnKDCEoKVo2z2KM7bq252RnoxP0wRx768OKMFgFM4lXoINavxE0Qu0+0KI54vi84OE7rbE3iLQgiUlIwe2oNYm9HYc4H11WQyQCpUiYNt06X8faSN8AGAOyvl9mwas4TXE8JABAAFG6AVEk2KQOpUhYF7iizmypem52QikUwG1ivkw40p7oGQiptJmNtelSRu5Cl4tp+UB1Xt8fOEQcAtn28huIDUf6Q+fofUk0AAAAASUVORK5CYII=\">
+            <svg width=\"24\" height=\"28\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 24 28\" enable-background=\"new 0 0 24 28\" xml:space=\"preserve\"><polygon fill=\"#3F3F3F\" points=\"18.4,3.8 12.8,9.4 16.3,9.4 16.3,21.1 14.1,21.1 9.9,25.3 16.3,25.3 20.5,25.3 20.5,21.1 20.5,9.4 23.9,9.4\"/><polygon fill=\"#3F3F3F\" points=\"5.6,25.3 11.2,19.7 7.7,19.7 7.7,8 9.9,8 14.1,3.8 7.7,3.8 3.5,3.8 3.5,8 3.5,19.7 0.1,19.7\"/></svg>
             <span class=\"sf-toolbar-ajax-requests\">0</span>
         </span>
     ") ? '' : new Twig_Markup($tmp, $this->env->getCharset());
@@ -57,6 +66,9 @@ class __TwigTemplate_bbc8ee8bf1be7594601dd44df0130983d6df993e0b5dd0cd2798412d7be
         // line 29
         echo "    ";
         $this->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig", "@WebProfiler/Collector/ajax.html.twig", 29)->display(array_merge($context, array("link" => false)));
+        
+        $__internal_31482c4c70e48180a19e78c8fb7483291b52384d27e4ff1b05df166f14476525->leave($__internal_31482c4c70e48180a19e78c8fb7483291b52384d27e4ff1b05df166f14476525_prof);
+
     }
 
     public function getTemplateName()
@@ -71,6 +83,6 @@ class __TwigTemplate_bbc8ee8bf1be7594601dd44df0130983d6df993e0b5dd0cd2798412d7be
 
     public function getDebugInfo()
     {
-        return array (  58 => 29,  38 => 10,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  67 => 29,  47 => 10,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
