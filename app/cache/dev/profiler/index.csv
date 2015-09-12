@@ -19,3 +19,7 @@ ad07df,127.0.0.1,GET,http://localhost/superjobs/web/app_dev.php/?page=2,14420124
 1287e5,127.0.0.1,GET,http://localhost/superjobs/web/app_dev.php/?page=2,1442012577,,200
 b43cf3,127.0.0.1,GET,http://localhost/superjobs/web/app_dev.php/?page=2,1442012603,,200
 d35a59,127.0.0.1,GET,http://localhost/superjobs/web/app_dev.php/?page=2,1442012630,,200
+55c659,127.0.0.1,GET,http://localhost/superjobs/web/app_dev.php/,1442014066,,200
+000c75,127.0.0.1,GET,http://localhost/superjobs/web/app_dev.php/feedback,1442014086,,200
+159a30,127.0.0.1,GET,http://localhost/superjobs/web/app_dev.php/,1442014094,,200
+7254f1,127.0.0.1,GET,http://localhost/superjobs/web/app_dev.php/,1442100753,,200

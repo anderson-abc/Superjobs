@@ -21,20 +21,20 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_481bbaa62c0c57d4de10bc3010250ee36702d648719d51ee15be6ad31af3889a = $this->env->getExtension("native_profiler");
-        $__internal_481bbaa62c0c57d4de10bc3010250ee36702d648719d51ee15be6ad31af3889a->enter($__internal_481bbaa62c0c57d4de10bc3010250ee36702d648719d51ee15be6ad31af3889a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SuperjobsHomeBundle:Main:index.html.twig"));
+        $__internal_0463baf885ec01458bc548c2bc0e4c6f46c3af507b73513eb2cf7de8f15e4abf = $this->env->getExtension("native_profiler");
+        $__internal_0463baf885ec01458bc548c2bc0e4c6f46c3af507b73513eb2cf7de8f15e4abf->enter($__internal_0463baf885ec01458bc548c2bc0e4c6f46c3af507b73513eb2cf7de8f15e4abf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SuperjobsHomeBundle:Main:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_481bbaa62c0c57d4de10bc3010250ee36702d648719d51ee15be6ad31af3889a->leave($__internal_481bbaa62c0c57d4de10bc3010250ee36702d648719d51ee15be6ad31af3889a_prof);
+        $__internal_0463baf885ec01458bc548c2bc0e4c6f46c3af507b73513eb2cf7de8f15e4abf->leave($__internal_0463baf885ec01458bc548c2bc0e4c6f46c3af507b73513eb2cf7de8f15e4abf_prof);
 
     }
 
     // line 2
     public function block_container($context, array $blocks = array())
     {
-        $__internal_e0cf0b2043a501ef4c619e37c381a13444b912dd304c0c0ffaab978a1f41a41d = $this->env->getExtension("native_profiler");
-        $__internal_e0cf0b2043a501ef4c619e37c381a13444b912dd304c0c0ffaab978a1f41a41d->enter($__internal_e0cf0b2043a501ef4c619e37c381a13444b912dd304c0c0ffaab978a1f41a41d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "container"));
+        $__internal_614d788a4d042ba83df517d2a900f59895918d116c5c124b8e559ecd1def59f9 = $this->env->getExtension("native_profiler");
+        $__internal_614d788a4d042ba83df517d2a900f59895918d116c5c124b8e559ecd1def59f9->enter($__internal_614d788a4d042ba83df517d2a900f59895918d116c5c124b8e559ecd1def59f9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "container"));
 
         // line 3
         echo "
@@ -98,27 +98,28 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
             echo "</span>
             </time>        
         </div>
+            
         <div class=\"col-md-2 vertical\" style=\"height:10em\">
             <i class=\"fa fa-compress\"></i> ";
-            // line 46
+            // line 47
             echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "type", array()), "html", null, true);
             echo "<br/>
             <i class=\"fa fa-map-marker\"></i> ";
-            // line 47
+            // line 48
             echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "location", array()), "html", null, true);
             echo "<br/>
             <i class=\"fa fa-building\"></i> ";
-            // line 48
+            // line 49
             echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "company", array()), "html", null, true);
             echo "<br/>    
         </div>
         <div class=\"col-md-8 vertical\" style=\"height:10em\">
             <a href=\"";
-            // line 51
+            // line 52
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("superjobs_home_recruiter_job_details", array("tag" => $this->getAttribute($context["article"], "id", array()))), "html", null, true);
             echo "\">
                 <h4>";
-            // line 52
+            // line 53
             echo twig_escape_filter($this->env, $this->getAttribute($context["article"], "title", array()), "html", null, true);
             echo "</h4>
             </a>
@@ -131,11 +132,11 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 60
         echo "    </div>
     <div class=\"col-xs-6 col-md-4\">
         <img src=\"";
-        // line 61
+        // line 62
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/superjobshome/img/publicité.jpg"), "html", null, true);
         echo "\" width=\"100%\">
     </div>
@@ -143,7 +144,7 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
 <center>
 <div class=\"pagination\">
     ";
-        // line 66
+        // line 67
         echo $this->env->getExtension('knp_pagination')->render((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "", array(), array("prev_label" => "Previous", "next_label" => "Next", "first_label" => "First", "last_label" => "Last"));
         echo "
 </div>
@@ -156,7 +157,7 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
 </style>
 ";
         
-        $__internal_e0cf0b2043a501ef4c619e37c381a13444b912dd304c0c0ffaab978a1f41a41d->leave($__internal_e0cf0b2043a501ef4c619e37c381a13444b912dd304c0c0ffaab978a1f41a41d_prof);
+        $__internal_614d788a4d042ba83df517d2a900f59895918d116c5c124b8e559ecd1def59f9->leave($__internal_614d788a4d042ba83df517d2a900f59895918d116c5c124b8e559ecd1def59f9_prof);
 
     }
 
@@ -172,6 +173,6 @@ class __TwigTemplate_74bb5bb4638d05ed2f47af326d6a4ebbf9995b31fa15c5d48ea7637193b
 
     public function getDebugInfo()
     {
-        return array (  147 => 66,  139 => 61,  135 => 59,  122 => 52,  118 => 51,  112 => 48,  108 => 47,  104 => 46,  97 => 42,  93 => 41,  89 => 40,  83 => 36,  79 => 35,  72 => 31,  69 => 30,  63 => 25,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  148 => 67,  140 => 62,  136 => 60,  123 => 53,  119 => 52,  113 => 49,  109 => 48,  105 => 47,  97 => 42,  93 => 41,  89 => 40,  83 => 36,  79 => 35,  72 => 31,  69 => 30,  63 => 25,  40 => 3,  34 => 2,  11 => 1,);
     }
 }
