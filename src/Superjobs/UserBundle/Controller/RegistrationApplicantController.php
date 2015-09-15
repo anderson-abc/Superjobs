@@ -8,6 +8,6 @@ class RegistrationApplicantController extends Controller
 {
     public function registerAction()
     {
-        return $this->render('IrmasoftUserBundle:Registration:applicant.form.html.twig');
+        return $this->render('SuperjobsUserBundle:Registration:applicant.form.html.twig');
     }
 }

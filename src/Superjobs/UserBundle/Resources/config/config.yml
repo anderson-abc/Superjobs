@@ -13,7 +13,7 @@ pugx_multi_user:
             registration:
                 form: 
                     type: Irmasoft\UserBundle\Form\Type\RegistrationRecruiterFormType
-                    name: recruiter_registration_form
+                    name: fos_user_registration_form
                     validation_groups: [Registration, Default]
                 template: IrmasoftUserBundle:Registration:recruiter.form.html.twig
             profile:
