@@ -22,9 +22,9 @@ class AppKernel extends Kernel
             new Superjobs\UserBundle\SuperjobsUserBundle(),
             
             new FOS\UserBundle\FOSUserBundle(),
+            new PUGX\MultiUserBundle\PUGXMultiUserBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
-//            new PUGX\MultiUserBundle\PUGXMultiUserBundle(),
         );
         
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

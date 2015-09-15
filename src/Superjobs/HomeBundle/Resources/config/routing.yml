@@ -10,7 +10,7 @@ superjobs_home_recruiter_job_details:
     path:     /jobs/{id}
     defaults: { _controller: SuperjobsHomeBundle:Main:details, id: 1 }
     requirements:
-        _method:  GET|POST
+        methods:  GET|POST
         id: \d+
         
 superjobs_home_recruiter_intro:
@@ -25,7 +25,7 @@ superjobs_home_recruiter_add:
     path:     /recruiter/add
     defaults: { _controller: SuperjobsHomeBundle:Recruiter:add }
     requirements:
-        _method:  GET|POST
+        methods:  GET|POST
 
 superjobs_home_intro_template:
     path:     /applicant/intro

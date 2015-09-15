@@ -9,7 +9,7 @@ class MainController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $jobs = $em->getRepository("SuperjobsHomeBundle:Jobs")->findBy(   
                                 array(), 
                                 array('id' => 'DESC')
