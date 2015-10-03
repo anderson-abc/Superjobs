@@ -14,7 +14,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Superjobs, recrutements, jobs, cv, informatique">
+        <meta name="description" content="Superjobs, recrutements, jobs, cv, profile, informatique, cvthéque">
         <meta name="author" content="Irmasoft">
         <link href="{{ asset('bundles/superjobshome/css/bootstrap.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -22,6 +22,7 @@
         <link href="{{ asset('bundles/superjobshome/css/one-page-wonder.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/sticky-footer-navbar.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/feedback.css')}}" rel="stylesheet">
+        <link href="{{ asset('bundles/superjobshome/css/signin.css')}}" rel="stylesheet">
         <title>Superjobs - Site de recrutement </title>
 
     <nav class="navbar navbar-inverse navbar-fixed-top" style="box-shadow: 0px 3px 5px 0px rgba(102, 102, 102, 0.5);">
@@ -78,7 +79,7 @@
                     <li>
                         <div>
                             {% block fos_user_content %}
-                            {% endblock fos_user_content %}
+                            {% endblock %}
                         </div>
                     </li>
                 </ul>
@@ -103,7 +104,6 @@
 <body>
     <br/><br/>
     <div class="container">
-
         {% block container %}  
         {% endblock %}     
     </div>
