@@ -2,12 +2,16 @@
 
 {% block container %}
 
-{# ici mettre les 2 profils : candidat et recruteur 
-if user.role == recruter {
--------- recruter profile.html.twig
-else if user.role == candidat {
--------- candidat profile.html.twig
-#}
-{% include "FOSUserBundle:Profile:show_content.html.twig" %}
+    {# ici mettre les 2 profils : candidat et recruteur 
+    if user.role == recruter {
+    -------- recruter profile.html.twig
+    else if user.role == candidat {
+    -------- candidat profile.html.twig
+    #}
+    {% if is_granted('ROLE_RECRUITER') %}
+        {% include "FOSUserBundle:Profile:dashboard_recruiter.html.twig" %}
+    {% elseif is_granted('ROLE_APPLICANT') %}
+        {% include "FOSUserBundle:Profile:dashboard_applicant.html.twig" %}
+    {% endif %}
 
 {% endblock %}
