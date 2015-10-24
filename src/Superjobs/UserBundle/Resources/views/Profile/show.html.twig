@@ -1,5 +1,13 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
+
+{# ici mettre les 2 profils : candidat et recruteur 
+if user.role == recruter {
+-------- recruter profile.html.twig
+else if user.role == candidat {
+-------- candidat profile.html.twig
+#}
 {% include "FOSUserBundle:Profile:show_content.html.twig" %}
+
 {% endblock fos_user_content %}
