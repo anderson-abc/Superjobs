@@ -19,7 +19,7 @@ class RecruiterController extends Controller
 
     public function addAction()
     {
-        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_RECRUITER')) {
             throw new AccessDeniedException();
         } else {
         $em = $this->getDoctrine()->getManager();
