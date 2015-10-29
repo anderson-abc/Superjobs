@@ -23,7 +23,7 @@ class JobsType extends AbstractType
             ->add('location')
             ->add('description', 'textarea', array('attr' => array('class' => 'ckeditor')))
             ->add('captcha', 'genemu_captcha',array('mapped' => false,))
-            ->add('skills')
+//            ->add('skills')
         ;
     }
     

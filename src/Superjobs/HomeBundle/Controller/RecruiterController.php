@@ -35,7 +35,13 @@ class RecruiterController extends Controller
                 $Jobs->setIsCreated('true');
                 // add some staff
                 $type = $request->request->get('type');
+                $category = $request->request->get('category');
+                $skills = $request->request->get('skills');
+                
                 $Jobs->setType($type);
+                $Jobs->setCategories($category);
+                $Jobs->setSkills($skills);
+                
                 $user = $this->getUser()->getId();
                 $Jobs->setIdUser($user);
                 
