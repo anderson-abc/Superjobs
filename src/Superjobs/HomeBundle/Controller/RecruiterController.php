@@ -17,7 +17,7 @@ class RecruiterController extends Controller
         return $this->render('SuperjobsHomeBundle:Recruiter:intro.html.twig');
     }
 
-    public function addAction()
+    public function addAction(Request $request)
     {
         if (false === $this->get('security.authorization_checker')->isGranted('ROLE_RECRUITER')) {
             throw new AccessDeniedException();
@@ -34,6 +34,8 @@ class RecruiterController extends Controller
                 $Jobs = $form->getData();
                 $Jobs->setIsCreated('true');
                 // add some staff
+                $type = $request->request->get('type');
+                $Jobs->setType($type);
                 $user = $this->getUser()->getId();
                 $Jobs->setIdUser($user);
                 

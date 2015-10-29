@@ -62,7 +62,7 @@ class Jobs
     /**
      * @var string
      *
-     * @ORM\Column(name="logo", type="string", length=255)
+     * @ORM\Column(name="logo", type="string", length=255, nullable=true)
      */
     private $logo;
 
@@ -135,7 +135,6 @@ class Jobs
      * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
-
 
     function __construct(){
         $this->createdAt = new \DateTime();
