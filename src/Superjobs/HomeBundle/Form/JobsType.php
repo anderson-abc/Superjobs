@@ -16,13 +16,6 @@ class JobsType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('Categories', 'entity', array(
-                    'class'    => 'SuperjobsHomeBundle:Category',
-                    'property' => 'name',
-                    'expanded' => true,
-                    'multiple' => true
-                  ))
-            ->add('type')
             ->add('company')
             ->add('logo', 'genemu_jqueryfile')
 //            ->add('logo', 'file', array('label' => 'Company logo', 'required' => false))

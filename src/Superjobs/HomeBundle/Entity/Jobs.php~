@@ -24,6 +24,12 @@ class Jobs
      */
     private $id;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_user", type="integer")
+     */
+    private $id_user;
 
     /**
      * @var string
@@ -35,7 +41,7 @@ class Jobs
     /**
      * @var array
      *
-     * @ORM\Column(name="categories", type="array")
+     * @ORM\Column(name="categories", type="string", length=255, nullable=true)
      */
     private $Categories;
 

@@ -17,6 +17,7 @@
         <meta name="description" content="Superjobs, recrutements, jobs, cv, profile, informatique, cvthéque">
         <meta name="author" content="Irmasoft">
         <link href="{{ asset('bundles/superjobshome/css/bootstrap.css')}}" rel="stylesheet">
+        <link href="{{ asset('bundles/superjobshome/css/inputosaurus.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/font-awesome.min.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/Calendar.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/one-page-wonder.css')}}" rel="stylesheet">
@@ -149,17 +150,19 @@
     </footer>
     <br/>
 
-
-
-    {#  <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>#}
+    
     <script src="http://cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
     <script src="{{ asset('bundles/superjobshome/js/jquery.js')}}"></script>
+    <script src="{{ asset('bundles/superjobshome/js/jquery-ui.min.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="{{ asset('bundles/superjobshome/js/inputosaurus.js')}}"></script>
     {#    <script src="{{ asset('bundles/superjobshome/js/tinymce.min.js')}}"></script>#}
     <script src="{{ asset('bundles/superjobshome/js/jquery.uploadify.v2.1.4.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/jquery.countTo.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/feedback.js')}}"></script>
     <script>
+        
               // custom formatting example
       $('#earth').data('countToOptions', {
         formatter: function (value, options) {

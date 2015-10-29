@@ -33,7 +33,10 @@ class RecruiterController extends Controller
             if($form->isValid()){
                 $Jobs = $form->getData();
                 $Jobs->setIsCreated('true');
-
+                // add some staff
+                $user = $this->getUser()->getId();
+                $Jobs->setIdUser($user);
+                
                 $em->persist($Jobs);
                 $em->flush();
 

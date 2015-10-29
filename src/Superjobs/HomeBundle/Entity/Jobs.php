@@ -24,6 +24,12 @@ class Jobs
      */
     private $id;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_user", type="integer")
+     */
+    private $id_user;
 
     /**
      * @var string
@@ -35,7 +41,7 @@ class Jobs
     /**
      * @var array
      *
-     * @ORM\Column(name="categories", type="integer")
+     * @ORM\Column(name="categories", type="string", length=255, nullable=true)
      */
     private $Categories;
 
@@ -495,5 +501,28 @@ class Jobs
     public function getCategories()
     {
         return $this->Categories;
+    }
+
+    /**
+     * Set id_user
+     *
+     * @param integer $idUser
+     * @return Jobs
+     */
+    public function setIdUser($idUser)
+    {
+        $this->id_user = $idUser;
+
+        return $this;
+    }
+
+    /**
+     * Get id_user
+     *
+     * @return integer 
+     */
+    public function getIdUser()
+    {
+        return $this->id_user;
     }
 }
