@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Jobs
@@ -63,9 +64,27 @@ class Jobs
      * @var string
      *
      * @ORM\Column(name="logo", type="string", length=255, nullable=true)
+     *
+    private $logo;
+     * 
+     */
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     * 
+     * @Vich\UploadableField(mapping="company_logo", fileNameProperty="logo")
+     * 
+     * @var File
      */
     private $logo;
-
+    
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="logoName", type="string", length=255, nullable=true)
+     */
+    private $logoName;
+    
     /**
      * @var string
      *
@@ -204,22 +223,29 @@ class Jobs
     }
 
     /**
-     * Set logo
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
      *
-     * @param string $logo
-     * @return Jobs
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
      */
-    public function setLogo($logo)
+    public function setLogo(File $image = null)
     {
-        $this->logo = $logo;
+        $this->logo = $image;
 
-        return $this;
+        if ($image) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTime('now');
+        }
     }
-
+    
     /**
      * Get logo
      *
-     * @return string 
+     * @return File
      */
     public function getLogo()
     {
