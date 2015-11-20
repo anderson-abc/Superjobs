@@ -77,7 +77,7 @@ class Jobs
      * @var File
      */
     private $logo;
-    
+
     /**
      * @var string
      * 
