@@ -9,6 +9,7 @@ use Superjobs\HomeBundle\Entity\Jobs;
 use Superjobs\HomeBundle\Form\JobsType;
 
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class RecruiterController extends Controller
 {
@@ -31,6 +32,15 @@ class RecruiterController extends Controller
         if ($request->isMethod('Post')){
             $form->bind($request);
             if($form->isValid()){
+//                $form['logo']->getData()->move($dir, $someNewFilename);
+                
+                 $file = $form['logo']->getData();
+                 $logo = $file->getClientOriginalName();
+                 echo $logo;
+                 echo "-----";
+                 $dir = '/var/www/html/Superjobs/web/upload';
+                 $file->move($dir, $logo);
+                 
                 $Jobs = $form->getData();
                 $Jobs->setIsCreated('true');
                 // add some staff
@@ -38,6 +48,7 @@ class RecruiterController extends Controller
                 $category = $request->request->get('category');
                 $skills = $request->request->get('skills');
                 
+                $Jobs->setLogo($logo);
                 $Jobs->setType($type);
                 $Jobs->setCategories($category);
                 $Jobs->setSkills($skills);

@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+//use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 class JobsType extends AbstractType
 {
     /**
@@ -17,7 +19,7 @@ class JobsType extends AbstractType
         $builder
             ->add('title')
             ->add('company')
-            ->add('logo', 'genemu_jqueryfile')
+            ->add('logo', 'file')
 //            ->add('logo', 'file', array('label' => 'Company logo', 'required' => false))
             ->add('url', 'url')
             ->add('location')
