@@ -32,15 +32,12 @@ class RecruiterController extends Controller
         if ($request->isMethod('Post')){
             $form->bind($request);
             if($form->isValid()){
-//                $form['logo']->getData()->move($dir, $someNewFilename);
-                
-                 $file = $form['logo']->getData();
-                 $logo = $file->getClientOriginalName();
-                 echo $logo;
-                 echo "-----";
-                 $dir = '/var/www/html/Superjobs/web/upload';
-                 $file->move($dir, $logo);
-                 
+
+                $file = $form['logo']->getData();
+                $logo = $file->getClientOriginalName();
+                $dir = '/var/www/html/Superjobs/web/upload';
+                $file->move($dir, $logo);
+
                 $Jobs = $form->getData();
                 $Jobs->setIsCreated('true');
                 // add some staff
@@ -61,7 +58,7 @@ class RecruiterController extends Controller
 
                 $this->get('session')->getFlashBag()->add(
                     'success',
-                    'Votre offre à était créer et sera bientôt en ligne !'
+                    'Votre offre à était créer avec success !'
                 );
                 return $this->redirect($this->generateUrl('superjobs_home_homepage'));
             }
