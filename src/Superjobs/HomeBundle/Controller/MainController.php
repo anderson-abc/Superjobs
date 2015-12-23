@@ -44,6 +44,10 @@ class MainController extends Controller
     {       
         return $this->render('SuperjobsHomeBundle:Main:press.html.twig');
     }
+    public function cguAction()
+    {       
+        return $this->render('SuperjobsHomeBundle:Main:cgu.html.twig');
+    }
     
     function detailsAction($id, Request $request){
 
