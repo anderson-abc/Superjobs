@@ -18,6 +18,10 @@ superjobs_home_press:
     path:     /press
     defaults: { _controller: SuperjobsHomeBundle:Main:press }
     
+superjobs_home_about:
+    path:     /about
+    defaults: { _controller: SuperjobsHomeBundle:Main:about }
+    
 superjobs_home_cgu:
     path:     /cgu
     defaults: { _controller: SuperjobsHomeBundle:Main:cgu }

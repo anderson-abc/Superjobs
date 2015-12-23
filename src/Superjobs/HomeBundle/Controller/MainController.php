@@ -31,7 +31,6 @@ class MainController extends Controller
     {       
         return $this->render('SuperjobsHomeBundle:Main:feedback.html.twig');
     }
-
     public function contactAction()
     {       
         return $this->render('SuperjobsHomeBundle:Main:contact.html.twig');
@@ -47,6 +46,10 @@ class MainController extends Controller
     public function cguAction()
     {       
         return $this->render('SuperjobsHomeBundle:Main:cgu.html.twig');
+    }
+    public function aboutAction()
+    {
+        return $this->render('SuperjobsHomeBundle:Main:about.html.twig');
     }
     
     function detailsAction($id, Request $request){
