@@ -6,6 +6,10 @@ superjobs_home_feedback:
     path:     /feedback
     defaults: { _controller: SuperjobsHomeBundle:Main:feedback }
     
+superjobs_home_contact:
+    path:     /contact
+    defaults: { _controller: SuperjobsHomeBundle:Main:contact }
+    
 superjobs_home_recruiter_job_details:
     path:     /jobs/{id}
     defaults: { _controller: SuperjobsHomeBundle:Main:details, id: 1 }
