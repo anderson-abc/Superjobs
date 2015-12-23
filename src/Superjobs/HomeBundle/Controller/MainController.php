@@ -40,6 +40,10 @@ class MainController extends Controller
     {       
         return $this->render('SuperjobsHomeBundle:Main:faq.html.twig');
     }
+    public function pressAction()
+    {       
+        return $this->render('SuperjobsHomeBundle:Main:press.html.twig');
+    }
     
     function detailsAction($id, Request $request){
 

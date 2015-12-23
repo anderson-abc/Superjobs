@@ -14,6 +14,10 @@ superjobs_home_faq:
     path:     /faq
     defaults: { _controller: SuperjobsHomeBundle:Main:faq }
     
+superjobs_home_press:
+    path:     /press
+    defaults: { _controller: SuperjobsHomeBundle:Main:press }
+    
 superjobs_home_recruiter_job_details:
     path:     /jobs/{id}
     defaults: { _controller: SuperjobsHomeBundle:Main:details, id: 1 }
