@@ -26,6 +26,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
+            new \JMS\SerializerBundle\JMSSerializerBundle(),
+            new \FOS\ElasticaBundle\FOSElasticaBundle(),
         );
         
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
