@@ -33,17 +33,17 @@
             <label for="exampleInputEmail1">
                 Catégorie : 
                 <div>
-                    <input type="checkbox" name="category" value="Developpement">
+                    <input type="checkbox" name="category[]" value="Developpement">
                     Développement<br/>
-                    <input type="checkbox" name="category" value="Systeme">
+                    <input type="checkbox" name="category[]" value="Systeme">
                     Systéme / réseaux<br/>
-                    <input type="checkbox" name="category" value="Stage">
+                    <input type="checkbox" name="category[]" value="Stage">
                     Désign<br/>
-                    <input type="checkbox" name="category" value="SEO">
+                    <input type="checkbox" name="category[]" value="SEO">
                     SEO / CEM <br/>
-                    <input type="checkbox" name="category" value="Independant">
+                    <input type="checkbox" name="category[]" value="Independant">
                     Webmarketing<br/>
-                    <input type="checkbox" name="category" value="Autre">
+                    <input type="checkbox" name="category[]" value="Autre">
                     Autre
                 </div>
             </label>
@@ -54,17 +54,17 @@
             <label for="exampleInputEmail1">
                 Type de contrat
                 <div>
-                    <input type="checkbox" name="type" value="CDI">
+                    <input type="checkbox" name="type[]" value="CDI">
                     CDI<br/>
-                    <input type="checkbox" name="type" value="CDD">
+                    <input type="checkbox" name="type[]" value="CDD">
                     CDD<br/>
-                    <input type="checkbox" name="type" value="Stage">
+                    <input type="checkbox" name="type[]" value="Stage">
                     Stage<br/>
-                    <input type="checkbox" name="type" value="Apprentissage">
+                    <input type="checkbox" name="type[]" value="Apprentissage">
                     Apprentissage / Professionnalisation<br/>
-                    <input type="checkbox" name="type" value="Independant">
+                    <input type="checkbox" name="type[]" value="Independant">
                     Indépentant / Freelance<br/>
-                    <input type="checkbox" name="type" value="Teletravail">
+                    <input type="checkbox" name="type[]" value="Teletravail">
                     Télétravail
                 </div>
             </label>
@@ -85,7 +85,7 @@
     #}
   <div class="form-group">
       Entrer les compétences : <i>exemple : Java, Word, HTML, Photoshop</i><br/>
-      <input type="text" value="" id="skills" name="skills" />
+      <input type="text" value="" id="skills" name="skills[]" />
       {#
     <label for="exampleInputEmail1">
         {{ form_label(form.skills) }}
