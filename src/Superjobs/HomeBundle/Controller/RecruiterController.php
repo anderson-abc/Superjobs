@@ -25,18 +25,19 @@ class RecruiterController extends Controller
         } else {
         $em = $this->getDoctrine()->getManager();
     	$Jobs = new Jobs;
-        $form = $this->createForm(new JobsType, $Jobs);
-
-        $request = $this->getRequest();
-               
-        if ($request->isMethod('Post')){
+        $form = $this->createForm(new JobsType (), $Jobs );
+			
+			$request = $this->getRequest ();
+			
+			if ($request->isMethod ( 'Post' )) {
             $form->bind($request);
             if($form->isValid()){
-
-                $file = $form['logo']->getData();
-                $logo = $file->getClientOriginalName();
-                $dir = '/var/www/html/Superjobs/web/upload';
-                $file->move($dir, $logo);
+            	$logo = "NULL";
+                if($file = $form['logo']->getData()){
+	                $logo = $file->getClientOriginalName();
+	                $dir = '/var/www/html/Superjobs/web/upload';
+	                $file->move($dir, $logo);
+                }
 
                 $Jobs = $form->getData();
                 $Jobs->setIsCreated('true');
@@ -45,7 +46,8 @@ class RecruiterController extends Controller
                 $category = $request->request->get('category');
                 $skills = $request->request->get('skills');
                 
-                $Jobs->setLogo($logo);
+                $Jobs->setLogo($logo); 
+                                
                 $Jobs->setType($type);
                 $Jobs->setCategories($category);
                 $Jobs->setSkills($skills);

@@ -19,14 +19,13 @@ class JobsType extends AbstractType
         $builder
             ->add('title')
             ->add('company')
-            ->add('logo', 'file')
+            ->add('logo', 'file', array('required' => false))
 //            ->add('logo', 'file', array('label' => 'Company logo', 'required' => false))
             ->add('url', 'url')
             ->add('location')
             ->add('description', 'textarea', array('attr' => array('class' => 'ckeditor')))
-            ->add('captcha', 'genemu_captcha',array('mapped' => false,))
-//            ->add('skills')
-        ;
+            ->add('captcha', 'genemu_captcha',array('mapped' => false,)
+            		);
     }
     
     /**
