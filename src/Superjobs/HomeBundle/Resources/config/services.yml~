@@ -7,4 +7,3 @@ services:
         class: Superjobs\HomeBundle\Form\Extension\ImageTypeExtension
         tags:
             - { name: form.type_extension, alias: file }
-

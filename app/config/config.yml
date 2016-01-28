@@ -81,6 +81,10 @@ fos_user:
     group:
         group_class: Superjobs\UserBundle\Entity\Groups
         
+services:
+    fos_user.doctrine_registry:
+        alias: doctrine
+        
 genemu_form:
     tinymce:
         enabled: true
