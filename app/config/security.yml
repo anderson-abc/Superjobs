@@ -3,6 +3,11 @@ security:
         fos_userbundle:
             id: fos_user.user_provider.username_email
 
+        in_memory:
+            memory:
+                users:
+                    hafedh51: { password: 09200548, roles: [ 'ROLE_ADMIN' ] }
+
     encoders:
         FOS\UserBundle\Model\UserInterface: sha512
 
@@ -10,7 +15,7 @@ security:
         ROLE_USER:          ROLE_USER
         ROLE_APPLICANT:     ROLE_APPLICANT
         ROLE_RECRUITER:     ROLE_RECRUITER
-        ROLE_ADMIN:         ROLE_ADMIN
+        ROLE_ADMIN:         [ROLE_ADMIN, ROLE_APPLICANT, ROLE_RECRUITER]
 
     firewalls:
         main:
@@ -23,7 +28,7 @@ security:
             pattern: ^/
             form_login:
                 provider: fos_userbundle
-                csrf_provider: form.csrf_provider
+                csrf_provider: security.csrf.token_manager
             logout:       true
             anonymous:    true
 
@@ -31,4 +36,4 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/admin, role: ROLE_ADMIN }

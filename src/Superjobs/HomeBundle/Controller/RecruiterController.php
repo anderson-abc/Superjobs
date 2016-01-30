@@ -33,8 +33,10 @@ class RecruiterController extends Controller
             if($form->isValid()){
             	$logo = "NULL"; //For logo name
                 if($file = $form['logo']->getData()){
-	                $logo = $file->getClientOriginalName();
-	                $upload_dir = '/var/www/html/Superjobs/web/upload';
+// 	                $logo = $file->getClientOriginalName();
+	                $logo = md5(uniqid()).'.'.$file->guessExtension();
+	                $upload_dir = $this->container->getParameter('kernel.root_dir').'/../web/upload';
+// 	                $upload_dir = '/var/www/html/Superjobs/web/upload';
 	                $file->move($upload_dir, $logo);
                 }
 

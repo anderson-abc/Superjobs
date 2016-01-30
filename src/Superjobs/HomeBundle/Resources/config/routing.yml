@@ -2,6 +2,10 @@ superjobs_home_homepage:
     path:     /
     defaults: { _controller: SuperjobsHomeBundle:Main:index }
 
+superjobs_home_admin:
+    path:     /admin
+    defaults: { _controller: SuperjobsHomeBundle:Admin:admin }
+
 superjobs_home_feedback:
     path:     /feedback
     defaults: { _controller: SuperjobsHomeBundle:Main:feedback }

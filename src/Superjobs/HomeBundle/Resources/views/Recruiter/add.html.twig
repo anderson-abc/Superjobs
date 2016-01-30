@@ -7,8 +7,9 @@
     </h2>
     </centre>
 
-<form role="form" action="{{ path('superjobs_home_recruiter_add') }}" method="post"{{ form_enctype(form) }} >
-
+{# <form role="form" action="{{ path('superjobs_home_recruiter_add') }}" #}
+{# method="post" {{ form_start(form) }} >#}
+{{ form_start(form, {'action': path('superjobs_home_recruiter_add'), 'method': 'POST'}) }}
 {{ form_errors(form) }}
 {#
   <div class="form-group">
@@ -131,15 +132,16 @@
 {{ form_widget(form.description) }}
    <br/>     
 
-{{ form_widget(form.captcha) }}
+
+{# {{ form_widget(form.captcha) }}#}
    <br/><br/>
 
 {{ form_rest(form) }} 
-
-    <input type="submit" value="Submit" class="btn btn-primary" />
-    <a href="{{ path('superjobs_home_recruiter_intro') }}">Revenir</a>
-
+<center>
+    <input type="submit" value="Submit" class="btn btn-success" />
+    <a href="{{ path('superjobs_home_recruiter_intro') }}" class="btn btn-primary">Annuler</a>
+</center>
     <br/>.
-</form>
+{{ form_end(form) }}
     
 {% endblock %}
