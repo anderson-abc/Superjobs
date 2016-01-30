@@ -3,10 +3,10 @@ security:
         fos_userbundle:
             id: fos_user.user_provider.username_email
 
-        in_memory:
-            memory:
-                users:
-                    hafedh51: { password: 09200548, roles: [ 'ROLE_ADMIN' ] }
+#        in_memory:
+#            memory:
+#                users:
+#                    hafedh51: { password: 09200548, roles: [ 'ROLE_ADMIN' ] }
 
     encoders:
         FOS\UserBundle\Model\UserInterface: sha512
