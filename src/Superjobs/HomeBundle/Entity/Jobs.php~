@@ -62,7 +62,7 @@ class Jobs
     /**
      * @var string
      *
-     * @ORM\Column(name="logo", type="string", length=255)
+     * @ORM\Column(name="logo", type="string", length=255, nullable=true)
      */
     private $logo;
 
@@ -79,6 +79,13 @@ class Jobs
      * @ORM\Column(name="location", type="string", length=255, nullable=true)
      */
     private $location;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="price", type="string", length=255, nullable=true)
+     */
+    private $price;
 
     /**
      * @var string
@@ -135,7 +142,6 @@ class Jobs
      * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
-
 
     function __construct(){
         $this->createdAt = new \DateTime();
@@ -501,5 +507,28 @@ class Jobs
     public function getCategories()
     {
         return $this->Categories;
+    }
+
+    /**
+     * Set id_user
+     *
+     * @param integer $idUser
+     * @return Jobs
+     */
+    public function setIdUser($idUser)
+    {
+        $this->id_user = $idUser;
+
+        return $this;
+    }
+
+    /**
+     * Get id_user
+     *
+     * @return integer 
+     */
+    public function getIdUser()
+    {
+        return $this->id_user;
     }
 }

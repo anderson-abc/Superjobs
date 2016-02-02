@@ -83,6 +83,13 @@ class Jobs
     /**
      * @var string
      *
+     * @ORM\Column(name="price", type="string", length=255, nullable=true)
+     */
+    private $price;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
@@ -523,5 +530,28 @@ class Jobs
     public function getIdUser()
     {
         return $this->id_user;
+    }
+
+    /**
+     * Set price
+     *
+     * @param string $price
+     * @return Jobs
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return string 
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 }
