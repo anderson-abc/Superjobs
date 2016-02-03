@@ -30,7 +30,7 @@
 <div class="count">
     {{ pagination.getTotalItemCount }} Offres d'emploi
 </div>
-<div class="row">  
+<div class="row">
     <div class="col-xs-12 col-md-8">
 {% for article in pagination %}
 <div class="items">
@@ -38,20 +38,18 @@
         <div class="col-md-2">
             <time class="calendar">
                 <em>{{ article.createdAt|date('Y')}}</em>
-                <strong>{{ article.createdAt|date('M')}}</strong>
-                <span>{{ article.createdAt|date('d')}}</span>
+                <strong>{{ article.createdAt|date('d')}} {{ article.createdAt|date('M')}}</strong>
             </time>        
         </div>
             
-        <div class="col-md-2 vertical" style="height:10em">
-            <i class="fa fa-compress"></i> {{ article.type }}<br/>
-            <i class="fa fa-map-marker"></i> {{ article.location }}<br/>
-            <i class="fa fa-building"></i> {{ article.company }}<br/>    
-        </div>
-        <div class="col-md-8 vertical" style="height:10em">
+        <div class="col-md-8 vertical" >
             <a href="{{ path('superjobs_home_recruiter_job_details', { 'tag': article.id }) }}">
                 <h4>{{ article.title }}</h4>
             </a>
+            
+            <i class="fa fa-compress"></i> {{ article.type }}
+            <i class="fa fa-map-marker"></i> {{ article.location }}
+            <i class="fa fa-building"></i> {{ article.company }}   
         </div>
     </div>
 </div>
