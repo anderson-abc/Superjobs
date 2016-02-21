@@ -4,6 +4,7 @@ namespace Superjobs\HomeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use \Swift_SmtpTransport,\Swift_Message, \Swift_Mailer;
 
 class MainController extends Controller
 {
@@ -19,7 +20,7 @@ class MainController extends Controller
         $pagination = $paginator->paginate(
                             $jobs,
                             $request->query->get('page', 1)/*page number*/,
-                            11/*limit per page*/
+                            10/*limit per page*/
                         );
              
         return $this->render('SuperjobsHomeBundle:Main:index.html.twig', array(
@@ -61,7 +62,15 @@ class MainController extends Controller
             throw $this->createNotFoundException(
                 'Ce job n\'existe plus : '.$id
             );
-        }               
+        }
+        // sending email
+//         $mailer = $this->get('mailer');
+//         $message = \Swift_Message::newInstance()
+//         ->setSubject('Hello Email')
+//         ->setTo('hafedh51@gmail.com')
+//         ->setBody('Here is the message itself');
+//         $this->get('mailer')->send($message);
+        
         return $this->render('SuperjobsHomeBundle:Main:details.html.twig',
             array('job' => $job));
     }

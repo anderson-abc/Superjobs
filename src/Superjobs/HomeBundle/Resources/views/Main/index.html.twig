@@ -2,18 +2,18 @@
 {% block container %}
 
 <header class="intro-header">
-    <div class="container">
-            <center>
-        <div class="headline">
-            <div class="container">
-                <div class="Heading">
-                <h2>Superjobs</h2>
-                <hr class="small">  
-                </div>
-            </div>
-        </div>
-            </center>
-    </div>
+	<div class="container">
+		<center>
+			<div class="headline">
+				<div class="container">
+					<div class="Heading">
+						<h2>Superjobs</h2>
+						<hr class="small">
+					</div>
+				</div>
+			</div>
+		</center>
+	</div>
 </header>
 
 <center><br/>
@@ -29,6 +29,13 @@
 <div class="count">
     {{ pagination.getTotalItemCount }} Offres d'emploi
 </div>
+
+<center>
+<div class="pagination">
+    {{ knp_pagination_render(pagination, "", {}, { "prev_label": "Previous", "next_label": "Next", "first_label": "First", "last_label": "Last"}) }}
+</div>
+</center>
+
 <div class="row">
     <div class="col-xs-12 col-md-8">
 {% for article in pagination %}
