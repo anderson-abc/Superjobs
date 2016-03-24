@@ -4,8 +4,8 @@ namespace Superjobs\HomeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use \Swift_SmtpTransport,\Swift_Message, \Swift_Mailer;
 use Superjobs\HomeBundle\Entity\CVtheque;
+// use \Swift_SmtpTransport,\Swift_Message, \Swift_Mailer;
 
 class MainController extends Controller
 {
@@ -68,18 +68,20 @@ class MainController extends Controller
         return $this->render('SuperjobsHomeBundle:Main:details.html.twig',
             array('job' => $job));
     }
+    
     function sendCVAction(Request $request){
     	$task = new CVtheque();
-    	$task->setFirstname('Write a blog post');
-    	$task->setLastename(new \DateTime('tomorrow'));
+//     	$task->setFirstname('Write a blog post');
+//     	$task->setLastename(new \DateTime('tomorrow'));
     	
     	$form = $this->createFormBuilder($task)
-    	->add('task', 'text')
-    	->add('dueDate', 'date')
+    	->add('firstname', 'text')
+    	->add('lastname', 'text')
+    	->add('email', 'text')
     	->add('save', 'submit', array('label' => 'Create Task'))
     	->getForm();
     	
-    	return $this->render('SuperjobsHomeBundle:Main:details.html.twig', array(
+    	return $this->render('SuperjobsHomeBundle:Main:popin.html.twig', array(
     			'form' => $form->createView(),
     	));
     	

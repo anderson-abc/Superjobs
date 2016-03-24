@@ -1,6 +1,6 @@
 <?php
 
-namespace Superjobs\HomeBundle\Entity;
+
 
 use Doctrine\ORM\Mapping as ORM;
 
