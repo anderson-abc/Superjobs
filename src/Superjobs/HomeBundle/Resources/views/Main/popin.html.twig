@@ -1,38 +1,5 @@
-{% extends "SuperjobsHomeBundle::layout.html.twig" %} {% block container
+{% extends "SuperjobsHomeBundle::details.html.twig" %} {% block container
 %}
-<br />
-<div class="row">
-	<div class="col-md-8">
-		<div class="col-md-4">
-			{% if job.logo == "NULL" %}
-			<div style="font-size: 12em;">
-				<i class="fa fa-building-o fa-3"></i>
-			</div>
-			{% else %} <img class="img-responsive img-center"
-				src="{{ asset('upload/'~job.logo) }}"> {% endif %}
-		</div>
-		<div class="col-md-8">
-			<div>
-				<h2>{{ job.title }}</h2>
-			</div>
-			{% set skills = job.skills|split(',') %} {% for skill in skills %} <span
-				class="label label-default"> {{ skill }} </span> {% endfor %} <br> <strong>{{
-				job.company }}</strong>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<hr>
-				<h3>Description :</h3>
-				{{ job.description|raw }} <br /> <br /> <br />
-				<button type="button" class="btn btn-primary btn-lg"
-					data-toggle="modal" data-target="#myModal">Postuler maintenant</button>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<br> Les offres simulaires <br> ici
-	</div>
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"

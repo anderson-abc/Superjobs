@@ -4,7 +4,8 @@ namespace Superjobs\HomeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use \Swift_SmtpTransport,\Swift_Message, \Swift_Mailer;
+use Superjobs\HomeBundle\Entity\CVtheque;
+// use \Swift_SmtpTransport,\Swift_Message, \Swift_Mailer;
 
 class MainController extends Controller
 {
@@ -63,15 +64,26 @@ class MainController extends Controller
                 'Ce job n\'existe plus : '.$id
             );
         }
-        // sending email
-//         $mailer = $this->get('mailer');
-//         $message = \Swift_Message::newInstance()
-//         ->setSubject('Hello Email')
-//         ->setTo('hafedh51@gmail.com')
-//         ->setBody('Here is the message itself');
-//         $this->get('mailer')->send($message);
         
         return $this->render('SuperjobsHomeBundle:Main:details.html.twig',
             array('job' => $job));
+    }
+    
+    function sendCVAction(Request $request){
+    	$task = new CVtheque();
+//     	$task->setFirstname('Write a blog post');
+//     	$task->setLastename(new \DateTime('tomorrow'));
+    	
+    	$form = $this->createFormBuilder($task)
+    	->add('firstname', 'text')
+    	->add('lastname', 'text')
+    	->add('email', 'text')
+    	->add('save', 'submit', array('label' => 'Create Task'))
+    	->getForm();
+    	
+    	return $this->render('SuperjobsHomeBundle:Main:popin.html.twig', array(
+    			'form' => $form->createView(),
+    	));
+    	
     }
 }
