@@ -20,3 +20,4 @@ To suggestion some thing or any question tell us at : contact@irmasoft.com
     php app/console doctrine:database:create
 
     php app/console doctrine:schema:update --force
+
