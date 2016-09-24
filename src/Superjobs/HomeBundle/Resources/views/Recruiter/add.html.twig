@@ -1,9 +1,9 @@
-{% extends "SuperjobsHomeBundle::layout.html.twig" %} {% block container
-%}
+{% extends "SuperjobsHomeBundle::layout.html.twig" %} 
+{% block container %}
 
 <centre>
-<h3>Remplissez et publiez votre offre</h3>
-<hr>
+    <h3>Remplissez et publiez votre offre</h3>
+    <hr>
 </centre>
 
 {# <form role="form" action="{{ path('superjobs_home_recruiter_add') }}"
@@ -13,43 +13,43 @@
 for="exampleInputEmail1"> Catégorie {{ form_widget(form.Categories) }}
 </label> {{ form_errors(form.Categories) }} </div> #}
 <div class="form-group">
-	<label for="exampleInputEmail1"> {{ form_label(form.title) }} {{
+    <label for="exampleInputEmail1"> {{ form_label(form.title) }} {{
 		form_widget(form.title, { 'attr': {'class': 'form-control'} }) }} </label>
-	{{ form_errors(form.title) }}
+        {{ form_errors(form.title) }}
 </div>
 
 <div class="row">
-	<div class="col-md-6">
-		<div class="form-group">
-			<label for="exampleInputEmail1"> Catégorie :
-				<div>
-					<input type="checkbox" name="category[]" value="Developpement">
-					Développement<br /> <input type="checkbox" name="category[]"
-						value="Systeme"> Systéme / réseaux<br /> <input type="checkbox"
-						name="category[]" value="Stage"> Désign<br /> <input
-						type="checkbox" name="category[]" value="SEO"> SEO / CEM <br /> <input
-						type="checkbox" name="category[]" value="Independant">
-					Webmarketing<br /> <input type="checkbox" name="category[]"
-						value="Autre"> Autre
-				</div>
-			</label>
-		</div>
-	</div>
-	<div class="col-md-6">
-		<div class="form-group">
-			<label for="exampleInputEmail1"> Type de contrat
-				<div>
-					<input type="checkbox" name="type[]" value="CDI"> CDI<br /> <input
-						type="checkbox" name="type[]" value="CDD"> CDD<br /> <input
-						type="checkbox" name="type[]" value="Stage"> Stage<br /> <input
-						type="checkbox" name="type[]" value="Apprentissage"> Apprentissage
-					/ Professionnalisation<br /> <input type="checkbox" name="type[]"
-						value="Independant"> Indépentant / Freelance<br /> <input
-						type="checkbox" name="type[]" value="Teletravail"> Télétravail
-				</div>
-			</label>
-		</div>
-	</div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1"> Catégorie :
+                <div>
+                    <input type="checkbox" name="category[]" value="Developpement">
+                    Développement<br /> <input type="checkbox" name="category[]"
+                                               value="Systeme"> Systéme / réseaux<br /> <input type="checkbox"
+                                               name="category[]" value="Stage"> Désign<br /> <input
+                                               type="checkbox" name="category[]" value="SEO"> SEO / CEM <br /> <input
+                                               type="checkbox" name="category[]" value="Independant">
+                    Webmarketing<br /> <input type="checkbox" name="category[]"
+                                              value="Autre"> Autre
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1"> Type de contrat
+                <div>
+                    <input type="checkbox" name="type[]" value="CDI"> CDI<br /> <input
+                        type="checkbox" name="type[]" value="CDD"> CDD<br /> <input
+                        type="checkbox" name="type[]" value="Stage"> Stage<br /> <input
+                        type="checkbox" name="type[]" value="Apprentissage"> Apprentissage
+                    / Professionnalisation<br /> <input type="checkbox" name="type[]"
+                                                        value="Independant"> Indépentant / Freelance<br /> <input
+                                                        type="checkbox" name="type[]" value="Teletravail"> Télétravail
+                </div>
+            </label>
+        </div>
+    </div>
 </div>
 
 
@@ -58,36 +58,36 @@ for="exampleInputEmail1"> Catégorie {{ form_widget(form.Categories) }}
 form_label(form.type) }} {{ form_widget(form.type, { 'attr': {'class':
 'form-control'} }) }} </label> {{ form_errors(form.type) }} </div> #}
 <div class="row">
-	<div class="col-md-6">
-		<div class="form-group">
-			Entrer les compétences : <br /> <input type="text" value=""
-				id="skills" name="skills[]" /> <br />exemple : Java, Word, HTML,
-			Photoshop {# <label for="exampleInputEmail1"> {{
-			form_label(form.skills) }} {{ form_widget(form.skills, { 'attr':
-			{'class': 'form-control'} }) }} </label> {{ form_errors(form.skills)
-			}}#}
-		</div>
-	</div>
+    <div class="col-md-6">
+        <div class="form-group">
+            Entrer les compétences : <br /> <input type="text" value=""
+                                                   id="skills" name="skills[]" /> <br />exemple : Java, Word, HTML,
+            Photoshop {# <label for="exampleInputEmail1"> {{
+            form_label(form.skills) }} {{ form_widget(form.skills, { 'attr':
+            {'class': 'form-control'} }) }} </label> {{ form_errors(form.skills)
+            }}#}
+        </div>
+    </div>
 
-	<div class="col-md-6">
-		<div class="form-group">
-			<label for="exampleInputEmail1"> {{ form_label(form.location) }} {{
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1"> {{ form_label(form.location) }} {{
 				form_widget(form.location, { 'attr': {'class': 'form-control'} }) }}
-			</label> {{ form_errors(form.location) }}
-		</div>
-	</div>
+            </label> {{ form_errors(form.location) }}
+        </div>
+    </div>
 </div>
 
 Rénumération annuelle :
 <select class="form-control" name="price">
-	<option value="nc">Non communiquée</option>
-	<option value="24000">&lt;24000</option>
-	<option value="25000-34000">25000-34000</option>
-	<option value="35000-44000">35000-44000</option>
-	<option value="45000-54000">45000-54000</option>
-	<option value="55000-59000">55000-59000</option>
-	<option value="60000-69000">60000-69000</option>
-	<option value="70000">&gt;70000</option>
+    <option value="nc">Non communiquée</option>
+    <option value="24000">&lt;24000</option>
+    <option value="25000-34000">25000-34000</option>
+    <option value="35000-44000">35000-44000</option>
+    <option value="45000-54000">45000-54000</option>
+    <option value="55000-59000">55000-59000</option>
+    <option value="60000-69000">60000-69000</option>
+    <option value="70000">&gt;70000</option>
 </select>
 {{ form_label(form.description) }} {{ form_errors(form.description) }}
 {{ form_widget(form.description) }}
@@ -101,31 +101,41 @@ Rénumération annuelle :
 <h3>Description de l'entreprise</h3>
 <hr>
 <div class="form-group">
-	<label for="exampleInputEmail1"> {{ form_label(form.company) }} {{
+    <label for="exampleInputEmail1"> {{ form_label(form.company) }} {{
 		form_widget(form.company, { 'attr': {'class': 'form-control'} }) }} </label>
-	{{ form_errors(form.company) }}
-</div>
+        {{ form_errors(form.company) }}
 
 <div class="form-group">
-	<label for="exampleInputEmail1"> 
-		{{ form_label(form.url) }}  
-		{{ form_widget(form.url, { 'attr': {'class': 'form-control'} }) }} 
-	</label>
-	
-	{{ form_errors(form.url) }}
-</div>
-
-<div class="form-group">
-	<label for="exampleInputEmail1"> {{ form_label(form.logo) }} {{
+    <label for="exampleInputEmail1"> {{ form_label(form.logo) }} {{
 		form_widget(form.logo) }} </label> {{ form_errors(form.logo) }}
 </div>
 
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1"> Email que vous recevez les candidatures : 
+        {{ form_widget(form.emailCV, { 'attr': {'class': 'form-control'} }) }} 
+    </label>
+    {{ form_errors(form.emailCV) }}
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1"> 
+        {{ form_label(form.url) }}  
+        {{ form_widget(form.url, { 'attr': {'class': 'form-control'} }) }} 
+    </label>
+
+    {{ form_errors(form.url) }}
+</div>
 
 {{ form_rest(form) }}
 <center>
-	<input type="submit" value="Submit" class="btn btn-success" /> <a
-		href="{{ path('superjobs_home_recruiter_intro') }}"
-		class="btn btn-primary">Annuler</a>
+    <input type="submit" value="Envoyer" class="btn btn-success" /> <a
+        href="{{ path('superjobs_home_recruiter_intro') }}"
+        class="btn btn-primary">Annuler</a>
 </center>
+{% for flashMessage in app.session.flashbag.get('success') %}
+
+    {{ flashMessage }}
+
+{% endfor %}
 <br />
 . {{ form_end(form) }} {% endblock %}

@@ -104,6 +104,13 @@ class Jobs {
     /**
      * @var string
      *
+     * @ORM\Column(name="emailCV", type="string", length=255)
+     */
+    private $emailCV;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="token", type="string", length=255, nullable=true)
      */
     private $token;
@@ -308,7 +315,6 @@ class Jobs {
     public function getSkills() {
         return $this->skills;
     }
-    
 
     /**
      * Set token
@@ -499,15 +505,13 @@ class Jobs {
         return $this->id_user;
     }
 
-
     /**
      * Set price
      *
      * @param string $price
      * @return Jobs
      */
-    public function setPrice($price)
-    {
+    public function setPrice($price) {
         $this->price = $price;
 
         return $this;
@@ -518,8 +522,31 @@ class Jobs {
      *
      * @return string 
      */
-    public function getPrice()
-    {
+    public function getPrice() {
         return $this->price;
+    }
+
+
+    /**
+     * Set emailCV
+     *
+     * @param string $emailCV
+     * @return Jobs
+     */
+    public function setEmailCV($emailCV)
+    {
+        $this->emailCV = $emailCV;
+
+        return $this;
+    }
+
+    /**
+     * Get emailCV
+     *
+     * @return string 
+     */
+    public function getEmailCV()
+    {
+        return $this->emailCV;
     }
 }
