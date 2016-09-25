@@ -69,21 +69,5 @@ class MainController extends Controller
             array('job' => $job));
     }
     
-    function sendCVAction(Request $request){
-    	$task = new CVtheque();
-//     	$task->setFirstname('Write a blog post');
-//     	$task->setLastename(new \DateTime('tomorrow'));
-    	
-    	$form = $this->createFormBuilder($task)
-    	->add('firstname', 'text')
-    	->add('lastname', 'text')
-    	->add('email', 'text')
-    	->add('save', 'submit', array('label' => 'Create Task'))
-    	->getForm();
-    	
-    	return $this->render('SuperjobsHomeBundle:Main:popin.html.twig', array(
-    			'form' => $form->createView(),
-    	));
-    	
-    }
+
 }
