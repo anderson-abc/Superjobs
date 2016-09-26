@@ -9,7 +9,7 @@ To suggestion some thing or any question tell us at : contact@irmasoft.com
 
     sudo git clone https://github.com/anderson-abc/Superjobs.git
 
-    composer update
+    composer install
 
     HTTPDUSER=`ps axo user,comm | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
 
