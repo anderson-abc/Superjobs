@@ -2,14 +2,14 @@
 <html lang="fr">
     <head>
 
-<!--######################################################################################
-      _                _                                  _                     _
-   __| | _____   _____| | ___  _ __  _ __ ___   ___ _ __ | |_    __ _  ___  ___| | _____
-  / _` |/ _ \ \ / / _ \ |/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __|  / _` |/ _ \/ _ \ |/ / __|
- | (_| |  __/\ V /  __/ | (_) | |_) | | | | | |  __/ | | | |_  | (_| |  __/  __/   <\__ \
-  \__,_|\___| \_/ \___|_|\___/| .__/|_| |_| |_|\___|_| |_|\__|  \__, |\___|\___|_|\_\___/
-                              |_|                               |___/
-#######################################################################################-->
+        <!--######################################################################################
+              _                _                                  _                     _
+           __| | _____   _____| | ___  _ __  _ __ ___   ___ _ __ | |_    __ _  ___  ___| | _____
+          / _` |/ _ \ \ / / _ \ |/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __|  / _` |/ _ \/ _ \ |/ / __|
+         | (_| |  __/\ V /  __/ | (_) | |_) | | | | | |  __/ | | | |_  | (_| |  __/  __/   <\__ \
+          \__,_|\___| \_/ \___|_|\___/| .__/|_| |_| |_|\___|_| |_|\__|  \__, |\___|\___|_|\_\___/
+                                      |_|                               |___/
+        #######################################################################################-->
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -144,53 +144,59 @@
                 </div>
             </div>
             <hr>
-            <center>
+            <center class='test'>
                 Copyright © 2015 Tous droits réservés.<br/>Made with ♥ by <a href="http://www.irmasoft.com" target="blanc">Irmasoft.com</a>
             </center>
         </div>
     </footer>
     <br/>
 
-    
+
+    <script src="{{ asset('bundles/superjobshome/js/jquery-3.1.1.min.js')}}"></script>
     <script src="http://cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
-    <script src="{{ asset('bundles/superjobshome/js/jquery.js')}}"></script>
-    <script src="{{ asset('bundles/superjobshome/js/jquery-ui.min.js')}}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    {#    <script src="{{ asset('bundles/superjobshome/js/jquery.js')}}"></script>#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <script src="{{ asset('bundles/superjobshome/js/inputosaurus.js')}}"></script>
     {#    <script src="{{ asset('bundles/superjobshome/js/tinymce.min.js')}}"></script>#}
-    <script src="{{ asset('bundles/superjobshome/js/jquery.uploadify.v2.1.4.js')}}"></script>
+    {#    <script src="{{ asset('bundles/superjobshome/js/jquery.uploadify.v2.1.4.js')}}"></script>#}
     <script src="{{ asset('bundles/superjobshome/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/jquery.countTo.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/feedback.js')}}"></script>
     <script>
-    $('#skills').inputosaurus({
-        width : '350px',
-        autoCompleteSource : ['', 'Java', 'PHP', 'MySQL', 'PostgreSQL', '.NET'],
-        activateFinalResult : true
-    });
-              // custom formatting example
-    $('#earth').data('countToOptions', {
-        formatter: function (value, options) {
-          return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+
+        $('#skills').inputosaurus({
+            width: '350px',
+            autoCompleteSource: ['', 'Java', 'PHP', 'MySQL', 'PostgreSQL', '.NET'],
+            activateFinalResult: true
+        });
+        // custom formatting example
+        $('#earth').data('countToOptions', {
+            formatter: function (value, options) {
+                return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+            }
+        });
+
+        // start all the timers
+        $('.timer').each(count);
+
+        // restart a timer when a button is clicked
+        $('.restart').click(function (event) {
+            event.preventDefault();
+            var target = $(this).data('target');
+            count.call($(target));
+        });
+
+        function count(options) {
+            var $this = $(this);
+            options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+            $this.countTo(options);
         }
-    });
-      
-      // start all the timers
-      $('.timer').each(count);
-      
-      // restart a timer when a button is clicked
-      $('.restart').click(function (event) {
-        event.preventDefault();
-        var target = $(this).data('target');
-        count.call($(target));
-      });
-      
-      function count(options) {
-        var $this = $(this);
-        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-        $this.countTo(options);
-      }
-      
+        function submitcv() {
+            $(document).on("click", ".btn.btn-info.postuler", function () {
+                $(".submitForm").toggle('slow');
+                
+            });
+        }
     </script>
 </body>
 </html>

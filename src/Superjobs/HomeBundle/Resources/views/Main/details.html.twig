@@ -1,36 +1,36 @@
 {% extends "SuperjobsHomeBundle::layout.html.twig" %} 
 {% block container %}
-<br />
-<div class="row">
-    <div class="col-md-8">
-        <div class="col-md-4">
-            {% if job.logo == "NULL" %}
-                <div style="font-size: 12em;">
-                    <i class="fa fa-building-o fa-3"></i>
-                </div>
-            {% else %} <img class="img-responsive img-center"
-                 src="{{ asset('upload/'~job.logo) }}"> 
-            {% endif %}
-        </div> 
+    <br />
+    <div class="row">
         <div class="col-md-8">
-            <div>
-                <h2>{{ job.title }}</h2>
-            </div>
-            {% set skills = job.skills|split(',') %} 
-            {% for skill in skills %} 
-                <span class="label label-default"> {{ skill }} </span> 
-            {% endfor %} 
-            <br> 
-            
-            <strong>{{job.company }}</strong>
+            <div class="col-md-4">
+                {% if job.logo == "NULL" %}
+                    <div style="font-size: 12em;">
+                        <i class="fa fa-building-o fa-3"></i>
+                    </div>
+                {% else %} <img class="img-responsive img-center"
+                     src="{{ asset('upload/'~job.logo) }}"> 
+                {% endif %}
+            </div> 
+            <div class="col-md-8">
+                <div>
+                    <h2>{{ job.title }}</h2>
+                </div>
+                {% set skills = job.skills|split(',') %} 
+                {% for skill in skills %} 
+                    <span class="label label-default"> {{ skill }} </span> 
+                {% endfor %} 
+                <br> 
+
+                <strong>{{job.company }}</strong>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <hr>
                     <h3>Description :</h3>
-                    
+
                     {{ job.description|raw }} <br /> <br /> <br />
-                    <a href="{{ path('superjobs_submitCV', { 'id':job.id }) }}" class="btn btn-info">
+                    <a class="btn btn-info postuler" style="cursor: pointer;" onclick='submitcv();'>
                         Postuler maintenant
                     </a>
                     {#<button type="button" class="btn btn-info"
@@ -44,72 +44,45 @@
             <br> Les offres simulaires <br> ici
         </div>
     </div>
+    <div class="submitForm" style="display: none;">
+        <div class="modal-body">
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document" style="z-index: inherit;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"
-                            aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Envoyer nous votre
-                        candidature rapidement sans unscription</h4>
+            {# Formulaire d'envoi de cv #}
+
+            <div class="form-group">
+                <label for="inputName3" class="col-sm-2 control-label">Nom</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputName3"
+                           placeholder="Prénom & NOM">
                 </div>
-
-                <form class="form-horizontal" action="" method="get">
-                    <div class="modal-body">
-                        <div class="modal-body">
-
-                            {# Formulaire d'envoi de cv #}
-
-                            <div class="form-group">
-                                <label for="inputName3" class="col-sm-2 control-label">Nom</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputName3"
-                                           placeholder="Prénom & NOM">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3"
-                                           placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-4"></div>
-                                <div class="col-md-8">
-                                    <div style="position: relative;">
-                                        <a class='btn btn-primary' href='javascript:;'> Select CV ... 
-                                            <input type="file" 
-                                                   style='position: absolute; 
-                                                   z-index: 2; 
-                                                   top: 0; 
-                                                   left: 0; 
-                                                   filter: alpha(opacity = 0); 
-                                                   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-                                                   opacity: 0; 
-                                                   background-color: transparent; 
-                                                   color: transparent;' 
-                                                   name="file_source" size="40" onchange='$("#upload-file-info").html($(this).val());'>
-                                        </a> &nbsp; <span class='label label-info' id="upload-file-info"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3"
+                           placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                    <div style="position: relative;">
+                        <a class='btn btn-primary' href='javascript:;'> Select CV ... 
+                            <input type="file" style='position: absolute; z-index: 2; top: 0; left: 0; filter: alpha(opacity = 0); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; opacity: 0; background-color: transparent; color: transparent;' name="file_source" size="40" onchange='$("#upload-file-info").html($(this).val());'>
+                        </a> &nbsp; 
+                        <span class='label label-info' id="upload-file-info">                                        
+                        </span>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Envoyer cadidature</button>
-                    </div>
-                </form>
-                {#			{{ form_start(form) }}
-                                        {{ form_widget(form) }}
-                                        {{ form_end(form) }}#}
+                </div>
             </div>
         </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            <button type="submit" class="btn btn-primary" onclick="{{ path('superjobs_submitCV') }}">Envoyer cadidature</button>
+        </div>
     </div>
-    {% endblock %}
+
+    <script>
+
+    </script>
+{% endblock %}

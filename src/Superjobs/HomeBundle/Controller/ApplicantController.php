@@ -21,15 +21,12 @@ class ApplicantController extends Controller
     }
     
     public function submitCVAction($id,  Request $request)
-    {             
-        $job = $this->getDoctrine()->getRepository("SuperjobsHomeBundle:Jobs")->findOneBy(array('id'=>$id));
+    {
+//        $job = $this->getDoctrine()->getRepository("SuperjobsHomeBundle:Jobs")->findOneBy(array('id'=>$id));
+
         
         
-        
-        
-        
-        
-        return $this->render('SuperjobsHomeBundle:Applicant:submitCV.html.twig',array(
+        return $this->render('SuperjobsHomeBundle:Applicant:similarjobs.html.twig',array(
             'job' => $job
                 ));
     }
