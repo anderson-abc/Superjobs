@@ -68,13 +68,16 @@ class ApplicantController extends Controller {
 
     public function sendMailer($setTo, $attach) {
         $message = \Swift_Message::newInstance()
-                ->setSubject('mana')
+                ->setSubject('Superjobs candidatures')
                 ->setFrom('contact@superjobs.com')
                 ->setTo($setTo)
                     // Optionally add any attachments
                 ->attach(\Swift_Attachment::fromPath($attach))
-                ->setBody('Vous avez reçu une candidature a l\'offre d\'emploi sur notre site web');
-# I removed this line: $this->get('mailer')->send($message);
+                ->setBody('Bonjour,<br/>\n'
+                        . 'Vous avez reçu une candidature a l\'offre d\'emploi sur notre site web<br/>\n'
+                        . 'Bonne journée<br/>\n'
+                        . 'L\'équipe Superjobs');
+
 
         $mailer = $this->get('mailer');
 
