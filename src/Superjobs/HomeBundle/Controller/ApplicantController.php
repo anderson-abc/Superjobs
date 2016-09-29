@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Superjobs\HomeBundle\Entity\CVtheque;
 use Superjobs\HomeBundle\Form\CVthequeType;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class ApplicantController extends Controller {
 
@@ -24,8 +23,7 @@ class ApplicantController extends Controller {
 
     public function submitCVAction($id, Request $request) {
         $job = $this->getDoctrine()->getRepository("SuperjobsHomeBundle:Jobs")->findOneBy(array('id' => $id));
-
-
+        $setTo = $job->getEmailCV();
         $em = $this->getDoctrine()->getManager();
 
         $CVtheque = new CVtheque();
@@ -45,6 +43,7 @@ class ApplicantController extends Controller {
 //                $cvFile = md5(uniqid()) . '.' . $file->guessExtension();
                     $upload_dir = $this->container->getParameter('kernel.root_dir') . '/../web/upload';
                     $file->move($upload_dir, $cvFile);
+                    $attach = $upload_dir."/".$cvFile;
                 }
 
                 $CVtheque->setFirstname($firstname);
@@ -56,14 +55,37 @@ class ApplicantController extends Controller {
                 // Insert into DB
                 $em->persist($CVtheque);
                 $em->flush();
-                
+
                 // send email to recruiter
+                $this->sendMailer($setTo, $attach);
             }
         }
 
         return $this->render('SuperjobsHomeBundle:Applicant:similarjobs.html.twig', array(
                     'job' => $job
         ));
+    }
+
+    public function sendMailer($setTo, $attach) {
+        $message = \Swift_Message::newInstance()
+                ->setSubject('mana')
+                ->setFrom('contact@superjobs.com')
+                ->setTo($setTo)
+                    // Optionally add any attachments
+                ->attach(\Swift_Attachment::fromPath($attach))
+                ->setBody('Vous avez reçu une candidature a l\'offre d\'emploi sur notre site web');
+# I removed this line: $this->get('mailer')->send($message);
+
+        $mailer = $this->get('mailer');
+
+        $mailer->send($message);
+
+        $spool = $mailer->getTransport()->getSpool();
+        $transport = $this->get('swiftmailer.transport.real');
+
+        $spool->flushQueue($transport);
+
+        return TRUE;
     }
 
 }
