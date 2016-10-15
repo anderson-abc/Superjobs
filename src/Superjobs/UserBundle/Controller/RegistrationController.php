@@ -33,9 +33,9 @@ class RegistrationController extends BaseController
         $user = $userManager->createUser();
         $user->setEnabled(true);
 
-        if('recruter' == $my_role = $request->request->get('role')){
+        if('ROLE_RECRUITER' == $my_role = $request->request->get('role')){
             $user->addRole('ROLE_RECRUITER');
-        } else if('applicant' == $my_role = $request->request->get('role')){
+        } else if('ROLE_APPLICANT' == $my_role = $request->request->get('role')){
             $user->addRole('ROLE_APPLICANT');
         }
         

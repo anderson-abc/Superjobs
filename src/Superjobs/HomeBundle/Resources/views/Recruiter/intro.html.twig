@@ -1,78 +1,73 @@
 {% extends "SuperjobsHomeBundle::layout.html.twig" %}
 
 {% block container %}
-<style type="text/css">
-    .timer {
-        font-size: 48px;
-        font-weight: 800;
-        text-transform: uppercase;
-        text-align:center;
-        line-height:80px;
-        color: #317EAC;
-    }
-  .example {
-    position: relative;
-    padding: 25px;
-    margin: 25px 0;
-    line-height: 1em;
-    background-color: #eee;
-  }
-  .example h2 {
-    margin-right: 100px;
-  }
+    <style type="text/css">
+        .timer {
+            font-size: 48px;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align:center;
+            line-height:80px;
+            color: #317EAC;
+        }
+        .example {
+            position: relative;
+            padding: 25px;
+            margin: 25px 0;
+            line-height: 1em;
+            background-color: #eee;
+        }
+        .example h2 {
+            margin-right: 100px;
+        }
 
-  .example p {
-    position: absolute;
-    right: 25px;
-    top: 25px;
-    font-size: 20px;
-  }
+        .example p {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            font-size: 20px;
+        }
 
-  .red {
-    color: #c00;
-  }
-</style>
+        .red {
+            color: #c00;
+        }
+    </style>
     <header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <center>
-{#            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">#}
-{#                <div class="site-heading">#}
-        <div class="headline">
-            <div class="container">
-                <h2>ESPACE RECRUTEURS</h2>
-                <span class="subheading">Publier votre offre d'emploi facilement et gratuitement</span>
-                <hr class="small">  
+        <div class="container">
+            <div class="row">
+                <center>
+                    {#            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">#}
+                    {#                <div class="site-heading">#}
+                    <div class="headline">
+                        <div class="container">
+                            <h2>ESPACE RECRUTEURS</h2>
+                            <span class="subheading">Publier votre offre d'emploi facilement et gratuitement</span>
+                            <hr class="small">  
+                        </div>
+                    </div>
+                </center>
             </div>
         </div>
-    {#                <h2>Superjobs</h2>
-                    <span class="subheading">Postez votre offre d'emploi facilement et gratuitement</span>
-                    <hr class="small">                    #}
-{#                </div>#}
-{#            </div>#}
-            </center>
-        </div>
-    </div>
-</header>
+    </header>
     <center>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-3">
-                <p><b class="timer" id="earth" data-to="268" data-speed="2000"></b><br/> PROFILES</p>
-            </div>
-            <div class="col-xs-12 col-sm-3 col-md-3">
-                <p><b class="timer" id="earth" data-to="110" data-speed="2000"></b><br/> JOBS</p>
-            </div>
-            <div class="col-xs-12 col-sm-3 col-md-3">
-                <p><b class="timer" id="earth" data-to="15" data-speed="2000"></b><br/> ENTREPRISES</p>
-            </div>
-            <div class="col-xs-12 col-sm-3 col-md-3">
-                <p><b class="timer" id="earth" data-to="121" data-speed="2000"></b><br/> CVs</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <p><b class="timer" id="earth" data-to="268" data-speed="2000"></b><br/> PROFILES</p>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <p><b class="timer" id="earth" data-to="110" data-speed="2000"></b><br/> JOBS</p>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <p><b class="timer" id="earth" data-to="15" data-speed="2000"></b><br/> ENTREPRISES</p>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <p><b class="timer" id="earth" data-to="121" data-speed="2000"></b><br/> CVs</p>
+                </div>
             </div>
         </div>
-    </div>
     </center>
-   
+
     <!-- Page Content -->
     <div class="container">
         <hr class="featurette-divider">
@@ -86,9 +81,9 @@
                     </a>
                 </span> Gratuitement !<br/>
             </h2>
-                        <p class="lead"><b>Bienvenue</b><br/>
+            <p class="lead"><b>Bienvenue</b><br/>
 
-                            Le site de Superjobs vous propose de déposer des offres de jobs, de stages, d’emploi et d’alternance. Une solution simple et rapide qui saura répondre à toutes vos problématiques de recrutement ! <br/>Publiez rapidement et gratuitement autant d’offres que vous voulez.</p>
+                Le site de irmajobs vous propose de déposer des offres de jobs, de stages, d’emploi et d’alternance. Une solution simple et rapide qui saura répondre à toutes vos problématiques de recrutement ! <br/>Publiez rapidement et gratuitement autant d’offres que vous voulez.</p>
         </div>
 
         <hr class="featurette-divider">
@@ -96,11 +91,11 @@
         <!-- Second Featurette -->
         <div class="featurette" id="services">
             <img class="featurette-image img-circle img-responsive pull-left" src="{{ asset('bundles/superjobshome/img/talents.jpg')}}" width="50%">
-            
+
             <h2 class="featurette-heading">Chercher des talents<br/>
                 <span class="text-muted">
-{#                    <a href="{{ path('superjobs_home_resume_template') }}">#}
-                        <a href="{{ path('superjobs_home_team_template') }}">                        
+                    
+                    <a href="{{ path('superjobs_home_team_template') }}">                        
                         { CVthèque }
                     </a>                
                 </span>
@@ -119,8 +114,8 @@
                 </span>Gratuitement !<br/>
             </h2>
             <p class="lead">
-Ce site regroupe plusieurs QCM dans le domaine de l'informatique. Ces QCM s'adressent à des étudiants ou des ingénieurs souhaitant s'entraîner avant de passer l'entretien d'embauche .
-A la fin de chacun de ces tests, une notation et une correction vous seront proposées. Celles-ci vous permettront d'accroître vos connaissances et d'évaluer votre niveau.</p>
+                Ce site regroupe plusieurs QCM dans le domaine de l'informatique. Ces QCM s'adressent à des étudiants ou des ingénieurs souhaitant s'entraîner avant de passer l'entretien d'embauche .
+                A la fin de chacun de ces tests, une notation et une correction vous seront proposées. Celles-ci vous permettront d'accroître vos connaissances et d'évaluer votre niveau.</p>
         </div>
 
         <hr class="featurette-divider">

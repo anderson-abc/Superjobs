@@ -14,8 +14,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Superjobs, recrutements, jobs, cv, profile, informatique, cvthéque">
-        <meta name="author" content="Irmasoft">
+        <meta name="description" content="Irmajobs vous propose l'emploi qu'il vous faut dans le domaine informatique. Préparer vos tests techniques, conseil pour l'entretien d'embauche, recrutements, jobs, cv, profile, informatique, cvthéque">
+        <meta name="author" content="irmajobs">
         <link href="{{ asset('bundles/superjobshome/css/bootstrap.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/inputosaurus.css')}}" rel="stylesheet">
         <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/cupertino/jquery-ui.css" rel="stylesheet">
@@ -26,7 +26,7 @@
         <link href="{{ asset('bundles/superjobshome/css/feedback.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/signin.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/business-frontpage.css')}}" rel="stylesheet">
-        <title>Superjobs - Site de recrutement </title>
+        <title>Irmajobs - Offre d'emploi informatique et digital</title>
 
     <nav class="navbar navbar-inverse navbar-fixed-top" style="box-shadow: 0px 3px 5px 0px rgba(102, 102, 102, 0.5);">
         <div class="container-fluid">
@@ -62,8 +62,7 @@
                                 </li>
                             </ul>
                         </li>
-                    {% else %}                    
-                        <li>
+                    {% else %}    
                         <li>
                             <a href="{{ path('superjobs_home_intro_template') }}">
                                 CANDIDAT
@@ -78,7 +77,6 @@
                                         </a>
                                       </li>
                                   {% endif %}#}
-                    </li>
                     <li>
                         <div>
                             {% block fos_user_content %}
@@ -89,7 +87,7 @@
                 <ul class="nav navbar-nav navbar-center" style="margin-left: 37%;">
                     <li>
                         <a href="{{ path('superjobs_home_homepage') }}">
-                            SUPERJOBS
+                            IRMAJOBS
                         </a>
                     </li>
                 </ul>
@@ -145,7 +143,7 @@
             </div>
             <hr>
             <center class='test'>
-                Copyright © 2015 Tous droits réservés.<br/>Made with ♥ by <a href="http://www.irmasoft.com" target="blanc">Irmasoft.com</a>
+                Copyright © 2015 Tous droits réservés.<br/>Made with ♥ by <a href="http://www.irmajobs.com" target="blanc">irmajobs.com</a>
             </center>
         </div>
     </footer>

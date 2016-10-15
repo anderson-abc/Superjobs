@@ -39,25 +39,29 @@ class ApplicantController extends Controller {
                 $emailCV = $form['email']->getData();
                 $cvFile = "NULL";
                 if ($file = $form ['cvFile']->getData()) {
+                    
                     $cvFile = $file->getClientOriginalName();
-//                $cvFile = md5(uniqid()) . '.' . $file->guessExtension();
-                    $upload_dir = $this->container->getParameter('kernel.root_dir') . '/../web/upload';
-                    $file->move($upload_dir, $cvFile);
-                    $attach = $upload_dir."/".$cvFile;
+                    $cvExt = $file->guessExtension();
+                    $haystack = array('pdf', 'doc', 'docx', 'odt'); 
+                    if (in_array($cvExt, $haystack)) {
+                        $upload_dir = $this->container->getParameter('kernel.root_dir') . '/../web/upload';
+                        $file->move($upload_dir, $cvFile);
+                        $attach = $upload_dir . "/" . $cvFile;
+
+
+                        $CVtheque->setFirstname($firstname);
+                        $CVtheque->setLastname($lastname);
+                        $CVtheque->setEmail($emailCV);
+                        $CVtheque->setCvFile($cvFile);
+
+                        // Insert into DB
+                        $em->persist($CVtheque);
+                        $em->flush();
+
+                        // send email to recruiter
+                        $this->sendMailer($setTo, $attach);
+                    }
                 }
-
-                $CVtheque->setFirstname($firstname);
-                $CVtheque->setLastname($lastname);
-                $CVtheque->setEmail($emailCV);
-                $CVtheque->setCvFile($cvFile);
-
-
-                // Insert into DB
-                $em->persist($CVtheque);
-                $em->flush();
-
-                // send email to recruiter
-                $this->sendMailer($setTo, $attach);
             }
         }
 
@@ -71,12 +75,12 @@ class ApplicantController extends Controller {
                 ->setSubject('Superjobs candidatures')
                 ->setFrom('contact@superjobs.com')
                 ->setTo($setTo)
-                    // Optionally add any attachments
+                // Optionally add any attachments
                 ->attach(\Swift_Attachment::fromPath($attach))
                 ->setBody('Bonjour,<br/>\n'
-                        . 'Vous avez reçu une candidature a l\'offre d\'emploi sur notre site web<br/>\n'
-                        . 'Bonne journée<br/>\n'
-                        . 'L\'équipe Superjobs');
+                . 'Vous avez reçu une candidature a l\'offre d\'emploi sur notre site web<br/>\n'
+                . 'Bonne journée<br/>\n'
+                . 'L\'équipe Superjobs');
 
 
         $mailer = $this->get('mailer');

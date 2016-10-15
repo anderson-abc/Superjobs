@@ -8,3 +8,9 @@ services:
         tags:
             - { name: form.type_extension, alias: file }
 
+#    superjobs_home.cms.twig.cms_extension:
+#        class: Superjobs\HomeBundle\Service\Twig\TwigExtension.php
+#        tags:
+#            - { name: twig.extension }
+#        arguments: ["@service_container"] 
+        

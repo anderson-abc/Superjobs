@@ -15,6 +15,12 @@ class RecruiterController extends Controller {
     }
 
     public function addAction(Request $request) {
+        $securityContext = $this->container->get('security.authorization_checker');
+        if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            // redirect register with role recruiter 
+            return $this->redirect($this->generateUrl('fos_user_security_login', 
+                    array('roleHierarchy' => 'ROLE_RECRUITER')));
+        }
         if (false === $this->get('security.authorization_checker')->isGranted('ROLE_RECRUITER')) {
             throw new AccessDeniedException ();
         } else {
@@ -23,11 +29,11 @@ class RecruiterController extends Controller {
             $form = $this->createForm(new JobsType(), $Jobs);
 
             $request = $this->getRequest();
-            
+
             if ($request->isMethod('Post')) {
                 $form->bind($request);
                 if ($form->isValid()) {
-                    
+
                     $user = $this->getUser()->getId();
                     $logo = "NULL";
                     if ($file = $form ['logo']->getData()) {
@@ -36,7 +42,7 @@ class RecruiterController extends Controller {
                         $upload_dir = $this->container->getParameter('kernel.root_dir') . '/../web/upload';
                         $file->move($upload_dir, $logo);
                     }
-                    
+
                     // Getters
                     $Jobs = $form->getData();
                     $type = implode(",", $request->request->get('type'));
@@ -57,11 +63,11 @@ class RecruiterController extends Controller {
                     // Insert into DB
                     $em->persist($Jobs);
                     $em->flush();
-                    
+
                     $this->get('session')->getFlashBag()->add('success', 'Votre offre à était créer avec success !');
-                    
-                    
-                    
+
+
+
                     return $this->redirect($this->generateUrl('superjobs_home_homepage'));
                 }
             }
