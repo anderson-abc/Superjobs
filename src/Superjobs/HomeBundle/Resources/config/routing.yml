@@ -70,3 +70,9 @@ superjobs_home_team_template:
     path:     /applicant/team
     defaults: { _controller: SuperjobsHomeBundle:Applicant:team }
     
+superjobs_result_page:
+    path:     /result/{pattern}
+    defaults: { _controller: SuperjobsHomeBundle:Main:searchEngine, pattern: null }
+    requirements:
+        methods:  GET|POST
+        id: \d+

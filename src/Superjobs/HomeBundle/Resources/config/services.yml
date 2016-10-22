@@ -13,4 +13,6 @@ services:
 #        tags:
 #            - { name: twig.extension }
 #        arguments: ["@service_container"] 
-        
+    superjobs_search_engine:
+        class: Superjobs\HomeBundle\Service\SearchEngine\SearchEngine
+        arguments: [@doctrine.orm.entity_manager]

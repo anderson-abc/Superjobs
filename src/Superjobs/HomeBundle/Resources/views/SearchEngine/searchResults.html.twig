@@ -1,0 +1,6 @@
+<strong>{{ Jobs|length }}</strong> resultats trouvés<br/>
+
+{% for Job in Jobs %}
+    <span>{{Job.title}}</span><br/>
+    <span>{{Job.company}}</span>
+{% endfor %}

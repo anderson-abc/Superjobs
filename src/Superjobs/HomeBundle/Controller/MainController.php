@@ -7,11 +7,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Superjobs\HomeBundle\Entity\CVtheque;
 use Superjobs\HomeBundle\Form\CVthequeType;
 
-// use \Swift_SmtpTransport,\Swift_Message, \Swift_Mailer;
-
 class MainController extends Controller {
 
     public function indexAction(Request $request) {
+
         $em = $this->getDoctrine()->getManager();
         $jobs = $em->getRepository("SuperjobsHomeBundle:Jobs")->findBy(
                 array(), array('id' => 'DESC')
@@ -66,4 +65,12 @@ class MainController extends Controller {
         ));
     }
 
+    function searchEngineAction($pattern, Request $request) {
+        if($pattern=="all")$pattern="";
+        $Jobs = $this->get("superjobs_search_engine")->searchExpress($pattern);
+        return $this->render('SuperjobsHomeBundle:SearchEngine:searchResults.html.twig', 
+                array(
+                    'Jobs' => $Jobs
+                ));
+    }
 }

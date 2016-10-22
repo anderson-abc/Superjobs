@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-
         <!--######################################################################################
               _                _                                  _                     _
            __| | _____   _____| | ___  _ __  _ __ ___   ___ _ __ | |_    __ _  ___  ___| | _____
@@ -10,7 +9,6 @@
           \__,_|\___| \_/ \___|_|\___/| .__/|_| |_| |_|\___|_| |_|\__|  \__, |\___|\___|_|\_\___/
                                       |_|                               |___/
         #######################################################################################-->
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +16,7 @@
         <meta name="author" content="irmajobs">
         <link href="{{ asset('bundles/superjobshome/css/bootstrap.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/inputosaurus.css')}}" rel="stylesheet">
-        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/cupertino/jquery-ui.css" rel="stylesheet">
+        <link href="{{ asset('bundles/superjobshome/css/jquery-ui.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/font-awesome.min.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/Calendar.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/one-page-wonder.css')}}" rel="stylesheet">
@@ -26,175 +24,34 @@
         <link href="{{ asset('bundles/superjobshome/css/feedback.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/signin.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/superjobshome/css/business-frontpage.css')}}" rel="stylesheet">
+        <link href="{{ asset('bundles/superjobshome/css/MyOwnStyle.css')}}" rel="stylesheet">
         <title>Irmajobs - Offre d'emploi informatique et digital</title>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="box-shadow: 0px 3px 5px 0px rgba(102, 102, 102, 0.5);">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                {#      <a class="navbar-brand" href="{{ path("superjobs_home_homepage") }}">Home</a>#}
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                { {{ app.user.username }} } <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ path('fos_user_profile_show') }}">
-                                        Mon compte
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('fos_user_security_logout') }}">
-                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    {% else %}    
-                        <li>
-                            <a href="{{ path('superjobs_home_intro_template') }}">
-                                CANDIDAT
-                            </a>
-                        </li>
-                    {% endif %}
-                    {#              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                                  {% else %}
-                                      <li>
-                                        <a href="{{ path('fos_user_security_login') }}">
-                                          {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
-                                        </a>
-                                      </li>
-                                  {% endif %}#}
-                    <li>
-                        <div>
-                            {% block fos_user_content %}
-                            {% endblock %}
-                        </div>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-center" style="margin-left: 37%;">
-                    <li>
-                        <a href="{{ path('superjobs_home_homepage') }}">
-                            IRMAJOBS
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="{{ path('superjobs_home_recruiter_intro') }}">
-                            ENTREPRISE
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 </head>
 <body>
+                     
+    {% block header %}
+        {% include 'SuperjobsHomeBundle:Main:header.html.twig' %}
+    {% endblock header %}
     <br/><br/>
     <div class="container">
         {% block container %}  
         {% endblock %}     
     </div>
-    <footer class="footer" style="padding-top:  50px;">
-        <div class="container">          
-            <div class="row">
-                <div class="col-md-3">
-                    <a href="{{ path('superjobs_home_homepage') }}"><b>Home</b></a><br/>
-                    <a href="{{ path('superjobs_home_about') }}">A propos</a><br/>
-                    <a href="{{ path('superjobs_home_cgu') }}">CGU</a><br/>
-                    <a href="{{ path('superjobs_home_faq') }}">Aide / FAQ</a><br/>
-                    <a href="{{ path('superjobs_home_press') }}">Press </a><br/>     
-                    <a href="{{ path('superjobs_home_contact') }}">Contact</a><br/>
-                </div>
-                <div class="col-md-3">
-                    <b>Candidat</b><br/>
-                    Chercher un offre d'emploi<br/>
-                    Liste des entreprise qui recrutent<br/>
-                    Optimiser mes recherches<br/>
-                    Créer mon profil<br/>
-                    Je m'entraine<br/>
-                </div>
-                <div class="col-md-3">
-                    <b>Entreprise</b><br/>
-                    Lancer une offre<br/>
-                    Selectionner des profils<br/>
-                    Passer un test à un candidat<br/>
-                    Télétravail<br/>
-                </div>
-                <div class="col-md-3">
-                    Stay in touch<br/>
-                    <input type="text" class="" placeholder="Email ..."><input type="button" value="OK"><br/>
-                    Twitter - Facebook - Google+<br/>
-                    <a href="{{ path('superjobs_home_feedback') }}">Feedback</a>
-                </div>
-            </div>
-            <hr>
-            <center class='test'>
-                Copyright © 2015 Tous droits réservés.<br/>Made with ♥ by <a href="http://www.irmajobs.com" target="blanc">irmajobs.com</a>
-            </center>
-        </div>
-    </footer>
+    {% block footer %}
+        {% include 'SuperjobsHomeBundle:Main:footer.html.twig' %}
+    {% endblock footer %}
     <br/>
 
 
-    <script src="{{ asset('bundles/superjobshome/js/jquery-3.1.1.min.js')}}"></script>
-    <script src="http://cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
-    {#    <script src="{{ asset('bundles/superjobshome/js/jquery.js')}}"></script>#}
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="{{ asset('bundles/superjobshome/js/jquery.min.js')}}"></script>
+    <script src="{{ asset('bundles/superjobshome/js/jquery-ui.min.js')}}"></script>
+{#    <script src="{{ asset('bundles/superjobshome/js/ckeditor.js')}}"></script>#}
+    <script src="//cdn.ckeditor.com/4.5.11/basic/ckeditor.js"></script>
     <script src="{{ asset('bundles/superjobshome/js/inputosaurus.js')}}"></script>
-    {#    <script src="{{ asset('bundles/superjobshome/js/tinymce.min.js')}}"></script>#}
-    {#    <script src="{{ asset('bundles/superjobshome/js/jquery.uploadify.v2.1.4.js')}}"></script>#}
+    
     <script src="{{ asset('bundles/superjobshome/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/jquery.countTo.js')}}"></script>
     <script src="{{ asset('bundles/superjobshome/js/feedback.js')}}"></script>
-    <script>
-
-        $('#skills').inputosaurus({
-            width: '350px',
-            autoCompleteSource: ['', 'Java', 'PHP', 'MySQL', 'PostgreSQL', '.NET'],
-            activateFinalResult: true
-        });
-        // custom formatting example
-        $('#earth').data('countToOptions', {
-            formatter: function (value, options) {
-                return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
-            }
-        });
-
-        // start all the timers
-        $('.timer').each(count);
-
-        // restart a timer when a button is clicked
-        $('.restart').click(function (event) {
-            event.preventDefault();
-            var target = $(this).data('target');
-            count.call($(target));
-        });
-
-        function count(options) {
-            var $this = $(this);
-            options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-            $this.countTo(options);
-        }
-        function submitcv() {
-            $(document).on("click", ".btn.btn-info.postuler", function () {
-                $(".submitForm").toggle('slow');
-                
-            });
-        }
-    </script>
+    <script src="{{ asset('bundles/superjobshome/js/MyOwnScript.js')}}"></script>
 </body>
 </html>
