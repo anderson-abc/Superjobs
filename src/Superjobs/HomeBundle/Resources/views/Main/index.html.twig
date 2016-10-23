@@ -63,21 +63,29 @@
             {% for article in pagination %}
                 <div class="items">
                     <div class="row">
-                        <div class="col-md-2">
-                            <time class="calendar">
-                                <em>{{ article.createdAt|date('Y')}}</em>
-                                <strong>{{ article.createdAt|date('d')}} {{ article.createdAt|date('M')}}</strong>
-                            </time>        
+                        <div class="col-md-2 vertical-align">
+                            <center>
+                            {% if article.logo == "NULL" %}
+                                <div style="font-size: 5em;">
+                                    <i class="fa fa-building-o fa-3"></i>
+                                </div>
+                            {% else %} 
+                                <img class="img-responsive img-center" src="{{ asset('upload/'~article.logo) }}"> 
+                            {% endif %}
+                            </center>
                         </div>
-
-                        <div class="col-md-8 vertical" >
+                        <div class="col-md-8 vertical-align" >
                             <a href="{{ path('superjobs_home_recruiter_job_details', { 'tag': article.id }) }}">
                                 <h4>{{ article.title }}</h4>
                             </a>
-
                             <i class="fa fa-compress"></i> {{ article.type }}
                             <i class="fa fa-map-marker"></i> {{ article.location }}
                             <i class="fa fa-building"></i> {{ article.company }}   
+                        </div>
+                        <div class="col-md-2">
+                            {{ article.createdAt|date('d')}} 
+                            {{ article.createdAt|date('M')}}
+                            <em>{{ article.createdAt|date('Y')}}</em>
                         </div>
                     </div>
                 </div>

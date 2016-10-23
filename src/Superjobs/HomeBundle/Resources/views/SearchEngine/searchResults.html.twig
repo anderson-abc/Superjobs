@@ -1,6 +1,10 @@
 <strong>{{ Jobs|length }}</strong> resultats trouvés<br/>
-
+{#{{ dump(Jobs[0]) }}#}
 {% for Job in Jobs %}
-    <span>{{Job.title}}</span><br/>
-    <span>{{Job.company}}</span>
+    <div class="items">
+        <a href="{{ path('superjobs_home_recruiter_job_details', { 'tag': Job.id }) }}">
+        <span>{{Job.title}}</span>
+        </a>
+        <span>{{Job.company}}</span>
+    </div>
 {% endfor %}

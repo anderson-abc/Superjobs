@@ -1,8 +1,12 @@
-<center><strong>Votre candidature à été envoyer, merci.</strong></center>
+<br/><br/>
+<center><strong>Votre candidature à été envoyer, merci.</strong>
+    <p>
+        Vous serez rediriger vers la page d'accueil ... 
+    </p>
+</center>
+<script>
+    setTimeout(function () {
+        window.location.href = 'http://irmajobs.com/'; // the redirect goes here
 
-<p>
-Voici une liste d'offres similaires à ce que vous recherchez.
-</p>
-
-{#{{ dump(job) }}#}
-
+    }, 5000); // 5 seconds
+</script>

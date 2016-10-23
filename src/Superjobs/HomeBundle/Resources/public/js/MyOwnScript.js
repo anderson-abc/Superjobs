@@ -23,9 +23,10 @@ $(document).ready(function () {
         count.call($(target));
     });
     $(".search-submit").click(function () {
-
+        
         var pattern = $(".search-input").val();
-        if(!pattern) pattern = "all";
+        if (!pattern)
+            pattern = "all";
         $.ajax({
             type: "POST",
             url: "./result/" + pattern,
@@ -33,9 +34,10 @@ $(document).ready(function () {
                 pattern: pattern
             },
             success: function (response) {
-                
-                $('html body div.container div.count').hide();        
-                $("html body div.container div.row div.col-xs-12.col-md-8").hide().html(response).fadeIn('slow');;
+
+                $('html body div.container div.count').hide();
+                $("html body div.container div.row div.col-xs-12.col-md-8").hide().html(response).fadeIn('slow');
+                ;
             }
         });
     });
