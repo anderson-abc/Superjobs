@@ -15,13 +15,14 @@
                 Chercher un offre d'emploi<br/>
                 Liste des entreprise qui recrutent<br/>
                 Optimiser mes recherches<br/>
-                Créer mon profil<br/>
+                <a href="{{ path('fos_user_security_login', {'roleHierarchy':'ROLE_APPLICANT'}) }}">
+                    Créer mon profil</a><br/>
                 Je m'entraine<br/>
             </div>
             <div class="col-md-3">
                 <b>Entreprise</b><br/>
-                Lancer une offre<br/>
-                Selectionner des profils<br/>
+                <a href="{{ path('superjobs_home_recruiter_intro') }}">Lancer une offre</a><br/>
+                <a href="{{ path('superjobs_home_team_template') }}">Selectionner des profils</a><br/>
                 Passer un test à un candidat<br/>
                 Télétravail<br/>
             </div>
