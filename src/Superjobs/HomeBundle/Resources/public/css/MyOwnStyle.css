@@ -22,3 +22,23 @@
 .search-input {
     height: 55px;
 }
+
+.cont {
+    height: 100%;
+}
+.logoRow {
+    height: 50%;
+}
+.logoCol {
+    height: 150px;
+}
+.logoContainer {
+    height: 50%;
+    width: 50%;
+}
+.flexbox {
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	flex-flow: column;
+}

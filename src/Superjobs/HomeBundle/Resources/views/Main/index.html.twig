@@ -31,15 +31,22 @@
                 <div class="items">
                     <div class="row">
                         <div class="col-md-2 vertical-align">
-                            <center>
-                                {% if article.logo == "NULL" %}
-                                    <div style="font-size: 5em;">
-                                        <i class="fa fa-building-o fa-3"></i>
+                            <div class="container-fluid cont">
+                                <div class="row logoRow">
+                                    <div class="col-md-13 logoCol flexbox">
+                                        {% if article.logo == "NULL" %}
+                                            <div style="font-size: 5em;">
+                                                <i class="fa fa-building-o fa-3"></i>
+                                            </div>
+                                        {% else %} 
+
+                                            <img class="img-responsive " src="{{ asset('upload/'~article.logo) }}"> 
+                                        {% endif %}
+                                        
+                                        
                                     </div>
-                                {% else %} 
-                                    <img class="img-responsive img-center" src="{{ asset('upload/'~article.logo) }}"> 
-                                {% endif %}
-                            </center>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-8 vertical-align" >
                             <a href="{{ path('superjobs_home_recruiter_job_details', { 'tag': article.id }) }}">
