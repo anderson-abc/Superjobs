@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log("ready!");
+//    console.log("ready!");
 
     $('#skills').inputosaurus({
         width: '350px',
@@ -16,15 +16,10 @@ $(document).ready(function () {
 // start all the timers
     $('.timer').each(count);
 
-// restart a timer when a button is clicked
-    $('.restart').click(function (event) {
+    $(".search-submit").submit(function (event) {
         event.preventDefault();
-        var target = $(this).data('target');
-        count.call($(target));
-    });
-    $(".search-submit").click(function () {
-        
         var pattern = $(".search-input").val();
+
         if (!pattern)
             pattern = "all";
         $.ajax({
@@ -34,12 +29,16 @@ $(document).ready(function () {
                 pattern: pattern
             },
             success: function (response) {
-
                 $('html body div.container div.count').hide();
                 $("html body div.container div.row div.col-xs-12.col-md-8").hide().html(response).fadeIn('slow');
-                ;
             }
         });
+    });
+
+    $('.dropdown').hover(function () {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+    }, function () {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
     });
 });
 function count(options) {
@@ -53,3 +52,4 @@ function submitcv() {
 
     });
 }
+

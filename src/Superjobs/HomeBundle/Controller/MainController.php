@@ -68,6 +68,7 @@ class MainController extends Controller {
     function searchEngineAction($pattern, Request $request) {
         if($pattern=="all")$pattern="";
         $Jobs = $this->get("superjobs_search_engine")->searchExpress($pattern);
+        
         return $this->render('SuperjobsHomeBundle:SearchEngine:searchResults.html.twig', 
                 array(
                     'Jobs' => $Jobs

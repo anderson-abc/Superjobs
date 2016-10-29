@@ -14,3 +14,11 @@
     /*margin-bottom: 4%;*/
     /*margin-top: 4%;*/
 }
+.search-bloc {
+    margin: 10px 0;
+    width: 575px;
+}
+.search-bloc span.input-group-btn button.btn,
+.search-input {
+    height: 55px;
+}
