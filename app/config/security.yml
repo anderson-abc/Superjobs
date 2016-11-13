@@ -16,6 +16,8 @@ security:
         ROLE_APPLICANT:     ROLE_APPLICANT
         ROLE_RECRUITER:     ROLE_RECRUITER
         ROLE_ADMIN:         [ROLE_ADMIN, ROLE_APPLICANT, ROLE_RECRUITER]
+        
+    access_denied_url: /login
 
     firewalls:
         main:
