@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Superjobs\HomeBundle\Entity\Jobs;
 use Superjobs\HomeBundle\Form\JobsType;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-
 class RecruiterController extends Controller {
 
     public function introAction() {
+        
         return $this->render('SuperjobsHomeBundle:Recruiter:intro.html.twig');
     }
 
@@ -18,8 +18,7 @@ class RecruiterController extends Controller {
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             // redirect register with role recruiter 
-            return $this->redirect($this->generateUrl('fos_user_security_login', 
-                    array('roleHierarchy' => 'ROLE_RECRUITER')));
+            return $this->redirect($this->generateUrl('fos_user_security_login', array('roleHierarchy' => 'ROLE_RECRUITER')));
         }
         if (false === $this->get('security.authorization_checker')->isGranted('ROLE_RECRUITER')) {
             $this->get('session')->getFlashBag()->add('Access denied', "Vous n\'avez pas le droit recruteur.");
@@ -40,8 +39,8 @@ class RecruiterController extends Controller {
                     $logo = "NULL";
                     if ($file = $form ['logo']->getData()) {
                         // $logo = $file->getClientOriginalName();
-                        $logo = md5(uniqid()) . '.' . $file->guessExtension();
-                        $upload_dir = $this->container->getParameter('kernel.root_dir') . '/../web/upload';
+                        $logo = time() . '_logo.' . $file->guessExtension();
+                        $upload_dir = $this->container->getParameter('kernel.root_dir') . '/../web/Users';
                         $file->move($upload_dir, $logo);
                     }
 

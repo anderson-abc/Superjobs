@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Superjobs\HomeBundle\Entity\CVtheque;
 use Superjobs\HomeBundle\Form\CVthequeType;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class ApplicantController extends Controller {
 
@@ -14,6 +15,7 @@ class ApplicantController extends Controller {
     }
 
     public function profileAction() {
+
         return $this->render('SuperjobsHomeBundle:Applicant:Profile.html.twig');
     }
 
@@ -34,17 +36,24 @@ class ApplicantController extends Controller {
         if ($request->isMethod('Post')) {
             $form->bind($request);
             if ($form->isValid()) {
+                $userid = NULL;
+                if ($this->container->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+                    $user = $this->container->get('security.token_storage')->getToken()->getUser();
+                    $userid = $user->getId();
+                }
+                $userdir = $userid ? $userid : 'unclassified';
+
                 $firstname = $form['firstname']->getData();
                 $lastname = $form['lastname']->getData();
                 $emailCV = $form['email']->getData();
                 $cvFile = "NULL";
                 if ($file = $form ['cvFile']->getData()) {
-                    
-                    $cvFile = $file->getClientOriginalName();
+
+                    $cvFile = time().'_'.$file->getClientOriginalName();
                     $cvExt = $file->guessExtension();
-                    $haystack = array('pdf', 'doc', 'docx', 'odt'); 
+                    $haystack = array('pdf', 'doc', 'docx', 'odt');
                     if (in_array($cvExt, $haystack)) {
-                        $upload_dir = $this->container->getParameter('kernel.root_dir') . '/../web/upload';
+                        $upload_dir = $this->container->getParameter('kernel.root_dir') . '/../web/Users/'.$userdir;
                         $file->move($upload_dir, $cvFile);
                         $attach = $upload_dir . "/" . $cvFile;
 
@@ -53,6 +62,7 @@ class ApplicantController extends Controller {
                         $CVtheque->setLastname($lastname);
                         $CVtheque->setEmail($emailCV);
                         $CVtheque->setCvFile($cvFile);
+                        $CVtheque->setIsuser($userdir);
 
                         // Insert into DB
                         $em->persist($CVtheque);
@@ -60,6 +70,10 @@ class ApplicantController extends Controller {
 
                         // send email to recruiter
                         $this->sendMailer($setTo, $attach);
+                    
+//                    else {  
+//                            // TODO : mettre la condition sur les type de fichier
+//                        }
                     }
                 }
             }

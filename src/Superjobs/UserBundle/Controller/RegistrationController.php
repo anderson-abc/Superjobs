@@ -4,8 +4,6 @@ namespace Superjobs\UserBundle\Controller;
 
 use FOS\UserBundle\Controller\RegistrationController as BaseController;
 use Symfony\Component\HttpFoundation\Request;
-
-
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -16,11 +14,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 
+class RegistrationController extends BaseController {
 
-class RegistrationController extends BaseController
-{
-    public function registerAction(Request $request)
-    {
+    public function registerAction(Request $request) {
 //        $response = parent::registerAction($request);
 
         /** @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface */
@@ -33,12 +29,12 @@ class RegistrationController extends BaseController
         $user = $userManager->createUser();
         $user->setEnabled(true);
 
-        if('ROLE_RECRUITER' == $my_role = $request->request->get('role')){
+        if ('ROLE_RECRUITER' == $my_role = $request->request->get('role')) {
             $user->addRole('ROLE_RECRUITER');
-        } else if('ROLE_APPLICANT' == $my_role = $request->request->get('role')){
+        } else if ('ROLE_APPLICANT' == $my_role = $request->request->get('role')) {
             $user->addRole('ROLE_APPLICANT');
         }
-        
+
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);
 
@@ -68,15 +64,14 @@ class RegistrationController extends BaseController
         }
 
         return $this->render('FOSUserBundle:Registration:register.html.twig', array(
-            'form' => $form->createView(),
+                    'form' => $form->createView(),
         ));
     }
 
     /**
      * Tell the user to check his email provider
      */
-    public function checkEmailAction()
-    {
+    public function checkEmailAction() {
         $email = $this->get('session')->get('fos_user_send_confirmation_email/email');
         $this->get('session')->remove('fos_user_send_confirmation_email/email');
         $user = $this->get('fos_user.user_manager')->findUserByEmail($email);
@@ -86,15 +81,14 @@ class RegistrationController extends BaseController
         }
 
         return $this->render('FOSUserBundle:Registration:checkEmail.html.twig', array(
-            'user' => $user,
+                    'user' => $user,
         ));
     }
 
     /**
      * Receive the confirmation token from user email provider, login the user
      */
-    public function confirmAction(Request $request, $token)
-    {
+    public function confirmAction(Request $request, $token) {
         /** @var $userManager \FOS\UserBundle\Model\UserManagerInterface */
         $userManager = $this->get('fos_user.user_manager');
 
@@ -128,21 +122,19 @@ class RegistrationController extends BaseController
     /**
      * Tell the user his account is now confirmed
      */
-    public function confirmedAction()
-    {
+    public function confirmedAction() {
         $user = $this->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
         return $this->render('FOSUserBundle:Registration:confirmed.html.twig', array(
-            'user' => $user,
-            'targetUrl' => $this->getTargetUrlFromSession(),
+                    'user' => $user,
+                    'targetUrl' => $this->getTargetUrlFromSession(),
         ));
     }
 
-    private function getTargetUrlFromSession()
-    {
+    private function getTargetUrlFromSession() {
         // Set the SecurityContext for Symfony <2.6
         if (interface_exists('Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')) {
             $tokenStorage = $this->get('security.token_storage');
@@ -156,4 +148,5 @@ class RegistrationController extends BaseController
             return $this->get('session')->get($key);
         }
     }
+
 }

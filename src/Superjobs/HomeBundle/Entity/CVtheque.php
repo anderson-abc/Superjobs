@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="CVtheque")
  * @ORM\Entity()
  */
-class CVtheque
-{
+class CVtheque {
+
     /**
      * @var integer
      *
@@ -20,6 +20,13 @@ class CVtheque
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var integer
+     *      
+     * @ORM\Column(name="iduser", type="integer", nullable=true)
+     */
+    private $iduser;
 
     /**
      * @var string
@@ -49,15 +56,34 @@ class CVtheque
      */
     private $cvFile;
 
-
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
+    }
+
+    /**
+     * Set iduser
+     *
+     * @param integer $iduser
+     * @return CVtheque
+     */
+    public function setIsuser($iduser) {
+        $this->iduser = $iduser;
+
+        return $this;
+    }
+
+    /**
+     * Get iduser
+     *
+     * @return integer
+     */
+    public function getIduser() {
+        return $this->iduser;
     }
 
     /**
@@ -66,8 +92,7 @@ class CVtheque
      * @param string $firstname
      * @return CVtheque
      */
-    public function setFirstname($firstname)
-    {
+    public function setFirstname($firstname) {
         $this->firstname = $firstname;
 
         return $this;
@@ -78,8 +103,7 @@ class CVtheque
      *
      * @return string 
      */
-    public function getFirstname()
-    {
+    public function getFirstname() {
         return $this->firstname;
     }
 
@@ -89,8 +113,7 @@ class CVtheque
      * @param string $lastname
      * @return CVtheque
      */
-    public function setLastname($lastname)
-    {
+    public function setLastname($lastname) {
         $this->lastname = $lastname;
 
         return $this;
@@ -101,8 +124,7 @@ class CVtheque
      *
      * @return string 
      */
-    public function getLastname()
-    {
+    public function getLastname() {
         return $this->lastname;
     }
 
@@ -112,8 +134,7 @@ class CVtheque
      * @param string $email
      * @return CVtheque
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
 
         return $this;
@@ -124,8 +145,7 @@ class CVtheque
      *
      * @return string 
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
@@ -135,8 +155,7 @@ class CVtheque
      * @param string $cvFile
      * @return CVtheque
      */
-    public function setCvFile($cvFile)
-    {
+    public function setCvFile($cvFile) {
         $this->cvFile = $cvFile;
 
         return $this;
@@ -147,8 +166,8 @@ class CVtheque
      *
      * @return string 
      */
-    public function getCvFile()
-    {
+    public function getCvFile() {
         return $this->cvFile;
     }
+
 }
