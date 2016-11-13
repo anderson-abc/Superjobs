@@ -5,7 +5,13 @@
 {% block container %}
 
     {% set roleHierarchy = app.request.get('roleHierarchy') %}
-    
+    {% for type, messages in app.session.flashbag.all() %}
+        {% if type == 'Access denied' %}
+            {#            {{ dump(messages[0]) }}#}
+            {#            {% include 'SuperjobsHomeBundle:SearchEngine:searchForm.html.twig'with({ 'pagination': pagination }) %}#}
+            {% include 'SuperjobsHomeBundle:Popin:popin.html.twig' with({ 'Title': type, 'messages':messages[0]}) %}
+        {% endif %}
+    {% endfor %}
     {% if error %}
 
         <div><p class="bg-warning">

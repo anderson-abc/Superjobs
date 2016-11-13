@@ -1,4 +1,9 @@
-
+{% set companyList = {} %}
+{% set lieux ={} %}
+{% for article in pagination %}
+    {% set companyList =  companyList|merge([article.company]) %}
+    {% set lieux = lieux|merge([article.location]) %}
+{% endfor %}
 <form class="search-submit">
     <div class="row">
         <div class="col-lg-5">
@@ -18,23 +23,29 @@
                         Salaire <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="">Moins de 24000</a></li>
+                        <li><a href="">25000 - 34000</a></li>
+                        <li><a href="">35000 - 44000</a></li>
+                        <li><a href="">45000 - 54000</a></li>
+                        <li><a href="">55000 - 59000</a></li>
+                        <li><a href="">60000 - 69000</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="">70000 et plus</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Compétences <span class="caret"></span>
+                        Métiers <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Design & Graphisme</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Développement</a></li>
+                        <li><a href="#">Systèmes & Réseaux</a></li>
+                        <li><a href="#">Management et Gestion</a></li>
+                        <li><a href="#">Ressources Humaines</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">Autres</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -42,23 +53,11 @@
                         Lieu <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        {% for item in lieux|arrayDistinct %}
+                            <li><a style="cursor: pointer;">{{ item }}</a></li>
+                        {% endfor %}
                         <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Métier <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">Autres</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -66,11 +65,14 @@
                         Contrat <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">CDI</a></li>
+                        <li><a href="#">CDD</a></li>
+                        <li><a href="#">Indépendant / Freelance</a></li>
+                        <li><a href="#">Stages</a></li>
+                        <li><a href="#">Intérim</a></li>
+                        <li><a href="#">Apprentissage / Pro</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">Autre</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -78,9 +80,9 @@
                         Sociétés <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        {% for item in companyList|arrayDistinct %}
+                            <li><a style="cursor: pointer;">{{ item }}</a></li>
+                        {% endfor %}
                         <li class="divider"></li>
                         <li><a href="#">Separated link</a></li>
                     </ul>

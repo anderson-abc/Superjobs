@@ -22,7 +22,9 @@ class RecruiterController extends Controller {
                     array('roleHierarchy' => 'ROLE_RECRUITER')));
         }
         if (false === $this->get('security.authorization_checker')->isGranted('ROLE_RECRUITER')) {
-            throw new AccessDeniedException ();
+            $this->get('session')->getFlashBag()->add('Access denied', "Vous n\'avez pas le droit recruteur.");
+//            throw new AccessDeniedException ();
+            throw $this->createAccessDeniedException('Vous n\'avez pas le droit recruteur ');
         } else {
             $em = $this->getDoctrine()->getManager();
             $Jobs = new Jobs ();

@@ -72,7 +72,7 @@ superjobs_home_team_template:
     
 superjobs_result_page:
     path:     /result/{pattern}
-    defaults: { _controller: SuperjobsHomeBundle:Main:searchEngine, pattern: null }
+    defaults: { _controller: SuperjobsHomeBundle:Search:searchEngine, pattern: null }
     requirements:
         methods:  GET|POST
         id: \d+

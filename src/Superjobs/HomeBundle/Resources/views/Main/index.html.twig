@@ -17,7 +17,7 @@
     </header>
     <br/>
 
-    {% include 'SuperjobsHomeBundle:SearchEngine:searchForm.html.twig' %}
+    {% include 'SuperjobsHomeBundle:SearchEngine:searchForm.html.twig'with({ 'pagination': pagination }) %}
 
     <br/>
     {# total items count #}
@@ -30,7 +30,7 @@
             {% for article in pagination %}
                 <div class="items">
                     <div class="row">
-                        <div class="col-md-2 vertical-align">
+                        <div class="col-md-2 ">
                             <div class="container-fluid cont">
                                 <div class="row logoRow">
                                     <div class="col-md-13 logoCol flexbox">
@@ -42,28 +42,40 @@
 
                                             <img class="img-responsive " src="{{ asset('upload/'~article.logo) }}"> 
                                         {% endif %}
-                                        
-                                        
+
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-8 vertical-align" >
+                        <div class="col-md-8 " >
                             <a href="{{ path('superjobs_home_recruiter_job_details', { 'tag': article.id }) }}">
                                 <h4>{{ article.title }}</h4>
                             </a>
-                            <i class="fa fa-compress"></i> {{ article.type }}
-                            <i class="fa fa-map-marker"></i> {{ article.location }}
-                            <i class="fa fa-building"></i> {{ article.company }}   
+                            {% if article.location == '' %}
+                                {% set location = 'Anywhere' %}
+                            {% else %}
+                                {% set location = article.location %}
+                            {% endif %}
+                            <i class="fa fa-map-marker"></i> {{ location }}<br/>
+                            <i class="fa fa-building"></i> {{ article.company }}<br/>
                         </div>
                         <div class="col-md-2">
-                            {{ article.createdAt|date('d')}} 
-                            {{ article.createdAt|date('M')}}
-                            <em>{{ article.createdAt|date('Y')}}</em>
+                            <br/>
+                            {% if date(article.createdAt) > date('-6days') %}
+                                <div class="newItem">New</div>
+                                <div class="newItem-r"></div>
+                                <br/>
+                            {% endif %}
+                            <div class="date">
+                                {{ article.createdAt|date('d')}} 
+                                {{ article.createdAt|date('M')}}
+                                <em>{{ article.createdAt|date('Y')}}</em>
+                            </div>
+                            <span class="label label-primary">{{ article.type }}</span>
                         </div>
                     </div>
                 </div>
-                <hr style="margin:0px;">
             {% endfor %}
         </div>
         <div class="col-xs-6 col-md-4 ">

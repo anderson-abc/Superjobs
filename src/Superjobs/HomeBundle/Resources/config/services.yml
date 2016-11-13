@@ -16,3 +16,9 @@ services:
     superjobs_search_engine:
         class: Superjobs\HomeBundle\Service\SearchEngine\SearchEngine
         arguments: [@doctrine.orm.entity_manager]
+        
+    superjobs_twig_extension:
+        class: Superjobs\HomeBundle\Service\Twig\MyTwigExtension
+        public: false
+        tags:
+            - { name: twig.extension }
