@@ -37,6 +37,13 @@ superjobs_home_recruiter_job_details:
         methods:  GET|POST
         id: \d+
         
+superjobs_submitCV:
+    path:     /Jobs/SubmitCV/{id}
+    defaults: { _controller: SuperjobsHomeBundle:Applicant:submitCV, id: 1 }
+    requirements:
+        methods:  GET|POST
+        id: \d+
+    
 superjobs_home_recruiter_intro:
     path:     /recruiter/intro
     defaults: { _controller: SuperjobsHomeBundle:Recruiter:intro }
@@ -63,3 +70,9 @@ superjobs_home_team_template:
     path:     /applicant/team
     defaults: { _controller: SuperjobsHomeBundle:Applicant:team }
     
+superjobs_result_page:
+    path:     /result/{pattern}
+    defaults: { _controller: SuperjobsHomeBundle:Search:searchEngine, pattern: null }
+    requirements:
+        methods:  GET|POST
+        id: \d+

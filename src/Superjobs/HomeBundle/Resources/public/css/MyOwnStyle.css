@@ -1,0 +1,82 @@
+/* 
+    Created on : 22 oct. 2016, 22:04:07
+    Author     : ubuntu
+*/
+
+.items:hover {
+    background-color: #f5f5f5;
+}
+.items {
+    min-height: 85px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    -moz-box-shadow: 0px 0px 5px 0px #656565;
+    -webkit-box-shadow: 0px 0px 5px 0px #656565;
+    -o-box-shadow: 0px 0px 5px 0px #656565;
+    box-shadow: 0px 0px 5px 0px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=NaN, Strength=5);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.vertical-align {
+    /*margin-bottom: 4%;*/
+    /*margin-top: 4%;*/
+}
+.search-bloc {
+    margin: 10px 0;
+    width: 575px;
+}
+.search-bloc span.input-group-btn button.btn,
+.search-input {
+    height: 55px;
+}
+
+.cont {
+    height: 100%;
+}
+.logoRow {
+    height: 50%;
+}
+.logoCol {
+    height: 120px;
+}
+.logoContainer {
+    height: 50%;
+    width: 50%;
+}
+.flexbox {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-flow: column;
+}
+.newItem {
+    color: #FFFFFF;
+    text-align: center;
+    background: #7f9db9 none repeat scroll 0 0;
+    float: left;
+    height: 50px;
+    left: 39px;
+    position: relative;
+    width: 380px;
+    z-index: 1;
+    right: -14px;
+    top: -15px;
+    width: 80px;
+    padding-top: 13px;
+    border-radius: 5px 0 0 5px;
+}
+.newItem-r {
+    border-color: transparent transparent transparent #7d90a3;
+    border-style: solid;
+    border-width: 15px;
+    height: 0;
+    position: relative;
+    width: 0;
+    /*z-index: 1;*/
+    left: 104px;
+    padding-left: 5px;
+    top: 20px;
+}

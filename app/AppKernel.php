@@ -25,9 +25,7 @@ class AppKernel extends Kernel
             // Bundles used : installed & configured & used
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
-            new \JMS\SerializerBundle\JMSSerializerBundle(),
-            new \FOS\ElasticaBundle\FOSElasticaBundle(),
+//            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
         );
         
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,74 @@
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="box-shadow: 0px 3px 5px 0px rgba(102, 102, 102, 0.5);">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                {#      <a class="navbar-brand" href="{{ path("superjobs_home_homepage") }}">Home</a>#}
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                { {{ app.user.username }} } <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ path('fos_user_profile_show') }}">
+                                        Mon compte
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}">
+                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}    
+                        <li>
+                            <a href="{{ path('superjobs_home_intro_template') }}">
+                                CANDIDAT
+                            </a>
+                        </li>
+                    {% endif %}
+                    {#              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                  {% else %}
+                                      <li>
+                                        <a href="{{ path('fos_user_security_login') }}">
+                                          {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                                        </a>
+                                      </li>
+                                  {% endif %}#}
+                    <li>
+                        <div>
+                            {% block fos_user_content %}
+                            {% endblock %}
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-center" style="margin-left: 37%;">
+                    <li>
+                        <a href="{{ path('superjobs_home_homepage') }}">
+                            IRMAJOBS
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{ path('superjobs_home_recruiter_intro') }}">
+                            ENTREPRISE
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
