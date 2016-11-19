@@ -13,8 +13,8 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Superjobs\HomeBundle\Entity\JobsRepository")
  */
-class Jobs
-{
+class Jobs {
+
     /**
      * @var integer
      *
@@ -104,6 +104,13 @@ class Jobs
     /**
      * @var string
      *
+     * @ORM\Column(name="emailCV", type="string", length=255)
+     */
+    private $emailCV;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="token", type="string", length=255, nullable=true)
      */
     private $token;
@@ -143,15 +150,14 @@ class Jobs
      */
     private $updatedAt;
 
-    function __construct(){
+    function __construct() {
         $this->createdAt = new \DateTime();
 
-        $now   = new DateTime;
-        $clone = clone $this->createdAt;   
+        $now = new DateTime;
+        $clone = clone $this->createdAt;
         $this->Categories = new ArrayCollection();
-        $this->expiresAt = $clone->modify( '+30 day' );
-        $this->updatedAt = $clone->modify( '+30 day' );
-
+        $this->expiresAt = $clone->modify('+30 day');
+        $this->updatedAt = $clone->modify('+30 day');
     }
 
     /**
@@ -159,8 +165,7 @@ class Jobs
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -170,8 +175,7 @@ class Jobs
      * @param string $type
      * @return Jobs
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
 
         return $this;
@@ -182,8 +186,7 @@ class Jobs
      *
      * @return string 
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -193,8 +196,7 @@ class Jobs
      * @param string $company
      * @return Jobs
      */
-    public function setCompany($company)
-    {
+    public function setCompany($company) {
         $this->company = $company;
 
         return $this;
@@ -205,8 +207,7 @@ class Jobs
      *
      * @return string 
      */
-    public function getCompany()
-    {
+    public function getCompany() {
         return $this->company;
     }
 
@@ -216,8 +217,7 @@ class Jobs
      * @param string $logo
      * @return Jobs
      */
-    public function setLogo($logo)
-    {
+    public function setLogo($logo) {
         $this->logo = $logo;
 
         return $this;
@@ -228,8 +228,7 @@ class Jobs
      *
      * @return string 
      */
-    public function getLogo()
-    {
+    public function getLogo() {
         return $this->logo;
     }
 
@@ -239,8 +238,7 @@ class Jobs
      * @param string $url
      * @return Jobs
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
 
         return $this;
@@ -251,8 +249,7 @@ class Jobs
      *
      * @return string 
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
@@ -262,8 +259,7 @@ class Jobs
      * @param string $location
      * @return Jobs
      */
-    public function setLocation($location)
-    {
+    public function setLocation($location) {
         $this->location = $location;
 
         return $this;
@@ -274,8 +270,7 @@ class Jobs
      *
      * @return string 
      */
-    public function getLocation()
-    {
+    public function getLocation() {
         return $this->location;
     }
 
@@ -285,8 +280,7 @@ class Jobs
      * @param string $description
      * @return Jobs
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -297,8 +291,7 @@ class Jobs
      *
      * @return string 
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -308,8 +301,7 @@ class Jobs
      * @param string $skills
      * @return Jobs
      */
-    public function setSkills($skills)
-    {
+    public function setSkills($skills) {
         $this->skills = $skills;
 
         return $this;
@@ -320,8 +312,7 @@ class Jobs
      *
      * @return string 
      */
-    public function getSkills()
-    {
+    public function getSkills() {
         return $this->skills;
     }
 
@@ -331,8 +322,7 @@ class Jobs
      * @param string $token
      * @return Jobs
      */
-    public function setToken($token)
-    {
+    public function setToken($token) {
         $this->token = $token;
 
         return $this;
@@ -343,8 +333,7 @@ class Jobs
      *
      * @return string 
      */
-    public function getToken()
-    {
+    public function getToken() {
         return $this->token;
     }
 
@@ -354,8 +343,7 @@ class Jobs
      * @param boolean $isPublic
      * @return Jobs
      */
-    public function setIsPublic($isPublic)
-    {
+    public function setIsPublic($isPublic) {
         $this->isPublic = $isPublic;
 
         return $this;
@@ -366,8 +354,7 @@ class Jobs
      *
      * @return boolean 
      */
-    public function getIsPublic()
-    {
+    public function getIsPublic() {
         return $this->isPublic;
     }
 
@@ -377,8 +364,7 @@ class Jobs
      * @param boolean $isCreated
      * @return Jobs
      */
-    public function setIsCreated($isCreated)
-    {
+    public function setIsCreated($isCreated) {
         $this->isCreated = $isCreated;
 
         return $this;
@@ -389,8 +375,7 @@ class Jobs
      *
      * @return boolean 
      */
-    public function getIsCreated()
-    {
+    public function getIsCreated() {
         return $this->isCreated;
     }
 
@@ -400,8 +385,7 @@ class Jobs
      * @param \DateTime $expiresAt
      * @return Jobs
      */
-    public function setExpiresAt($expiresAt)
-    {
+    public function setExpiresAt($expiresAt) {
         $this->expiresAt = $expiresAt;
 
         return $this;
@@ -412,8 +396,7 @@ class Jobs
      *
      * @return \DateTime 
      */
-    public function getExpiresAt()
-    {
+    public function getExpiresAt() {
         return $this->expiresAt;
     }
 
@@ -423,8 +406,7 @@ class Jobs
      * @param \DateTime $createdAt
      * @return Jobs
      */
-    public function setCreatedAt($createdAt)
-    {
+    public function setCreatedAt($createdAt) {
         $this->createdAt = $createdAt;
 
         return $this;
@@ -435,8 +417,7 @@ class Jobs
      *
      * @return \DateTime 
      */
-    public function getCreatedAt()
-    {
+    public function getCreatedAt() {
         return $this->createdAt;
     }
 
@@ -446,8 +427,7 @@ class Jobs
      * @param \DateTime $updatedAt
      * @return Jobs
      */
-    public function setUpdatedAt($updatedAt)
-    {
+    public function setUpdatedAt($updatedAt) {
         $this->updatedAt = $updatedAt;
 
         return $this;
@@ -458,8 +438,7 @@ class Jobs
      *
      * @return \DateTime 
      */
-    public function getUpdatedAt()
-    {
+    public function getUpdatedAt() {
         return $this->updatedAt;
     }
 
@@ -469,8 +448,7 @@ class Jobs
      * @param string $title
      * @return Jobs
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -481,8 +459,7 @@ class Jobs
      *
      * @return string 
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -492,8 +469,7 @@ class Jobs
      * @param array $categories
      * @return Jobs
      */
-    public function setCategories($categories)
-    {
+    public function setCategories($categories) {
         $this->Categories = $categories;
 
         return $this;
@@ -504,8 +480,7 @@ class Jobs
      *
      * @return array 
      */
-    public function getCategories()
-    {
+    public function getCategories() {
         return $this->Categories;
     }
 
@@ -515,8 +490,7 @@ class Jobs
      * @param integer $idUser
      * @return Jobs
      */
-    public function setIdUser($idUser)
-    {
+    public function setIdUser($idUser) {
         $this->id_user = $idUser;
 
         return $this;
@@ -527,8 +501,52 @@ class Jobs
      *
      * @return integer 
      */
-    public function getIdUser()
-    {
+    public function getIdUser() {
         return $this->id_user;
+    }
+
+    /**
+     * Set price
+     *
+     * @param string $price
+     * @return Jobs
+     */
+    public function setPrice($price) {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return string 
+     */
+    public function getPrice() {
+        return $this->price;
+    }
+
+
+    /**
+     * Set emailCV
+     *
+     * @param string $emailCV
+     * @return Jobs
+     */
+    public function setEmailCV($emailCV)
+    {
+        $this->emailCV = $emailCV;
+
+        return $this;
+    }
+
+    /**
+     * Get emailCV
+     *
+     * @return string 
+     */
+    public function getEmailCV()
+    {
+        return $this->emailCV;
     }
 }

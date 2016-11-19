@@ -6,31 +6,46 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * CVtheque
+ *
+ * @ORM\Table(name="CVtheque")
+ * @ORM\Entity()
  */
 class CVtheque
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *      
+     * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
      */
     private $firstname;
 
     /**
      * @var string
+     *      
+     * @ORM\Column(name="lastname", type="string", length=255, nullable=true)
      */
-    private $lastename;
+    private $lastname;
 
     /**
      * @var string
+     * 
+     * @ORM\Column(name="email", type="string", length=255, nullable=true)
      */
     private $email;
 
     /**
      * @var string
+     * 
+     * @ORM\Column(name="cvFile", type="string", length=255)
      */
     private $cvFile;
 
@@ -69,26 +84,26 @@ class CVtheque
     }
 
     /**
-     * Set lastename
+     * Set lastname
      *
-     * @param string $lastename
+     * @param string $lastname
      * @return CVtheque
      */
-    public function setLastename($lastename)
+    public function setLastname($lastname)
     {
-        $this->lastename = $lastename;
+        $this->lastname = $lastname;
 
         return $this;
     }
 
     /**
-     * Get lastename
+     * Get lastname
      *
      * @return string 
      */
-    public function getLastename()
+    public function getLastname()
     {
-        return $this->lastename;
+        return $this->lastname;
     }
 
     /**

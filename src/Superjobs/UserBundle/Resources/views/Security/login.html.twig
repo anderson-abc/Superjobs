@@ -1,52 +1,60 @@
 {% extends "SuperjobsHomeBundle::layout.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
-    
+
 {% block container %}
 
-{% if error %}
-    
-      <div><p class="bg-warning">
-        {{ error.messageKey|trans(error.messageData, 'security') }}
-      </p></div>
-    
-{% endif %}
+    {% set roleHierarchy = app.request.get('roleHierarchy') %}
+    {% for type, messages in app.session.flashbag.all() %}
+        {% if type == 'Access denied' %}
+            {#            {{ dump(messages[0]) }}#}
+            {#            {% include 'SuperjobsHomeBundle:SearchEngine:searchForm.html.twig'with({ 'pagination': pagination }) %}#}
+            {% include 'SuperjobsHomeBundle:Popin:popin.html.twig' with({ 'Title': type, 'messages':messages[0]}) %}
+        {% endif %}
+    {% endfor %}
+    {% if error %}
 
-<form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
-    <fieldset>
-        {# <h2 class="form-signin-heading">Please sign in</h2> #}
-        <legend><center>Connexion</center></legend>
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-        
-{#        <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>#}
-        <div style="margin-bottom: 25px" class="input-group">
-            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"
-            class="form-control" placeholder="{{ 'security.login.username'|trans }}" autofocus />
-        </div>
-            
-{#        <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>#}
-        <div style="margin-bottom: 25px" class="input-group">
-            <span class="input-group-addon"><i class="fa fa-key"></i></span>
-            <input type="password" id="password" name="_password" class="form-control" 
-            placeholder="{{ 'security.login.password'|trans }}" required="required" autofocus />
-        </div>
+        <div><p class="bg-warning">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </p></div>
 
-        <div class="checkbox">
-          <label for="remember_me">
-            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-            {{ 'security.login.remember_me'|trans }}
-          </label>
-        </div>
-        
-        <button class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit">
-            {{ 'security.login.submit'|trans }}
-        </button>
-        <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{ path('fos_user_registration_register') }}">Créer un compte</a></li>
-            <li><a href="{{ path('fos_user_resetting_request') }}">Forget password</a></li>
-        </ul>
-    </fieldset>
-</form>
+    {% endif %}
+
+    <form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+        <fieldset>
+            {# <h2 class="form-signin-heading">Please sign in</h2> #}
+            <legend><center>Connexion</center></legend>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+            {#        <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>#}
+            <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"
+                       class="form-control" placeholder="{{ 'security.login.username'|trans }}" autofocus />
+            </div>
+
+            {#        <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>#}
+            <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <input type="password" id="password" name="_password" class="form-control" 
+                       placeholder="{{ 'security.login.password'|trans }}" required="required" autofocus />
+            </div>
+
+            <div class="checkbox">
+                <label for="remember_me">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    {{ 'security.login.remember_me'|trans }}
+                </label>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit">
+                {{ 'security.login.submit'|trans }}
+            </button>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="{{ path('fos_user_registration_register', {'roleHierarchy':roleHierarchy}) }}">Créer un compte</a></li>
+                <li><a href="{{ path('fos_user_resetting_request') }}">Forget password</a></li>
+            </ul>
+        </fieldset>
+    </form>
 
 {% endblock %}
