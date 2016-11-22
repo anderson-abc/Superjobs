@@ -4,36 +4,46 @@ namespace Superjobs\HomeBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-//use Symfony\Component\HttpFoundation\File\UploadedFile;
+class JobsType extends AbstractType {
 
-class JobsType extends AbstractType
-{
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+    public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-            ->add('title')
-            ->add('company')
-            ->add('logo', 'file', array('required' => false))
-//            ->add('logo', 'file', array('label' => 'Company logo', 'required' => false))
-            ->add('url', 'url')
-            ->add('location')
-            ->add('emailCV')
-            ->add('description', 'textarea', array('attr' => array('class' => 'ckeditor')))
-//             ->add('captcha', 'genemu_captcha',array('mapped' => false,))
+//                ->add('id_user')
+                ->add('title')
+                ->add('Categories')
+                ->add('type', 'choice', array(
+                    'choices' => array('CDI' => 'CDI', 'CDD' => 'CDD', 'Stage' => 'Stage'),
+                    'choices_as_values' => true,
+                        )
+                )
+                ->add('company')
+                ->add('logo', 'file', array('required' => false, 'label' => 'Company Logo (Image)', 'data_class' => null))
+                ->add('url')
+                ->add('location')
+                ->add('salary')
+                ->add('description', 'textarea', array('attr' => array('class' => 'ckeditor')))
+                ->add('skills')
+                ->add('emailCV')
+                ->add('token')
+                ->add('isPublic')
+                ->add('isCreated')
+                ->add('expiresAt')
+                ->add('createdAt')
+                ->add('updatedAt')
         ;
     }
-    
+
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
+    public function configureOptions(OptionsResolver $resolver) {
         $resolver->setDefaults(array(
             'data_class' => 'Superjobs\HomeBundle\Entity\Jobs'
         ));
@@ -42,8 +52,8 @@ class JobsType extends AbstractType
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'superjobs_homebundle_jobs';
     }
+
 }

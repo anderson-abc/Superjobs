@@ -1,0 +1,30 @@
+jobs:
+    path:     /
+    defaults: { _controller: "SuperjobsHomeBundle:Jobs:index" }
+
+jobs_show:
+    path:     /{id}/show
+    defaults: { _controller: "SuperjobsHomeBundle:Jobs:show" }
+
+jobs_new:
+    path:     /new
+    defaults: { _controller: "SuperjobsHomeBundle:Jobs:new" }
+
+jobs_create:
+    path:     /create
+    defaults: { _controller: "SuperjobsHomeBundle:Jobs:create" }
+    methods:  POST
+
+jobs_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SuperjobsHomeBundle:Jobs:edit" }
+
+jobs_update:
+    path:     /{id}/update
+    defaults: { _controller: "SuperjobsHomeBundle:Jobs:update" }
+    methods:  [POST, PUT]
+
+jobs_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SuperjobsHomeBundle:Jobs:delete" }
+    methods:  [POST, DELETE]

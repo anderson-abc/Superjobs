@@ -48,7 +48,7 @@ class Jobs {
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\Column(name="type", type="string", length=255, nullable=true)
      */
     private $type;
 
@@ -83,9 +83,9 @@ class Jobs {
     /**
      * @var string
      *
-     * @ORM\Column(name="price", type="string", length=255, nullable=true)
+     * @ORM\Column(name="salary", type="string", length=255, nullable=true)
      */
-    private $price;
+    private $salary;
 
     /**
      * @var string
@@ -97,7 +97,7 @@ class Jobs {
     /**
      * @var string
      *
-     * @ORM\Column(name="skills", type="string", length=255)
+     * @ORM\Column(name="skills", type="string", length=255, nullable=true)
      */
     private $skills;
 
@@ -155,6 +155,7 @@ class Jobs {
 
         $now = new DateTime;
         $clone = clone $this->createdAt;
+        $this->isCreated = true;
         $this->Categories = new ArrayCollection();
         $this->expiresAt = $clone->modify('+30 day');
         $this->updatedAt = $clone->modify('+30 day');
@@ -506,24 +507,24 @@ class Jobs {
     }
 
     /**
-     * Set price
+     * Set salary
      *
-     * @param string $price
+     * @param string $salary
      * @return Jobs
      */
-    public function setPrice($price) {
-        $this->price = $price;
+    public function setSalary($salary) {
+        $this->salary = $salary;
 
         return $this;
     }
 
     /**
-     * Get price
+     * Get salary
      *
      * @return string 
      */
-    public function getPrice() {
-        return $this->price;
+    public function getSalary() {
+        return $this->salary;
     }
 
 

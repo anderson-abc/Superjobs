@@ -12,6 +12,10 @@ class MyTwigExtension extends \Twig_Extension {
             new \Twig_SimpleFilter('testtPourcent', array($this, 'testtPourcent')),
         );
     }
+    
+    public function getName() {
+        return 'app_extension';
+    }
 
     public function priceFilter($number, $decimals = 0, $thousandsSep = '.', $decPoint = ',') {
         $price = number_format($number, $decimals, $decPoint, $thousandsSep);
@@ -21,7 +25,7 @@ class MyTwigExtension extends \Twig_Extension {
     }
 
     public function arrayDistinct($arrayIN) {
-        $arrayOUT = [];
+        $arrayOUT = array();
         foreach ($arrayIN as $key => $value) {
             if (!in_array($value, $arrayOUT)) {
                 $arrayOUT[] = $value;
@@ -69,7 +73,4 @@ class MyTwigExtension extends \Twig_Extension {
         return $test;
     }
 
-//    public function getName() {
-//        return 'app_extension';
-//    }
 }

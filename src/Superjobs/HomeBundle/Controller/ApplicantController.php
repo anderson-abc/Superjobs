@@ -41,6 +41,7 @@ class ApplicantController extends Controller {
                     $user = $this->container->get('security.token_storage')->getToken()->getUser();
                     $userid = $user->getId();
                 }
+
                 $userdir = $userid ? $userid : 'unclassified';
 
                 $firstname = $form['firstname']->getData();
@@ -49,11 +50,11 @@ class ApplicantController extends Controller {
                 $cvFile = "NULL";
                 if ($file = $form ['cvFile']->getData()) {
 
-                    $cvFile = time().'_'.$file->getClientOriginalName();
+                    $cvFile = time() . '_' . $file->getClientOriginalName();
                     $cvExt = $file->guessExtension();
                     $haystack = array('pdf', 'doc', 'docx', 'odt');
                     if (in_array($cvExt, $haystack)) {
-                        $upload_dir = $this->container->getParameter('kernel.root_dir') . '/../web/Users/'.$userdir;
+                        $upload_dir = $this->container->getParameter('kernel.root_dir') . '/../web/Users/' . $userdir;
                         $file->move($upload_dir, $cvFile);
                         $attach = $upload_dir . "/" . $cvFile;
 
@@ -70,14 +71,11 @@ class ApplicantController extends Controller {
 
                         // send email to recruiter
                         $this->sendMailer($setTo, $attach);
-                    
-//                    else {  
-//                            // TODO : mettre la condition sur les type de fichier
-//                        }
                     }
                 }
             }
         }
+
 
         return $this->render('SuperjobsHomeBundle:Applicant:similarjobs.html.twig', array(
                     'job' => $job
@@ -107,6 +105,21 @@ class ApplicantController extends Controller {
         $spool->flushQueue($transport);
 
         return TRUE;
+    }
+
+    public function getRefererRoute() {
+        $request = $this->getRequest();
+
+        //look for the referer route
+        $referer = $request->headers->get('referer');
+        $lastPath = substr($referer, strpos($referer, $request->getBaseUrl()));
+        $lastPath = str_replace($request->getBaseUrl(), '', $lastPath);
+
+        $matcher = $this->get('router')->getMatcher();
+        $parameters = $matcher->match($lastPath);
+        $route = $parameters['_route'];
+
+        return $route;
     }
 
 }
