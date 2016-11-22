@@ -26,6 +26,9 @@ framework:
     fragments:       ~
     http_method_override: true
 
+parameters:
+    logo_directory: '%kernel.root_dir%/../web/Users/'
+
 # Twig Configuration
 twig:
     debug:            "%kernel.debug%"
