@@ -6,6 +6,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Superjobs\HomeBundle\Entity\Jobs;
 use Superjobs\HomeBundle\Form\JobsType;
+use Superjobs\HomeBundle\Entity\CVtheque;
+use Superjobs\HomeBundle\Form\CVthequeType;
 
 /**
  * Jobs controller.
@@ -107,10 +109,13 @@ class JobsController extends Controller {
             throw $this->createNotFoundException('Unable to find Jobs entity.');
         }
 
+        $CVtheque = new CVtheque();
+        $form = $this->createForm(new CVthequeType(), $CVtheque);
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('SuperjobsHomeBundle:Jobs:show.html.twig', array(
                     'entity' => $entity,
+                    'form' => $form->createView(),
                     'delete_form' => $deleteForm->createView(),
         ));
     }

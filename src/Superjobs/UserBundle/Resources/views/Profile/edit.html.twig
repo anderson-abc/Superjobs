@@ -1,5 +1,9 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "SuperjobsHomeBundle::layout.html.twig" %} 
 
+{% block container %}
+    <br/>
 {% block fos_user_content %}
 {% include "FOSUserBundle:Profile:edit_content.html.twig" %}
 {% endblock fos_user_content %}
+
+{% endblock %}
