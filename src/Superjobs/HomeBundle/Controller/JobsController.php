@@ -188,7 +188,7 @@ class JobsController extends Controller {
 
             $em->flush();
 
-            return $this->redirect($this->generateUrl('jobs_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('jobs_show', array('id' => $id)));
         }
 
         return $this->render('SuperjobsHomeBundle:Jobs:edit.html.twig', array(
