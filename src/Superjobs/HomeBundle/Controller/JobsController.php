@@ -44,6 +44,7 @@ class JobsController extends Controller {
             $file->move(
                     $this->getParameter('logo_directory') . '/' . $user . '/', $fileName
             );
+            
             $entity->setLogo($fileName);
             $entity->setIdUser($user);
 
@@ -173,14 +174,18 @@ class JobsController extends Controller {
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            
-            $user = $this->getUser()->getId();
-            $file = $entity->getLogo();
-            $fileName = $user . '-' . time() . '.' . $file->guessExtension();
-            $file->move(
-                    $this->getParameter('logo_directory') . '/' . $user . '/', $fileName
-            );
-            $entity->setLogo($fileName);
+
+            $user = $this->getUser()->getId() ? $this->getUser()->getId() : '0';
+            if ($file = $entity->getLogo()) {
+                $fileName = $user . '-' . time() . '.' . $file->guessExtension();
+                $file->move(
+                        $this->getParameter('logo_directory') . '/' . $user . '/', $fileName
+                );
+                $entity->setLogo($fileName);
+            }
+            $updatedAt = new \DateTime();
+            $entity->setUpdatedAt($updatedAt);
+
             $em->flush();
 
             return $this->redirect($this->generateUrl('jobs_edit', array('id' => $id)));

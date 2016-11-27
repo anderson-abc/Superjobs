@@ -14,29 +14,42 @@ class JobsType extends AbstractType {
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
+        $type = array(
+            'CDI' => 'CDI',
+            'CDD' => 'CDD',
+            'Stage' => 'Stage',
+            'Télétravail' => 'Télétravail',
+            'Apprentissage' => 'Apprentissage',
+            'Independant' => 'Independant',
+        );
+
+        $Categories = array(
+            'Developpement' => 'Developpement',
+            'Systeme / Réseaux' => 'Systeme',
+            'Désign' => 'Désign',
+            'SEO' => 'SEO',
+            'Webmarketing' => 'Webmarketing',
+            'Autre' => 'Autre',
+        );
+
         $builder
-//                ->add('id_user')
                 ->add('title')
-                ->add('Categories')
-                ->add('type', 'choice', array(
-                    'choices' => array('CDI' => 'CDI', 'CDD' => 'CDD', 'Stage' => 'Stage'),
+                ->add('Categories', 'choice', array(
+                    'choices' => $Categories,
                     'choices_as_values' => true,
-                        )
-                )
+                ))
+                ->add('type', 'choice', array(
+                    'choices' => $type,
+                    'choices_as_values' => true,
+                ))
                 ->add('company')
-                ->add('logo', 'file', array('required' => false, 'label' => 'Company Logo (Image)', 'data_class' => null))
+                ->add('logo', 'file', array('required' => false, 'label' => 'Company Logo', 'data_class' => null))
                 ->add('url')
                 ->add('location')
                 ->add('salary')
                 ->add('description', 'textarea', array('attr' => array('class' => 'ckeditor')))
                 ->add('skills')
                 ->add('emailCV')
-                ->add('token')
-                ->add('isPublic')
-                ->add('isCreated')
-                ->add('expiresAt')
-                ->add('createdAt')
-                ->add('updatedAt')
         ;
     }
 

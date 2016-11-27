@@ -39,7 +39,7 @@ class Jobs {
     private $title;
 
     /**
-     * @var array
+     * @var string
      *
      * @ORM\Column(name="categories", type="string", length=255, nullable=true)
      */
@@ -151,14 +151,14 @@ class Jobs {
     private $updatedAt;
 
     function __construct() {
-        $this->createdAt = new \DateTime();
+        $this->createdAt = new \DateTime("now");
 
-        $now = new DateTime;
+//        $now = new DateTime;
         $clone = clone $this->createdAt;
         $this->isCreated = true;
-        $this->Categories = new ArrayCollection();
+
         $this->expiresAt = $clone->modify('+30 day');
-        $this->updatedAt = $clone->modify('+30 day');
+//        $this->updatedAt = $clone->modify('+30 day');
     }
 
     /**
@@ -404,7 +404,9 @@ class Jobs {
     /**
      * Set createdAt
      *
-     * @param \DateTime $createdAt
+     * @param \DateTime $createdAt     
+     * @ORM\PrePersist
+     * 
      * @return Jobs
      */
     public function setCreatedAt($createdAt) {
@@ -429,11 +431,20 @@ class Jobs {
      * @return Jobs
      */
     public function setUpdatedAt($updatedAt) {
-        $this->updatedAt = $updatedAt;
+                
+        $this->updatedAt = new \DateTime();
+
+        $now = new DateTime;
+        $clone = clone $this->updatedAt;
+        $this->isCreated = true;
+        
+        $this->updatedAt = $clone->modify('+1 day');
+        
+        
+        
 
         return $this;
     }
-
     /**
      * Get updatedAt
      *
@@ -467,7 +478,7 @@ class Jobs {
     /**
      * Set Categories
      *
-     * @param array $categories
+     * @param string $categories
      * @return Jobs
      */
     public function setCategories($categories) {
@@ -479,7 +490,7 @@ class Jobs {
     /**
      * Get Categories
      *
-     * @return array 
+     * @return string 
      */
     public function getCategories() {
         return $this->Categories;
@@ -527,15 +538,13 @@ class Jobs {
         return $this->salary;
     }
 
-
     /**
      * Set emailCV
      *
      * @param string $emailCV
      * @return Jobs
      */
-    public function setEmailCV($emailCV)
-    {
+    public function setEmailCV($emailCV) {
         $this->emailCV = $emailCV;
 
         return $this;
@@ -546,8 +555,8 @@ class Jobs {
      *
      * @return string 
      */
-    public function getEmailCV()
-    {
+    public function getEmailCV() {
         return $this->emailCV;
     }
+
 }

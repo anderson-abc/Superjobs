@@ -1,15 +1,14 @@
-{% extends '::base.html.twig' %}
-
-{% block body -%}
+{% extends "SuperjobsHomeBundle::layout.html.twig" %} 
+{% block container %}
     <h1>Jobs creation</h1>
 
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('jobs') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('jobs') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
 {% endblock %}
