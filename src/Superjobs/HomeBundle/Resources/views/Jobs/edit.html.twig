@@ -1,0 +1,16 @@
+{% extends "SuperjobsHomeBundle::layout.html.twig" %} 
+{% block container %}
+
+    <h1>Jobs edit</h1>
+
+    {{ form(edit_form) }}
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('superjobs_home_homepage') }}">
+                Revenir à l'accueil
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}

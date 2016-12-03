@@ -3,7 +3,6 @@
 {#{{dump(user|testtPourcent)}}#}
 <!-- Main -->
 <div class="container">
-
     <!-- upper section -->
     <div class="row">
         <div class="col-sm-3">
@@ -80,6 +79,8 @@
 
                 <!--center-right-->
                 <div class="col-md-5">
+
+                    <a href="{{ path('fos_user_profile_edit') }}">Edit</a>
                     <div class="panel panel-default">
                         <div class="panel-heading"><h4>Processing Status</h4></div>
                         <div class="panel-body">
@@ -98,7 +99,15 @@
                                     </div>
                                 </div>
                             {% endif %}
-                        </div><!--/panel-body-->
+                        </div>
+                    </div><!--/panel-body-->
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            Plus votre profil est complet, plus sera visible par les entreprises.
+                        </div>
                     </div><!--/panel-->  
                 </div><!--/col-span-6-->
             </div><!--/row-->

@@ -39,8 +39,7 @@
                                                 <i class="fa fa-building-o fa-3"></i>
                                             </div>
                                         {% else %} 
-
-                                            <img class="img-responsive " src="{{ asset('upload/'~article.logo) }}"> 
+                                            <img class="img-responsive " src="{{ asset('/Users/' ~ article.iduser ~ '/' ~ article.logo) }}" width="100">
                                         {% endif %}
 
 
@@ -49,7 +48,7 @@
                             </div>
                         </div>
                         <div class="col-md-8 " >
-                            <a href="{{ path('superjobs_home_recruiter_job_details', { 'tag': article.id }) }}">
+                            <a href="{{ path('jobs_show', { 'id': article.id }) }}">
                                 <h4>{{ article.title }}</h4>
                             </a>
                             {% if article.location == '' %}
@@ -62,7 +61,7 @@
                         </div>
                         <div class="col-md-2">
                             <br/>
-                            {% if date(article.createdAt) > date('-6days') %}
+                            {% if date(article.createdAt) > date('-10days') %}
                                 <div class="newItem">New</div>
                                 <div class="newItem-r"></div>
                                 <br/>

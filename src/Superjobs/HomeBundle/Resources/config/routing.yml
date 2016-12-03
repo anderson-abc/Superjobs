@@ -1,3 +1,7 @@
+superjobs_home_jobs:
+    resource: "@SuperjobsHomeBundle/Resources/config/routing/jobs.yml"
+    prefix:   /jobs
+
 superjobs_home_homepage:
     path:     /
     defaults: { _controller: SuperjobsHomeBundle:Main:index }

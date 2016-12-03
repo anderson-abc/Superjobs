@@ -39,7 +39,7 @@ class Jobs {
     private $title;
 
     /**
-     * @var array
+     * @var string
      *
      * @ORM\Column(name="categories", type="string", length=255, nullable=true)
      */
@@ -48,7 +48,7 @@ class Jobs {
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\Column(name="type", type="string", length=255, nullable=true)
      */
     private $type;
 
@@ -83,9 +83,9 @@ class Jobs {
     /**
      * @var string
      *
-     * @ORM\Column(name="price", type="string", length=255, nullable=true)
+     * @ORM\Column(name="salary", type="string", length=255, nullable=true)
      */
-    private $price;
+    private $salary;
 
     /**
      * @var string
@@ -97,7 +97,7 @@ class Jobs {
     /**
      * @var string
      *
-     * @ORM\Column(name="skills", type="string", length=255)
+     * @ORM\Column(name="skills", type="string", length=255, nullable=true)
      */
     private $skills;
 
@@ -146,18 +146,19 @@ class Jobs {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated_at", type="datetime")
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     private $updatedAt;
 
     function __construct() {
-        $this->createdAt = new \DateTime();
+        $this->createdAt = new \DateTime("now");
 
-        $now = new DateTime;
+//        $now = new DateTime;
         $clone = clone $this->createdAt;
-        $this->Categories = new ArrayCollection();
+        $this->isCreated = true;
+
         $this->expiresAt = $clone->modify('+30 day');
-        $this->updatedAt = $clone->modify('+30 day');
+//        $this->updatedAt = $clone->modify('+30 day');
     }
 
     /**
@@ -403,7 +404,9 @@ class Jobs {
     /**
      * Set createdAt
      *
-     * @param \DateTime $createdAt
+     * @param \DateTime $createdAt     
+     * @ORM\PrePersist
+     * 
      * @return Jobs
      */
     public function setCreatedAt($createdAt) {
@@ -428,11 +431,20 @@ class Jobs {
      * @return Jobs
      */
     public function setUpdatedAt($updatedAt) {
-        $this->updatedAt = $updatedAt;
+                
+        $this->updatedAt = new \DateTime();
+
+        $now = new DateTime;
+        $clone = clone $this->updatedAt;
+        $this->isCreated = true;
+        
+        $this->updatedAt = $clone->modify('+1 day');
+        
+        
+        
 
         return $this;
     }
-
     /**
      * Get updatedAt
      *
@@ -466,7 +478,7 @@ class Jobs {
     /**
      * Set Categories
      *
-     * @param array $categories
+     * @param string $categories
      * @return Jobs
      */
     public function setCategories($categories) {
@@ -478,7 +490,7 @@ class Jobs {
     /**
      * Get Categories
      *
-     * @return array 
+     * @return string 
      */
     public function getCategories() {
         return $this->Categories;
@@ -506,26 +518,25 @@ class Jobs {
     }
 
     /**
-     * Set price
+     * Set salary
      *
-     * @param string $price
+     * @param string $salary
      * @return Jobs
      */
-    public function setPrice($price) {
-        $this->price = $price;
+    public function setSalary($salary) {
+        $this->salary = $salary;
 
         return $this;
     }
 
     /**
-     * Get price
+     * Get salary
      *
      * @return string 
      */
-    public function getPrice() {
-        return $this->price;
+    public function getSalary() {
+        return $this->salary;
     }
-
 
     /**
      * Set emailCV
@@ -533,8 +544,7 @@ class Jobs {
      * @param string $emailCV
      * @return Jobs
      */
-    public function setEmailCV($emailCV)
-    {
+    public function setEmailCV($emailCV) {
         $this->emailCV = $emailCV;
 
         return $this;
@@ -545,8 +555,8 @@ class Jobs {
      *
      * @return string 
      */
-    public function getEmailCV()
-    {
+    public function getEmailCV() {
         return $this->emailCV;
     }
+
 }
