@@ -7,6 +7,11 @@ framework:
         strict_requirements: true
     profiler: { only_exceptions: false }
 
+
+parameters:
+    logo_directory: '%kernel.root_dir%/../web/Users/'
+    user_directory: '%kernel.root_dir%/../web/Users/'
+
 web_profiler:
     toolbar: true
     intercept_redirects: false
