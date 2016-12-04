@@ -48,6 +48,7 @@ class RegistrationController extends BaseController {
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+
             $event = new FormEvent($form, $request);
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
 
@@ -115,7 +116,6 @@ class RegistrationController extends BaseController {
         }
 
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_CONFIRMED, new FilterUserResponseEvent($user, $request, $response));
-
         return $response;
     }
 
@@ -127,6 +127,10 @@ class RegistrationController extends BaseController {
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
+
+        $userDir = $this->getParameter('user_directory');
+        mkdir($userDir . $user->getId(), 0755, true);
+
 
         return $this->render('FOSUserBundle:Registration:confirmed.html.twig', array(
                     'user' => $user,
