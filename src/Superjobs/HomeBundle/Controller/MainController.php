@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Superjobs\HomeBundle\Entity\CVtheque;
 use Superjobs\HomeBundle\Form\CVthequeType;
+use Superjobs\HomeBundle\Entity\Category;
+use Superjobs\HomeBundle\Form\CategoryType;
 
 class MainController extends Controller {
 
@@ -16,13 +18,21 @@ class MainController extends Controller {
                 array(), array('id' => 'DESC')
         );
 
+        $productRepository = $em->getRepository('SuperjobsHomeBundle:Category');
+        $oCategory = $productRepository->findAll();
+        
+        foreach ($oCategory as $key => $oCategoryValue) {
+            $category[$key] = $oCategoryValue->getName();
+        }
+        
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
                 $jobs, $request->query->get('page', 1)/* page number */, 10/* limit per page */
         );
 
         return $this->render('SuperjobsHomeBundle:Main:index.html.twig', array(
-                    'pagination' => $pagination
+                    'pagination' => $pagination,
+                    'category' => $category
         ));
     }
 
@@ -66,12 +76,13 @@ class MainController extends Controller {
     }
 
     function searchEngineAction($pattern, Request $request) {
-        if($pattern=="all")$pattern="";
+        if ($pattern == "all")
+            $pattern = "";
         $Jobs = $this->get("superjobs_search_engine")->searchExpress($pattern);
-        
-        return $this->render('SuperjobsHomeBundle:SearchEngine:searchResults.html.twig', 
-                array(
+
+        return $this->render('SuperjobsHomeBundle:SearchEngine:searchResults.html.twig', array(
                     'Jobs' => $Jobs
-                ));
+        ));
     }
+
 }

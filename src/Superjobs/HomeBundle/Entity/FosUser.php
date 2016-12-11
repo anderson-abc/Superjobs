@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * FosUser
  *
+ * @ORM\Table(name="fos_user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_957A647992FC23A8", columns={"username_canonical"}), @ORM\UniqueConstraint(name="UNIQ_957A6479A0D96FBF", columns={"email_canonical"}), @ORM\UniqueConstraint(name="UNIQ_957A6479C05FB297", columns={"confirmation_token"})})
+ * @ORM\Entity
  */
 class FosUser
 {
@@ -22,28 +24,28 @@ class FosUser
     /**
      * @var string
      *
-     * @ORM\Column(name="username", type="string", length=255, nullable=false)
+     * @ORM\Column(name="username", type="string", length=180, nullable=false)
      */
     private $username;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="username_canonical", type="string", length=255, nullable=false)
+     * @ORM\Column(name="username_canonical", type="string", length=180, nullable=false)
      */
     private $usernameCanonical;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     * @ORM\Column(name="email", type="string", length=180, nullable=false)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email_canonical", type="string", length=255, nullable=false)
+     * @ORM\Column(name="email_canonical", type="string", length=180, nullable=false)
      */
     private $emailCanonical;
 
@@ -99,7 +101,7 @@ class FosUser
     /**
      * @var string
      *
-     * @ORM\Column(name="confirmation_token", type="string", length=255, nullable=true)
+     * @ORM\Column(name="confirmation_token", type="string", length=180, nullable=true)
      */
     private $confirmationToken;
 

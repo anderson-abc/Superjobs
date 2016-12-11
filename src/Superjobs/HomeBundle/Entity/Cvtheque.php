@@ -5,73 +5,70 @@ namespace Superjobs\HomeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * CVtheque
+ * Cvtheque
  *
  * @ORM\Table(name="CVtheque")
- * @ORM\Entity()
+ * @ORM\Entity
  */
-class CVtheque {
-
+class Cvtheque
+{
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
-     * @var integer
-     *      
      * @ORM\Column(name="iduser", type="integer", nullable=true)
      */
     private $iduser;
 
     /**
      * @var string
-     *      
+     *
      * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
      */
     private $firstname;
 
     /**
      * @var string
-     *      
+     *
      * @ORM\Column(name="lastname", type="string", length=255, nullable=true)
      */
     private $lastname;
 
     /**
      * @var string
-     * 
+     *
      * @ORM\Column(name="email", type="string", length=255, nullable=true)
      */
     private $email;
 
     /**
      * @var string
-     * 
-     * @ORM\Column(name="cvFile", type="string", length=255)
+     *
+     * @ORM\Column(name="cvFile", type="string", length=255, nullable=false)
      */
-    private $cvFile;
+    private $cvfile;
 
     /**
-     * Get id
+     * @var \FosUser
      *
-     * @return integer 
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="FosUser")
+     * @ORM\JoinColumns({/va    
+     *   @ORM\JoinColumn(name="id", referencedColumnName="id")
+     * })
      */
-    public function getId() {
-        return $this->id;
-    }
+    private $id;
+
+
 
     /**
      * Set iduser
      *
      * @param integer $iduser
-     * @return CVtheque
+     * @return Cvtheque
      */
-    public function setIsuser($iduser) {
+    public function setIduser($iduser)
+    {
         $this->iduser = $iduser;
 
         return $this;
@@ -80,9 +77,10 @@ class CVtheque {
     /**
      * Get iduser
      *
-     * @return integer
+     * @return integer 
      */
-    public function getIduser() {
+    public function getIduser()
+    {
         return $this->iduser;
     }
 
@@ -90,9 +88,10 @@ class CVtheque {
      * Set firstname
      *
      * @param string $firstname
-     * @return CVtheque
+     * @return Cvtheque
      */
-    public function setFirstname($firstname) {
+    public function setFirstname($firstname)
+    {
         $this->firstname = $firstname;
 
         return $this;
@@ -103,7 +102,8 @@ class CVtheque {
      *
      * @return string 
      */
-    public function getFirstname() {
+    public function getFirstname()
+    {
         return $this->firstname;
     }
 
@@ -111,9 +111,10 @@ class CVtheque {
      * Set lastname
      *
      * @param string $lastname
-     * @return CVtheque
+     * @return Cvtheque
      */
-    public function setLastname($lastname) {
+    public function setLastname($lastname)
+    {
         $this->lastname = $lastname;
 
         return $this;
@@ -124,7 +125,8 @@ class CVtheque {
      *
      * @return string 
      */
-    public function getLastname() {
+    public function getLastname()
+    {
         return $this->lastname;
     }
 
@@ -132,9 +134,10 @@ class CVtheque {
      * Set email
      *
      * @param string $email
-     * @return CVtheque
+     * @return Cvtheque
      */
-    public function setEmail($email) {
+    public function setEmail($email)
+    {
         $this->email = $email;
 
         return $this;
@@ -145,29 +148,54 @@ class CVtheque {
      *
      * @return string 
      */
-    public function getEmail() {
+    public function getEmail()
+    {
         return $this->email;
     }
 
     /**
-     * Set cvFile
+     * Set cvfile
      *
-     * @param string $cvFile
-     * @return CVtheque
+     * @param string $cvfile
+     * @return Cvtheque
      */
-    public function setCvFile($cvFile) {
-        $this->cvFile = $cvFile;
+    public function setCvfile($cvfile)
+    {
+        $this->cvfile = $cvfile;
 
         return $this;
     }
 
     /**
-     * Get cvFile
+     * Get cvfile
      *
      * @return string 
      */
-    public function getCvFile() {
-        return $this->cvFile;
+    public function getCvfile()
+    {
+        return $this->cvfile;
     }
 
+    /**
+     * Set id
+     *
+     * @param \Superjobs\HomeBundle\Entity\FosUser $id
+     * @return Cvtheque
+     */
+    public function setId(\Superjobs\HomeBundle\Entity\FosUser $id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return \Superjobs\HomeBundle\Entity\FosUser 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

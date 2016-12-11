@@ -30,7 +30,7 @@ class CVthequeType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Superjobs\HomeBundle\Entity\CVtheque'
+            'data_class' => 'Superjobs\HomeBundle\Entity\Cvtheque'
         ));
     }
 

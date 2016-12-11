@@ -15,6 +15,7 @@
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
     </div>
+    
     <div class="row">
         <div class="col-lg-7">
             <ul class="nav nav-pills">
@@ -38,12 +39,9 @@
                         Métiers <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Design & Graphisme</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Développement</a></li>
-                        <li><a href="#">Systèmes & Réseaux</a></li>
-                        <li><a href="#">Management et Gestion</a></li>
-                        <li><a href="#">Ressources Humaines</a></li>
+                        {% for item in category %}
+                            <li><a href="#" >{{item}}</a></li>
+                        {% endfor %}
                         <li class="divider"></li>
                         <li><a href="#">Autres</a></li>
                     </ul>

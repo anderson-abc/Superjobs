@@ -4,7 +4,7 @@ namespace Superjobs\HomeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Superjobs\HomeBundle\Entity\CVtheque;
+use Superjobs\HomeBundle\Entity\Cvtheque;
 use Superjobs\HomeBundle\Form\CVthequeType;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
@@ -28,7 +28,7 @@ class ApplicantController extends Controller {
         $setTo = $job->getEmailCV();
         $em = $this->getDoctrine()->getManager();
 
-        $CVtheque = new CVtheque();
+        $CVtheque = new Cvtheque();
         $form = $this->createForm(new CVthequeType(), $CVtheque);
 
         $request = $this->getRequest();
@@ -63,7 +63,7 @@ class ApplicantController extends Controller {
                         $CVtheque->setLastname($lastname);
                         $CVtheque->setEmail($emailCV);
                         $CVtheque->setCvFile($cvFile);
-                        $CVtheque->setIsuser($userdir);
+                        $CVtheque->setIduser($userdir);
 
                         // Insert into DB
                         $em->persist($CVtheque);

@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Superjobs\HomeBundle\Entity\Jobs;
 use Superjobs\HomeBundle\Form\JobsType;
-use Superjobs\HomeBundle\Entity\CVtheque;
+use Superjobs\HomeBundle\Entity\Cvtheque;
 use Superjobs\HomeBundle\Form\CVthequeType;
 
 /**
@@ -46,7 +46,7 @@ class JobsController extends Controller {
             $file->move(
                     $this->getParameter('logo_directory') . '/' . $user . '/', $fileName
             );
-            
+
             $entity->setLogo($fileName);
             $entity->setIdUser($user);
 
@@ -105,6 +105,13 @@ class JobsController extends Controller {
 
         $entity = $em->getRepository('SuperjobsHomeBundle:Jobs')->find($id);
 
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        if ($user != 'anon.'){
+            $userid = $user->getId();
+        } else {
+            $userid = 'anon.';
+        }
+
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Jobs entity.');
         }
@@ -114,6 +121,7 @@ class JobsController extends Controller {
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('SuperjobsHomeBundle:Jobs:show.html.twig', array(
+                    'currentUser' => $userid,
                     'entity' => $entity,
                     'form' => $form->createView(),
                     'delete_form' => $deleteForm->createView(),

@@ -3,38 +3,35 @@
 namespace Superjobs\HomeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Validator\Constraints\DateTime;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Jobs
  *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="Superjobs\HomeBundle\Entity\JobsRepository")
+ * @ORM\Table(name="Jobs")
+ * @ORM\Entity
  */
-class Jobs {
-
+class Jobs
+{
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_user", type="integer")
+     * @ORM\Column(name="id_user", type="integer", nullable=false)
      */
-    private $id_user;
+    private $idUser;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
     private $title;
 
@@ -43,7 +40,7 @@ class Jobs {
      *
      * @ORM\Column(name="categories", type="string", length=255, nullable=true)
      */
-    private $Categories;
+    private $categories;
 
     /**
      * @var string
@@ -55,7 +52,7 @@ class Jobs {
     /**
      * @var string
      *
-     * @ORM\Column(name="company", type="string", length=255)
+     * @ORM\Column(name="company", type="string", length=255, nullable=false)
      */
     private $company;
 
@@ -104,9 +101,9 @@ class Jobs {
     /**
      * @var string
      *
-     * @ORM\Column(name="emailCV", type="string", length=255)
+     * @ORM\Column(name="emailCV", type="string", length=255, nullable=false)
      */
-    private $emailCV;
+    private $emailcv;
 
     /**
      * @var string
@@ -125,21 +122,21 @@ class Jobs {
     /**
      * @var boolean
      *
-     * @ORM\Column(name="is_created", type="boolean")
+     * @ORM\Column(name="is_created", type="boolean", nullable=false)
      */
     private $isCreated;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="expires_at", type="datetime")
+     * @ORM\Column(name="expires_at", type="datetime", nullable=false)
      */
     private $expiresAt;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created_at", type="datetime")
+     * @ORM\Column(name="created_at", type="datetime", nullable=false)
      */
     private $createdAt;
 
@@ -150,308 +147,39 @@ class Jobs {
      */
     private $updatedAt;
 
-    function __construct() {
-        $this->createdAt = new \DateTime("now");
 
-//        $now = new DateTime;
-        $clone = clone $this->createdAt;
-        $this->isCreated = true;
-
-        $this->expiresAt = $clone->modify('+30 day');
-//        $this->updatedAt = $clone->modify('+30 day');
-    }
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set type
+     * Set idUser
      *
-     * @param string $type
+     * @param integer $idUser
      * @return Jobs
      */
-    public function setType($type) {
-        $this->type = $type;
+    public function setIdUser($idUser)
+    {
+        $this->idUser = $idUser;
 
         return $this;
     }
 
     /**
-     * Get type
+     * Get idUser
      *
-     * @return string 
+     * @return integer 
      */
-    public function getType() {
-        return $this->type;
-    }
-
-    /**
-     * Set company
-     *
-     * @param string $company
-     * @return Jobs
-     */
-    public function setCompany($company) {
-        $this->company = $company;
-
-        return $this;
-    }
-
-    /**
-     * Get company
-     *
-     * @return string 
-     */
-    public function getCompany() {
-        return $this->company;
-    }
-
-    /**
-     * Set logo
-     *
-     * @param string $logo
-     * @return Jobs
-     */
-    public function setLogo($logo) {
-        $this->logo = $logo;
-
-        return $this;
-    }
-
-    /**
-     * Get logo
-     *
-     * @return string 
-     */
-    public function getLogo() {
-        return $this->logo;
-    }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     * @return Jobs
-     */
-    public function setUrl($url) {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string 
-     */
-    public function getUrl() {
-        return $this->url;
-    }
-
-    /**
-     * Set location
-     *
-     * @param string $location
-     * @return Jobs
-     */
-    public function setLocation($location) {
-        $this->location = $location;
-
-        return $this;
-    }
-
-    /**
-     * Get location
-     *
-     * @return string 
-     */
-    public function getLocation() {
-        return $this->location;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     * @return Jobs
-     */
-    public function setDescription($description) {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string 
-     */
-    public function getDescription() {
-        return $this->description;
-    }
-
-    /**
-     * Set skills
-     *
-     * @param string $skills
-     * @return Jobs
-     */
-    public function setSkills($skills) {
-        $this->skills = $skills;
-
-        return $this;
-    }
-
-    /**
-     * Get skills
-     *
-     * @return string 
-     */
-    public function getSkills() {
-        return $this->skills;
-    }
-
-    /**
-     * Set token
-     *
-     * @param string $token
-     * @return Jobs
-     */
-    public function setToken($token) {
-        $this->token = $token;
-
-        return $this;
-    }
-
-    /**
-     * Get token
-     *
-     * @return string 
-     */
-    public function getToken() {
-        return $this->token;
-    }
-
-    /**
-     * Set isPublic
-     *
-     * @param boolean $isPublic
-     * @return Jobs
-     */
-    public function setIsPublic($isPublic) {
-        $this->isPublic = $isPublic;
-
-        return $this;
-    }
-
-    /**
-     * Get isPublic
-     *
-     * @return boolean 
-     */
-    public function getIsPublic() {
-        return $this->isPublic;
-    }
-
-    /**
-     * Set isCreated
-     *
-     * @param boolean $isCreated
-     * @return Jobs
-     */
-    public function setIsCreated($isCreated) {
-        $this->isCreated = $isCreated;
-
-        return $this;
-    }
-
-    /**
-     * Get isCreated
-     *
-     * @return boolean 
-     */
-    public function getIsCreated() {
-        return $this->isCreated;
-    }
-
-    /**
-     * Set expiresAt
-     *
-     * @param \DateTime $expiresAt
-     * @return Jobs
-     */
-    public function setExpiresAt($expiresAt) {
-        $this->expiresAt = $expiresAt;
-
-        return $this;
-    }
-
-    /**
-     * Get expiresAt
-     *
-     * @return \DateTime 
-     */
-    public function getExpiresAt() {
-        return $this->expiresAt;
-    }
-
-    /**
-     * Set createdAt
-     *
-     * @param \DateTime $createdAt     
-     * @ORM\PrePersist
-     * 
-     * @return Jobs
-     */
-    public function setCreatedAt($createdAt) {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Get createdAt
-     *
-     * @return \DateTime 
-     */
-    public function getCreatedAt() {
-        return $this->createdAt;
-    }
-
-    /**
-     * Set updatedAt
-     *
-     * @param \DateTime $updatedAt
-     * @return Jobs
-     */
-    public function setUpdatedAt($updatedAt) {
-                
-        $this->updatedAt = new \DateTime();
-
-        $now = new DateTime;
-        $clone = clone $this->updatedAt;
-        $this->isCreated = true;
-        
-        $this->updatedAt = $clone->modify('+1 day');
-        
-        
-        
-
-        return $this;
-    }
-    /**
-     * Get updatedAt
-     *
-     * @return \DateTime 
-     */
-    public function getUpdatedAt() {
-        return $this->updatedAt;
+    public function getIdUser()
+    {
+        return $this->idUser;
     }
 
     /**
@@ -460,7 +188,8 @@ class Jobs {
      * @param string $title
      * @return Jobs
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
 
         return $this;
@@ -471,50 +200,147 @@ class Jobs {
      *
      * @return string 
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
     /**
-     * Set Categories
+     * Set categories
      *
      * @param string $categories
      * @return Jobs
      */
-    public function setCategories($categories) {
-        $this->Categories = $categories;
+    public function setCategories($categories)
+    {
+        $this->categories = $categories;
 
         return $this;
     }
 
     /**
-     * Get Categories
+     * Get categories
      *
      * @return string 
      */
-    public function getCategories() {
-        return $this->Categories;
+    public function getCategories()
+    {
+        return $this->categories;
     }
 
     /**
-     * Set id_user
+     * Set type
      *
-     * @param integer $idUser
+     * @param string $type
      * @return Jobs
      */
-    public function setIdUser($idUser) {
-        $this->id_user = $idUser;
+    public function setType($type)
+    {
+        $this->type = $type;
 
         return $this;
     }
 
     /**
-     * Get id_user
+     * Get type
      *
-     * @return integer 
+     * @return string 
      */
-    public function getIdUser() {
-        return $this->id_user;
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set company
+     *
+     * @param string $company
+     * @return Jobs
+     */
+    public function setCompany($company)
+    {
+        $this->company = $company;
+
+        return $this;
+    }
+
+    /**
+     * Get company
+     *
+     * @return string 
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+
+    /**
+     * Set logo
+     *
+     * @param string $logo
+     * @return Jobs
+     */
+    public function setLogo($logo)
+    {
+        $this->logo = $logo;
+
+        return $this;
+    }
+
+    /**
+     * Get logo
+     *
+     * @return string 
+     */
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return Jobs
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string 
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Set location
+     *
+     * @param string $location
+     * @return Jobs
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    /**
+     * Get location
+     *
+     * @return string 
+     */
+    public function getLocation()
+    {
+        return $this->location;
     }
 
     /**
@@ -523,7 +349,8 @@ class Jobs {
      * @param string $salary
      * @return Jobs
      */
-    public function setSalary($salary) {
+    public function setSalary($salary)
+    {
         $this->salary = $salary;
 
         return $this;
@@ -534,29 +361,215 @@ class Jobs {
      *
      * @return string 
      */
-    public function getSalary() {
+    public function getSalary()
+    {
         return $this->salary;
     }
 
     /**
-     * Set emailCV
+     * Set description
      *
-     * @param string $emailCV
+     * @param string $description
      * @return Jobs
      */
-    public function setEmailCV($emailCV) {
-        $this->emailCV = $emailCV;
+    public function setDescription($description)
+    {
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get emailCV
+     * Get description
      *
      * @return string 
      */
-    public function getEmailCV() {
-        return $this->emailCV;
+    public function getDescription()
+    {
+        return $this->description;
     }
 
+    /**
+     * Set skills
+     *
+     * @param string $skills
+     * @return Jobs
+     */
+    public function setSkills($skills)
+    {
+        $this->skills = $skills;
+
+        return $this;
+    }
+
+    /**
+     * Get skills
+     *
+     * @return string 
+     */
+    public function getSkills()
+    {
+        return $this->skills;
+    }
+
+    /**
+     * Set emailcv
+     *
+     * @param string $emailcv
+     * @return Jobs
+     */
+    public function setEmailcv($emailcv)
+    {
+        $this->emailcv = $emailcv;
+
+        return $this;
+    }
+
+    /**
+     * Get emailcv
+     *
+     * @return string 
+     */
+    public function getEmailcv()
+    {
+        return $this->emailcv;
+    }
+
+    /**
+     * Set token
+     *
+     * @param string $token
+     * @return Jobs
+     */
+    public function setToken($token)
+    {
+        $this->token = $token;
+
+        return $this;
+    }
+
+    /**
+     * Get token
+     *
+     * @return string 
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * Set isPublic
+     *
+     * @param boolean $isPublic
+     * @return Jobs
+     */
+    public function setIsPublic($isPublic)
+    {
+        $this->isPublic = $isPublic;
+
+        return $this;
+    }
+
+    /**
+     * Get isPublic
+     *
+     * @return boolean 
+     */
+    public function getIsPublic()
+    {
+        return $this->isPublic;
+    }
+
+    /**
+     * Set isCreated
+     *
+     * @param boolean $isCreated
+     * @return Jobs
+     */
+    public function setIsCreated($isCreated)
+    {
+        $this->isCreated = $isCreated;
+
+        return $this;
+    }
+
+    /**
+     * Get isCreated
+     *
+     * @return boolean 
+     */
+    public function getIsCreated()
+    {
+        return $this->isCreated;
+    }
+
+    /**
+     * Set expiresAt
+     *
+     * @param \DateTime $expiresAt
+     * @return Jobs
+     */
+    public function setExpiresAt($expiresAt)
+    {
+        $this->expiresAt = $expiresAt;
+
+        return $this;
+    }
+
+    /**
+     * Get expiresAt
+     *
+     * @return \DateTime 
+     */
+    public function getExpiresAt()
+    {
+        return $this->expiresAt;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Jobs
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Jobs
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
 }
