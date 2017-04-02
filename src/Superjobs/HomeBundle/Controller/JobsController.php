@@ -34,6 +34,7 @@ class JobsController extends Controller {
      *
      */
     public function createAction(Request $request) {
+
         $entity = new Jobs();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
@@ -49,6 +50,16 @@ class JobsController extends Controller {
 
             $entity->setLogo($fileName);
             $entity->setIdUser($user);
+
+            $createdAt = new \DateTime();
+            $entity->setCreatedAt($createdAt);
+
+            $exiredAt = clone $createdAt;
+            $exiredAt->add(new \DateInterval("P3M"));
+
+            $entity->setExpiresAt($exiredAt);
+
+            $entity->setIsCreated(TRUE);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -86,14 +97,22 @@ class JobsController extends Controller {
      *
      */
     public function newAction() {
+        $securityContext = $this->container->get('security.authorization_checker');
+        if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            return $this->redirect($this->generateUrl('fos_user_security_login', array('roleHierarchy' => 'ROLE_RECRUITER')));
+        }
+        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_RECRUITER')) {
+            $this->get('session')->getFlashBag()->add('Access denied', "Vous n\'avez pas le droit recruteur.");
+            throw $this->createAccessDeniedException('Vous n\'avez pas le droit recruteur ');
+        } else {
+            $entity = new Jobs();
+            $form = $this->createCreateForm($entity);
 
-        $entity = new Jobs();
-        $form = $this->createCreateForm($entity);
-
-        return $this->render('SuperjobsHomeBundle:Jobs:new.html.twig', array(
-                    'entity' => $entity,
-                    'form' => $form->createView(),
-        ));
+            return $this->render('SuperjobsHomeBundle:Jobs:new.html.twig', array(
+                        'entity' => $entity,
+                        'form' => $form->createView(),
+            ));
+        }
     }
 
     /**
@@ -106,7 +125,7 @@ class JobsController extends Controller {
         $entity = $em->getRepository('SuperjobsHomeBundle:Jobs')->find($id);
 
         $user = $this->container->get('security.token_storage')->getToken()->getUser();
-        if ($user != 'anon.'){
+        if ($user != 'anon.') {
             $userid = $user->getId();
         } else {
             $userid = 'anon.';

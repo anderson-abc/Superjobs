@@ -15,6 +15,15 @@ class Cvtheque
     /**
      * @var integer
      *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="iduser", type="integer", nullable=true)
      */
     private $iduser;
@@ -47,17 +56,6 @@ class Cvtheque
      */
     private $cvfile;
 
-    /**
-     * @var \FosUser
-     *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="FosUser")
-     * @ORM\JoinColumns({/va    
-     *   @ORM\JoinColumn(name="id", referencedColumnName="id")
-     * })
-     */
-    private $id;
 
 
 
