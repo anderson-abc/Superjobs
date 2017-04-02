@@ -1,9 +1,9 @@
-Superjobs Website
+Irmajobs Website
 =================
 
 A new website to help candidates find their best computer job, and to help recuiters to find their best applicant.
 This project is under construction.
-To suggestion some thing or any question tell us at : contact@irmasoft.com
+To suggestion some thing or any question tell us at : contact@irmajobs.com
 
 ** Installation 
 
@@ -13,9 +13,9 @@ To suggestion some thing or any question tell us at : contact@irmasoft.com
 
     HTTPDUSER=`ps axo user,comm | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
 
-    sudo setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var/cache var/logs
+    sudo setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs
 
-    sudo setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var/cache var/log
+    sudo setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/log
 
     php app/console doctrine:database:create
 
