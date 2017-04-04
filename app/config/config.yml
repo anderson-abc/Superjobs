@@ -83,7 +83,10 @@ fos_user:
     user_class: Superjobs\UserBundle\Entity\User
     group:
         group_class: Superjobs\UserBundle\Entity\Groups
-        
+    from_email:
+        address: hafedh51@gmail.com
+        sender_name: MyName
+
 services:
     fos_user.doctrine_registry:
         alias: doctrine
