@@ -15,6 +15,7 @@ class RecruiterController extends Controller {
     }
 
     public function addAction(Request $request) {
+        
         $securityContext = $this->container->get('security.authorization_checker');
         if (!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             // redirect register with role recruiter 

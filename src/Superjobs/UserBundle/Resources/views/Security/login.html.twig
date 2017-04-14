@@ -1,14 +1,9 @@
 {% extends "SuperjobsHomeBundle::layout.html.twig" %}
-
 {% trans_default_domain 'FOSUserBundle' %}
-
 {% block container %}
-
     {% set roleHierarchy = app.request.get('roleHierarchy') %}
     {% for type, messages in app.session.flashbag.all() %}
         {% if type == 'Access denied' %}
-            {#            {{ dump(messages[0]) }}#}
-            {#            {% include 'SuperjobsHomeBundle:SearchEngine:searchForm.html.twig'with({ 'pagination': pagination }) %}#}
             {% include 'SuperjobsHomeBundle:Popin:popin.html.twig' with({ 'Title': type, 'messages':messages[0]}) %}
         {% endif %}
     {% endfor %}
@@ -33,7 +28,7 @@
                        class="form-control" placeholder="{{ 'security.login.username'|trans }}" autofocus />
             </div>
 
-            {#        <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>#}
+            
             <div style="margin-bottom: 25px" class="input-group">
                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
                 <input type="password" id="password" name="_password" class="form-control" 
