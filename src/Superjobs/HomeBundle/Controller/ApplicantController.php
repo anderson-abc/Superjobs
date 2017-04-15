@@ -75,11 +75,13 @@ class ApplicantController extends Controller {
                 }
             }
         }
-
-
-        return $this->render('SuperjobsHomeBundle:Applicant:similarjobs.html.twig', array(
+die("1");
+        return array(
                     'job' => $job
-        ));
+        );
+//        return $this->render('SuperjobsHomeBundle:Applicant:similarjobs.html.twig', array(
+//                    'job' => $job
+//        ));
     }
 
     public function sendMailer($setTo, $attach) {

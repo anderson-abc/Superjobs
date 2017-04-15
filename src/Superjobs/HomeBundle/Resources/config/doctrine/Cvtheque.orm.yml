@@ -1,0 +1,44 @@
+Superjobs\HomeBundle\Entity\Cvtheque:
+    type: entity
+    table: CVtheque
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        iduser:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        firstname:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        lastname:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        email:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        cvfile:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            column: cvFile
+    lifecycleCallbacks: {  }

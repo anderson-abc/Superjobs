@@ -58,6 +58,15 @@ class Cvtheque
 
 
 
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set iduser
@@ -172,28 +181,5 @@ class Cvtheque
     public function getCvfile()
     {
         return $this->cvfile;
-    }
-
-    /**
-     * Set id
-     *
-     * @param \Superjobs\HomeBundle\Entity\FosUser $id
-     * @return Cvtheque
-     */
-    public function setId(\Superjobs\HomeBundle\Entity\FosUser $id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get id
-     *
-     * @return \Superjobs\HomeBundle\Entity\FosUser 
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 }

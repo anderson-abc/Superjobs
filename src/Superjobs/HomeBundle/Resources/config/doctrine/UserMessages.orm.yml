@@ -1,0 +1,32 @@
+Superjobs\HomeBundle\Entity\UserMessages:
+    type: entity
+    table: user_messages
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        fromiduser:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: fromIdUser
+        message:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        toiduser:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: toIdUser
+    lifecycleCallbacks: {  }

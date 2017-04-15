@@ -59,7 +59,7 @@ class FosUser
     /**
      * @var string
      *
-     * @ORM\Column(name="salt", type="string", length=255, nullable=false)
+     * @ORM\Column(name="salt", type="string", length=255, nullable=true)
      */
     private $salt;
 
@@ -76,27 +76,6 @@ class FosUser
      * @ORM\Column(name="last_login", type="datetime", nullable=true)
      */
     private $lastLogin;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="locked", type="boolean", nullable=false)
-     */
-    private $locked;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="expired", type="boolean", nullable=false)
-     */
-    private $expired;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="expires_at", type="datetime", nullable=true)
-     */
-    private $expiresAt;
 
     /**
      * @var string
@@ -118,20 +97,6 @@ class FosUser
      * @ORM\Column(name="roles", type="array", nullable=false)
      */
     private $roles;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="credentials_expired", type="boolean", nullable=false)
-     */
-    private $credentialsExpired;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="credentials_expire_at", type="datetime", nullable=true)
-     */
-    private $credentialsExpireAt;
 
 
 
@@ -330,75 +295,6 @@ class FosUser
     }
 
     /**
-     * Set locked
-     *
-     * @param boolean $locked
-     * @return FosUser
-     */
-    public function setLocked($locked)
-    {
-        $this->locked = $locked;
-
-        return $this;
-    }
-
-    /**
-     * Get locked
-     *
-     * @return boolean 
-     */
-    public function getLocked()
-    {
-        return $this->locked;
-    }
-
-    /**
-     * Set expired
-     *
-     * @param boolean $expired
-     * @return FosUser
-     */
-    public function setExpired($expired)
-    {
-        $this->expired = $expired;
-
-        return $this;
-    }
-
-    /**
-     * Get expired
-     *
-     * @return boolean 
-     */
-    public function getExpired()
-    {
-        return $this->expired;
-    }
-
-    /**
-     * Set expiresAt
-     *
-     * @param \DateTime $expiresAt
-     * @return FosUser
-     */
-    public function setExpiresAt($expiresAt)
-    {
-        $this->expiresAt = $expiresAt;
-
-        return $this;
-    }
-
-    /**
-     * Get expiresAt
-     *
-     * @return \DateTime 
-     */
-    public function getExpiresAt()
-    {
-        return $this->expiresAt;
-    }
-
-    /**
      * Set confirmationToken
      *
      * @param string $confirmationToken
@@ -465,51 +361,5 @@ class FosUser
     public function getRoles()
     {
         return $this->roles;
-    }
-
-    /**
-     * Set credentialsExpired
-     *
-     * @param boolean $credentialsExpired
-     * @return FosUser
-     */
-    public function setCredentialsExpired($credentialsExpired)
-    {
-        $this->credentialsExpired = $credentialsExpired;
-
-        return $this;
-    }
-
-    /**
-     * Get credentialsExpired
-     *
-     * @return boolean 
-     */
-    public function getCredentialsExpired()
-    {
-        return $this->credentialsExpired;
-    }
-
-    /**
-     * Set credentialsExpireAt
-     *
-     * @param \DateTime $credentialsExpireAt
-     * @return FosUser
-     */
-    public function setCredentialsExpireAt($credentialsExpireAt)
-    {
-        $this->credentialsExpireAt = $credentialsExpireAt;
-
-        return $this;
-    }
-
-    /**
-     * Get credentialsExpireAt
-     *
-     * @return \DateTime 
-     */
-    public function getCredentialsExpireAt()
-    {
-        return $this->credentialsExpireAt;
     }
 }
